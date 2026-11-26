@@ -492,6 +492,175 @@
      "source_name": "Toyota Service Specifications - Engine Mechanical (RM744U, 2000 Celica) - valvulita.com copy",
      "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
      "notes": "Listed in engine removal specs."
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE",
+     "component": "Crankshaft pulley bolt",
+     "fastener_detail": "",
+     "torque_nm": "138",
+     "torque_original": "138 N·m (102 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "2ZZ-GE",
+     "component": "Crankshaft pulley bolt",
+     "fastener_detail": "",
+     "torque_nm": "120",
+     "torque_original": "120 N·m (87 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE",
+     "component": "Exhaust manifold to cylinder head",
+     "fastener_detail": "",
+     "torque_nm": "37",
+     "torque_original": "37 N·m (27 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "2ZZ-GE",
+     "component": "Exhaust manifold to cylinder head",
+     "fastener_detail": "",
+     "torque_nm": "50",
+     "torque_original": "50 N·m (37 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE",
+     "component": "Cylinder head cover",
+     "fastener_detail": "",
+     "torque_nm": "9.0",
+     "torque_original": "9.0 N·m with washer; 11 N·m without washer",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Two values depending on washer fitment."
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "2ZZ-GE",
+     "component": "Cylinder head cover",
+     "fastener_detail": "",
+     "torque_nm": "10",
+     "torque_original": "10 N·m",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Oil pan bolts (pan fasteners, NOT drain plug)",
+     "fastener_detail": "",
+     "torque_nm": "9.0",
+     "torque_original": "9.0 N·m (80 in·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Pan fasteners only; drain plug still not found."
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE",
+     "component": "Engine coolant drain union",
+     "fastener_detail": "",
+     "torque_nm": "20",
+     "torque_original": "20 N·m (14 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "2ZZ-GE",
+     "component": "Engine coolant drain union",
+     "fastener_detail": "",
+     "torque_nm": "25",
+     "torque_original": "25 N·m (18 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Knock sensor",
+     "fastener_detail": "",
+     "torque_nm": "39",
+     "torque_original": "39 N·m (29 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Rear engine mounting bracket to transaxle",
+     "fastener_detail": "",
+     "torque_nm": "64",
+     "torque_original": "64 N·m (47 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "1ZZ-FE",
+     "component": "Camshaft timing sprocket / VVT controller to camshaft",
+     "fastener_detail": "",
+     "torque_nm": "45",
+     "torque_original": "45 N·m (33 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
+    },
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "2000",
+     "engine": "2ZZ-GE",
+     "component": "Camshaft timing sprocket / VVT controller to camshaft",
+     "fastener_detail": "",
+     "torque_nm": "54",
+     "torque_original": "54 N·m (40 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": ""
     }
    ]
   },
@@ -525,28 +694,361 @@
      "notes": "Same engine family but from Celica manual; also conflicts with 18 N·m in 2000 Celica manual. MR2-specific value not found."
     }
    ]
+  },
+  {
+   "name": "Lexus GX460 / Prado 150 (cross-ref)",
+   "rows": [
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "1UR-FE 4.6 V8",
+     "component": "Engine oil drain plug",
+     "fastener_detail": "",
+     "torque_nm": "40.7",
+     "torque_original": "30 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). Same engine family as LC200 URJ202 1UR-FE - plausible cross-ref for LC200 drain plug but unverified."
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "1UR-FE 4.6 V8",
+     "component": "Oil filter cap (plastic housing)",
+     "fastener_detail": "",
+     "torque_nm": "24.4",
+     "torque_original": "18 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). Metal aftermarket cap quoted 18.43-22.13 ft-lb (25-30 N·m)."
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "1UR-FE 4.6 V8",
+     "component": "Spark plugs",
+     "fastener_detail": "",
+     "torque_nm": "20.3",
+     "torque_original": "15 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). Only text cross-ref found for 1UR-FE plugs (LC200 URJ202 gap). Low confidence."
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Front differential filler plug",
+     "fastener_detail": "",
+     "torque_nm": "39.3",
+     "torque_original": "29 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Front differential drain plug",
+     "fastener_detail": "",
+     "torque_nm": "65.1",
+     "torque_original": "48 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). Drain higher than fill as posted - unverified."
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Rear differential filler plug",
+     "fastener_detail": "",
+     "torque_nm": "48.8",
+     "torque_original": "36 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Rear differential drain plug",
+     "fastener_detail": "",
+     "torque_nm": "48.8",
+     "torque_original": "36 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Transfer case filler plug",
+     "fastener_detail": "",
+     "torque_nm": "36.6",
+     "torque_original": "27 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Transfer case drain plug",
+     "fastener_detail": "",
+     "torque_nm": "36.6",
+     "torque_original": "27 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Front brake caliper slide (slider) bolts",
+     "fastener_detail": "pad replacement",
+     "torque_nm": "88.1",
+     "torque_original": "65 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Front strut lower bolt",
+     "fastener_detail": "",
+     "torque_nm": "95",
+     "torque_original": "95 N·m / 70 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Upper control arm to spindle (castle nut)",
+     "fastener_detail": "",
+     "torque_nm": "110",
+     "torque_original": "110 N·m / 82 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Tie rod end ball joint (castle nut)",
+     "fastener_detail": "",
+     "torque_nm": "91",
+     "torque_original": "91 N·m / 67 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Front strut top plate to chassis (3 bolts)",
+     "fastener_detail": "",
+     "torque_nm": "64",
+     "torque_original": "64 N·m / 46 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Rear shock absorber lower bolt",
+     "fastener_detail": "",
+     "torque_nm": "98",
+     "torque_original": "98 N·m / 72 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    },
+    {
+     "model_code": "URJ150 (J150 platform)",
+     "years": "2010-2023",
+     "engine": "all",
+     "component": "Rear track rod (panhard) to frame",
+     "fastener_detail": "",
+     "torque_nm": "110",
+     "torque_original": "110 N·m / 81 ft-lb",
+     "confidence": "low",
+     "source_name": "ClubLexus GX 2nd-gen 'FAQ: Torque Specs' thread (members quoting FSM/TechDoc)",
+     "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/932893-faq-torque-specs-post-50-complete-specs.html",
+     "notes": "US-market Lexus on Prado 150 platform; NOT verified for AU Prado (1KD/1GD diesel, 1GR petrol). "
+    }
+   ]
   }
  ],
  "wheel_nuts": [
   {
-   "vehicle": "Toyota LandCruiser 200",
-   "model_code": "URJ202 / VDJ200 (US OM covers URJ200)",
-   "years": "2008-2021",
-   "torque_nm": "131",
-   "confidence": "high",
-   "source_name": "2011 Toyota Land Cruiser Owner's Manual (US) p.1153 via ManualOwl",
-   "source_url": "https://www.manualowl.com/am/Toyota/2011-Land%20Cruiser/Manual/5788?page=1153",
-   "notes": "US-market owner's manual. AU-market owner's manual not obtained, so AU figure and any steel-vs-alloy difference are UNVERIFIED (see gaps.md)."
+   "vehicle": "BYD Seal",
+   "model_code": "Seal EV (EU type approval e13*2018/858*00639)",
+   "years": "2022-",
+   "torque_nm": "130",
+   "confidence": "medium",
+   "source_name": "Felgenshop.de TÜV wheel certificate 01017334 (CMS C32 8.0Jx19) - fixing elements table",
+   "source_url": "https://www.felgenshop.de/gutachten/01017334",
+   "notes": "Aftermarket wheel certificate listing OE series nut torque. AU handbook has no figure (pass 1)."
   },
   {
-   "vehicle": "Toyota RAV4",
-   "model_code": "ACA33 / GSA33 (XA30)",
-   "years": "2006-2012",
-   "torque_nm": "103",
+   "vehicle": "BYD Shark 6",
+   "model_code": "Shark 6 PHEV (AU)",
+   "years": "2024-",
+   "torque_nm": "140",
    "confidence": "high",
-   "source_name": "2009 Toyota RAV4 Owner's Manual (US) p.471 via ManualOwl",
-   "source_url": "https://www.manualowl.com/am/Toyota/2009-RAV4/Manual/5669?page=471",
-   "notes": "US OM; same XA30 generation as AU 2010. Unlabelled value 103 (1,050, 77) also appears in RM01N0 SDS (https://4rav.ru/manual/rm01n0ru/sds/sds.pdf)."
+   "source_name": "BYD SHARK 6 Owner's Handbook 2024 (AU dealer copy)",
+   "source_url": "https://evdealergroup-byd.com.au/brochures/BYD-SHARK-6-Owners-Handbook-2024.pdf",
+   "notes": "AU-market handbook."
+  },
+  {
+   "vehicle": "Ford Ranger",
+   "model_code": "PX3 (folder label; doc is '2019 Ranger')",
+   "years": "2019",
+   "torque_nm": "135",
+   "confidence": "high",
+   "source_name": "Ford Service Content 204-04A Wheels and Tires - Removal and Installation (2019 Ranger)",
+   "source_url": "https://servicemanuals-backend.fly.storage.tigris.dev/manuals/Ford/Ranger/2019/PX3/204-04A%20Wheels%20and%20Tires%20-%20Removal%20and%20Installation%20-%20Wheel%20and%20Tire.pdf",
+   "notes": "Clean dry threads; star pattern; re-torque within 160 km. Document hosted in a 'PX3' folder but text says '2019 Ranger' - market not confirmed. Next-gen (2022+) Ranger NOT verified."
+  },
+  {
+   "vehicle": "Ford Ranger",
+   "model_code": "next-gen (US 2025 Ranger owner's manual, quoted)",
+   "years": "2024- (US)",
+   "torque_nm": "135",
+   "confidence": "medium",
+   "source_name": "Ranger6G forum - member quoting 2025 Ranger owner's manual table",
+   "source_url": "https://www.ranger6g.com/forum/goto/post?id=202888",
+   "notes": "US-market T6.2 Ranger. AU next-gen manual not obtained. Matches 2019 PX3 service doc (135 Nm). Thread quoted as M12 - unverified for AU."
+  },
+  {
+   "vehicle": "Hyundai i30",
+   "model_code": "generation not identified",
+   "years": "unknown",
+   "torque_nm": "88.3-107.9",
+   "confidence": "low",
+   "source_name": "Hyundai i30 Owner's Manual (manualslib 1185916) p.340",
+   "source_url": "https://www.manualslib.com/manual/1185916/Hyundai-i30.html?page=340",
+   "notes": "Converted range 88.3-107.9 N·m. Manual generation/year not stated - do not apply to PD/CN7 without checking the correct manual."
+  },
+  {
+   "vehicle": "Hyundai i30",
+   "model_code": "generation not confirmed (features suggest PD)",
+   "years": "unknown",
+   "torque_nm": "107.9",
+   "confidence": "low",
+   "source_name": "Hyundai i30 Owner's Manual (manualslib 1256505) p.489",
+   "source_url": "https://www.manualslib.com/manual/1256505/Hyundai-I30.html?page=489",
+   "notes": "Differs from pass-1 manual (9~11 kgf·m) - see conflicts_pass2.md. Generation not stated on page."
+  },
+  {
+   "vehicle": "Isuzu D-Max",
+   "model_code": "previous gen (UK '17MY' combined manual)",
+   "years": "2017-2020",
+   "torque_nm": "120",
+   "confidence": "high",
+   "source_name": "Isuzu D-Max Owner's Manual combined 17MY (Isuzu UK) p.6-87 / 6-89",
+   "source_url": "https://www.isuzu.co.uk/wp-content/uploads/2024/05/isuzu-d-max-owners-manual-combined-17my.pdf",
+   "notes": "Manual states applicable all countries except USA/Canada. Current RG (2020+) AU manual not read - see gaps.md."
+  },
+  {
+   "vehicle": "Kia Sportage",
+   "model_code": "NQ5 (UK manual)",
+   "years": "2022-",
+   "torque_nm": "107.9-127.5",
+   "confidence": "high",
+   "source_name": "Kia Sportage NQ5 2024 owner's manual (en_GB) - Changing tires",
+   "source_url": "https://ownersmanual.kia.com/full_webhelp/NQ5/2024/en_GB/topics/t00707.html",
+   "notes": "Converted range 107.9-127.5 N·m (kgf·m x 9.80665). Published only in kgf·m / lbf·ft. AU manual not checked."
+  },
+  {
+   "vehicle": "Kia Sportage",
+   "model_code": "NQ5 (2024 en_RG general-market manual)",
+   "years": "2022-",
+   "torque_nm": "107.9",
+   "confidence": "medium",
+   "source_name": "Kia Sportage NQ5 2024 owner's manual (en_RG)",
+   "source_url": "https://ownersmanual.kia.com/full_webhelp/NQ5/2024/en_RG/topics/chapter8_7_2.html",
+   "notes": "Agrees with UK manual in pass 1. Published as range; torque_nm = lower bound. AU-specific manual not checked."
+  },
+  {
+   "vehicle": "Lexus GX460 (cross-ref for Toyota Prado 150)",
+   "model_code": "URJ150 (US 2010)",
+   "years": "2010",
+   "torque_nm": "112.5",
+   "confidence": "low",
+   "source_name": "ClubLexus thread 784024 - member quoting 2010 GX460 owner's manual",
+   "source_url": "https://clublexus.com/forums/gx-2nd-gen-2010-2023/784024-torque-specs-for-wheel-lug-nuts-on-gx460.html",
+   "notes": "Same J150 platform as Prado 150 but AU Prado owner's manual not obtained. N·m converted. Also in GX FAQ thread (83 ft-lb)."
+  },
+  {
+   "vehicle": "MG ZS",
+   "model_code": "ZS petrol (2017-2025 5x100 per page)",
+   "years": "2017-",
+   "torque_nm": "130",
+   "confidence": "low",
+   "source_name": "Autosport Tyre World - MG ZS tyre size / wheel specs guide",
+   "source_url": "https://autostw.com.au/blogs/news/mg-zs-tyre-size-wheel-specs-guide",
+   "notes": "Retailer; no thread; PCD changed 2025 (5x112) so value may not apply to new ZS. Same retailer mis-described LC200 PCD in pass 1."
+  },
+  {
+   "vehicle": "Mazda BT-50",
+   "model_code": "TF (implied: 'new Mazda BT-50', article 9/4/2025)",
+   "years": "2020-",
+   "torque_nm": "120",
+   "confidence": "medium",
+   "source_name": "Mazda Australia news - BT-50 Tech Drive: how to change spare wheel",
+   "source_url": "https://www.mazda.com.au/mazda-news/mazda-bt-50-tech-drive-how-to-change-spare-wheel/",
+   "notes": "Manufacturer AU page; generation not named explicitly; refers to owner's manual."
+  },
+  {
+   "vehicle": "Mazda CX-5",
+   "model_code": "KF (EC-market manual 8HD5-EE-18K)",
+   "years": "2017-",
+   "torque_nm": "108-147",
+   "confidence": "high",
+   "source_name": "Mazda CX-5 owner's manual - Specifications > Tyres (owners-manual.mazda.com)",
+   "source_url": "https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8hd5ee18k/contents/10020109.html",
+   "notes": "Published as a range 108-147 N·m (kgf·m figures as printed do not convert exactly). Use upper/lower bounds; no single value."
+  },
+  {
+   "vehicle": "Tesla Model Y",
+   "model_code": "Model Y (AU owner's manual)",
+   "years": "current",
+   "torque_nm": "175",
+   "confidence": "high",
+   "source_name": "Tesla Model Y Owner's Manual (en_AU) - Wheels and Tires",
+   "source_url": "https://www.tesla.com/ownersmanual/modely/en_au/GUID-FDDB10EF-FFA9-46EB-B8CC-03614AE92B6B.html",
+   "notes": "AU-market online manual; single value for all factory wheels."
   },
   {
    "vehicle": "Toyota Celica",
@@ -556,16 +1058,6 @@
    "confidence": "high",
    "source_name": "2002 Toyota Celica Owner's Manual (US) p.223 via ManualOwl",
    "source_url": "https://www.manualowl.com/am/Toyota/2002-Celica/Manual/5372?page=223",
-   "notes": "US OM."
-  },
-  {
-   "vehicle": "Toyota MR2 Spyder (MR-S)",
-   "model_code": "ZZW30",
-   "years": "2000-2007",
-   "torque_nm": "103",
-   "confidence": "high",
-   "source_name": "2003 Toyota MR2 Spyder Owner's Manual (US) p.220 via ManualOwl",
-   "source_url": "https://www.manualowl.com/am/Toyota/2003-MR2%20Spyder/Manual/5392?page=220",
    "notes": "US OM."
   },
   {
@@ -579,66 +1071,6 @@
    "notes": "European-market manual; AU Corolla is Japan-built - AU manual not checked."
   },
   {
-   "vehicle": "Ford Ranger",
-   "model_code": "PX3 (folder label; doc is '2019 Ranger')",
-   "years": "2019",
-   "torque_nm": "135",
-   "confidence": "high",
-   "source_name": "Ford Service Content 204-04A Wheels and Tires - Removal and Installation (2019 Ranger)",
-   "source_url": "https://servicemanuals-backend.fly.storage.tigris.dev/manuals/Ford/Ranger/2019/PX3/204-04A%20Wheels%20and%20Tires%20-%20Removal%20and%20Installation%20-%20Wheel%20and%20Tire.pdf",
-   "notes": "Clean dry threads; star pattern; re-torque within 160 km. Document hosted in a 'PX3' folder but text says '2019 Ranger' - market not confirmed. Next-gen (2022+) Ranger NOT verified."
-  },
-  {
-   "vehicle": "Isuzu D-Max",
-   "model_code": "previous gen (UK '17MY' combined manual)",
-   "years": "2017-2020",
-   "torque_nm": "120",
-   "confidence": "high",
-   "source_name": "Isuzu D-Max Owner's Manual combined 17MY (Isuzu UK) p.6-87 / 6-89",
-   "source_url": "https://www.isuzu.co.uk/wp-content/uploads/2024/05/isuzu-d-max-owners-manual-combined-17my.pdf",
-   "notes": "Manual states applicable all countries except USA/Canada. Current RG (2020+) AU manual not read - see gaps.md."
-  },
-  {
-   "vehicle": "Mazda CX-5",
-   "model_code": "KF (EC-market manual 8HD5-EE-18K)",
-   "years": "2017-",
-   "torque_nm": "108-147",
-   "confidence": "high",
-   "source_name": "Mazda CX-5 owner's manual - Specifications > Tyres (owners-manual.mazda.com)",
-   "source_url": "https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8hd5ee18k/contents/10020109.html",
-   "notes": "Published as a range 108-147 N·m (kgf·m figures as printed do not convert exactly). Use upper/lower bounds; no single value."
-  },
-  {
-   "vehicle": "Kia Sportage",
-   "model_code": "NQ5 (UK manual)",
-   "years": "2022-",
-   "torque_nm": "107.9-127.5",
-   "confidence": "high",
-   "source_name": "Kia Sportage NQ5 2024 owner's manual (en_GB) - Changing tires",
-   "source_url": "https://ownersmanual.kia.com/full_webhelp/NQ5/2024/en_GB/topics/t00707.html",
-   "notes": "Converted range 107.9-127.5 N·m (kgf·m x 9.80665). Published only in kgf·m / lbf·ft. AU manual not checked."
-  },
-  {
-   "vehicle": "Hyundai i30",
-   "model_code": "generation not identified",
-   "years": "unknown",
-   "torque_nm": "88.3-107.9",
-   "confidence": "low",
-   "source_name": "Hyundai i30 Owner's Manual (manualslib 1185916) p.340",
-   "source_url": "https://www.manualslib.com/manual/1185916/Hyundai-i30.html?page=340",
-   "notes": "Converted range 88.3-107.9 N·m. Manual generation/year not stated - do not apply to PD/CN7 without checking the correct manual."
-  },
-  {
-   "vehicle": "BYD Shark 6",
-   "model_code": "Shark 6 PHEV (AU)",
-   "years": "2024-",
-   "torque_nm": "140",
-   "confidence": "high",
-   "source_name": "BYD SHARK 6 Owner's Handbook 2024 (AU dealer copy)",
-   "source_url": "https://evdealergroup-byd.com.au/brochures/BYD-SHARK-6-Owners-Handbook-2024.pdf",
-   "notes": "AU-market handbook."
-  },
-  {
    "vehicle": "Toyota HiLux",
    "model_code": "AN10/AN20 (KUN25/KUN26), accessory alloy PZ040-0K037",
    "years": "08/2011",
@@ -647,6 +1079,76 @@
    "source_name": "Toyota Europe accessory installation instructions - Hilux Alloy Wheels PZ040-0K037",
    "source_url": "https://www.toyota-tech.eu/aimuploads/%7B79DEB2F9-9C64-DF0E-36CD-E287183B9C64%7D/Hilux_Alloy_Wheels_PZ040-0K037_AIM_002_254_2.pdf",
    "notes": "PREVIOUS-GEN HiLux, accessory wheel, EU market. NOT valid for AN120/AN130 (2015+)."
+  },
+  {
+   "vehicle": "Toyota HiLux",
+   "model_code": "7th gen AN10/20/30 (manual lists 1KD-FTV/2TR-FE/1GR-FE), 4WD",
+   "years": "2005-2015",
+   "torque_nm": "105",
+   "confidence": "medium",
+   "source_name": "Toyota HILUX Owner's Manual (manualslib 2313282) ~p.443 'Installing the spare tire'",
+   "source_url": "https://www.manualslib.com/manual/2313282/Toyota-Hilux.html",
+   "notes": "Previous generation, NOT AN120/130. Market not stated (ECE references). Pass-1 EU accessory sheet gave 103 Nm."
+  },
+  {
+   "vehicle": "Toyota HiLux",
+   "model_code": "7th gen AN10/20/30, 2WD",
+   "years": "2005-2015",
+   "torque_nm": "152",
+   "confidence": "medium",
+   "source_name": "Toyota HILUX Owner's Manual (manualslib 2313282) ~p.443 'Installing the spare tire'",
+   "source_url": "https://www.manualslib.com/manual/2313282/Toyota-Hilux.html",
+   "notes": "Previous generation. 2WD value differs from 4WD in same manual."
+  },
+  {
+   "vehicle": "Toyota HiLux",
+   "model_code": "AN120/AN130 (retailer: 'most Hilux 2005-present')",
+   "years": "2005-",
+   "torque_nm": "131",
+   "confidence": "low",
+   "source_name": "Autosport Tyre World - Hilux tyre size guide",
+   "source_url": "https://autostw.com.au/blogs/news/toyota-hilux-tyre-size-guide-wheel-specs-pcd-centre-bore-torque-settings",
+   "notes": "Generic across generations; conflicts with 7th-gen owner's manual (105 4WD / 152 2WD). Not reliable for N80 - see conflicts_pass2.md."
+  },
+  {
+   "vehicle": "Toyota HiLux",
+   "model_code": "'Hilux SWB 2016' (generation not stated)",
+   "years": "2016",
+   "torque_nm": "152",
+   "confidence": "low",
+   "source_name": "Puretyre UK vehicle index - Hilux SWB 2016 205/70R15",
+   "source_url": "https://www.puretyre.co.uk/tyre-information/vehicle-index/toyota/hilux-swb/2016/205-70r15/",
+   "notes": "Matches 7th-gen 2WD OM figure; generation unclear. Not attributed to AN120/130."
+  },
+  {
+   "vehicle": "Toyota LandCruiser 200",
+   "model_code": "URJ202 / VDJ200 (US OM covers URJ200)",
+   "years": "2008-2021",
+   "torque_nm": "131",
+   "confidence": "high",
+   "source_name": "2011 Toyota Land Cruiser Owner's Manual (US) p.1153 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2011-Land%20Cruiser/Manual/5788?page=1153",
+   "notes": "US-market owner's manual. AU-market owner's manual not obtained, so AU figure and any steel-vs-alloy difference are UNVERIFIED (see gaps.md)."
+  },
+  {
+   "vehicle": "Toyota MR2 Spyder (MR-S)",
+   "model_code": "ZZW30",
+   "years": "2000-2007",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "2003 Toyota MR2 Spyder Owner's Manual (US) p.220 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2003-MR2%20Spyder/Manual/5392?page=220",
+   "notes": "US OM."
+  },
+  {
+   "vehicle": "Toyota RAV4",
+   "model_code": "ACA33 / GSA33 (XA30)",
+   "years": "2006-2012",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "2009 Toyota RAV4 Owner's Manual (US) p.471 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2009-RAV4/Manual/5669?page=471",
+   "notes": "US OM; same XA30 generation as AU 2010. Unlabelled value 103 (1,050, 77) also appears in RM01N0 SDS (https://4rav.ru/manual/rm01n0ru/sds/sds.pdf)."
   }
  ],
  "spark_plugs": [
@@ -970,10 +1472,11 @@
   }
  ],
  "gaps": [
-  "HiLux AN120/130: no factory wheel nut, brake, diff or suspension figures found yet.",
-  "LC200: AU steel vs alloy wheel nut figure, stud thread, oil drain/filter, 1VD/1UR plugs and suspension not found.",
-  "RAV4 / Celica / MR2: front caliper and suspension torques not found.",
-  "Wheel nuts not found: Prado 150, Camry XV70, next-gen Ranger, D-Max RG, Triton, Navara D23, Patrol Y62, Forester/Outback, Amarok, Atto 3, Seal."
+  "HiLux AN120/130: no factory figures found yet (wheel nuts only from retailers/earlier gen).",
+  "LC200: AU steel vs alloy wheel nut figure, stud thread, 1VD diesel drain/filter, suspension not found.",
+  "RAV4 / Celica / MR2: brakes, suspension and transmission plugs not found.",
+  "Wheel nuts still missing: Prado AU, Camry, Corolla AU, D-Max RG, Triton, Navara D23, Patrol Y62, Subaru, Amarok, Atto 3, MG3.",
+  "Open conflicts: 1ZZ-FE spark plug 18 vs 25 N·m; RAV4 2AZ drain plug 25 vs 40 N·m (40 now more likely)."
  ],
  "source": "Compiled 2026-11-26 by research agent; every row carries its source."
 }
