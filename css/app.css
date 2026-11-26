@@ -202,3 +202,9 @@ h2.group:first-child { margin-top: 2px; }
 .work p { margin: 0; overflow-wrap: anywhere; }
 .work p + p { padding-left: 10px; }
 .work strong { color: var(--accent); }
+.vdt { font-size: 13px; margin-top: 4px; }
+.vdt td, .vdt th { padding: 7px 4px; }
+.vdt th:not(:first-child), .vdt td:not(:first-child) { text-align: right; }
+.vdt tbody tr { cursor: pointer; }
+.vdt td.ok { color: var(--ok); } .vdt td.bad { color: var(--bad); }
+.kv b .ok { color: var(--ok); } .kv b .bad { color: var(--bad); }

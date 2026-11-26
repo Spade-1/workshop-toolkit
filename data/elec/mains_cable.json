@@ -1,10 +1,135 @@
-{"title":"230 V copper TPS (2C+E) – guidance","source":"Prysmian Cable Guide (Australia), 2-core PVC 75 °C, 40 °C ambient; Olex handbook gives the same mV/A·m","source_url":"https://media.mmem.com.au/Brochure/Prysmian/Prysmian_Cable_Guide.pdf","confidence":"medium",
-"note":"Guidance only, not a substitute for AS/NZS 3008.1.1. Ratings are for one circuit; grouping, ambient above 40 °C and insulation reduce them. AS/NZS 3000 allows 5% total drop from the point of supply (11.5 V at 230 V) – that includes mains and submains.",
-"rows":[
-{"mm2":1.0,"mv":51.6,"touching":14,"conduit":13,"insul":11},
-{"mm2":1.5,"mv":33.0,"touching":18,"conduit":16,"insul":14},
-{"mm2":2.5,"mv":18.0,"touching":26,"conduit":23,"insul":20},
-{"mm2":4,"mv":11.2,"touching":34,"conduit":30,"insul":27},
-{"mm2":6,"mv":7.49,"touching":44,"conduit":39,"insul":35},
-{"mm2":10,"mv":4.46,"touching":60,"conduit":52,"insul":48},
-{"mm2":16,"mv":2.81,"touching":80,"conduit":68,"insul":64}]}
+{
+ "title": "230 V copper TPS (2C+E) – guidance",
+ "source": "Prysmian Cable Guide (Australia), 2-core PVC 75 °C, 40 °C ambient; Olex handbook gives the same mV/A·m",
+ "source_url": "https://media.mmem.com.au/Brochure/Prysmian/Prysmian_Cable_Guide.pdf",
+ "confidence": "medium",
+ "note": "Guidance only, not a substitute for AS/NZS 3008.1.1. Ratings are for one circuit at 40 °C ambient; grouping with other circuits reduces them further. AS/NZS 3000 allows 5% total drop from the point of supply (11.5 V at 230 V), including mains and submains. 16 mm² buried values look high in the source table – treat with caution.",
+ "rows": [
+  {
+   "mm2": 1.0,
+   "mv": 51.6,
+   "spaced": 15.0,
+   "touching": 14.0,
+   "sun": 11.0,
+   "conduit": 13.0,
+   "insul_part": 11.0,
+   "insul_full": 7.0,
+   "buried": 17.0,
+   "ug_conduit": 17.0
+  },
+  {
+   "mm2": 1.5,
+   "mv": 33.0,
+   "spaced": 19.0,
+   "touching": 18.0,
+   "sun": 14.0,
+   "conduit": 16.0,
+   "insul_part": 14.0,
+   "insul_full": 9.0,
+   "buried": 21.0,
+   "ug_conduit": 21.0
+  },
+  {
+   "mm2": 2.5,
+   "mv": 18.0,
+   "spaced": 27.0,
+   "touching": 26.0,
+   "sun": 20.0,
+   "conduit": 23.0,
+   "insul_part": 20.0,
+   "insul_full": 13.0,
+   "buried": 30.0,
+   "ug_conduit": 30.0
+  },
+  {
+   "mm2": 4.0,
+   "mv": 11.2,
+   "spaced": 37.0,
+   "touching": 34.0,
+   "sun": 27.0,
+   "conduit": 30.0,
+   "insul_part": 27.0,
+   "insul_full": 17.0,
+   "buried": 39.0,
+   "ug_conduit": 39.0
+  },
+  {
+   "mm2": 6.0,
+   "mv": 7.49,
+   "spaced": 46.0,
+   "touching": 44.0,
+   "sun": 34.0,
+   "conduit": 39.0,
+   "insul_part": 35.0,
+   "insul_full": 22.0,
+   "buried": 50.0,
+   "ug_conduit": 50.0
+  },
+  {
+   "mm2": 10.0,
+   "mv": 4.46,
+   "spaced": 64.0,
+   "touching": 60.0,
+   "sun": 46.0,
+   "conduit": 52.0,
+   "insul_part": 48.0,
+   "insul_full": 30.0,
+   "buried": 66.0,
+   "ug_conduit": 66.0
+  },
+  {
+   "mm2": 16.0,
+   "mv": 2.81,
+   "spaced": 85.0,
+   "touching": 80.0,
+   "sun": 60.0,
+   "conduit": 68.0,
+   "insul_part": 64.0,
+   "insul_full": 40.0,
+   "buried": 114.0,
+   "ug_conduit": 86.0
+  }
+ ],
+ "methods": [
+  [
+   "spaced",
+   "Clipped, spaced from surface",
+   "Air all round the cable – best cooling."
+  ],
+  [
+   "touching",
+   "Clipped to a surface / touching",
+   "Clipped to a wall or batten; the surface blocks some cooling."
+  ],
+  [
+   "conduit",
+   "In conduit (in air)",
+   "Air trapped in the conduit insulates the cable – roughly 10–15% lower."
+  ],
+  [
+   "sun",
+   "Exposed to sun",
+   "Solar heating adds to conductor temperature."
+  ],
+  [
+   "insul_part",
+   "Partly in thermal insulation",
+   "One side against ceiling batts – heat can only escape one way."
+  ],
+  [
+   "insul_full",
+   "Fully in thermal insulation",
+   "Buried in batts – about half the free-air rating. Avoid, or upsize."
+  ],
+  [
+   "buried",
+   "Buried direct",
+   "Soil conducts heat away well."
+  ],
+  [
+   "ug_conduit",
+   "Underground conduit",
+   "Air gap in the conduit lowers it slightly vs buried direct."
+  ]
+ ]
+}

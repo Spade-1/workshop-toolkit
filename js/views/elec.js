@@ -126,66 +126,88 @@
 
   // ---------- Voltage drop
   const RHO = 0.0172; // Ω·mm²/m, copper at 20 °C
+  const AUTO_INST = [
+    ['air30', 'Free air or cabin, up to 30 °C', 1.0, 'The rated condition (Tycab, 30 °C ambient). Full rating.'],
+    ['cab40', 'Warm cabin, tray or canopy, 40 °C', 0.9, 'Warmer air leaves less headroom before the insulation reaches its limit.'],
+    ['bay50', 'Engine bay, away from heat, 50 °C', 0.76, 'Under-bonnet air is hot even away from the engine.'],
+    ['bay60', 'Engine bay, typical, 60 °C', 0.6, 'Typical engine bay. Cable carries a bit over half its rating.'],
+    ['bay70', 'Engine bay near exhaust or turbo, 70 °C', 0.45, 'Close to heat sources. Under half the rating – reroute or upsize.'],
+  ];
+  const VPRE = [['12', '12 V'], ['13.8', '13.8 V (idling, charging)'], ['14.4', '14.4 V (charging)'], ['24', '24 V'], ['28.8', '28.8 V (24 V charging)'], ['48', '48 V'], ['230', '230 V AC'], ['', 'Custom']];
+  function autoName(r) {
+    const s = r.au_sold_as || '';
+    if (/auto/.test(s)) return `${s.replace(' auto', '').replace('mm', ' mm')} · ${r.bs} B&S`;
+    if (/"8mm"/.test(s)) return `8 mm · ${r.bs} B&S`;
+    return `${r.bs} B&S`;
+  }
   async function vdrop($el) {
     const C = await WT.load('data/auto/cable.json');
     const M = await WT.load('data/elec/mains_cable.json');
-    const dc = C.rows.filter((r) => r.au_mm2).map((r) => ({ id: r.bs, label: `${r.bs} B&S (${r.au_mm2} mm²)`, a: r.au_mm2, rating: parseFloat(r.cont_a) }))
-      .sort((a, b) => a.a - b.a);
-    const st = WT.store.get('elec.vd', { sys: '12', i: '', l: '', cab: '', tgt: '3', inst: 'conduit' });
+    const dc = C.rows.filter((r) => r.au_mm2).map((r) => ({ id: r.bs, name: autoName(r), a: r.au_mm2, rating: parseFloat(r.cont_a) })).sort((a, b) => a.a - b.a);
+    const st = WT.store.get('elec.vd2', { v: '12', type: 'auto', i: '', l: '', tgt: '3', inst: 'air30', minst: 'touching', sel: '' });
     $el.innerHTML = `<form class="calc" onsubmit="return false">
-      <label>System<select id="sys"><option value="12">12 V DC (auto)</option><option value="24">24 V DC</option><option value="230">230 V AC single-phase</option></select></label>
-      <div class="row2"><label>Current (A)<input id="i" inputmode="decimal"></label><label>Run length, one way (m)<input id="l" inputmode="decimal"></label></div>
-      <label>Cable<select id="cab"></select></label>
-      <div class="row2"><label>Allowed drop<select id="tgt"></select></label><label id="instw">Installed<select id="inst">
-        <option value="touching">Clipped / touching</option><option value="conduit">In conduit</option><option value="insul">Partly in insulation</option></select></label></div>
-      </form><div id="vdo" class="out"></div><p class="foot" id="vdn"></p>`;
+      <div class="row2"><label>System voltage (V)<input id="v" inputmode="decimal"></label><label>Preset<select id="vp">${VPRE.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
+      <label>Cable type<select id="type"><option value="auto">Auto / marine single-core (DC)</option><option value="tps">Building TPS twin and earth (230 V)</option></select></label>
+      <div class="row2"><label>Current draw (A)<input id="i" inputmode="decimal"></label><label>Run length, one way (m)<input id="l" inputmode="decimal"></label></div>
+      <label>Where it's installed<select id="inst"></select></label>
+      <p class="intro" id="instn"></p>
+      <label>Allowed drop<select id="tgt"></select></label>
+      </form><div id="vdo"></div><p class="foot" id="vdn"></p>`;
     const $ = (id) => $el.querySelector('#' + id);
-    $('sys').value = st.sys; $('i').value = st.i; $('l').value = st.l; $('inst').value = st.inst;
-
+    $('v').value = st.v; $('type').value = st.type; $('i').value = st.i; $('l').value = st.l;
+    let sel = st.sel;
+    const vpSync = () => { $('vp').value = VPRE.some(([v]) => v === $('v').value) ? $('v').value : ''; };
     function fill() {
-      const ac = $('sys').value === '230';
-      $('cab').innerHTML = (ac ? M.rows.map((r) => `<option value="${r.mm2}">${r.mm2} mm² TPS</option>`) : dc.map((r) => `<option value="${r.id}">${esc(r.label)}</option>`)).join('');
-      $('tgt').innerHTML = (ac ? [['5', '5% (AS/NZS 3000 total)'], ['3', '3%'], ['2.5', '2.5% (final circuit guide)']] : [['3', '3% (critical: fridge, lights, charging)'], ['5', '5%'], ['10', '10% (non-critical)']])
-        .map(([v, t]) => `<option value="${v}">${t}</option>`).join('');
-      $('instw').hidden = !ac;
-      $('vdn').innerHTML = ac ? `${esc(M.note)} Source: <a href="${esc(M.source_url)}" target="_blank" rel="noopener">${esc(M.source)}</a> (${esc(M.confidence)} confidence).`
-        : 'Round-trip copper resistance at 20 °C (ρ = 0.0172 Ω·mm²/m) using the copper area AU auto cable is actually sold with. Earth-return circuits: count only the positive run. Hot cable drops more.';
+      const tps = $('type').value === 'tps';
+      $('inst').innerHTML = (tps ? M.methods.map(([k, t]) => [k, t]) : AUTO_INST.map(([k, t]) => [k, t])).map(([k, t]) => `<option value="${k}">${esc(t)}</option>`).join('');
+      $('inst').value = tps ? st.minst : st.inst;
+      if (!$('inst').value) $('inst').selectedIndex = 0;
+      $('tgt').innerHTML = (tps ? [['5', '5% (AS/NZS 3000, whole installation)'], ['3', '3%'], ['2.5', '2.5% (final-circuit rule of thumb)']]
+        : [['3', '3% – critical: fridge, lights, charging'], ['5', '5%'], ['10', '10% – non-critical']]).map(([v, t]) => `<option value="${v}">${t}</option>`).join('');
+      if ([...$('tgt').options].some((o) => o.value === st.tgt)) $('tgt').value = st.tgt;
+      $('vdn').innerHTML = tps ? `${esc(M.note)} Source: <a href="${esc(M.source_url)}" target="_blank" rel="noopener">${esc(M.source)}</a> (${esc(M.confidence)} confidence).`
+        : 'Drop uses round-trip copper resistance at 20 °C (ρ = 0.0172 Ω·mm²/m) and the copper area AU auto cable is actually sold with – auto cable sizes are smaller than their B&S equivalent. Earth-return circuits: count the positive run only. Ratings: Tycab continuous at 30 °C, derated for the location you pick. Bundling in a loom or split tube lowers ratings further – factor being sourced.';
     }
     function go() {
-      const sys = +$('sys').value, ac = sys === 230, I = num($('i')), L = num($('l')), tgt = +$('tgt').value, inst = $('inst').value;
-      WT.store.set('elec.vd', { sys: $('sys').value, i: $('i').value, l: $('l').value, cab: $('cab').value, tgt: $('tgt').value, inst });
-      if (!I || !L) { $('vdo').innerHTML = row('Enter', 'current and length'); return; }
-      const allow = (sys * tgt) / 100;
-      let h = '';
-      if (ac) {
-        const r = M.rows.find((x) => String(x.mm2) === $('cab').value);
-        const vd = (r.mv * I * L) / 1000, pct = (vd / sys) * 100, rating = r[inst];
-        h += row('Drop', `<span class="${pct <= tgt ? 'ok' : 'bad'}">${sig(vd, 3)} V · ${sig(pct, 3)}%</span>`, 'hl');
-        h += row('At the load', `${sig(sys - vd, 4)} V`);
-        h += row('Max run at ' + tgt + '%', `${sig((allow * 1000) / (r.mv * I), 3)} m`);
-        h += row('Cable rating', `${rating} A ${I > rating ? '<span class="bad">· over rating</span>' : ''}`);
-        const best = M.rows.find((x) => (x.mv * I * L) / 1000 <= allow && x[inst] >= I);
-        h += row('Smallest that passes', best ? `<b class="acc">${best.mm2} mm²</b> <small>(${sig((best.mv * I * L) / 1000, 3)} V, ${best[inst]} A)</small>` : 'none up to 16 mm²');
-        h += work([`Vd = mV/A·m × I × L ÷ 1000`, `= ${r.mv} × ${sig(I)} × ${sig(L)} ÷ 1000`, `= <strong>${sig(vd, 3)} V</strong> (${sig(pct, 3)}% of ${sys} V)`]);
-      } else {
-        const r = dc.find((x) => x.id === $('cab').value) || dc[0];
-        const R = (RHO * 2 * L) / r.a, vd = I * R, pct = (vd / sys) * 100;
-        h += row('Drop', `<span class="${pct <= tgt ? 'ok' : 'bad'}">${sig(vd, 3)} V · ${sig(pct, 3)}%</span>`, 'hl');
-        h += row('At the load', `${sig(sys - vd, 4)} V <small>(from ${sys} V; a running 12 V system sits nearer 13.8–14.4 V)</small>`);
-        h += row('Max run at ' + tgt + '%', `${sig((allow * r.a) / (RHO * 2 * I), 3)} m one way`);
-        if (r.rating) h += row('Cable rating', `${r.rating} A ${I > r.rating ? '<span class="bad">· over rating</span>' : ''}`);
-        const best = dc.find((x) => (I * RHO * 2 * L) / x.a <= allow && (!x.rating || x.rating >= I));
-        h += row('Smallest that passes', best ? `<b class="acc">${esc(best.label)}</b>` : 'none on chart');
-        h += work([`R = ρ × 2L ÷ A = 0.0172 × 2 × ${sig(L)} ÷ ${r.a}`, `= ${sig(R, 3)} Ω`, `Vd = I × R = ${sig(I)} × ${sig(R, 3)}`, `= <strong>${sig(vd, 3)} V</strong> (${sig(pct, 3)}% of ${sys} V)`]);
-      }
-      $('vdo').innerHTML = h;
+      const tps = $('type').value === 'tps', V = num($('v')), I = num($('i')), L = num($('l')), tgt = +$('tgt').value, inst = $('inst').value;
+      Object.assign(st, { v: $('v').value, type: $('type').value, i: $('i').value, l: $('l').value, tgt: $('tgt').value, sel });
+      if (tps) st.minst = inst; else st.inst = inst;
+      WT.store.set('elec.vd2', st);
+      const m = tps ? M.methods.find((x) => x[0] === inst) : AUTO_INST.find((x) => x[0] === inst);
+      const k = tps ? null : m[2];
+      $('instn').innerHTML = tps ? esc(m[2]) : `<b>×${k}</b> of the 30 °C rating. ${esc(m[3])}`;
+      if (!V || !I || !L) { $('vdo').innerHTML = `<div class="out">${row('Enter', 'voltage, current and length')}</div>`; return; }
+      const allow = (V * tgt) / 100;
+      const list = (tps ? M.rows.map((r) => ({ id: String(r.mm2), name: `${r.mm2} mm² TPS`, a: r.mm2, rating: r[inst], vd: (r.mv * I * L) / 1000, mv: r.mv }))
+        : dc.map((r) => ({ ...r, rating: r.rating * k, base: r.rating, vd: (I * RHO * 2 * L) / r.a })))
+        .map((r) => ({ ...r, pct: (r.vd / V) * 100, okV: r.vd <= allow, okA: r.rating >= I }));
+      const best = list.find((r) => r.okV && r.okA);
+      const cur = list.find((r) => r.id === sel) || best || list[list.length - 1];
+      let w;
+      if (tps) w = [`Vd = mV/A·m × I × L ÷ 1000`, `= ${cur.mv} × ${sig(I)} × ${sig(L)} ÷ 1000`, `= <strong>${sig(cur.vd, 3)} V</strong> (${sig(cur.pct, 3)}% of ${sig(V)} V)`];
+      else w = [`R = ρ × 2L ÷ A = 0.0172 × 2 × ${sig(L)} ÷ ${cur.a}`, `= ${sig((RHO * 2 * L) / cur.a, 3)} Ω`, `Vd = I × R = <strong>${sig(cur.vd, 3)} V</strong> (${sig(cur.pct, 3)}% of ${sig(V)} V)`,
+        `Rating = ${cur.base} A × ${k} = ${sig(cur.rating, 3)} A`];
+      const maxRun = tps ? (allow * 1000) / (cur.mv * I) : (allow * cur.a) / (RHO * 2 * I);
+      $('vdo').innerHTML = `<div class="card solve"><div class="solve-h"><b>${esc(cur.name)}</b>${cur === best ? ' <span class="ok">· smallest that passes</span>' : ''}</div>
+        <div class="out" style="padding:0;background:none">${row('Drop', `<span class="${cur.okV ? 'ok' : 'bad'}">${sig(cur.vd, 3)} V · ${sig(cur.pct, 3)}%</span>`, 'hl')}
+        ${row('At the load', `${sig(V - cur.vd, 4)} V`)}${row('Rating here', `<span class="${cur.okA ? 'ok' : 'bad'}">${sig(cur.rating, 3)} A${cur.okA ? '' : ' · too small for ' + sig(I) + ' A'}</span>`)}
+        ${row(`Max run at ${tgt}%`, `${sig(maxRun, 3)} m one way`)}</div>${work(w)}</div>
+        <table class="tbl vdt"><thead><tr><th>Cable</th><th>mm²</th><th>Rated A</th><th>Drop V</th><th>%</th></tr></thead><tbody>
+        ${list.map((r) => `<tr data-id="${esc(r.id)}" class="${r === cur ? 'near' : ''}"><td>${esc(r.name)}${r === best ? ' ★' : ''}</td><td>${r.a}</td>
+          <td class="${r.okA ? '' : 'bad'}">${sig(r.rating, 3)}</td><td class="${r.okV ? 'ok' : 'bad'}">${sig(r.vd, 2)}</td><td class="${r.okV ? 'ok' : 'bad'}">${sig(r.pct, 2)}</td></tr>`).join('')}</tbody></table>
+        <p class="foot">Tap a row to see its working. ★ = smallest cable that passes both drop and rating. Red = fails.</p>`;
+      $el.querySelectorAll('.vdt tbody tr').forEach((tr) => tr.addEventListener('click', () => { sel = tr.dataset.id; go(); }));
     }
-    fill();
-    if (st.cab && [...$('cab').options].some((o) => o.value === st.cab)) $('cab').value = st.cab;
-    if ([...$('tgt').options].some((o) => o.value === st.tgt)) $('tgt').value = st.tgt;
-    $('sys').addEventListener('change', () => { fill(); go(); });
-    ['i', 'l'].forEach((k) => $(k).addEventListener('input', go));
-    ['cab', 'tgt', 'inst'].forEach((k) => $(k).addEventListener('change', go));
+    fill(); vpSync();
+    $('vp').addEventListener('change', () => {
+      if ($('vp').value) { $('v').value = $('vp').value; const t = $('vp').value === '230' ? 'tps' : 'auto'; if (t !== $('type').value) { $('type').value = t; sel = ''; fill(); } }
+      else $('v').focus();
+      go();
+    });
+    $('v').addEventListener('input', () => { vpSync(); go(); });
+    $('type').addEventListener('change', () => { sel = ''; fill(); go(); });
+    ['i', 'l'].forEach((x) => $(x).addEventListener('input', go));
+    ['inst', 'tgt'].forEach((x) => $(x).addEventListener('change', go));
     go();
   }
 
@@ -259,38 +281,49 @@
   }
 
   // ---------- Battery runtime
-  const CHEM = [['0.5', 'AGM / flooded lead-acid (50%)'], ['0.8', 'Lead-acid, deep (80%)'], ['0.9', 'Lithium LiFePO4 (90%)'], ['1', 'Lithium, full (100%)']];
+  const CHEM = [['0.5', 'AGM / flooded lead-acid – 50% usable'], ['0.8', 'Lead-acid, deep cycle pushed – 80%'], ['0.9', 'Lithium LiFePO4 – 90% usable'], ['1', 'Full capacity – 100%']];
+  const CAPU = [['ah', 'Ah'], ['mah', 'mAh'], ['wh', 'Wh'], ['kwh', 'kWh']];
+  const LOADU = [['w', 'W'], ['kw', 'kW'], ['a', 'A'], ['ma', 'mA']];
   function battery($el) {
-    const st = WT.store.get('elec.bat', { ah: '100', v: '12', dod: '0.5', load: '', lu: 'w', eff: '85', hrs: '' });
+    const st = WT.store.get('elec.bat2', { cap: '100', cu: 'ah', v: '12', dod: '0.5', load: '', lu: 'w', sup: 'dc', eff: '85', hrs: '' });
     $el.innerHTML = `<form class="calc" onsubmit="return false">
-      <div class="row2"><label>Battery (Ah)<input id="ah" inputmode="decimal"></label><label>Voltage<select id="v"><option>12</option><option>24</option><option>48</option></select></label></div>
+      <div class="row2"><label>Battery capacity<input id="cap" inputmode="decimal"></label><label>Unit<select id="cu">${CAPU.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
+      <div class="row2"><label>Battery voltage (V)<select id="v">${['3.7', '7.4', '12', '24', '48'].map((x) => `<option>${x}</option>`).join('')}</select></label><label>&nbsp;</label></div>
       <label>Type / usable capacity<select id="dod">${CHEM.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label>
-      <div class="row2"><label>Load<input id="load" inputmode="decimal"></label><label>Load is<select id="lu">
-        <option value="w">W, DC</option><option value="a">A, DC at battery</option><option value="ac">W, AC via inverter</option></select></label></div>
+      <div class="row2"><label>Load – what the device draws<input id="load" inputmode="decimal"></label><label>Unit<select id="lu">${LOADU.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
+      <label>Device runs on<select id="sup"><option value="dc">DC, straight off the battery</option><option value="ac">230 V AC, through an inverter</option></select></label>
       <label id="effw">Inverter efficiency (%)<input id="eff" inputmode="decimal"></label>
       </form><div id="bo"></div>
       <h3 class="sub">Battery needed</h3>
       <form class="calc" onsubmit="return false"><label>Run time wanted (hours)<input id="hrs" inputmode="decimal"></label></form><div id="bn"></div>
-      <p class="foot">Lead-acid gives less than its rated Ah at high draw (Peukert) and in the cold. Ratings are usually at the 20-hour rate.</p>`;
+      <p class="foot">Ah × V = Wh. Lead-acid gives less than its rated Ah at high draw (Peukert) and in the cold; ratings are usually at the 20-hour rate. AC amps are converted at 230 V.</p>`;
     const $ = (id) => $el.querySelector('#' + id);
     Object.entries(st).forEach(([k, v]) => { if ($(k)) $(k).value = v; });
     function go() {
-      const s = {}; Object.keys(st).forEach((k) => (s[k] = $(k).value)); WT.store.set('elec.bat', s);
-      $('effw').hidden = s.lu !== 'ac';
-      const Ah = num($('ah')), V = +s.v, dod = +s.dod, load = num($('load')), eff = (num($('eff')) || 85) / 100, H = num($('hrs'));
+      const s = {}; Object.keys(st).forEach((k) => (s[k] = $(k).value)); WT.store.set('elec.bat2', s);
+      $('effw').hidden = s.sup !== 'ac';
+      const V = +s.v, dod = +s.dod, cap = num($('cap')), load = num($('load')), eff = (num($('eff')) || 85) / 100, H = num($('hrs'));
       if (!load) { $('bo').innerHTML = ''; $('bn').innerHTML = ''; return; }
-      const Wdc = s.lu === 'a' ? load * V : s.lu === 'ac' ? load / eff : load;
-      const Adc = Wdc / V;
-      const lw = [s.lu === 'a' ? `Load = ${sig(load)} A × ${V} V = ${sig(Wdc, 4)} W` : s.lu === 'ac' ? `Load = ${sig(load)} W ÷ ${sig(eff)} (inverter) = ${sig(Wdc, 4)} W DC` : `Load = ${sig(Wdc, 4)} W = ${sig(Adc, 3)} A at ${V} V`];
-      if (Ah) {
-        const Wh = Ah * V * dod, h = Wh / Wdc;
-        $('bo').innerHTML = `<div class="card solve"><div class="solve-h"><b>Runtime</b> = <strong>${h >= 48 ? sig(h / 24, 3) + ' days' : sig(h, 3) + ' h'}</strong><small>${sig(h, 3)} h</small></div>
-          ${work([...lw, `Usable = ${sig(Ah)} Ah × ${V} V × ${dod * 100}% = ${sig(Wh, 4)} Wh`, `Time = ${sig(Wh, 4)} ÷ ${sig(Wdc, 4)} = <strong>${sig(h, 3)} h</strong>`])}</div>`;
+      const lv = s.sup === 'ac' ? 230 : V;
+      const Wdev = { w: load, kw: load * 1000, a: load * lv, ma: (load / 1000) * lv }[s.lu];
+      const Wdc = s.sup === 'ac' ? Wdev / eff : Wdev;
+      const lw = [];
+      if (s.lu === 'a' || s.lu === 'ma') lw.push(`Load = ${sig(s.lu === 'ma' ? load / 1000 : load)} A × ${lv} V = ${sig(Wdev, 4)} W`);
+      else lw.push(`Load = ${sig(Wdev, 4)} W`);
+      if (s.sup === 'ac') lw.push(`Battery side = ${sig(Wdev, 4)} W ÷ ${sig(eff)} = ${sig(Wdc, 4)} W`);
+      lw.push(`Battery current = ${sig(Wdc, 4)} W ÷ ${V} V = ${sig(Wdc / V, 3)} A`);
+      if (cap) {
+        const Wh = { ah: cap * V, mah: (cap / 1000) * V, wh: cap, kwh: cap * 1000 }[s.cu];
+        const capTxt = { ah: `${sig(cap)} Ah × ${V} V`, mah: `${sig(cap)} mAh ÷ 1000 × ${V} V`, wh: `${sig(cap)} Wh`, kwh: `${sig(cap)} kWh × 1000` }[s.cu];
+        const use = Wh * dod, h = use / Wdc;
+        const t = h >= 48 ? `${sig(h / 24, 3)} days` : h < 1 ? `${sig(h * 60, 3)} min` : `${sig(h, 3)} h`;
+        $('bo').innerHTML = `<div class="card solve"><div class="solve-h"><b>Runtime</b> = <strong>${t}</strong><small>${sig(Wh, 4)} Wh total · ${sig(use, 4)} Wh usable</small></div>
+          ${work([...lw, `Capacity = ${capTxt} = ${sig(Wh, 4)} Wh`, `Usable = ${sig(Wh, 4)} × ${dod * 100}% = ${sig(use, 4)} Wh`, `Time = ${sig(use, 4)} Wh ÷ ${sig(Wdc, 4)} W = <strong>${sig(h, 3)} h</strong>`])}</div>`;
       } else $('bo').innerHTML = '';
       if (H) {
-        const need = (Wdc * H) / (V * dod);
-        $('bn').innerHTML = `<div class="card solve"><div class="solve-h"><b>Need</b> = <strong>${sig(need, 3)} Ah</strong><small>at ${V} V</small></div>
-          ${work([`Ah = W × h ÷ (V × usable)`, `= ${sig(Wdc, 4)} × ${sig(H)} ÷ (${V} × ${dod})`, `= <strong>${sig(need, 3)} Ah</strong>`])}</div>`;
+        const WhNeed = (Wdc * H) / dod, ah = WhNeed / V;
+        $('bn').innerHTML = `<div class="card solve"><div class="solve-h"><b>Need</b> = <strong>${sig(ah, 3)} Ah</strong><small>${sig(WhNeed, 4)} Wh at ${V} V</small></div>
+          ${work([`Wh = W × h ÷ usable = ${sig(Wdc, 4)} × ${sig(H)} ÷ ${dod}`, `= ${sig(WhNeed, 4)} Wh`, `Ah = Wh ÷ V = ${sig(WhNeed, 4)} ÷ ${V} = <strong>${sig(ah, 3)} Ah</strong>`])}</div>`;
       } else $('bn').innerHTML = '';
     }
     $el.querySelectorAll('input,select').forEach((x) => x.addEventListener(x.tagName === 'SELECT' ? 'change' : 'input', go));
