@@ -133,6 +133,7 @@
     ['bay60', 'Engine bay, typical, 60 °C', 0.6, 'Typical engine bay. Cable carries a bit over half its rating.'],
     ['bay70', 'Engine bay near exhaust or turbo, 70 °C', 0.45, 'Close to heat sources. Under half the rating – reroute or upsize.'],
   ];
+  const BUNDLE = [['1', 'Single cable, or spaced apart', 1], ['2', '2 loaded cables together', 0.8], ['3', '3 together', 0.7], ['4', '4–6 together', 0.6], ['7', '7–24 together', 0.5], ['25', '25 or more', 0.4]];
   const VPRE = [['12', '12 V'], ['13.8', '13.8 V (idling, charging)'], ['14.4', '14.4 V (charging)'], ['24', '24 V'], ['28.8', '28.8 V (24 V charging)'], ['48', '48 V'], ['230', '230 V AC'], ['', 'Custom']];
   function autoName(r) {
     const s = r.au_sold_as || '';
@@ -144,17 +145,18 @@
     const C = await WT.load('data/auto/cable.json');
     const M = await WT.load('data/elec/mains_cable.json');
     const dc = C.rows.filter((r) => r.au_mm2).map((r) => ({ id: r.bs, name: autoName(r), a: r.au_mm2, rating: parseFloat(r.cont_a) })).sort((a, b) => a.a - b.a);
-    const st = WT.store.get('elec.vd2', { v: '12', type: 'auto', i: '', l: '', tgt: '3', inst: 'air30', minst: 'touching', sel: '' });
+    const st = WT.store.get('elec.vd2', { v: '12', type: 'auto', i: '', l: '', tgt: '3', inst: 'air30', minst: 'touching', sel: '', bun: '1' });
     $el.innerHTML = `<form class="calc" onsubmit="return false">
       <div class="row2"><label>System voltage (V)<input id="v" inputmode="decimal"></label><label>Preset<select id="vp">${VPRE.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
       <label>Cable type<select id="type"><option value="auto">Auto / marine single-core (DC)</option><option value="tps">Building TPS twin and earth (230 V)</option></select></label>
       <div class="row2"><label>Current draw (A)<input id="i" inputmode="decimal"></label><label>Run length, one way (m)<input id="l" inputmode="decimal"></label></div>
       <label>Where it's installed<select id="inst"></select></label>
       <p class="intro" id="instn"></p>
+      <label id="bunw">Cables bundled together (loom, split tube, conduit)<select id="bun">${BUNDLE.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label>
       <label>Allowed drop<select id="tgt"></select></label>
       </form><div id="vdo"></div><p class="foot" id="vdn"></p>`;
     const $ = (id) => $el.querySelector('#' + id);
-    $('v').value = st.v; $('type').value = st.type; $('i').value = st.i; $('l').value = st.l;
+    $('v').value = st.v; $('type').value = st.type; $('bun').value = st.bun || '1'; $('i').value = st.i; $('l').value = st.l;
     let sel = st.sel;
     const vpSync = () => { $('vp').value = VPRE.some(([v]) => v === $('v').value) ? $('v').value : ''; };
     function fill() {
@@ -166,16 +168,19 @@
         : [['3', '3% – critical: fridge, lights, charging'], ['5', '5%'], ['10', '10% – non-critical']]).map(([v, t]) => `<option value="${v}">${t}</option>`).join('');
       if ([...$('tgt').options].some((o) => o.value === st.tgt)) $('tgt').value = st.tgt;
       $('vdn').innerHTML = tps ? `${esc(M.note)} Source: <a href="${esc(M.source_url)}" target="_blank" rel="noopener">${esc(M.source)}</a> (${esc(M.confidence)} confidence).`
-        : 'Drop uses round-trip copper resistance at 20 °C (ρ = 0.0172 Ω·mm²/m) and the copper area AU auto cable is actually sold with – auto cable sizes are smaller than their B&S equivalent. Earth-return circuits: count the positive run only. Ratings: Tycab continuous at 30 °C, derated for the location you pick. Bundling in a loom or split tube lowers ratings further – factor being sourced.';
+        : 'Drop uses round-trip copper resistance at 20 °C (ρ = 0.0172 Ω·mm²/m) and the copper area AU auto cable is actually sold with – auto cable sizes are smaller than their B&S equivalent. Earth-return circuits: count the positive run only. Ratings: Tycab continuous at 30 °C, derated for the location you pick. Bundling factors: IEC 60364-5-52 (2 cables ×0.8) and Ancor/ABYC marine (3 ×0.7, 4–6 ×0.6, 7–24 ×0.5, 25+ ×0.4) – medium confidence; count only cables carrying load at the same time.';
     }
     function go() {
       const tps = $('type').value === 'tps', V = num($('v')), I = num($('i')), L = num($('l')), tgt = +$('tgt').value, inst = $('inst').value;
       Object.assign(st, { v: $('v').value, type: $('type').value, i: $('i').value, l: $('l').value, tgt: $('tgt').value, sel });
       if (tps) st.minst = inst; else st.inst = inst;
+      st.bun = $('bun').value; $('bunw').hidden = tps;
+      const bf = tps ? 1 : BUNDLE.find((x) => x[0] === st.bun)[2];
       WT.store.set('elec.vd2', st);
       const m = tps ? M.methods.find((x) => x[0] === inst) : AUTO_INST.find((x) => x[0] === inst);
-      const k = tps ? null : m[2];
-      $('instn').innerHTML = tps ? esc(m[2]) : `<b>×${k}</b> of the 30 °C rating. ${esc(m[3])}`;
+      const k = tps ? null : +(m[2] * (BUNDLE.find((x) => x[0] === $('bun').value) || [0, 0, 1])[2]).toFixed(3);
+      const kb = tps ? 1 : (BUNDLE.find((x) => x[0] === $('bun').value) || [0, 0, 1])[2];
+      $('instn').innerHTML = tps ? esc(m[2]) : `Location <b>×${m[2]}</b>${kb < 1 ? ` × bundling <b>×${kb}</b> = <b>×${k}</b>` : ''} of the 30 °C rating. ${esc(m[3])}`;
       if (!V || !I || !L) { $('vdo').innerHTML = `<div class="out">${row('Enter', 'voltage, current and length')}</div>`; return; }
       const allow = (V * tgt) / 100;
       const list = (tps ? M.rows.map((r) => ({ id: String(r.mm2), name: `${r.mm2} mm² TPS`, a: r.mm2, rating: r[inst], vd: (r.mv * I * L) / 1000, mv: r.mv }))
@@ -187,6 +192,7 @@
       if (tps) w = [`Vd = mV/A·m × I × L ÷ 1000`, `= ${cur.mv} × ${sig(I)} × ${sig(L)} ÷ 1000`, `= <strong>${sig(cur.vd, 3)} V</strong> (${sig(cur.pct, 3)}% of ${sig(V)} V)`];
       else w = [`R = ρ × 2L ÷ A = 0.0172 × 2 × ${sig(L)} ÷ ${cur.a}`, `= ${sig((RHO * 2 * L) / cur.a, 3)} Ω`, `Vd = I × R = <strong>${sig(cur.vd, 3)} V</strong> (${sig(cur.pct, 3)}% of ${sig(V)} V)`,
         `Rating = ${cur.base} A × ${k} = ${sig(cur.rating, 3)} A`];
+      void bf;
       const maxRun = tps ? (allow * 1000) / (cur.mv * I) : (allow * cur.a) / (RHO * 2 * I);
       $('vdo').innerHTML = `<div class="card solve"><div class="solve-h"><b>${esc(cur.name)}</b>${cur === best ? ' <span class="ok">· smallest that passes</span>' : ''}</div>
         <div class="out" style="padding:0;background:none">${row('Drop', `<span class="${cur.okV ? 'ok' : 'bad'}">${sig(cur.vd, 3)} V · ${sig(cur.pct, 3)}%</span>`, 'hl')}
@@ -207,7 +213,7 @@
     $('v').addEventListener('input', () => { vpSync(); go(); });
     $('type').addEventListener('change', () => { sel = ''; fill(); go(); });
     ['i', 'l'].forEach((x) => $(x).addEventListener('input', go));
-    ['inst', 'tgt'].forEach((x) => $(x).addEventListener('change', go));
+    ['inst', 'tgt', 'bun'].forEach((x) => $(x).addEventListener('change', go));
     go();
   }
 

@@ -42,17 +42,17 @@
   // cfg: { id, intro, fields:[{k,name,sub,kind:'len'|'deg'|'area'}], need, solve(g) -> {v:{}, w:[], err, note}, draw(v, given, solved, unit) }
   function solver($el, cfg) {
     let unit = WT.store.get('geo.unit', 'mm');
-    $el.innerHTML = `<p class="intro">${cfg.intro}</p>
-      <div id="gd"></div>
+    $el.innerHTML = `<p class="intro">${cfg.intro}</p>${cfg.pre || ''}
+      <div id="g_d"></div>
       <form class="calc gform" onsubmit="return false">
         ${cfg.fields.map((f) => `<div class="gf" id="f${f.k}"><label for="g${f.k}"><b>${f.k}</b> ${f.name}<small>${f.sub}</small></label>
           <div class="gi"><input id="g${f.k}" inputmode="decimal" autocomplete="off"><span class="gu" data-kind="${f.kind}"></span></div></div>`).join('')}
-        <div class="vbar"><label class="inline">Units <select id="gunit">${LU.map((u) => `<option${u === unit ? ' selected' : ''}>${u}</option>`).join('')}</select></label>
-        <span id="ghint"></span><button type="button" class="btn" id="gclr">Clear</button></div>
-      </form><div id="go"></div>`;
+        <div class="vbar"><label class="inline">Units <select id="g_unit">${LU.map((u) => `<option${u === unit ? ' selected' : ''}>${u}</option>`).join('')}</select></label>
+        <span id="g_h"></span><button type="button" class="btn" id="g_clr">Clear</button></div>
+      </form><div id="g_o"></div>`;
     const $ = (id) => $el.querySelector('#' + id);
     const auto = new Set();
-    const uLabel = () => $el.querySelectorAll('.gu').forEach((s) => (s.textContent = s.dataset.kind === 'deg' ? '°' : s.dataset.kind === 'area' ? unit + '²' : unit));
+    const uLabel = () => $el.querySelectorAll('.gu').forEach((s) => (s.textContent = s.dataset.kind === 'deg' ? '°' : s.dataset.kind === 'area' ? unit + '²' : s.dataset.kind === 'vol' ? unit + '³' : unit));
     function go(e) {
       if (e && e.target && e.target.id && e.target.id[0] === 'g') auto.delete(e.target.id.slice(1));
       cfg.fields.forEach((f) => { if (auto.has(f.k)) $('g' + f.k).value = ''; $('f' + f.k).classList.remove('solved'); });
@@ -61,24 +61,24 @@
       cfg.fields.forEach((f) => { const v = num($('g' + f.k)); if (v != null) g[f.k] = v; });
       const n = Object.keys(g).length;
       let res = null;
-      if (n === cfg.need) res = cfg.solve(g);
+      if (n === cfg.need) res = cfg.solve(g, unit);
       const given = new Set(Object.keys(g)), solved = new Set();
       if (res && !res.err) {
         cfg.fields.forEach((f) => { if (!given.has(f.k) && res.v[f.k] != null && isFinite(res.v[f.k])) { $('g' + f.k).value = sig(res.v[f.k]); auto.add(f.k); solved.add(f.k); $('f' + f.k).classList.add('solved'); } });
       }
-      $('gd').innerHTML = cfg.draw(res && !res.err ? res.v : g, given, solved, unit);
-      $('ghint').textContent = n < cfg.need ? `Fill any ${cfg.need}` : n > cfg.need ? `Only ${cfg.need} needed` : res && res.err ? '' : 'Solved';
-      if (n !== cfg.need) { $('go').innerHTML = ''; return; }
-      if (res.err) { $('go').innerHTML = `<div class="out">${row('Check', esc(res.err))}</div>`; return; }
-      const u = (k) => { const f = cfg.fields.find((x) => x.k === k); return f ? (f.kind === 'deg' ? '°' : f.kind === 'area' ? ' ' + unit + '²' : ' ' + unit) : ''; };
+      $('g_d').innerHTML = cfg.draw(res && !res.err ? res.v : g, given, solved, unit);
+      $('g_h').textContent = n < cfg.need ? `Fill any ${cfg.need}` : n > cfg.need ? `Only ${cfg.need} needed` : res && res.err ? '' : 'Solved';
+      if (n !== cfg.need) { $('g_o').innerHTML = ''; return; }
+      if (res.err) { $('g_o').innerHTML = `<div class="out">${row('Check', esc(res.err))}</div>`; return; }
+      const u = (k) => { const f = cfg.fields.find((x) => x.k === k); return f ? (f.kind === 'deg' ? '°' : f.kind === 'area' ? ' ' + unit + '²' : f.kind === 'vol' ? ' ' + unit + '³' : ' ' + unit) : ''; };
       const lines = res.w.map((l) => l.replace(/\{(\w+)\}/g, (_, k) => sig(res.v[k]) + u(k)));
-      $('go').innerHTML = `<div class="card solve"><div class="solve-h"><b>Working</b></div>${work(lines)}
-        ${res.extra ? `<div class="out" style="padding:0;background:none;margin-top:6px">${res.extra.map(([a, b]) => row(a, b.replace(/\{(\w+)\}/g, (_, k) => sig(res.v[k]) + u(k)).replace(/\bU2\b/g, unit + '²').replace(/\bU\b/g, unit))).join('')}</div>` : ''}
+      $('g_o').innerHTML = `<div class="card solve"><div class="solve-h"><b>Working</b></div>${work(lines)}
+        ${res.extra ? `<div class="out" style="padding:0;background:none;margin-top:6px">${res.extra.map(([a, b]) => row(a, b.replace(/\{(\w+)\}/g, (_, k) => sig(res.v[k]) + u(k)).replace(/\bU3\b/g, unit + '³').replace(/\bU2\b/g, unit + '²').replace(/\bU\b/g, unit))).join('')}</div>` : ''}
         ${res.note ? `<p class="foot">${res.note}</p>` : ''}</div>`;
     }
     cfg.fields.forEach((f) => $('g' + f.k).addEventListener('input', go));
-    $('gunit').addEventListener('change', () => { unit = $('gunit').value; WT.store.set('geo.unit', unit); uLabel(); go(); });
-    $('gclr').addEventListener('click', () => { cfg.fields.forEach((f) => ($('g' + f.k).value = '')); auto.clear(); go(); });
+    $('g_unit').addEventListener('change', () => { unit = $('g_unit').value; WT.store.set('geo.unit', unit); uLabel(); go(); });
+    $('g_clr').addEventListener('click', () => { cfg.fields.forEach((f) => ($('g' + f.k).value = '')); auto.clear(); go(); });
     uLabel(); go();
   }
   const cls = (k, given, solved) => (given.has(k) ? 'g' : solved.has(k) ? 's' : 'u');
