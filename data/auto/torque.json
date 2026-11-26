@@ -1,0 +1,979 @@
+{
+ "warning": "Confirm wheel, brake and suspension torques against the workshop manual for your exact model before relying on them. Confidence: high = owner's/factory manual (or two sources agree); medium = single factory-manual excerpt or reputable forum quoting it; low = unverified.",
+ "vehicles": [
+  {
+   "name": "Toyota LandCruiser 200",
+   "rows": [
+    {
+     "model_code": "URJ202 / VDJ200 (US OM covers URJ200)",
+     "years": "2008-2021",
+     "engine": "all",
+     "component": "Wheel nuts",
+     "fastener_detail": "Factory nuts; tighten in sequence 2-3 passes",
+     "torque_nm": "131",
+     "torque_original": "97 ft·lbf (131 N·m, 13.4 kgf·m)",
+     "confidence": "high",
+     "source_name": "2011 Toyota Land Cruiser Owner's Manual (US) p.1153 via ManualOwl",
+     "source_url": "https://www.manualowl.com/am/Toyota/2011-Land%20Cruiser/Manual/5788?page=1153",
+     "notes": "US-market owner's manual. AU-market owner's manual not obtained, so AU figure and any steel-vs-alloy difference are UNVERIFIED.",
+     "also": [
+      {
+       "source_name": "2013 Toyota Land Cruiser Owner's Manual (US) p.621 via ManualOwl",
+       "source_url": "https://www.manualowl.com/am/Toyota/2013-Land%20Cruiser/Manual/5898?page=621"
+      }
+     ]
+    },
+    {
+     "model_code": "J200 (not stated)",
+     "years": "2007-2021",
+     "engine": "all",
+     "component": "Wheel nuts",
+     "fastener_detail": "M14x1.5 thread stated",
+     "torque_nm": "131",
+     "torque_original": "131 Nm; M14 x 1.5",
+     "confidence": "low",
+     "source_name": "Autosport Tyre World - LandCruiser tyre size guide",
+     "source_url": "https://autostw.com.au/blogs/news/toyota-landcruiser-tyre-size-guide-wheel-specs-pcd-centre-bore-torque-settings",
+     "notes": "Retailer table is generic 'most modern LandCruiser' and lists PCD 6x139.7 which is NOT the 200 Series (5x150). Thread M14x1.5 therefore not reliably attributed to LC200 - see conflicts.md."
+    },
+    {
+     "model_code": "J200",
+     "years": "2008-07/2015",
+     "engine": "all",
+     "component": "Front brake caliper mounting bolts",
+     "fastener_detail": "M12x1.25 (per DBA kit sheet); 2008 FSM reportedly lists bolt as non-reusable / pre-coated",
+     "torque_nm": "99.0",
+     "torque_original": "73 ft·lbf",
+     "confidence": "medium",
+     "source_name": "IH8MUD thread 977345 (member states figure from TIS LX570 manual) + IH8MUD thread 1184893 (member quoting 2008 200-Series FSM)",
+     "source_url": "https://forum.ih8mud.com/threads/torque-specs-on-front-and-rear-caliper-bolts.977345/",
+     "notes": "Two forum posts agree on 73 ft·lbf; no FSM page number; N·m is converted (FSM N·m value likely 98 or 99). Also see https://forum.ih8mud.com/threads/brake-caliper-mounting-bolts-replace-them-when-removed-alert-alert-alert.1184893/ and DBA kit sheet https://www.msbgarage.com/assets/brochures/DBABU3013.pdf (confirms M12x1.25 up to 07/2015)."
+    },
+    {
+     "model_code": "J200",
+     "years": "2008-07/2015",
+     "engine": "all",
+     "component": "Rear brake caliper bolts (bolt not specified)",
+     "fastener_detail": "M12x1.25 (per DBA kit sheet DBABU3017)",
+     "torque_nm": "88.1",
+     "torque_original": "65 ft·lbf",
+     "confidence": "medium",
+     "source_name": "IH8MUD thread 977345 (member confirms 'rear 65 ft-lb' from TIS LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/torque-specs-on-front-and-rear-caliper-bolts.977345/",
+     "notes": "Unclear whether bracket or slide/pin bolt. Another member gives bracket 70 / pin 65 (no units) - see conflicts.md."
+    },
+    {
+     "model_code": "J200",
+     "years": "2008-07/2015",
+     "engine": "all",
+     "component": "Rear caliper bracket-to-axle bolts",
+     "fastener_detail": "",
+     "torque_nm": "94.9",
+     "torque_original": "70 (units not stated; assumed ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1266763 post #2 (bloc)",
+     "source_url": "https://forum.ih8mud.com/threads/rotor-and-brake-caliper-torque-specs.1266763",
+     "notes": "No source cited, no units. Conflicts with 65 ft·lbf above."
+    },
+    {
+     "model_code": "J200",
+     "years": "2008-07/2015",
+     "engine": "all",
+     "component": "Rear caliper pin/bolt to bracket",
+     "fastener_detail": "",
+     "torque_nm": "88.1",
+     "torque_original": "65 (units not stated; assumed ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1266763 post #2 (bloc)",
+     "source_url": "https://forum.ih8mud.com/threads/rotor-and-brake-caliper-torque-specs.1266763",
+     "notes": "No source cited."
+    },
+    {
+     "model_code": "J200",
+     "years": "08/2015-2021",
+     "engine": "all",
+     "component": "Front brake caliper mounting bolts",
+     "fastener_detail": "Post-facelift (2016+ MY) larger brakes",
+     "torque_nm": "180.3",
+     "torque_original": "133 ft·lbf",
+     "confidence": "medium",
+     "source_name": "IH8MUD thread 1266763 posts #5, #11, #13 (members reading FSM)",
+     "source_url": "https://forum.ih8mud.com/threads/rotor-and-brake-caliper-torque-specs.1266763",
+     "notes": "Three members agree; one says 'per my reading of the FSM'. No page reference. N·m converted."
+    },
+    {
+     "model_code": "J200",
+     "years": "08/2015-2021",
+     "engine": "all",
+     "component": "Rear caliper bracket bolts",
+     "fastener_detail": "",
+     "torque_nm": "154.6",
+     "torque_original": "114 ft·lbf",
+     "confidence": "medium",
+     "source_name": "IH8MUD thread 1266763 posts #10, #11, #13",
+     "source_url": "https://forum.ih8mud.com/threads/rotor-and-brake-caliper-torque-specs.1266763",
+     "notes": "Three members agree; one member claims 2016+ rear brakes same as earlier trucks - see conflicts.md."
+    },
+    {
+     "model_code": "J200",
+     "years": "08/2015-2021",
+     "engine": "all",
+     "component": "Rear caliper slide pin bolts",
+     "fastener_detail": "",
+     "torque_nm": "88.1",
+     "torque_original": "65 ft·lbf",
+     "confidence": "medium",
+     "source_name": "IH8MUD thread 1266763 posts #10, #13",
+     "source_url": "https://forum.ih8mud.com/threads/rotor-and-brake-caliper-torque-specs.1266763",
+     "notes": ""
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Front differential drain plug",
+     "fastener_detail": "",
+     "torque_nm": "39",
+     "torque_original": "39 N·m (29 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Front differential filler plug",
+     "fastener_detail": "",
+     "torque_nm": "39",
+     "torque_original": "39 N·m (29 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Rear differential drain plug",
+     "fastener_detail": "",
+     "torque_nm": "49",
+     "torque_original": "49 N·m (36 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Rear differential filler plug",
+     "fastener_detail": "",
+     "torque_nm": "49",
+     "torque_original": "49 N·m (36 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Transfer case drain plug",
+     "fastener_detail": "",
+     "torque_nm": "37",
+     "torque_original": "37 N·m (27 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "J200 (LX570 table)",
+     "years": "2016-2021",
+     "engine": "all",
+     "component": "Transfer case filler plug",
+     "fastener_detail": "",
+     "torque_nm": "37",
+     "torque_original": "37 N·m (27 ft·lbf)",
+     "confidence": "low",
+     "source_name": "IH8MUD thread 1382647 (Sajan table, 2018 LX570)",
+     "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
+     "notes": "Unsourced table posted for a 2018 Lexus LX570 (same J200 platform; US 3UR-FE). No FSM/TIS page given. Verify against AU FSM before use."
+    },
+    {
+     "model_code": "URJ200 (US 5.7) - NOT AU URJ202",
+     "years": "2008-2021",
+     "engine": "3UR-FE 5.7 V8",
+     "component": "Spark plugs",
+     "fastener_detail": "",
+     "torque_nm": "18",
+     "torque_original": "18 N·m (178 kgf·cm, 13 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2007 Tundra 4WD 3UR-FE spark plug specifications - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/tundra_4wd/v8-5.7l_(3ur-fe)/powertrain_management/ignition_system/spark_plug/component_information/specifications/",
+     "notes": "Engine-level spec from Tundra manual; applies to 3UR-FE (US LC200) only. AU URJ202 is 1UR-FE 4.6 - NOT verified. VDJ200 is diesel (n/a)."
+    },
+    {
+     "model_code": "J200 (towbar listed 'Landcruiser 03/2007-on')",
+     "years": "2007-",
+     "engine": "all",
+     "component": "Towbar (TAG T4T540 aftermarket) - chassis bolts",
+     "fastener_detail": "M12x1.25 grade 8.8 (instructions: chassis bolts to M12 spec)",
+     "torque_nm": "101",
+     "torque_original": "101 Nm",
+     "confidence": "medium",
+     "source_name": "TAG T4T540 towbar fitting instructions",
+     "source_url": "https://www.mygenerator.com.au/assets/files/TAG_T4T540_Instructions.pdf",
+     "notes": "Towbar-manufacturer value for THIS towbar only. Same sheet: M12x1.5 8.8 = 97 Nm; M12x1.75 8.8 = 77 Nm; M10x1.25 8.8 = 57 Nm; M10x1.5 8.8 = 44 Nm; M16x2.0 8.8 = 190 Nm. Toyota genuine towbar torque not found."
+    },
+    {
+     "model_code": "J200 (towbar listed 'Landcruiser 03/2007-on')",
+     "years": "2007-",
+     "engine": "all",
+     "component": "Towbar (TAG T4T540 aftermarket) - M10x1.25 bolts",
+     "fastener_detail": "M10x1.25 grade 8.8",
+     "torque_nm": "57",
+     "torque_original": "57 Nm",
+     "confidence": "medium",
+     "source_name": "TAG T4T540 towbar fitting instructions",
+     "source_url": "https://www.mygenerator.com.au/assets/files/TAG_T4T540_Instructions.pdf",
+     "notes": "Towbar-specific."
+    }
+   ]
+  },
+  {
+   "name": "Toyota HiLux",
+   "rows": [
+    {
+     "model_code": "AN120/AN130 (listed 'Hilux 2016 Underbumper', DC/CC/SC)",
+     "years": "2015-",
+     "engine": "all",
+     "component": "Towbar (SYCOR 80068 aftermarket) - M12 bolts",
+     "fastener_detail": "M12x45x1.25 fine thread",
+     "torque_nm": "73",
+     "torque_original": "M12 = 73 Nm",
+     "confidence": "medium",
+     "source_name": "SYCOR product 80068 /T006 fitting instructions",
+     "source_url": "https://cdn.shopify.com/s/files/1/0144/2103/3017/files/PN-80068-Toyota-Hilux-Tow-Bar-2016.pdf",
+     "notes": "Towbar-specific value, not a Toyota chassis spec."
+    },
+    {
+     "model_code": "AN120/AN130 (listed 'Hilux 2016 Underbumper')",
+     "years": "2015-",
+     "engine": "all",
+     "component": "Towbar (SYCOR 80068 aftermarket) - M16 bolts",
+     "fastener_detail": "M16x45",
+     "torque_nm": "178",
+     "torque_original": "M16 = 178 Nm",
+     "confidence": "medium",
+     "source_name": "SYCOR product 80068 /T006 fitting instructions",
+     "source_url": "https://cdn.shopify.com/s/files/1/0144/2103/3017/files/PN-80068-Toyota-Hilux-Tow-Bar-2016.pdf",
+     "notes": "Towbar-specific."
+    }
+   ]
+  },
+  {
+   "name": "Toyota RAV4",
+   "rows": [
+    {
+     "model_code": "ACA33 / GSA33 (XA30)",
+     "years": "2006-2012",
+     "engine": "2AZ-FE / 2GR-FE",
+     "component": "Wheel nuts",
+     "fastener_detail": "",
+     "torque_nm": "103",
+     "torque_original": "76 ft·lbf (103 N·m, 10.5 kgf·m)",
+     "confidence": "high",
+     "source_name": "2009 Toyota RAV4 Owner's Manual (US) p.471 via ManualOwl",
+     "source_url": "https://www.manualowl.com/am/Toyota/2009-RAV4/Manual/5669?page=471",
+     "notes": "US OM; same XA30 generation as AU 2010. Unlabelled value 103 (1,050, 77) also appears in RM01N0 SDS (https://4rav.ru/manual/rm01n0ru/sds/sds.pdf)."
+    },
+    {
+     "model_code": "ACA33 (2AZ-FE)",
+     "years": "2006-2012",
+     "engine": "2AZ-FE 2.4",
+     "component": "Spark plugs",
+     "fastener_detail": "DENSO SK20R11 / NGK IFR6A11, gap 1.0-1.1 mm",
+     "torque_nm": "19",
+     "torque_original": "19 N·m (194 kgf·cm, 14 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2005 Camry 2AZ-FE spark plug specs - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/camry/l4-2.4l_(2az-fe)/powertrain_management/ignition_system/spark_plug/component_information/specifications/",
+     "notes": "Same engine; taken from Camry manual, not RAV4 manual. Plug part numbers match RAV4 RM01N0 SDS."
+    },
+    {
+     "model_code": "GSA33 (2GR-FE)",
+     "years": "2006-2012",
+     "engine": "2GR-FE 3.5 V6",
+     "component": "Spark plugs",
+     "fastener_detail": "gap 1.0-1.1 mm",
+     "torque_nm": "18",
+     "torque_original": "18 N·m (184 kgf·cm, 13 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2008 Camry 2GR-FE spark plug specs - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/camry/v6-3.5l_(2gr-fe)/powertrain_management/ignition_system/spark_plug/component_information/specifications/",
+     "notes": "Same engine; taken from Camry manual. GSA33 sold in AU 2006-2012."
+    },
+    {
+     "model_code": "ACA33 (2AZ-FE)",
+     "years": "2006-2012",
+     "engine": "2AZ-FE 2.4",
+     "component": "Engine oil drain plug",
+     "fastener_detail": "",
+     "torque_nm": "25",
+     "torque_original": "25 N·m (255 kgf·cm, 18 ft·lbf)",
+     "confidence": "low",
+     "source_name": "Toyota Camry 2007-2009 Service Manual - 2AZ-FE Lubrication (ManualMachine)",
+     "source_url": "https://manualmachine.com/toyota/camry20072009/7599712-service-manual---2az-fe_lubrication",
+     "notes": "CONFLICT: Camry XV40 2AZ manual gives 25 N·m; RAV4 RM01N0 SDS shows unlabelled 40 (408, 30) beside oil data. Oil pans may differ between Camry and RAV4 - see conflicts.md."
+    },
+    {
+     "model_code": "ACA3x (RM01N0 SDS)",
+     "years": "11/2005-",
+     "engine": "2AZ-FE (petrol)",
+     "component": "Engine oil drain plug (probable)",
+     "fastener_detail": "",
+     "torque_nm": "40",
+     "torque_original": "40 (408, 30) N·m (kgf·cm, ft·lbf) - label not legible",
+     "confidence": "low",
+     "source_name": "Toyota RAV4 repair manual RM01N0 SDS (4rav.ru copy)",
+     "source_url": "https://4rav.ru/manual/rm01n0ru/sds/sds.pdf",
+     "notes": "Value sits beside oil specs but item label is not legible in the extracted text; 2AD diesel equivalent 38 (387, 28). Treat as unconfirmed."
+    },
+    {
+     "model_code": "ACA33 (2AZ-FE)",
+     "years": "2006-2012",
+     "engine": "2AZ-FE 2.4",
+     "component": "Oil filter (spin-on sub-assembly)",
+     "fastener_detail": "",
+     "torque_nm": "13",
+     "torque_original": "13 N·m (133 kgf·cm, 10 ft·lbf)",
+     "confidence": "low",
+     "source_name": "Toyota Camry 2007-2009 Service Manual - 2AZ-FE Lubrication (ManualMachine)",
+     "source_url": "https://manualmachine.com/toyota/camry20072009/7599712-service-manual---2az-fe_lubrication",
+     "notes": "Camry manual, same engine; not confirmed for RAV4."
+    },
+    {
+     "model_code": "XA30 ('RAV4 III')",
+     "years": "2006-2012",
+     "engine": "all",
+     "component": "Rear caliper mount (bracket) bolts",
+     "fastener_detail": "2 bolts",
+     "torque_nm": "88",
+     "torque_original": "88 Nm",
+     "confidence": "low",
+     "source_name": "Ferodo TechTips - Installing rear brakes Toyota RAV4 III",
+     "source_url": "https://www.techtips.ie/Ferodo/installing-rear-brakes---toyota-rav4-iii.pdf",
+     "notes": "Brake-parts maker fitting guide, no FSM citation."
+    },
+    {
+     "model_code": "XA30 ('RAV4 III')",
+     "years": "2006-2012",
+     "engine": "all",
+     "component": "Rear caliper-to-mount (guide) bolts",
+     "fastener_detail": "",
+     "torque_nm": "34",
+     "torque_original": "34 Nm",
+     "confidence": "low",
+     "source_name": "Ferodo TechTips - Installing rear brakes Toyota RAV4 III",
+     "source_url": "https://www.techtips.ie/Ferodo/installing-rear-brakes---toyota-rav4-iii.pdf",
+     "notes": "Same document also states 26.5 Nm for the same bolt in the pad-replacement section - internal conflict, see conflicts.md."
+    },
+    {
+     "model_code": "XA30 ('RAV4 III')",
+     "years": "2006-2012",
+     "engine": "all",
+     "component": "Rear caliper-to-mount (guide) bolts",
+     "fastener_detail": "pad replacement section",
+     "torque_nm": "26.5",
+     "torque_original": "26.5 Nm",
+     "confidence": "low",
+     "source_name": "Ferodo TechTips - Installing rear brakes Toyota RAV4 III",
+     "source_url": "https://www.techtips.ie/Ferodo/installing-rear-brakes---toyota-rav4-iii.pdf",
+     "notes": "Conflicts with 34 Nm in same document."
+    }
+   ]
+  },
+  {
+   "name": "Toyota Celica",
+   "rows": [
+    {
+     "model_code": "ZZT230 / ZZT231",
+     "years": "1999-2006",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Wheel nuts",
+     "fastener_detail": "",
+     "torque_nm": "103",
+     "torque_original": "103 N·m (10.5 kgf·m, 76 ft·lbf)",
+     "confidence": "high",
+     "source_name": "2002 Toyota Celica Owner's Manual (US) p.223 via ManualOwl",
+     "source_url": "https://www.manualowl.com/am/Toyota/2002-Celica/Manual/5372?page=223",
+     "notes": "US OM."
+    },
+    {
+     "model_code": "ZZT230",
+     "years": "2004",
+     "engine": "1ZZ-FE",
+     "component": "Wheel nuts",
+     "fastener_detail": "",
+     "torque_nm": "103",
+     "torque_original": "76 ft·lbs (103 Nm, 10.5 kgf·m)",
+     "confidence": "high",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2004 Celica 1ZZ-FE wheel fastener specs - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/celica/l4-1.8l_(1zz-fe)/maintenance/wheels_and_tires/wheel_fastener/component_information/specifications/",
+     "notes": "Agrees with OM."
+    },
+    {
+     "model_code": "ZZT230",
+     "years": "2004",
+     "engine": "1ZZ-FE",
+     "component": "Front axle hub nut",
+     "fastener_detail": "Install new nut",
+     "torque_nm": "216",
+     "torque_original": "216 Nm (2,203 kgf·cm, 159 ft·lbs)",
+     "confidence": "high",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2004 Celica 1ZZ-FE axle nut specs - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/celica/l4-1.8l_(1zz-fe)/maintenance/wheels_and_tires/wheel_hub/axle_nut/component_information/specifications/",
+     "notes": "Single type-2 source."
+    },
+    {
+     "model_code": "ZZT230",
+     "years": "2004",
+     "engine": "1ZZ-FE",
+     "component": "Spark plugs",
+     "fastener_detail": "DENSO SK16R11 / NGK IFR5A11, gap 1.0-1.1 mm",
+     "torque_nm": "25",
+     "torque_original": "19 ft·lbs (25 Nm)",
+     "confidence": "low",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2004 Celica 1ZZ-FE spark plug specs - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/celica/l4-1.8l_(1zz-fe)/powertrain_management/ignition_system/spark_plug/component_information/specifications/",
+     "notes": "CONFLICT with 2000 Celica service manual (18 N·m). See conflicts.md."
+    },
+    {
+     "model_code": "ZZT23x (engine not stated)",
+     "years": "2000",
+     "engine": "1ZZ-FE or 2ZZ-GE (not stated)",
+     "component": "Spark plugs",
+     "fastener_detail": "DENSO SK16R11 / NGK IFR54A11 (sic), gap 1.1 mm",
+     "torque_nm": "18",
+     "torque_original": "18 Nm (184 kg·cm, 13 ft·lb)",
+     "confidence": "low",
+     "source_name": "Toyota Celica 2000 Service Manual - Engine - Spark Plug Replacement (jabse.com copy)",
+     "source_url": "https://www.jabse.com/Ly4gQ2FyIE1hbnVhbHMvVG95b3RhIENlbGljYSAxOTg4LTE5ODkuMTk5My0xOTk0LjIwMDAgQXBwcm92ZWQvVG95b3RhIENlbGljYSAyMDAwL1RveW90YSBDZWxpY2EgMjAwMCBTZXJ2aWNlIE1hbnVhbC9FbmdpbmUvQVJUSUNMRV9FTkdJTkVfU1BBUktfUExVR19SRVBMQUNFTUVOVC5wZGY-",
+     "notes": "Engine code not shown on page. Conflicts with 25 N·m (2004 1ZZ). 2ZZ-GE-specific spark plug torque not confirmed."
+    },
+    {
+     "model_code": "ZZT23x",
+     "years": "2000",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Oil filter union",
+     "fastener_detail": "",
+     "torque_nm": "30",
+     "torque_original": "30 N·m (306 kgf·cm, 21 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical SS-13..15 (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Union stud, not the filter itself. Text extraction was partly garbled."
+    },
+    {
+     "model_code": "ZZT23x",
+     "years": "2000",
+     "engine": "1ZZ-FE / 2ZZ-GE",
+     "component": "Steering gear to suspension member",
+     "fastener_detail": "",
+     "torque_nm": "45",
+     "torque_original": "45 N·m (460 kgf·cm, 33 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota Service Specifications - Engine Mechanical (RM744U, 2000 Celica) - valvulita.com copy",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Listed in engine removal specs."
+    }
+   ]
+  },
+  {
+   "name": "Toyota MR2 Spyder (MR-S)",
+   "rows": [
+    {
+     "model_code": "ZZW30",
+     "years": "2000-2007",
+     "engine": "1ZZ-FE",
+     "component": "Wheel nuts",
+     "fastener_detail": "",
+     "torque_nm": "103",
+     "torque_original": "103 N·m (10.5 kgf·m, 76 ft·lbf)",
+     "confidence": "high",
+     "source_name": "2003 Toyota MR2 Spyder Owner's Manual (US) p.220 via ManualOwl",
+     "source_url": "https://www.manualowl.com/am/Toyota/2003-MR2%20Spyder/Manual/5392?page=220",
+     "notes": "US OM."
+    },
+    {
+     "model_code": "ZZW30",
+     "years": "2000-2007",
+     "engine": "1ZZ-FE",
+     "component": "Spark plugs",
+     "fastener_detail": "Cross-reference only",
+     "torque_nm": "25",
+     "torque_original": "19 ft·lbs (25 Nm) - from Celica 1ZZ-FE manual",
+     "confidence": "low",
+     "source_name": "Toyota FSM (ALLDATA-derived) 2004 Celica 1ZZ-FE - workshop-manuals.com",
+     "source_url": "https://workshop-manuals.com/toyota/celica/l4-1.8l_(1zz-fe)/powertrain_management/ignition_system/spark_plug/component_information/specifications/",
+     "notes": "Same engine family but from Celica manual; also conflicts with 18 N·m in 2000 Celica manual. MR2-specific value not found."
+    }
+   ]
+  }
+ ],
+ "wheel_nuts": [
+  {
+   "vehicle": "Toyota LandCruiser 200",
+   "model_code": "URJ202 / VDJ200 (US OM covers URJ200)",
+   "years": "2008-2021",
+   "torque_nm": "131",
+   "confidence": "high",
+   "source_name": "2011 Toyota Land Cruiser Owner's Manual (US) p.1153 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2011-Land%20Cruiser/Manual/5788?page=1153",
+   "notes": "US-market owner's manual. AU-market owner's manual not obtained, so AU figure and any steel-vs-alloy difference are UNVERIFIED (see gaps.md)."
+  },
+  {
+   "vehicle": "Toyota RAV4",
+   "model_code": "ACA33 / GSA33 (XA30)",
+   "years": "2006-2012",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "2009 Toyota RAV4 Owner's Manual (US) p.471 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2009-RAV4/Manual/5669?page=471",
+   "notes": "US OM; same XA30 generation as AU 2010. Unlabelled value 103 (1,050, 77) also appears in RM01N0 SDS (https://4rav.ru/manual/rm01n0ru/sds/sds.pdf)."
+  },
+  {
+   "vehicle": "Toyota Celica",
+   "model_code": "ZZT230 / ZZT231",
+   "years": "1999-2006",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "2002 Toyota Celica Owner's Manual (US) p.223 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2002-Celica/Manual/5372?page=223",
+   "notes": "US OM."
+  },
+  {
+   "vehicle": "Toyota MR2 Spyder (MR-S)",
+   "model_code": "ZZW30",
+   "years": "2000-2007",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "2003 Toyota MR2 Spyder Owner's Manual (US) p.220 via ManualOwl",
+   "source_url": "https://www.manualowl.com/am/Toyota/2003-MR2%20Spyder/Manual/5392?page=220",
+   "notes": "US OM."
+  },
+  {
+   "vehicle": "Toyota Corolla",
+   "model_code": "E210 (EU TMMT build)",
+   "years": "2019-",
+   "torque_nm": "103",
+   "confidence": "high",
+   "source_name": "Toyota Corolla 2019 owner's manual (COROLLA_TMMT_EE) via libble.eu p.600",
+   "source_url": "https://libble.eu/toyota-corolla-2019/online-manual-1022047/?page=0600",
+   "notes": "European-market manual; AU Corolla is Japan-built - AU manual not checked."
+  },
+  {
+   "vehicle": "Ford Ranger",
+   "model_code": "PX3 (folder label; doc is '2019 Ranger')",
+   "years": "2019",
+   "torque_nm": "135",
+   "confidence": "high",
+   "source_name": "Ford Service Content 204-04A Wheels and Tires - Removal and Installation (2019 Ranger)",
+   "source_url": "https://servicemanuals-backend.fly.storage.tigris.dev/manuals/Ford/Ranger/2019/PX3/204-04A%20Wheels%20and%20Tires%20-%20Removal%20and%20Installation%20-%20Wheel%20and%20Tire.pdf",
+   "notes": "Clean dry threads; star pattern; re-torque within 160 km. Document hosted in a 'PX3' folder but text says '2019 Ranger' - market not confirmed. Next-gen (2022+) Ranger NOT verified."
+  },
+  {
+   "vehicle": "Isuzu D-Max",
+   "model_code": "previous gen (UK '17MY' combined manual)",
+   "years": "2017-2020",
+   "torque_nm": "120",
+   "confidence": "high",
+   "source_name": "Isuzu D-Max Owner's Manual combined 17MY (Isuzu UK) p.6-87 / 6-89",
+   "source_url": "https://www.isuzu.co.uk/wp-content/uploads/2024/05/isuzu-d-max-owners-manual-combined-17my.pdf",
+   "notes": "Manual states applicable all countries except USA/Canada. Current RG (2020+) AU manual not read - see gaps.md."
+  },
+  {
+   "vehicle": "Mazda CX-5",
+   "model_code": "KF (EC-market manual 8HD5-EE-18K)",
+   "years": "2017-",
+   "torque_nm": "108-147",
+   "confidence": "high",
+   "source_name": "Mazda CX-5 owner's manual - Specifications > Tyres (owners-manual.mazda.com)",
+   "source_url": "https://owners-manual.mazda.com/gen/en/cx-5/cx-5_8hd5ee18k/contents/10020109.html",
+   "notes": "Published as a range 108-147 N·m (kgf·m figures as printed do not convert exactly). Use upper/lower bounds; no single value."
+  },
+  {
+   "vehicle": "Kia Sportage",
+   "model_code": "NQ5 (UK manual)",
+   "years": "2022-",
+   "torque_nm": "107.9-127.5",
+   "confidence": "high",
+   "source_name": "Kia Sportage NQ5 2024 owner's manual (en_GB) - Changing tires",
+   "source_url": "https://ownersmanual.kia.com/full_webhelp/NQ5/2024/en_GB/topics/t00707.html",
+   "notes": "Converted range 107.9-127.5 N·m (kgf·m x 9.80665). Published only in kgf·m / lbf·ft. AU manual not checked."
+  },
+  {
+   "vehicle": "Hyundai i30",
+   "model_code": "generation not identified",
+   "years": "unknown",
+   "torque_nm": "88.3-107.9",
+   "confidence": "low",
+   "source_name": "Hyundai i30 Owner's Manual (manualslib 1185916) p.340",
+   "source_url": "https://www.manualslib.com/manual/1185916/Hyundai-i30.html?page=340",
+   "notes": "Converted range 88.3-107.9 N·m. Manual generation/year not stated - do not apply to PD/CN7 without checking the correct manual."
+  },
+  {
+   "vehicle": "BYD Shark 6",
+   "model_code": "Shark 6 PHEV (AU)",
+   "years": "2024-",
+   "torque_nm": "140",
+   "confidence": "high",
+   "source_name": "BYD SHARK 6 Owner's Handbook 2024 (AU dealer copy)",
+   "source_url": "https://evdealergroup-byd.com.au/brochures/BYD-SHARK-6-Owners-Handbook-2024.pdf",
+   "notes": "AU-market handbook."
+  },
+  {
+   "vehicle": "Toyota HiLux",
+   "model_code": "AN10/AN20 (KUN25/KUN26), accessory alloy PZ040-0K037",
+   "years": "08/2011",
+   "torque_nm": "103",
+   "confidence": "medium",
+   "source_name": "Toyota Europe accessory installation instructions - Hilux Alloy Wheels PZ040-0K037",
+   "source_url": "https://www.toyota-tech.eu/aimuploads/%7B79DEB2F9-9C64-DF0E-36CD-E287183B9C64%7D/Hilux_Alloy_Wheels_PZ040-0K037_AIM_002_254_2.pdf",
+   "notes": "PREVIOUS-GEN HiLux, accessory wheel, EU market. NOT valid for AN120/AN130 (2015+)."
+  }
+ ],
+ "spark_plugs": [
+  {
+   "item": "NGK - flat/gasket - cast iron head",
+   "size": "18 mm",
+   "torque_nm": "34.3-44.1",
+   "torque_original": "25.3-32.5 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - aluminium head",
+   "size": "18 mm",
+   "torque_nm": "34.3-44.1",
+   "torque_original": "25.3-32.5 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - cast iron head",
+   "size": "14 mm",
+   "torque_nm": "24.4-34.3",
+   "torque_original": "18.0-25.3 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - aluminium head",
+   "size": "14 mm",
+   "torque_nm": "24.4-29.3",
+   "torque_original": "18.0-21.6 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - cast iron head",
+   "size": "12 mm",
+   "torque_nm": "14.6-24.4",
+   "torque_original": "10.8-18.0 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - aluminium head",
+   "size": "12 mm",
+   "torque_nm": "14.6-19.7",
+   "torque_original": "10.8-14.5 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - cast iron head",
+   "size": "10 mm",
+   "torque_nm": "9.8-14.6",
+   "torque_original": "7.2-10.8 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - aluminium head",
+   "size": "10 mm",
+   "torque_nm": "9.8-11.8",
+   "torque_original": "7.2-8.7 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - flat/gasket - aluminium head",
+   "size": "8 mm",
+   "torque_nm": "7.9-9.8",
+   "torque_original": "5.8-7.2 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - taper (no gasket) - cast iron head",
+   "size": "18 mm",
+   "torque_nm": "19.7-29.3",
+   "torque_original": "14.5-21.6 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - taper (no gasket) - aluminium head",
+   "size": "18 mm",
+   "torque_nm": "19.7-29.3",
+   "torque_original": "14.5-21.6 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - taper (no gasket) - cast iron head",
+   "size": "14 mm",
+   "torque_nm": "14.6-24.4",
+   "torque_original": "10.8-18.0 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - taper (no gasket) - aluminium head",
+   "size": "14 mm",
+   "torque_nm": "9.8-19.7",
+   "torque_original": "7.2-14.5 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "NGK - taper (no gasket) - aluminium head",
+   "size": "12 mm",
+   "torque_nm": "10.0-20.0",
+   "torque_original": "7.36-14.75 lb-ft",
+   "source_name": "NGK Spark Plugs (USA) - Spark Plug Installation",
+   "source_url": "https://ngksparkplugs.com/en/resources/spark-plug-installation"
+  },
+  {
+   "item": "DENSO - flat seat - cast iron head",
+   "size": "10 mm",
+   "torque_nm": "10-15",
+   "torque_original": "10-15 (7-11 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - aluminium head",
+   "size": "10 mm",
+   "torque_nm": "10-15",
+   "torque_original": "10-15 (7-11 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - cast iron head",
+   "size": "12 mm",
+   "torque_nm": "15-25",
+   "torque_original": "15-25 (11-18 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - aluminium head",
+   "size": "12 mm",
+   "torque_nm": "15-25",
+   "torque_original": "15-25 (11-18 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - cast iron head",
+   "size": "14 mm",
+   "torque_nm": "35-40",
+   "torque_original": "35-40 (26-30 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - aluminium head",
+   "size": "14 mm",
+   "torque_nm": "20-30",
+   "torque_original": "20-30 (15-22 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - taper seat - cast iron head",
+   "size": "14 mm",
+   "torque_nm": "9-20",
+   "torque_original": "9-20 (7-15 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - taper seat - aluminium head",
+   "size": "14 mm",
+   "torque_nm": "9-20",
+   "torque_original": "9-20 (7-15 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - cast iron head",
+   "size": "18 mm",
+   "torque_nm": "43-52",
+   "torque_original": "43-52 (32-38 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - flat seat - aluminium head",
+   "size": "18 mm",
+   "torque_nm": "38-46",
+   "torque_original": "38-46 (28-34 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - taper seat - cast iron head",
+   "size": "18 mm",
+   "torque_nm": "20-27",
+   "torque_original": "20-27 (15-20 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  },
+  {
+   "item": "DENSO - taper seat - aluminium head",
+   "size": "18 mm",
+   "torque_nm": "20-27",
+   "torque_original": "20-27 (15-20 lb-ft)",
+   "source_name": "DENSO Auto Parts - spark plug torque table",
+   "source_url": "https://www.densoautoparts.com/?p=246"
+  }
+ ],
+ "generic_wheel_nuts": [
+  {
+   "item": "Tire Rack typical range",
+   "size": "M12x1.5",
+   "torque_nm": "94.9-108.5",
+   "torque_original": "70-80 ft-lbs; min 6.5 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "M12x1.25",
+   "torque_nm": "94.9-108.5",
+   "torque_original": "70-80 ft-lbs; min 8 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "M14x1.5",
+   "torque_nm": "115.2-122.0",
+   "torque_original": "85-90 ft-lbs; min 7.5 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "M14x1.25",
+   "torque_nm": "115.2-122.0",
+   "torque_original": "85-90 ft-lbs; min 9 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "7/16\"",
+   "torque_nm": "94.9-108.5",
+   "torque_original": "70-80 ft-lbs; min 9 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "1/2\"",
+   "torque_nm": "101.7-115.2",
+   "torque_original": "75-85 ft-lbs; min 8 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Tire Rack typical range",
+   "size": "9/16\"",
+   "torque_nm": "183.0-196.6",
+   "torque_original": "135-145 ft-lbs; min 8 turns engagement",
+   "source_name": "Tire Rack - How do I properly torque my wheel lug nuts or bolts",
+   "source_url": "https://tirerack.com/upgrade-garage/how-do-i-properly-torque-my-wheel-lug-nuts-or-bolts",
+   "notes": "US tyre retailer; dry threads only; owner's manual spec takes priority. Not an Australian standard."
+  },
+  {
+   "item": "Modern Tire Dealer generic guideline",
+   "size": "12 mm",
+   "torque_nm": "101.7-115.2",
+   "torque_original": "75-85 ft-lbs",
+   "source_name": "Modern Tire Dealer - 'Wheel fasteners' (M. Mavrigian, 2015)",
+   "source_url": "https://www.moderntiredealer.com/articles/1468-wheel-fasteners",
+   "notes": "Trade publication; thread pitch not specified; article says follow vehicle maker's spec."
+  },
+  {
+   "item": "Modern Tire Dealer generic guideline",
+   "size": "14 mm",
+   "torque_nm": "115.2-135.6",
+   "torque_original": "85-100 ft-lbs",
+   "source_name": "Modern Tire Dealer - 'Wheel fasteners' (M. Mavrigian, 2015)",
+   "source_url": "https://www.moderntiredealer.com/articles/1468-wheel-fasteners",
+   "notes": "Trade publication; thread pitch not specified; article says follow vehicle maker's spec."
+  },
+  {
+   "item": "Modern Tire Dealer generic guideline",
+   "size": "7/16\"",
+   "torque_nm": "94.9-108.5",
+   "torque_original": "70-80 ft-lbs",
+   "source_name": "Modern Tire Dealer - 'Wheel fasteners' (M. Mavrigian, 2015)",
+   "source_url": "https://www.moderntiredealer.com/articles/1468-wheel-fasteners",
+   "notes": "Trade publication; thread pitch not specified; article says follow vehicle maker's spec."
+  },
+  {
+   "item": "Modern Tire Dealer generic guideline",
+   "size": "1/2\"",
+   "torque_nm": "101.7-115.2",
+   "torque_original": "75-85 ft-lbs",
+   "source_name": "Modern Tire Dealer - 'Wheel fasteners' (M. Mavrigian, 2015)",
+   "source_url": "https://www.moderntiredealer.com/articles/1468-wheel-fasteners",
+   "notes": "Trade publication; thread pitch not specified; article says follow vehicle maker's spec."
+  },
+  {
+   "item": "Modern Tire Dealer generic guideline",
+   "size": "9/16\"",
+   "torque_nm": "183.0-196.6",
+   "torque_original": "135-145 ft-lbs",
+   "source_name": "Modern Tire Dealer - 'Wheel fasteners' (M. Mavrigian, 2015)",
+   "source_url": "https://www.moderntiredealer.com/articles/1468-wheel-fasteners",
+   "notes": "Trade publication; thread pitch not specified; article says follow vehicle maker's spec."
+  }
+ ],
+ "gaps": [
+  "HiLux AN120/130: no factory wheel nut, brake, diff or suspension figures found yet.",
+  "LC200: AU steel vs alloy wheel nut figure, stud thread, oil drain/filter, 1VD/1UR plugs and suspension not found.",
+  "RAV4 / Celica / MR2: front caliper and suspension torques not found.",
+  "Wheel nuts not found: Prado 150, Camry XV70, next-gen Ranger, D-Max RG, Triton, Navara D23, Patrol Y62, Forester/Outback, Amarok, Atto 3, Seal."
+ ],
+ "source": "Compiled 2026-11-26 by research agent; every row carries its source."
+}
