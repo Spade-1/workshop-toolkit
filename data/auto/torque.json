@@ -630,6 +630,19 @@
      "source_name": "Toyota Motor Europe AIM 000 463-9 (rev 9, 02-04-2008)",
      "source_url": "https://www.toyota-tech.eu/aimuploads/%7B4FA27C4E-37F8-516C-B5DC-4A39A3FE37F8%7D/Detachable%20towing%20hitch%20PZ408-X0561-00%20AIM%20000%20463-9.pdf",
      "notes": "Accessory fitting only, not a chassis spec. The other figures in the AIM (40, 100, 160 Nm) are not clearly tied to a fastener in the extracted text, so they were NOT recorded."
+    },
+    {
+     "model_code": "ACA3x (2012 US, engine not stated)",
+     "years": "2012",
+     "engine": "not stated (poster says 'six cylinder')",
+     "component": "Engine oil drain plug",
+     "fastener_detail": "",
+     "torque_nm": "40.7",
+     "torque_original": "30 ft-lbs (hedged: 'It appears to be 30 ft-lbs')",
+     "confidence": "low",
+     "source_name": "2CarPros Q&A reply (KASEKENNY, 5 Jun 2019), 2012 RAV4",
+     "source_url": "https://2carpros.com/questions/oil-chance",
+     "notes": "Anonymous hedged forum reply, engine not named. Only weak support for ~40 N·m. See pass4_conflicts.md C1."
     }
    ]
   },
@@ -921,6 +934,201 @@
      "source_name": "RM823E (Corolla 1ZZ-FE)",
      "source_url": "https://fcache1.pakwheels.com/original/4X/4/2/f/42f525eb044049d358c65f2d34403f1bdba95b42.pdf",
      "notes": "Corolla oil pan, not Celica or MR2. The drain plug depends on the pan, so treat as cross-ref only. The 'in.lbf' unit is a printing error (28 ft·lbf is correct)."
+    },
+    {
+     "model_code": "ZZT231 (2005 RM1131U, US)",
+     "years": "2005",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Front suspension member to body",
+     "fastener_detail": "Mounting bolt A",
+     "torque_nm": "113",
+     "torque_original": "113 N·m (1,152 kgf·cm, 83 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota 2005 Celica Repair Manual RM1131U, MA7/MA8 Chassis maintenance (ManualMachine copy)",
+     "source_url": "https://manualmachine.com/toyota/celica2005/3867667-user-manual",
+     "notes": "Chassis re-tighten list (MA8 item 7). Text read via WebFetch summary, not visually checked against the page image. US-market manual; AU ZZT231 expected the same. Front bolt B 157 matches RM744U SS-14 suspension member bolts C/D (157)."
+    },
+    {
+     "model_code": "ZZT231 (2005 RM1131U, US)",
+     "years": "2005",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Front suspension member to body",
+     "fastener_detail": "Mounting bolt B",
+     "torque_nm": "157",
+     "torque_original": "157 N·m (1,600 kgf·cm, 116 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota 2005 Celica Repair Manual RM1131U, MA7/MA8 Chassis maintenance (ManualMachine copy)",
+     "source_url": "https://manualmachine.com/toyota/celica2005/3867667-user-manual",
+     "notes": "Chassis re-tighten list (MA8 item 7). Text read via WebFetch summary, not visually checked against the page image. US-market manual; AU ZZT231 expected the same. Front bolt B 157 matches RM744U SS-14 suspension member bolts C/D (157)."
+    },
+    {
+     "model_code": "ZZT231 (2005 RM1131U, US)",
+     "years": "2005",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Rear suspension member to body",
+     "fastener_detail": "Mounting bolt A",
+     "torque_nm": "80",
+     "torque_original": "80 N·m (816 kgf·cm, 59 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota 2005 Celica Repair Manual RM1131U, MA7/MA8 Chassis maintenance (ManualMachine copy)",
+     "source_url": "https://manualmachine.com/toyota/celica2005/3867667-user-manual",
+     "notes": "Chassis re-tighten list (MA8 item 7). Text read via WebFetch summary, not visually checked against the page image. US-market manual; AU ZZT231 expected the same. Front bolt B 157 matches RM744U SS-14 suspension member bolts C/D (157)."
+    },
+    {
+     "model_code": "ZZT231 (2005 RM1131U, US)",
+     "years": "2005",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Rear suspension member to body",
+     "fastener_detail": "Mounting bolt B",
+     "torque_nm": "130",
+     "torque_original": "130 N·m (1,326 kgf·cm, 96 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota 2005 Celica Repair Manual RM1131U, MA7/MA8 Chassis maintenance (ManualMachine copy)",
+     "source_url": "https://manualmachine.com/toyota/celica2005/3867667-user-manual",
+     "notes": "Chassis re-tighten list (MA8 item 7). Text read via WebFetch summary, not visually checked against the page image. US-market manual; AU ZZT231 expected the same. Front bolt B 157 matches RM744U SS-14 suspension member bolts C/D (157)."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Bolt A",
+     "torque_nm": "52",
+     "torque_original": "52 N·m (530 kgf·cm, 32 ft·lbf) as extracted",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. ft·lbf figure as extracted (32) does not match 52 N·m (38 ft·lbf). Extraction or printing error; treat 52 as unverified until the page is read directly. Which bolt A/B/C/D/E is which is not stated."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Bolt B",
+     "torque_nm": "52",
+     "torque_original": "52 N·m (530 kgf·cm, 32 ft·lbf) as extracted",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Same ft·lbf mismatch as bolt A."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Bolt C",
+     "torque_nm": "157",
+     "torque_original": "157 N·m (1,600 kgf·cm, 116 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Agrees with RM1131U front member bolt B (157)."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Bolt D",
+     "torque_nm": "157",
+     "torque_original": "157 N·m (1,600 kgf·cm, 116 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Same as bolt C."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Bolt E",
+     "torque_nm": "39",
+     "torque_original": "39 N·m (400 kgf·cm, 29 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. "
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Suspension member (engine-removal list)",
+     "fastener_detail": "Nut",
+     "torque_nm": "52",
+     "torque_original": "52 N·m (530 kgf·cm, 32 ft·lbf) as extracted",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Same ft·lbf mismatch as bolt A."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Exhaust pipe",
+     "fastener_detail": "Pipe flange/joint",
+     "torque_nm": "43",
+     "torque_original": "43 N·m (440 kgf·cm, 32 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Both engines."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "LH engine mounting",
+     "fastener_detail": "",
+     "torque_nm": "80",
+     "torque_original": "80 N·m (816 kgf·cm, 59 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Both engines."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Rear engine mounting through bolt",
+     "fastener_detail": "",
+     "torque_nm": "87",
+     "torque_original": "87 N·m (887 kgf·cm, 64 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Both engines."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Flywheel (manual) bolts",
+     "fastener_detail": "1st stage, then turn 90 deg",
+     "torque_nm": "49",
+     "torque_original": "49 N·m (500 kgf·cm, 36 ft·lbf) then 90 deg",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Matches the MR2 flywheel row from pass 3 (49)."
+    },
+    {
+     "model_code": "ZZT231 (2000 RM744U)",
+     "years": "2000",
+     "engine": "1ZZ-FE/2ZZ-GE",
+     "component": "Drive plate (auto) bolts",
+     "fastener_detail": "",
+     "torque_nm": "88",
+     "torque_original": "88 N·m (897 kgf·cm, 65 ft·lbf)",
+     "confidence": "medium",
+     "source_name": "Toyota RM744U 2000 Celica Service Specifications SS-14/15 (valvulita copy)",
+     "source_url": "https://www.valvulita.com/sites/default/files/especificaciones_de_torque_toyota_1zz-ge_2zz-ge.pdf",
+     "notes": "Engine-bay items from the engine service specs. Both engines."
     }
    ]
   },
@@ -1061,6 +1269,19 @@
      "source_name": "IH8MUD thread 1382647 - member Sajan's table",
      "source_url": "https://forum.ih8mud.com/threads/does-anyone-have-a-pdf-on-all-the-basic-toque-specs-for-a-2016-2021.1382647/",
      "notes": "Unsourced forum table."
+    },
+    {
+     "model_code": "USF4_ AWD",
+     "years": "2011",
+     "engine": "1UR-FSE",
+     "component": "Engine oil drain plug",
+     "fastener_detail": "Oil pan drain plug (AWD procedure)",
+     "torque_nm": "40",
+     "torque_original": "40 Nm (408 kgf-cm, 30 ft-lbf)",
+     "confidence": "low",
+     "source_name": "Toyota FSM via ALLDATA-style mirror (Operation CHARM), 2011 LS 460 AWD 1UR-FSE, Replacement",
+     "source_url": "https://manuals.autorepairshq.com/Lexus/2011/LS%20460%20AWD%20V8-4.6L%20%281UR-FSE%29/Repair%20and%20Diagnosis/Maintenance/Fluids/Engine%20Oil/Service%20and%20Repair/Replacement",
+     "notes": "LS460 1UR-FSE figure, cross-reference only. Different engine variant (1UR-FSE) and pan from the AU URJ202 1UR-FE, so cross-ref only. Agrees with the GX460 1UR-FE forum figure (40.7) from pass 2."
     }
    ]
   },
@@ -2193,7 +2414,8 @@
   "LC200: AU steel vs alloy wheel nuts, brakes, suspension and 1VD drain plug not confirmed (LC100 steel 209 / alloy 131 is a cross-reference only).",
   "RAV4 / Celica / MR2: chassis torques not yet from a Toyota source (in image-only FSM pages).",
   "Open conflicts: RAV4 2AZ drain plug 25 vs 40 N·m; LC200 caliper bolts pre/post 2015; 3UR-FE spark plug 18 vs 21 N·m; HiLux Toyota towbar M16 260 vs 310 N·m on the same sheet.",
-  "Resolved: 1ZZ-FE spark plug = 25 N·m (second Toyota manual); LC200 wheel stud M14x1.5 (parts listings)."
+  "Resolved: 1ZZ-FE spark plug = 25 N·m (second Toyota manual); LC200 wheel stud M14x1.5 (parts listings).",
+  "Pass 4 could not find Toyota-labelled sources for: HiLux brakes/diffs/sump plug/U-bolts, LC200 suspension and 1VD drain plug, MR2 chassis, RAV4 chassis. Open conflicts: RAV4 drain plug 25 vs ~40 (leans 40), HiLux towbar M16 260 vs 310 (leans 260), RAV4 rear guide bolt 27 vs 34."
  ],
  "source": "Compiled 2026-11-26 by research agent; every row carries its source."
 }
