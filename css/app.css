@@ -143,6 +143,7 @@ label.inline input[type=checkbox] { accent-color: var(--accent); width: 18px; he
 .warn { background: rgba(231,193,74,.1); border: 1px solid rgba(231,193,74,.35); color: var(--text); border-radius: 10px; padding: 8px 10px; font-size: 13px; margin: 0 0 10px; }
 .kv a, .tbl a { color: var(--accent); }
 .tbl td:first-child, .tbl td:last-child { white-space: nowrap; }
+.tbl.wrapl td:last-child { white-space: normal; }
 
 /* v9: grouped home, list column headings, compact phone grid */
 h2.group { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 16px 2px 8px; font-weight: 700; }

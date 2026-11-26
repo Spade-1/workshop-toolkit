@@ -82,7 +82,7 @@
         <span class="item-sum">${esc(r.torque_nm)} N·m ${conf(r.confidence)}</span></button>
         <div class="item-body" hidden>${row('Model', esc(r.model_code))}${row('Years', esc(r.years))}${row('Source', src(r))}${r.notes ? row('Notes', esc(r.notes)) : ''}</div></li>`).join('')}</ul>
       <h3 class="sub">Generic by stud size – only if the vehicle figure is unknown</h3>
-      <table class="tbl"><thead><tr><th>Stud</th><th>N·m</th><th>Source</th></tr></thead><tbody>
+      <table class="tbl wrapl"><thead><tr><th>Stud</th><th>N·m</th><th>Source</th></tr></thead><tbody>
       ${T.generic_wheel_nuts.map((r) => `<tr><td>${esc(r.size)}</td><td>${esc(r.torque_nm)}</td><td>${src(r)}</td></tr>`).join('')}</tbody></table>
       <p class="foot">Tighten in a star pattern in two stages; re-check after 50–100 km on alloys.</p>`;
     toggle($el.querySelector('#wl'));

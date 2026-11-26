@@ -94,7 +94,7 @@
 
   function imperial($el, F) {
     $el.innerHTML = `<p class="intro">SAE J429 – older and US-built gear.</p>
-      <table class="tbl"><thead><tr><th>Grade</th><th>Size</th><th>Proof</th><th>Tensile</th><th>Head</th></tr></thead><tbody>
+      <table class="tbl wrapl"><thead><tr><th>Grade</th><th>Size</th><th>Proof</th><th>Tensile</th><th>Head</th></tr></thead><tbody>
       ${F.sae.map((s) => `<tr><td><b>${esc(s.grade)}</b></td><td>${esc(s.size_in)}"</td><td>${s.proof}</td><td>${s.tensile}</td><td>${esc(s.marking)}</td></tr>`).join('')}</tbody></table>
       <p class="foot">MPa. Grade 5 ≈ metric 8.8, Grade 8 ≈ 10.9.</p>`;
   }
