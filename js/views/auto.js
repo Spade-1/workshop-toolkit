@@ -54,7 +54,7 @@
   }
 
   function torque($el, T) {
-    const V = T.vehicles.map((v, i) => ({ key: String(i), label: v.name.replace('Toyota ', '').replace(' (MR-S)', '') }));
+    const V = T.vehicles.map((v, i) => ({ key: String(i), label: v.name.replace('Toyota ', '').replace(' (MR-S)', '').replace(' Spyder', '') }));
     let vi = WT.store.get('auto.veh', '0'); if (!T.vehicles[vi]) vi = '0';
     $el.innerHTML = `<p class="warn">${esc(T.warning)}</p>${WT.chips(V, vi).replace('class="chips"', 'class="chips small"')}<ul id="tl" class="list"></ul>
       <h3 class="sub">Still missing</h3><ul class="fixes">${T.gaps.map((g) => `<li>${esc(g)}</li>`).join('')}</ul>`;
