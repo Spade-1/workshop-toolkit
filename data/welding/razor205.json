@@ -1,0 +1,785 @@
+{
+ "machine": {
+  "name": "Unimig Razor 205 Smart Set",
+  "sku": "KUMJRRW205SSMIG",
+  "mig": "30–200 A, 0.6–1.0 mm wire, 20% @ 200 A",
+  "tig": "DC lift arc, 10–200 A, 35% @ 200 A",
+  "stick": "10–200 A, 2.5–4.0 mm electrodes, 15% @ 200 A"
+ },
+ "door_chart": {
+  "source": "Unimig MTS-205 set-up guide (inside wire-feed door of Aaron's Razor 205 Smart Set), photographed 2026-11-26",
+  "note": "Guide only. Down-hand butt weld, gas flow 8-12 L/min. V = volts, WFS = wire feed speed (machine display units, assumed m/min).",
+  "thickness_mm": [
+   1,
+   2,
+   4,
+   6,
+   8
+  ],
+  "rows": [
+   {
+    "material": "steel",
+    "wire_type": "solid ER70S-6",
+    "wire_dia_mm": 0.8,
+    "drive_roller": "V groove",
+    "polarity": "DCEP",
+    "gas": "Argon/CO2/O2 mix",
+    "gas_flow_l_min": "8-12",
+    "points": [
+     {
+      "thickness_mm": 1,
+      "volts": 14.0,
+      "wfs": 4.0
+     },
+     {
+      "thickness_mm": 2,
+      "volts": 14.0,
+      "wfs": 5.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 16.0,
+      "wfs": 7.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 20.0,
+      "wfs": 12.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 23.0,
+      "wfs": 15.0
+     }
+    ]
+   },
+   {
+    "material": "steel",
+    "wire_type": "solid ER70S-6",
+    "wire_dia_mm": 0.9,
+    "drive_roller": "V groove",
+    "polarity": "DCEP",
+    "gas": "Argon/CO2/O2 mix",
+    "gas_flow_l_min": "8-12",
+    "points": [
+     {
+      "thickness_mm": 2,
+      "volts": 15.0,
+      "wfs": 5.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 17.0,
+      "wfs": 8.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 20.0,
+      "wfs": 13.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 24.0,
+      "wfs": 15.0
+     }
+    ]
+   },
+   {
+    "material": "steel",
+    "wire_type": "flux cored",
+    "wire_dia_mm": 0.8,
+    "drive_roller": "F groove",
+    "polarity": "DCEN",
+    "gas": "none (gasless)",
+    "gas_flow_l_min": null,
+    "points": [
+     {
+      "thickness_mm": 1,
+      "volts": 14.0,
+      "wfs": 4.0
+     },
+     {
+      "thickness_mm": 2,
+      "volts": 14.0,
+      "wfs": 5.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 16.0,
+      "wfs": 7.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 18.0,
+      "wfs": 9.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 21.0,
+      "wfs": 11.0
+     }
+    ]
+   },
+   {
+    "material": "steel",
+    "wire_type": "flux cored",
+    "wire_dia_mm": 0.9,
+    "drive_roller": "F groove",
+    "polarity": "DCEN",
+    "gas": "none (gasless)",
+    "gas_flow_l_min": null,
+    "points": [
+     {
+      "thickness_mm": 2,
+      "volts": 15.0,
+      "wfs": 6.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 17.0,
+      "wfs": 8.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 19.0,
+      "wfs": 10.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 22.0,
+      "wfs": 12.0
+     }
+    ]
+   },
+   {
+    "material": "stainless",
+    "wire_type": "stainless",
+    "wire_dia_mm": 0.8,
+    "drive_roller": "V groove",
+    "polarity": "DCEP",
+    "gas": "Argon/CO2 mix",
+    "gas_flow_l_min": "8-12",
+    "points": [
+     {
+      "thickness_mm": 1,
+      "volts": 14.0,
+      "wfs": 4.0
+     },
+     {
+      "thickness_mm": 2,
+      "volts": 14.0,
+      "wfs": 5.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 16.0,
+      "wfs": 7.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 18.0,
+      "wfs": 9.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 20.0,
+      "wfs": 11.0
+     }
+    ]
+   },
+   {
+    "material": "stainless",
+    "wire_type": "stainless",
+    "wire_dia_mm": 0.9,
+    "drive_roller": "V groove",
+    "polarity": "DCEP",
+    "gas": "Argon/CO2 mix",
+    "gas_flow_l_min": "8-12",
+    "points": [
+     {
+      "thickness_mm": 2,
+      "volts": 15.0,
+      "wfs": 5.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 17.0,
+      "wfs": 8.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 19.0,
+      "wfs": 10.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 21.0,
+      "wfs": 12.0
+     }
+    ]
+   },
+   {
+    "material": "aluminium",
+    "wire_type": "aluminium",
+    "wire_dia_mm": 1.0,
+    "drive_roller": "U groove",
+    "polarity": "DCEP",
+    "gas": "Argon",
+    "gas_flow_l_min": "8-12",
+    "points": [
+     {
+      "thickness_mm": 2,
+      "volts": 14.0,
+      "wfs": 8.0
+     },
+     {
+      "thickness_mm": 4,
+      "volts": 15.0,
+      "wfs": 9.0
+     },
+     {
+      "thickness_mm": 6,
+      "volts": 17.0,
+      "wfs": 12.0
+     },
+     {
+      "thickness_mm": 8,
+      "volts": 19.0,
+      "wfs": 15.0
+     }
+    ]
+   }
+  ]
+ },
+ "smartset": {
+  "program": "0.8 mm mild steel, Argon 90% / CO2 10%",
+  "source": "Measured by Aaron on his machine 2026-11-26",
+  "trim_v": 1.0,
+  "trim_note": "±1.0 V confirmed at 3.0, 8.0 and 13.0; other points assumed",
+  "points": [
+   [
+    3.0,
+    16.5
+   ],
+   [
+    3.1,
+    16.6
+   ],
+   [
+    3.2,
+    16.7
+   ],
+   [
+    3.3,
+    16.9
+   ],
+   [
+    3.4,
+    17.0
+   ],
+   [
+    3.5,
+    17.1
+   ],
+   [
+    3.6,
+    17.3
+   ],
+   [
+    3.7,
+    17.4
+   ],
+   [
+    3.8,
+    17.5
+   ],
+   [
+    3.9,
+    17.6
+   ],
+   [
+    4.0,
+    17.8
+   ],
+   [
+    4.1,
+    17.9
+   ],
+   [
+    4.2,
+    18.0
+   ],
+   [
+    4.3,
+    18.2
+   ],
+   [
+    4.4,
+    18.3
+   ],
+   [
+    4.5,
+    18.4
+   ],
+   [
+    4.6,
+    18.6
+   ],
+   [
+    4.7,
+    18.7
+   ],
+   [
+    4.8,
+    18.8
+   ],
+   [
+    4.9,
+    18.9
+   ],
+   [
+    5.0,
+    19.0
+   ],
+   [
+    5.1,
+    19.0
+   ],
+   [
+    5.2,
+    19.1
+   ],
+   [
+    5.3,
+    19.2
+   ],
+   [
+    5.4,
+    19.2
+   ],
+   [
+    5.5,
+    19.3
+   ],
+   [
+    5.6,
+    19.3
+   ],
+   [
+    5.7,
+    19.3
+   ],
+   [
+    5.8,
+    19.4
+   ],
+   [
+    5.9,
+    19.4
+   ],
+   [
+    6.0,
+    19.5
+   ],
+   [
+    6.1,
+    19.6
+   ],
+   [
+    6.2,
+    19.6
+   ],
+   [
+    6.3,
+    19.7
+   ],
+   [
+    6.4,
+    19.7
+   ],
+   [
+    6.5,
+    19.8
+   ],
+   [
+    6.6,
+    19.8
+   ],
+   [
+    6.7,
+    19.9
+   ],
+   [
+    6.8,
+    19.9
+   ],
+   [
+    6.9,
+    20.0
+   ],
+   [
+    7.0,
+    20.0
+   ],
+   [
+    7.1,
+    20.1
+   ],
+   [
+    7.2,
+    20.2
+   ],
+   [
+    7.3,
+    20.3
+   ],
+   [
+    7.4,
+    20.4
+   ],
+   [
+    7.5,
+    20.5
+   ],
+   [
+    7.6,
+    20.6
+   ],
+   [
+    7.7,
+    20.7
+   ],
+   [
+    7.8,
+    20.8
+   ],
+   [
+    7.9,
+    20.9
+   ],
+   [
+    8.0,
+    21.0
+   ],
+   [
+    8.1,
+    21.1
+   ],
+   [
+    8.2,
+    21.3
+   ],
+   [
+    8.3,
+    21.5
+   ],
+   [
+    8.4,
+    21.7
+   ],
+   [
+    8.5,
+    21.9
+   ],
+   [
+    8.6,
+    22.0
+   ],
+   [
+    8.7,
+    22.1
+   ],
+   [
+    8.8,
+    22.2
+   ],
+   [
+    8.9,
+    22.3
+   ],
+   [
+    9.0,
+    22.5
+   ],
+   [
+    9.1,
+    22.6
+   ],
+   [
+    9.2,
+    22.7
+   ],
+   [
+    9.3,
+    22.8
+   ],
+   [
+    9.4,
+    22.9
+   ],
+   [
+    9.5,
+    23.0
+   ],
+   [
+    9.6,
+    23.2
+   ],
+   [
+    9.7,
+    23.3
+   ],
+   [
+    9.8,
+    23.4
+   ],
+   [
+    9.9,
+    23.5
+   ],
+   [
+    10.0,
+    23.5
+   ],
+   [
+    10.1,
+    23.6
+   ],
+   [
+    10.2,
+    23.7
+   ],
+   [
+    10.3,
+    23.7
+   ],
+   [
+    10.4,
+    23.7
+   ],
+   [
+    10.5,
+    23.8
+   ],
+   [
+    10.6,
+    23.8
+   ],
+   [
+    10.7,
+    23.9
+   ],
+   [
+    10.8,
+    23.9
+   ],
+   [
+    10.9,
+    24.0
+   ],
+   [
+    11.0,
+    24.1
+   ],
+   [
+    11.1,
+    24.2
+   ],
+   [
+    11.2,
+    24.3
+   ],
+   [
+    11.3,
+    24.5
+   ],
+   [
+    11.4,
+    24.7
+   ],
+   [
+    11.5,
+    24.8
+   ],
+   [
+    11.6,
+    25.0
+   ],
+   [
+    11.7,
+    25.1
+   ],
+   [
+    11.8,
+    25.2
+   ],
+   [
+    11.9,
+    25.3
+   ],
+   [
+    12.0,
+    25.5
+   ],
+   [
+    12.1,
+    25.6
+   ],
+   [
+    12.2,
+    25.7
+   ],
+   [
+    12.3,
+    25.8
+   ],
+   [
+    12.4,
+    25.9
+   ],
+   [
+    12.5,
+    26.0
+   ],
+   [
+    12.6,
+    26.1
+   ],
+   [
+    12.7,
+    26.2
+   ],
+   [
+    12.8,
+    26.3
+   ],
+   [
+    12.9,
+    26.4
+   ],
+   [
+    13.0,
+    26.5
+   ]
+  ]
+ },
+ "mig_notes": [
+  "Door chart = down-hand butt weld, 8–12 L/min gas.",
+  "Stick-out 5–10 mm (manual).",
+  "Smart Set default runs 3–5 V above the door chart at the same wire speed – unresolved, see project notes.",
+  "Flux-cored (gasless) wire runs DCEN – swap the torch lead polarity."
+ ],
+ "stick": {
+  "source": "Razor 205 manual p.37 (general purpose E6013)",
+  "by_thickness": [
+   [
+    1.0,
+    2.0,
+    2.5
+   ],
+   [
+    2.0,
+    5.0,
+    3.2
+   ],
+   [
+    5.0,
+    8.0,
+    4.0
+   ],
+   [
+    8.0,
+    null,
+    5.0
+   ]
+  ],
+  "current": [
+   [
+    2.5,
+    60,
+    100
+   ],
+   [
+    3.2,
+    100,
+    130
+   ],
+   [
+    4.0,
+    130,
+    165
+   ],
+   [
+    5.0,
+    165,
+    260
+   ]
+  ],
+  "machine_max_electrode": 4.0,
+  "notes": [
+   "Arc length no more than the core wire diameter.",
+   "Electrode angle 5–15° toward travel (flat/horizontal/overhead); 80–90° vertical up."
+  ]
+ },
+ "tungsten": {
+  "source": "Razor 205 manual p.34 – current columns corrected (manual has Excel date corruption); values per industry-standard DGP prep table",
+  "rows": [
+   [
+    1.0,
+    0.25,
+    20,
+    "5–30",
+    "5–60"
+   ],
+   [
+    1.6,
+    0.5,
+    25,
+    "8–50",
+    "8–100"
+   ],
+   [
+    1.6,
+    0.8,
+    30,
+    "10–70",
+    "10–140"
+   ],
+   [
+    2.4,
+    0.8,
+    35,
+    "12–90",
+    "12–180"
+   ],
+   [
+    2.4,
+    1.1,
+    45,
+    "15–150",
+    "15–250"
+   ],
+   [
+    3.2,
+    1.1,
+    60,
+    "20–200",
+    "20–300"
+   ],
+   [
+    3.2,
+    1.5,
+    90,
+    "25–250",
+    "25–350"
+   ]
+  ],
+  "cols": [
+   "Tungsten Ø mm",
+   "Tip flat Ø mm",
+   "Included angle °",
+   "Amps",
+   "Pulsed amps"
+  ]
+ }
+}

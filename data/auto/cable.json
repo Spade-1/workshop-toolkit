@@ -1,0 +1,254 @@
+{
+ "title": "Auto Cable Chart (AU)",
+ "source": "Aaron's chart compiled from Narva and Tycab published data (supplied 2026-11-26)",
+ "columns": [
+  "bs",
+  "true_mm2",
+  "cond_dia_mm",
+  "au_sold_as",
+  "au_mm2",
+  "sheath_mm",
+  "peak_a",
+  "cont_a",
+  "terminal",
+  "terminal_flag"
+ ],
+ "rows": [
+  {
+   "bs": "00",
+   "true_mm2": 67.4,
+   "cond_dia_mm": 9.27,
+   "au_sold_as": "00 B&S",
+   "au_mm2": 64.15,
+   "sheath_mm": "14.5",
+   "peak_a": 390,
+   "cont_a": "292",
+   "terminal": "Lug 70",
+   "terminal_flag": null
+  },
+  {
+   "bs": "0",
+   "true_mm2": 53.5,
+   "cond_dia_mm": 8.25,
+   "au_sold_as": "0 B&S",
+   "au_mm2": 49,
+   "sheath_mm": "12.7",
+   "peak_a": 330,
+   "cont_a": "246",
+   "terminal": "Lug 50",
+   "terminal_flag": null
+  },
+  {
+   "bs": "1",
+   "true_mm2": 42.4,
+   "cond_dia_mm": 7.35,
+   "au_sold_as": "1 B&S",
+   "au_mm2": 39.55,
+   "sheath_mm": "12.1",
+   "peak_a": null,
+   "cont_a": "210",
+   "terminal": "Lug 35/50",
+   "terminal_flag": "warn"
+  },
+  {
+   "bs": "2",
+   "true_mm2": 33.6,
+   "cond_dia_mm": 6.54,
+   "au_sold_as": "2 B&S",
+   "au_mm2": 32.07,
+   "sheath_mm": "11.3",
+   "peak_a": 255,
+   "cont_a": "188",
+   "terminal": "Lug 35",
+   "terminal_flag": null
+  },
+  {
+   "bs": "3",
+   "true_mm2": 26.7,
+   "cond_dia_mm": 5.83,
+   "au_sold_as": "3 B&S",
+   "au_mm2": 26.45,
+   "sheath_mm": "10.2",
+   "peak_a": 215,
+   "cont_a": "168",
+   "terminal": "Lug 25",
+   "terminal_flag": null
+  },
+  {
+   "bs": "4",
+   "true_mm2": 21.2,
+   "cond_dia_mm": 5.19,
+   "au_sold_as": "4 B&S",
+   "au_mm2": 20.26,
+   "sheath_mm": "8.3",
+   "peak_a": 185,
+   "cont_a": "135",
+   "terminal": "Lug 25",
+   "terminal_flag": "warn"
+  },
+  {
+   "bs": "6",
+   "true_mm2": 13.3,
+   "cond_dia_mm": 4.11,
+   "au_sold_as": "6 B&S",
+   "au_mm2": 13.5,
+   "sheath_mm": "7.2",
+   "peak_a": 140,
+   "cont_a": "103",
+   "terminal": "Lug 16",
+   "terminal_flag": null
+  },
+  {
+   "bs": "8",
+   "true_mm2": 8.37,
+   "cond_dia_mm": 3.26,
+   "au_sold_as": "8 B&S / \"8mm\"",
+   "au_mm2": 7.71,
+   "sheath_mm": "5.5",
+   "peak_a": 100,
+   "cont_a": "74",
+   "terminal": "Lug 10",
+   "terminal_flag": null
+  },
+  {
+   "bs": "10",
+   "true_mm2": 5.26,
+   "cond_dia_mm": 2.59,
+   "au_sold_as": "6mm auto",
+   "au_mm2": 4.59,
+   "sheath_mm": "4.0–5.7",
+   "peak_a": 50,
+   "cont_a": "48",
+   "terminal": "Yellow",
+   "terminal_flag": null
+  },
+  {
+   "bs": "12",
+   "true_mm2": 3.31,
+   "cond_dia_mm": 2.05,
+   "au_sold_as": "5mm auto",
+   "au_mm2": 2.9,
+   "sheath_mm": "3.0–4.9",
+   "peak_a": 25,
+   "cont_a": "37*",
+   "terminal": "Yellow",
+   "terminal_flag": null
+  },
+  {
+   "bs": "14",
+   "true_mm2": 2.08,
+   "cond_dia_mm": 1.63,
+   "au_sold_as": "4mm auto",
+   "au_mm2": 1.84,
+   "sheath_mm": "2.6–4.2",
+   "peak_a": 15,
+   "cont_a": "28",
+   "terminal": "Blue",
+   "terminal_flag": null
+  },
+  {
+   "bs": "16",
+   "true_mm2": 1.31,
+   "cond_dia_mm": 1.29,
+   "au_sold_as": "3mm auto",
+   "au_mm2": 1.13,
+   "sheath_mm": "2.2–3.8",
+   "peak_a": 10,
+   "cont_a": "20",
+   "terminal": "Red",
+   "terminal_flag": null
+  },
+  {
+   "bs": "≈18",
+   "true_mm2": 0.82,
+   "cond_dia_mm": 1.02,
+   "au_sold_as": "2.5mm auto",
+   "au_mm2": 0.64,
+   "sheath_mm": "n/f",
+   "peak_a": 5,
+   "cont_a": "12†",
+   "terminal": "Red",
+   "terminal_flag": null
+  }
+ ],
+ "metric_to_bs": [
+  [
+   "1.5",
+   "16"
+  ],
+  [
+   "2.5",
+   "14"
+  ],
+  [
+   "4",
+   "12"
+  ],
+  [
+   "6",
+   "10"
+  ],
+  [
+   "10",
+   "8"
+  ],
+  [
+   "16",
+   "6"
+  ],
+  [
+   "25",
+   "3–4"
+  ],
+  [
+   "35",
+   "2"
+  ],
+  [
+   "50",
+   "0"
+  ],
+  [
+   "70",
+   "00"
+  ]
+ ],
+ "lug_gaps": [
+  "1 B&S: no lug",
+  "4 B&S: no 20 lug"
+ ],
+ "notes": [
+  "B&S = AWG.",
+  "Peak A (Narva): 5 min at 60% duty cycle. Auto-cable figures are Narva's single published rating (no stated basis).",
+  "Cont. A (Tycab): continuous at 30°C ambient. Auto cable rated to JASO D609. Derate for ambient: 40°C ×0.9 · 50°C ×0.76 · 60°C ×0.6 · 70°C ×0.45. Bundling reduces further.",
+  "Sheath Ø: B&S = Tycab single-core OD. Auto = single-core → double-insulated range.",
+  "4 B&S: no 20 mm² lug — use 25, crimp hard, pull-test.",
+  "1 B&S: fit-check 35 or 50 lug.",
+  "* 5mm figure from Jaydee (matches Tycab on all other sizes).",
+  "† 2.5mm: no published Tycab figure — 12 A set conservatively below interpolated ~14 A (Tycab 0.5 mm² = 13 A, 0.85 mm² = 17 A).",
+  "n/f = not found in published data. 2.5mm auto (0.64 mm²) is nearer 19 AWG.",
+  "Insulated terminals: Red 2.5–3mm · Blue 4mm · Yellow 5–6mm (Narva colour code)."
+ ],
+ "derate": [
+  [
+   30,
+   1.0
+  ],
+  [
+   40,
+   0.9
+  ],
+  [
+   50,
+   0.76
+  ],
+  [
+   60,
+   0.6
+  ],
+  [
+   70,
+   0.45
+  ]
+ ]
+}

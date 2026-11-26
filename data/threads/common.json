@@ -1,0 +1,33 @@
+{
+ "sizes": [
+  {
+   "d": 4,
+   "hex_spanner": "7",
+   "socket_cap_key": "3"
+  },
+  {
+   "d": 5,
+   "hex_spanner": "8",
+   "socket_cap_key": "4"
+  },
+  {
+   "d": 6,
+   "hex_spanner": "10",
+   "socket_cap_key": "5"
+  },
+  {
+   "d": 8,
+   "hex_spanner": "13",
+   "socket_cap_key": "6"
+  },
+  {
+   "d": 10,
+   "hex_spanner": "16 (ISO) / 17 (DIN)",
+   "socket_cap_key": "8"
+  }
+ ],
+ "notes": [
+  "Hex spanner: ISO 4017/4032 bolts and nuts (DIN 933/934 M10 = 17 mm).",
+  "Socket cap screw key: ISO 4762."
+ ]
+}
