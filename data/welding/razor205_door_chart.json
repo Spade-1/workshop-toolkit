@@ -1,0 +1,245 @@
+{
+ "source": "Unimig MTS-205 set-up guide (inside wire-feed door of Aaron's Razor 205 Smart Set), photographed 2026-11-26",
+ "note": "Guide only. Down-hand butt weld, gas flow 8-12 L/min. V = volts, WFS = wire feed speed (machine display units, assumed m/min).",
+ "thickness_mm": [
+  1,
+  2,
+  4,
+  6,
+  8
+ ],
+ "rows": [
+  {
+   "material": "steel",
+   "wire_type": "solid ER70S-6",
+   "wire_dia_mm": 0.8,
+   "drive_roller": "V groove",
+   "polarity": "DCEP",
+   "gas": "Argon/CO2/O2 mix",
+   "gas_flow_l_min": "8-12",
+   "points": [
+    {
+     "thickness_mm": 1,
+     "volts": 14.0,
+     "wfs": 4.0
+    },
+    {
+     "thickness_mm": 2,
+     "volts": 14.0,
+     "wfs": 5.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 16.0,
+     "wfs": 7.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 20.0,
+     "wfs": 12.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 23.0,
+     "wfs": 15.0
+    }
+   ]
+  },
+  {
+   "material": "steel",
+   "wire_type": "solid ER70S-6",
+   "wire_dia_mm": 0.9,
+   "drive_roller": "V groove",
+   "polarity": "DCEP",
+   "gas": "Argon/CO2/O2 mix",
+   "gas_flow_l_min": "8-12",
+   "points": [
+    {
+     "thickness_mm": 2,
+     "volts": 15.0,
+     "wfs": 5.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 17.0,
+     "wfs": 8.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 20.0,
+     "wfs": 13.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 24.0,
+     "wfs": 15.0
+    }
+   ]
+  },
+  {
+   "material": "steel",
+   "wire_type": "flux cored",
+   "wire_dia_mm": 0.8,
+   "drive_roller": "F groove",
+   "polarity": "DCEN",
+   "gas": "none (gasless)",
+   "gas_flow_l_min": null,
+   "points": [
+    {
+     "thickness_mm": 1,
+     "volts": 14.0,
+     "wfs": 4.0
+    },
+    {
+     "thickness_mm": 2,
+     "volts": 14.0,
+     "wfs": 5.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 16.0,
+     "wfs": 7.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 18.0,
+     "wfs": 9.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 21.0,
+     "wfs": 11.0
+    }
+   ]
+  },
+  {
+   "material": "steel",
+   "wire_type": "flux cored",
+   "wire_dia_mm": 0.9,
+   "drive_roller": "F groove",
+   "polarity": "DCEN",
+   "gas": "none (gasless)",
+   "gas_flow_l_min": null,
+   "points": [
+    {
+     "thickness_mm": 2,
+     "volts": 15.0,
+     "wfs": 6.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 17.0,
+     "wfs": 8.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 19.0,
+     "wfs": 10.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 22.0,
+     "wfs": 12.0
+    }
+   ]
+  },
+  {
+   "material": "stainless",
+   "wire_type": "stainless",
+   "wire_dia_mm": 0.8,
+   "drive_roller": "V groove",
+   "polarity": "DCEP",
+   "gas": "Argon/CO2 mix",
+   "gas_flow_l_min": "8-12",
+   "points": [
+    {
+     "thickness_mm": 1,
+     "volts": 14.0,
+     "wfs": 4.0
+    },
+    {
+     "thickness_mm": 2,
+     "volts": 14.0,
+     "wfs": 5.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 16.0,
+     "wfs": 7.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 18.0,
+     "wfs": 9.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 20.0,
+     "wfs": 11.0
+    }
+   ]
+  },
+  {
+   "material": "stainless",
+   "wire_type": "stainless",
+   "wire_dia_mm": 0.9,
+   "drive_roller": "V groove",
+   "polarity": "DCEP",
+   "gas": "Argon/CO2 mix",
+   "gas_flow_l_min": "8-12",
+   "points": [
+    {
+     "thickness_mm": 2,
+     "volts": 15.0,
+     "wfs": 5.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 17.0,
+     "wfs": 8.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 19.0,
+     "wfs": 10.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 21.0,
+     "wfs": 12.0
+    }
+   ]
+  },
+  {
+   "material": "aluminium",
+   "wire_type": "aluminium",
+   "wire_dia_mm": 1.0,
+   "drive_roller": "U groove",
+   "polarity": "DCEP",
+   "gas": "Argon",
+   "gas_flow_l_min": "8-12",
+   "points": [
+    {
+     "thickness_mm": 2,
+     "volts": 14.0,
+     "wfs": 8.0
+    },
+    {
+     "thickness_mm": 4,
+     "volts": 15.0,
+     "wfs": 9.0
+    },
+    {
+     "thickness_mm": 6,
+     "volts": 17.0,
+     "wfs": 12.0
+    },
+    {
+     "thickness_mm": 8,
+     "volts": 19.0,
+     "wfs": 15.0
+    }
+   ]
+  }
+ ]
+}
