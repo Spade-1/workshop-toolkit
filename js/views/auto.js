@@ -23,6 +23,7 @@
       <h3 class="sub">Metric mm² / Narva lug → nearest B&amp;S</h3>
       <div class="grid5">${C.metric_to_bs.map(([m, b]) => `<div><b>${m} mm²</b><small>≈ ${b} B&amp;S</small></div>`).join('')}
         ${C.lug_gaps.map((g) => `<div><b>—</b><small>${esc(g)}</small></div>`).join('')}</div>
+      <p class="foot">Max fuse = largest standard fuse at or below the cable's rating at that ambient. The fuse protects the cable: size it for the load (about 1.25 × the load current), never above the cable's max. Fit it as close to the battery as practical.</p>
       <div class="notes">${C.notes.map((n) => `<p>${esc(n)}</p>`).join('')}<p><small>Source: ${esc(C.source)}</small></p></div>`;
     const $amb = $el.querySelector('#amb'), $l = $el.querySelector('#cl');
     $amb.value = amb;
@@ -42,6 +43,7 @@
             ${row('Terminal / lug', term)}
             ${row('AU sold as', esc(r.au_sold_as))}
             ${row('True area', `${r.true_mm2} mm²`)}
+            ${row('Max fuse', (() => { const f = WT.maxFuse(base * k); return f ? `<b class="acc">${f} A</b> <small>${WT.fuseType(f)}</small>` : '—'; })())}
             ${row('AU sold area (Tycab)', `${r.au_mm2} mm²`)}
             ${row('Conductor Ø', `${r.cond_dia_mm} mm`)}
             ${row('Sheath Ø', `${esc(r.sheath_mm)} mm`)}
@@ -111,12 +113,12 @@
   }
 
   async function autoelec() {
-    WT.setHeader('Auto electrical', true);
+    WT.setHeader('Auto electrical cable', true);
     const C = await WT.load('data/auto/cable.json');
     WT.$view.innerHTML = '<div id="pane"></div>';
     cables(WT.$view.querySelector('#pane'), C);
   }
 
   WT.section('auto', { name: 'Automotive', desc: 'Torque specs, wheel nuts, plugs', group: 'Automotive' }, auto);
-  WT.section('autoelec', { name: 'Auto electrical', desc: 'Cable size, amps, lugs', group: 'Automotive' }, autoelec);
+  WT.section('autoelec', { name: 'Auto electrical cable', desc: 'Cable size, amps, fuses, lugs', group: 'Automotive' }, autoelec);
 })();

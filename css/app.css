@@ -227,3 +227,8 @@ h2.group:first-child { margin-top: 2px; }
 .gf.solved input { border-color: var(--accent); color: var(--accent); }
 .vbar label.inline select { margin: 0; }
 .gl { paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+.load { border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 10px 2px; margin: 8px 0; background: var(--panel); }
+.load .row2 > input { flex: 1; margin: 4px 0 6px; }
+.load .row2 { align-items: flex-end; }
+.btn.x { padding: 9px 12px; margin-bottom: 6px; }
+#addl { margin: 2px 0 10px; }

@@ -8,7 +8,7 @@
  },
  "door_chart": {
   "source": "Unimig MTS-205 set-up guide (inside wire-feed door of Aaron's Razor 205 Smart Set), photographed 2026-11-26",
-  "note": "Guide only. Down-hand butt weld, gas flow 8-12 L/min. V = volts, WFS = wire feed speed (machine display units, assumed m/min).",
+  "note": "Guide only. Down-hand butt weld, gas flow 10-11 L/min (middle of manual 6-12 / 10-15 and door chart 8-12). V = volts, WFS = wire feed speed (machine display units, assumed m/min).",
   "thickness_mm": [
    1,
    2,
@@ -24,7 +24,7 @@
     "drive_roller": "V groove",
     "polarity": "DCEP",
     "gas": "Argon/CO2/O2 mix",
-    "gas_flow_l_min": "8-12",
+    "gas_flow_l_min": "10-11",
     "points": [
      {
       "thickness_mm": 1,
@@ -60,7 +60,7 @@
     "drive_roller": "V groove",
     "polarity": "DCEP",
     "gas": "Argon/CO2/O2 mix",
-    "gas_flow_l_min": "8-12",
+    "gas_flow_l_min": "10-11",
     "points": [
      {
       "thickness_mm": 2,
@@ -158,7 +158,7 @@
     "drive_roller": "V groove",
     "polarity": "DCEP",
     "gas": "Argon/CO2 mix",
-    "gas_flow_l_min": "8-12",
+    "gas_flow_l_min": "10-11",
     "points": [
      {
       "thickness_mm": 1,
@@ -194,7 +194,7 @@
     "drive_roller": "V groove",
     "polarity": "DCEP",
     "gas": "Argon/CO2 mix",
-    "gas_flow_l_min": "8-12",
+    "gas_flow_l_min": "10-11",
     "points": [
      {
       "thickness_mm": 2,
@@ -225,7 +225,7 @@
     "drive_roller": "U groove",
     "polarity": "DCEP",
     "gas": "Argon",
-    "gas_flow_l_min": "8-12",
+    "gas_flow_l_min": "10-11",
     "points": [
      {
       "thickness_mm": 2,
@@ -664,7 +664,7 @@
   ]
  },
  "mig_notes": [
-  "Door chart = down-hand butt weld, 8–12 L/min gas.",
+  "Door chart = down-hand butt weld. Gas set to 10–11 L/min – the overlap of the Razor manual (6–12, 10–15) and door chart (8–12).",
   "Stick-out 5–10 mm (manual).",
   "Smart Set default runs 3–5 V above the door chart at the same wire speed – unresolved, see project notes.",
   "Flux-cored (gasless) wire runs DCEN – swap the torch lead polarity."

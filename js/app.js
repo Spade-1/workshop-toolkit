@@ -3,7 +3,7 @@
   'use strict';
   const GROUPS = [
     { name: 'Threads & fasteners', ids: ['taps', 'drillcheck', 'fasteners'] },
-    { name: 'Workshop', ids: ['welding', 'convert'] },
+    { name: 'Workshop', ids: ['welding', 'convert', 'metal'] },
     { name: 'Calculators', ids: ['elec', 'trig', 'area'] },
     { name: 'Automotive', ids: ['auto', 'autoelec', 'tyres'] },
     { name: 'Residential', soon: [['Residential electrical', 'Cable ratings, voltage drop'], ['Residential construction', 'Timber, spans, fixings']] },

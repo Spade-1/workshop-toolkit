@@ -197,7 +197,8 @@
       $('vdo').innerHTML = `<div class="card solve"><div class="solve-h"><b>${esc(cur.name)}</b>${cur === best ? ' <span class="ok">· smallest that passes</span>' : ''}</div>
         <div class="out" style="padding:0;background:none">${row('Drop', `<span class="${cur.okV ? 'ok' : 'bad'}">${sig(cur.vd, 3)} V · ${sig(cur.pct, 3)}%</span>`, 'hl')}
         ${row('At the load', `${sig(V - cur.vd, 4)} V`)}${row('Rating here', `<span class="${cur.okA ? 'ok' : 'bad'}">${sig(cur.rating, 3)} A${cur.okA ? '' : ' · too small for ' + sig(I) + ' A'}</span>`)}
-        ${row(`Max run at ${tgt}%`, `${sig(maxRun, 3)} m one way`)}</div>${work(w)}</div>
+        ${row(`Max run at ${tgt}%`, `${sig(maxRun, 3)} m one way`)}
+        ${tps ? '' : (() => { const fz = WT.fuseFor(I, cur.rating); return row('Fuse', fz.f == null ? '—' : fz.ok ? `<b class="acc">${fz.f} A</b> <small>${WT.fuseType(fz.f)} · 1.25 × load, ≤ cable</small>` : `<span class="bad">${fz.f} A needed – over this cable's ${sig(cur.rating, 3)} A, go bigger</span>`); })()}</div>${work(w)}</div>
         <table class="tbl vdt"><thead><tr><th>Cable</th><th>mm²</th><th>Rated A</th><th>Drop V</th><th>%</th></tr></thead><tbody>
         ${list.map((r) => `<tr data-id="${esc(r.id)}" class="${r === cur ? 'near' : ''}"><td>${esc(r.name)}${r === best ? ' ★' : ''}</td><td>${r.a}</td>
           <td class="${r.okA ? '' : 'bad'}">${sig(r.rating, 3)}</td><td class="${r.okV ? 'ok' : 'bad'}">${sig(r.vd, 2)}</td><td class="${r.okV ? 'ok' : 'bad'}">${sig(r.pct, 2)}</td></tr>`).join('')}</tbody></table>
@@ -286,54 +287,76 @@
     go();
   }
 
-  // ---------- Battery runtime
+  // ---------- Battery runtime (multiple loads, each with its own on-time)
   const CHEM = [['0.5', 'AGM / flooded lead-acid – 50% usable'], ['0.8', 'Lead-acid, deep cycle pushed – 80%'], ['0.9', 'Lithium LiFePO4 – 90% usable'], ['1', 'Full capacity – 100%']];
   const CAPU = [['ah', 'Ah'], ['mah', 'mAh'], ['wh', 'Wh'], ['kwh', 'kWh']];
   const LOADU = [['w', 'W'], ['kw', 'kW'], ['a', 'A'], ['ma', 'mA']];
+  const DUTY = [['on', 'On all the time'], ['mph', 'Minutes on per hour'], ['hpd', 'Hours on per day'], ['pct', '% of the time']];
+  const newLoad = () => ({ name: '', val: '', u: 'w', sup: 'dc', duty: 'on', dv: '' });
   function battery($el) {
-    const st = WT.store.get('elec.bat2', { cap: '100', cu: 'ah', v: '12', dod: '0.5', load: '', lu: 'w', sup: 'dc', eff: '85', hrs: '' });
+    const st = WT.store.get('elec.bat3', { cap: '100', cu: 'ah', v: '12', dod: '0.5', eff: '85', hrs: '', loads: [newLoad()] });
     $el.innerHTML = `<form class="calc" onsubmit="return false">
       <div class="row2"><label>Battery capacity<input id="cap" inputmode="decimal"></label><label>Unit<select id="cu">${CAPU.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
-      <div class="row2"><label>Battery voltage (V)<select id="v">${['3.7', '7.4', '12', '24', '48'].map((x) => `<option>${x}</option>`).join('')}</select></label><label>&nbsp;</label></div>
+      <div class="row2"><label>Battery voltage (V)<select id="v">${['3.7', '7.4', '12', '24', '48'].map((x) => `<option>${x}</option>`).join('')}</select></label><label>Inverter efficiency (%)<input id="eff" inputmode="decimal"></label></div>
       <label>Type / usable capacity<select id="dod">${CHEM.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label>
-      <div class="row2"><label>Load – what the device draws<input id="load" inputmode="decimal"></label><label>Unit<select id="lu">${LOADU.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
-      <label>Device runs on<select id="sup"><option value="dc">DC, straight off the battery</option><option value="ac">230 V AC, through an inverter</option></select></label>
-      <label id="effw">Inverter efficiency (%)<input id="eff" inputmode="decimal"></label>
+      <h3 class="sub">Loads – what's drawing power</h3><div id="loads"></div>
+      <button type="button" class="btn" id="addl">+ Add load</button>
       </form><div id="bo"></div>
       <h3 class="sub">Battery needed</h3>
       <form class="calc" onsubmit="return false"><label>Run time wanted (hours)<input id="hrs" inputmode="decimal"></label></form><div id="bn"></div>
-      <p class="foot">Ah × V = Wh. Lead-acid gives less than its rated Ah at high draw (Peukert) and in the cold; ratings are usually at the 20-hour rate. AC amps are converted at 230 V.</p>`;
+      <p class="foot">Each load's average = its draw × the share of time it's on. A fridge cycling 20 min every hour is on 33% of the time. Lead-acid gives less than rated Ah at high draw (Peukert) and in the cold. AC loads run through the inverter; AC amps are converted at 230 V.</p>`;
     const $ = (id) => $el.querySelector('#' + id);
-    Object.entries(st).forEach(([k, v]) => { if ($(k)) $(k).value = v; });
+    ['cap', 'cu', 'v', 'dod', 'eff', 'hrs'].forEach((k) => ($(k).value = st[k]));
+    const $L = $('loads');
+    function drawLoads() {
+      $L.innerHTML = st.loads.map((l, i) => `<div class="load" data-i="${i}">
+        <div class="row2"><input data-f="name" placeholder="Load ${i + 1} name (fridge, lights…)" value="${esc(l.name)}"><button type="button" class="btn x" data-del="${i}" aria-label="Remove load">✕</button></div>
+        <div class="row2"><label>Draw<input data-f="val" inputmode="decimal" value="${esc(l.val)}"></label><label>Unit<select data-f="u">${LOADU.map(([v, t]) => `<option value="${v}"${v === l.u ? ' selected' : ''}>${t}</option>`).join('')}</select></label>
+          <label>Runs on<select data-f="sup"><option value="dc"${l.sup === 'dc' ? ' selected' : ''}>DC</option><option value="ac"${l.sup === 'ac' ? ' selected' : ''}>230 V AC</option></select></label></div>
+        <div class="row2"><label>How often<select data-f="duty">${DUTY.map(([v, t]) => `<option value="${v}"${v === l.duty ? ' selected' : ''}>${t}</option>`).join('')}</select></label>
+          <label${l.duty === 'on' ? ' hidden' : ''}>${{ mph: 'Min / hour', hpd: 'Hours / day', pct: '%' }[l.duty] || '&nbsp;'}<input data-f="dv" inputmode="decimal" value="${esc(l.dv)}"></label></div></div>`).join('');
+    }
     function go() {
-      const s = {}; Object.keys(st).forEach((k) => (s[k] = $(k).value)); WT.store.set('elec.bat2', s);
-      $('effw').hidden = s.sup !== 'ac';
-      const V = +s.v, dod = +s.dod, cap = num($('cap')), load = num($('load')), eff = (num($('eff')) || 85) / 100, H = num($('hrs'));
-      if (!load) { $('bo').innerHTML = ''; $('bn').innerHTML = ''; return; }
-      const lv = s.sup === 'ac' ? 230 : V;
-      const Wdev = { w: load, kw: load * 1000, a: load * lv, ma: (load / 1000) * lv }[s.lu];
-      const Wdc = s.sup === 'ac' ? Wdev / eff : Wdev;
-      const lw = [];
-      if (s.lu === 'a' || s.lu === 'ma') lw.push(`Load = ${sig(s.lu === 'ma' ? load / 1000 : load)} A × ${lv} V = ${sig(Wdev, 4)} W`);
-      else lw.push(`Load = ${sig(Wdev, 4)} W`);
-      if (s.sup === 'ac') lw.push(`Battery side = ${sig(Wdev, 4)} W ÷ ${sig(eff)} = ${sig(Wdc, 4)} W`);
-      lw.push(`Battery current = ${sig(Wdc, 4)} W ÷ ${V} V = ${sig(Wdc / V, 3)} A`);
+      ['cap', 'cu', 'v', 'dod', 'eff', 'hrs'].forEach((k) => (st[k] = $(k).value));
+      WT.store.set('elec.bat3', st);
+      const V = +st.v, dod = +st.dod, cap = num($('cap')), eff = (num($('eff')) || 85) / 100, H = num($('hrs'));
+      const rows = [], lw = [];
+      let tot = 0, peak = 0;
+      st.loads.forEach((l, i) => {
+        const val = parseFloat(l.val); if (!(val > 0)) return;
+        const lv = l.sup === 'ac' ? 230 : V;
+        const Wdev = { w: val, kw: val * 1000, a: val * lv, ma: (val / 1000) * lv }[l.u];
+        const Wdc = l.sup === 'ac' ? Wdev / eff : Wdev;
+        const dv = parseFloat(l.dv);
+        const frac = l.duty === 'on' ? 1 : !(dv > 0) ? 0 : Math.min(1, { mph: dv / 60, hpd: dv / 24, pct: dv / 100 }[l.duty]);
+        const avg = Wdc * frac; tot += avg; peak += Wdc;
+        const nm = l.name || `Load ${i + 1}`;
+        rows.push([nm, `${sig(Wdc, 3)} W × ${sig(frac * 100, 3)}% = <b>${sig(avg, 3)} W</b>`]);
+        lw.push(`${esc(nm)}: ${l.u === 'a' || l.u === 'ma' ? `${sig(l.u === 'ma' ? val / 1000 : val)} A × ${lv} V = ` : ''}${sig(Wdev, 4)} W${l.sup === 'ac' ? ` ÷ ${sig(eff)} = ${sig(Wdc, 4)} W` : ''} × ${sig(frac * 100, 3)}% on = ${sig(avg, 4)} W avg`);
+      });
+      if (!tot) { $('bo').innerHTML = ''; $('bn').innerHTML = ''; return; }
+      const sum = `<div class="out">${rows.map(([a, b]) => row(esc(a), b)).join('')}${row('Average total', `<b class="acc">${sig(tot, 4)} W</b> · ${sig(tot / V, 3)} A`, 'hl')}
+        ${row('Per day', `${sig(tot * 24, 4)} Wh · ${sig((tot * 24) / V, 4)} Ah`)}${row('Peak (all on at once)', `${sig(peak, 4)} W · ${sig(peak / V, 3)} A`)}</div>`;
       if (cap) {
-        const Wh = { ah: cap * V, mah: (cap / 1000) * V, wh: cap, kwh: cap * 1000 }[s.cu];
-        const capTxt = { ah: `${sig(cap)} Ah × ${V} V`, mah: `${sig(cap)} mAh ÷ 1000 × ${V} V`, wh: `${sig(cap)} Wh`, kwh: `${sig(cap)} kWh × 1000` }[s.cu];
-        const use = Wh * dod, h = use / Wdc;
+        const Wh = { ah: cap * V, mah: (cap / 1000) * V, wh: cap, kwh: cap * 1000 }[st.cu];
+        const use = Wh * dod, h = use / tot;
         const t = h >= 48 ? `${sig(h / 24, 3)} days` : h < 1 ? `${sig(h * 60, 3)} min` : `${sig(h, 3)} h`;
-        $('bo').innerHTML = `<div class="card solve"><div class="solve-h"><b>Runtime</b> = <strong>${t}</strong><small>${sig(Wh, 4)} Wh total · ${sig(use, 4)} Wh usable</small></div>
-          ${work([...lw, `Capacity = ${capTxt} = ${sig(Wh, 4)} Wh`, `Usable = ${sig(Wh, 4)} × ${dod * 100}% = ${sig(use, 4)} Wh`, `Time = ${sig(use, 4)} Wh ÷ ${sig(Wdc, 4)} W = <strong>${sig(h, 3)} h</strong>`])}</div>`;
-      } else $('bo').innerHTML = '';
+        $('bo').innerHTML = `${sum}<div class="card solve"><div class="solve-h"><b>Runtime</b> = <strong>${t}</strong><small>${sig(Wh, 4)} Wh total · ${sig(use, 4)} Wh usable</small></div>
+          ${work([...lw, `Usable = ${sig(Wh, 4)} Wh × ${dod * 100}% = ${sig(use, 4)} Wh`, `Time = ${sig(use, 4)} ÷ ${sig(tot, 4)} W = <strong>${sig(h, 3)} h</strong>`])}</div>`;
+      } else $('bo').innerHTML = sum;
       if (H) {
-        const WhNeed = (Wdc * H) / dod, ah = WhNeed / V;
+        const WhNeed = (tot * H) / dod, ah = WhNeed / V;
         $('bn').innerHTML = `<div class="card solve"><div class="solve-h"><b>Need</b> = <strong>${sig(ah, 3)} Ah</strong><small>${sig(WhNeed, 4)} Wh at ${V} V</small></div>
-          ${work([`Wh = W × h ÷ usable = ${sig(Wdc, 4)} × ${sig(H)} ÷ ${dod}`, `= ${sig(WhNeed, 4)} Wh`, `Ah = Wh ÷ V = ${sig(WhNeed, 4)} ÷ ${V} = <strong>${sig(ah, 3)} Ah</strong>`])}</div>`;
+          ${work([`Wh = avg W × h ÷ usable = ${sig(tot, 4)} × ${sig(H)} ÷ ${dod}`, `= ${sig(WhNeed, 4)} Wh`, `Ah = ${sig(WhNeed, 4)} ÷ ${V} = <strong>${sig(ah, 3)} Ah</strong>`])}</div>`;
       } else $('bn').innerHTML = '';
     }
-    $el.querySelectorAll('input,select').forEach((x) => x.addEventListener(x.tagName === 'SELECT' ? 'change' : 'input', go));
-    go();
+    $L.addEventListener('input', (e) => { const f = e.target.dataset.f; if (!f) return; const i = +e.target.closest('.load').dataset.i; st.loads[i][f] = e.target.value; if (f === 'duty') drawLoads(); go(); });
+    $L.addEventListener('change', (e) => { const f = e.target.dataset.f; if (!f || e.target.tagName !== 'SELECT') return; const i = +e.target.closest('.load').dataset.i; st.loads[i][f] = e.target.value; if (f === 'duty') drawLoads(); go(); });
+    $L.addEventListener('click', (e) => { const d = e.target.closest('[data-del]'); if (!d) return; st.loads.splice(+d.dataset.del, 1); if (!st.loads.length) st.loads.push(newLoad()); drawLoads(); go(); });
+    $('addl').addEventListener('click', () => { st.loads.push(newLoad()); drawLoads(); go(); });
+    ['cap', 'eff', 'hrs'].forEach((k) => $(k).addEventListener('input', go));
+    ['cu', 'v', 'dod'].forEach((k) => $(k).addEventListener('change', go));
+    drawLoads(); go();
   }
 
   const TABS = [{ key: 'virp', label: 'V I R P' }, { key: 'vdrop', label: 'Voltage drop' }, { key: 'combo', label: 'Series / parallel' }, { key: 'led', label: 'LED resistor' }, { key: 'bat', label: 'Battery' }];
