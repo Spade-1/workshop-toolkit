@@ -3,7 +3,7 @@
   'use strict';
   const { fmt, esc, row } = WT;
 
-  const TABS = [{ key: 'mig', label: 'MIG' }, { key: 'stick', label: 'Stick' }, { key: 'tig', label: 'TIG' }];
+  const TABS = [{ key: 'mig', label: 'MIG' }, { key: 'stick', label: 'Stick' }, { key: 'tig', label: 'TIG' }, { key: 'faults', label: 'Fault finder' }];
 
   // linear interpolation over [{x,y}] sorted by x; clamps at the ends
   function interp(pts, x) {
@@ -105,25 +105,75 @@
     $t.addEventListener('input', calc); calc();
   }
 
-  function tig($el, W) {
+  function tig($el, W, TG) {
     const T = W.tungsten;
-    $el.innerHTML = `<p class="intro">Razor 205 is <b>DC lift-arc TIG only</b> – steel, stainless, copper. Aluminium TIG needs an AC machine.</p>
-      <h3 class="sub">Tungsten size & prep vs current (DC)</h3>
+    const tables = TG.tables;
+    let ti = WT.store.get('weld.tigtable', 0); if (!tables[ti]) ti = 0;
+    $el.innerHTML = `<p class="intro">Razor 205 is <b>DC lift-arc TIG only</b> – steel, stainless, copper. Aluminium needs an AC machine.</p>
+      <form class="calc" onsubmit="return false">
+        <label>Material / joint<select id="tt">${tables.map((t, i) => `<option value="${i}">${esc(t.material)} – ${esc(t.joint)}${t.ac ? ' (AC)' : ''}</option>`).join('')}</select></label>
+        <label>Thickness<select id="tth"></select></label>
+      </form>
+      <div id="to" class="out"></div>
+      <p class="foot">${esc(TG.razor205_note)}</p>
+      <h3 class="sub">Tungsten size &amp; prep vs current (DC)</h3>
       <table class="tbl"><thead><tr><th>Ø</th><th>Tip flat</th><th>Angle</th><th>Amps</th><th>Pulsed</th></tr></thead><tbody>
       ${T.rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}°</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join('')}
       </tbody></table>
-      <p class="foot">${esc(T.source)}. Grind lengthways on a dedicated diamond wheel. Taper length ≈ 2.5 × tungsten Ø. Gas: pure argon 8–10 L/min.</p>`;
+      <p class="foot">${esc(T.source)}. Grind lengthways on a dedicated diamond wheel. Taper ≈ 2.5 × tungsten Ø.<br>Settings: ${esc(TG.source)}.</p>`;
+    const $ = (id) => $el.querySelector('#' + id);
+    $('tt').value = ti;
+    function fillTh() {
+      const t = tables[$('tt').value];
+      const keep = WT.store.get('weld.tigth', 3);
+      $('tth').innerHTML = t.rows.map((r) => `<option value="${r.thickness_mm}">${r.thickness_mm} mm</option>`).join('');
+      if (t.rows.some((r) => r.thickness_mm === keep)) $('tth').value = keep;
+    }
+    function calc() {
+      const t = tables[$('tt').value]; WT.store.set('weld.tigtable', +$('tt').value);
+      const th = +$('tth').value; WT.store.set('weld.tigth', th);
+      const r = t.rows.find((x) => x.thickness_mm === th); const c = TG.common;
+      let h = row('Amps (main / peak)', `<b class="big">${r.peak_a} A</b>`, 'hl');
+      h += row('Tungsten', `${r.tungsten_mm} mm ${esc(t.tungsten_type)}`, 'hl');
+      h += row('Filler rod', `${r.filler_mm} mm`) + row('Cup', `#${r.cup}`);
+      h += row('Gas', `${esc(c.gas)} · ${c.gas_flow_l_min} L/min`) + row('Polarity', esc(t.polarity));
+      h += row('Down-slope', `${c.down_slope_s} s`);
+      h += row('Start / finish amps', `${r.start_a} / ${r.finish_a} A <small>(machines with slope control)</small>`);
+      h += row('Pre / post gas', `${c.pre_gas_s} / ${c.post_gas_s} s`);
+      if (r.ac_hz) h += row('AC Hz / balance', `${r.ac_hz} Hz / ${r.ac_balance}`);
+      if (t.note) h += row('Note', esc(t.note), 'warnrow');
+      $('to').innerHTML = h;
+    }
+    $('tt').addEventListener('input', () => { fillTh(); calc(); });
+    $('tth').addEventListener('input', calc);
+    fillTh(); calc();
+  }
+
+  function faults($el, W, TG, TS) {
+    const P = [{ key: 'mig', label: 'MIG' }, { key: 'wirefeed', label: 'Wire feed' }, { key: 'tig', label: 'TIG' }, { key: 'stick', label: 'Stick' }];
+    let p = WT.store.get('weld.faultp', 'mig');
+    $el.innerHTML = `${WT.chips(P, p).replace('class="chips"', 'class="chips small"')}<ul id="fl" class="list"></ul>
+      <p class="foot">${esc(TS.source)}. ${TS.flags.map(esc).join(' ')}</p>`;
+    const $l = $el.querySelector('#fl');
+    function render() {
+      $el.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === p));
+      $l.innerHTML = TS[p].map((f) => `<li class="item"><button class="item-head" aria-expanded="false"><span class="item-label">${esc(f.problem)}</span><span class="item-sum">›</span></button>
+        <div class="item-body" hidden><ul class="fixes">${f.fixes.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div></li>`).join('');
+    }
+    $el.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; p = b.dataset.k; WT.store.set('weld.faultp', p); render(); });
+    $l.addEventListener('click', (e) => { const h = e.target.closest('.item-head'); if (!h) return; const b = h.nextElementSibling; b.hidden = !b.hidden; h.setAttribute('aria-expanded', !b.hidden); });
+    render();
   }
 
   async function welding() {
     WT.setHeader('Welding', true);
-    const W = await WT.load('data/welding/razor205.json');
+    const [W, TG, TS] = await Promise.all([WT.load('data/welding/razor205.json'), WT.load('data/welding/tig_unimig.json'), WT.load('data/welding/troubleshooting.json')]);
     let tab = WT.store.get('weld.tab', 'mig');
     WT.$view.innerHTML = `<p class="machine">${esc(W.machine.name)}</p>${WT.chips(TABS, tab)}<div id="pane"></div>`;
     const $p = WT.$view.querySelector('#pane');
     function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      ({ mig, stick, tig })[tab]($p, W);
+      ({ mig, stick, tig, faults })[tab]($p, W, TG, TS);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => {
       const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('weld.tab', tab); render();

@@ -1,0 +1,434 @@
+{
+ "source": "Unimig 'The Ultimate TIG Guide' (2024) \u2013 HyperTIG settings tables, standard (non-pulse) rows, guide pp.34\u201339",
+ "common": {
+  "gas": "Pure argon",
+  "gas_flow_l_min": 8,
+  "pre_gas_s": 1.0,
+  "up_slope_s": 1.0,
+  "down_slope_s": 1.0,
+  "post_gas_s": 2.0
+ },
+ "tables": [
+  {
+   "material": "Mild steel",
+   "joint": "Butt",
+   "polarity": "DC \u2013 torch negative",
+   "tungsten_type": "Lanthanated / ceriated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 45,
+     "peak_a": 50,
+     "finish_a": 45
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 48,
+     "peak_a": 55,
+     "finish_a": 48
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 50,
+     "peak_a": 60,
+     "finish_a": 50
+    },
+    {
+     "thickness_mm": 4,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 60,
+     "peak_a": 70,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 75,
+     "peak_a": 85,
+     "finish_a": 75
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 100,
+     "peak_a": 120,
+     "finish_a": 100
+    },
+    {
+     "thickness_mm": 8,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 105,
+     "peak_a": 140,
+     "finish_a": 105
+    }
+   ]
+  },
+  {
+   "material": "Mild steel",
+   "joint": "Fillet / lap",
+   "polarity": "DC \u2013 torch negative",
+   "tungsten_type": "Lanthanated / ceriated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 45,
+     "peak_a": 50,
+     "finish_a": 45
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 48,
+     "peak_a": 55,
+     "finish_a": 48
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 60,
+     "peak_a": 70,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 4,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 60,
+     "peak_a": 80,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 85,
+     "peak_a": 100,
+     "finish_a": 85
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 100,
+     "peak_a": 130,
+     "finish_a": 100
+    },
+    {
+     "thickness_mm": 8,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 105,
+     "peak_a": 145,
+     "finish_a": 105
+    }
+   ]
+  },
+  {
+   "material": "Stainless",
+   "joint": "Butt",
+   "polarity": "DC \u2013 torch negative",
+   "tungsten_type": "Lanthanated / ceriated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 8,
+     "filler_mm": 1.6,
+     "start_a": 50,
+     "peak_a": 60,
+     "finish_a": 50
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 8,
+     "filler_mm": 1.6,
+     "start_a": 60,
+     "peak_a": 65,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 60,
+     "peak_a": 70,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 90,
+     "peak_a": 115,
+     "finish_a": 90
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 95,
+     "peak_a": 120,
+     "finish_a": 95
+    },
+    {
+     "thickness_mm": 8,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 105,
+     "peak_a": 130,
+     "finish_a": 105
+    }
+   ],
+   "note": "No 4 mm row published."
+  },
+  {
+   "material": "Stainless",
+   "joint": "Fillet / lap",
+   "polarity": "DC \u2013 torch negative",
+   "tungsten_type": "Lanthanated / ceriated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 8,
+     "filler_mm": 1.6,
+     "start_a": 50,
+     "peak_a": 63,
+     "finish_a": 50
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 8,
+     "filler_mm": 1.6,
+     "start_a": 60,
+     "peak_a": 75,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 60,
+     "peak_a": 75,
+     "finish_a": 60
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 90,
+     "peak_a": 120,
+     "finish_a": 90
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 95,
+     "peak_a": 135,
+     "finish_a": 95
+    },
+    {
+     "thickness_mm": 8,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 105,
+     "peak_a": 145,
+     "finish_a": 105
+    }
+   ],
+   "note": "No 4 mm row published."
+  },
+  {
+   "material": "Aluminium",
+   "joint": "Butt",
+   "polarity": "AC (needs AC machine \u2013 not Razor 205)",
+   "tungsten_type": "Zirconiated / lanthanated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 20,
+     "peak_a": 25,
+     "finish_a": 20,
+     "ac_hz": 110,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 30,
+     "peak_a": 45,
+     "finish_a": 30,
+     "ac_hz": 110,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 40,
+     "peak_a": 75,
+     "finish_a": 40,
+     "ac_hz": 110,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 4,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 50,
+     "peak_a": 85,
+     "finish_a": 50,
+     "ac_hz": 90,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 65,
+     "peak_a": 110,
+     "finish_a": 65,
+     "ac_hz": 90,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 100,
+     "peak_a": 125,
+     "finish_a": 100,
+     "ac_hz": 90,
+     "ac_balance": 0
+    }
+   ],
+   "ac": true,
+   "note": "Guide's table header says 'torch negative' \u2013 aluminium TIG is AC; treat as AC settings."
+  },
+  {
+   "material": "Aluminium",
+   "joint": "Fillet / lap",
+   "polarity": "AC (needs AC machine \u2013 not Razor 205)",
+   "tungsten_type": "Zirconiated / lanthanated",
+   "rows": [
+    {
+     "thickness_mm": 1,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 20,
+     "peak_a": 27,
+     "finish_a": 20,
+     "ac_hz": 120,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 2,
+     "tungsten_mm": 1.6,
+     "cup": 6,
+     "filler_mm": 1.6,
+     "start_a": 30,
+     "peak_a": 50,
+     "finish_a": 30,
+     "ac_hz": 120,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 3,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 40,
+     "peak_a": 80,
+     "finish_a": 40,
+     "ac_hz": 120,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 4,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 50,
+     "peak_a": 95,
+     "finish_a": 50,
+     "ac_hz": 110,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 5,
+     "tungsten_mm": 2.4,
+     "cup": 8,
+     "filler_mm": 2.4,
+     "start_a": 65,
+     "peak_a": 115,
+     "finish_a": 65,
+     "ac_hz": 110,
+     "ac_balance": 0
+    },
+    {
+     "thickness_mm": 6,
+     "tungsten_mm": 3.2,
+     "cup": 10,
+     "filler_mm": 3.2,
+     "start_a": 100,
+     "peak_a": 135,
+     "finish_a": 100,
+     "ac_hz": 110,
+     "ac_balance": 0
+    }
+   ],
+   "ac": true,
+   "note": "Guide's table header says 'torch negative' \u2013 aluminium TIG is AC; treat as AC settings."
+  }
+ ],
+ "razor205_note": "Razor 205 TIG: lift arc, set main amps (= peak amps here) and down-slope; no pre/post-gas timers, up-slope or pulse \u2013 use the torch valve to keep gas flowing after the arc stops."
+}

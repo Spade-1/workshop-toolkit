@@ -1,0 +1,177 @@
+{
+ "source": "Condensed from the Unimig Razor 205 Smart Set manual troubleshooting charts (pp.40\u201343), reworded",
+ "mig": [
+  {
+   "problem": "Lots of spatter",
+   "fixes": [
+    "Wire speed or voltage too high \u2013 turn down",
+    "Wrong polarity for the wire (gasless = DCEN)",
+    "Stick-out too long \u2013 keep 5\u201310 mm",
+    "Dirty metal or rusty/oily wire \u2013 clean back to bright metal",
+    "Gas flow wrong or draughty \u2013 check hose/leaks, shield from wind"
+   ]
+  },
+  {
+   "problem": "Porosity (pin holes)",
+   "fixes": [
+    "Wrong gas, gas off, or leaks \u2013 check cylinder, hose, Euro O-ring",
+    "Flow too low or too high, or wind blowing gas away",
+    "Moisture, paint, oil or mill scale on the job",
+    "Nozzle clogged with spatter, or diffuser missing/damaged",
+    "Contaminated wire"
+   ]
+  },
+  {
+   "problem": "Wire stubbing into the job",
+   "fixes": [
+    "Voltage too low \u2013 increase",
+    "Wire speed too high \u2013 decrease",
+    "Torch held too far away \u2013 keep 5\u201310 mm stick-out"
+   ]
+  },
+  {
+   "problem": "Weld sitting on top / lack of fusion",
+   "fixes": [
+    "Not enough heat \u2013 more voltage and matching wire speed",
+    "Keep the arc on the leading edge of the pool, 5\u201315\u00b0 gun angle",
+    "Aim at the joint; pause on the side walls when weaving",
+    "Clean the base metal"
+   ]
+  },
+  {
+   "problem": "Burning through",
+   "fixes": [
+    "Too much heat \u2013 drop voltage/wire speed",
+    "Travel faster"
+   ]
+  },
+  {
+   "problem": "Shallow penetration",
+   "fixes": [
+    "Not enough heat \u2013 more voltage/wire speed, slow down",
+    "Joint too thick or poorly prepped \u2013 bevel/gap so the arc reaches the root",
+    "Keep the arc on the leading edge, 5\u201310 mm stick-out"
+   ]
+  }
+ ],
+ "wirefeed": [
+  {
+   "problem": "No wire feed",
+   "fixes": [
+    "Selector on MIG?",
+    "Standard / Spool gun switch on the right setting?"
+   ]
+  },
+  {
+   "problem": "Erratic or stopping wire feed",
+   "fixes": [
+    "Liner worn or clogged \u2013 most common cause; blow out, ideally replace",
+    "Contact tip worn or wrong size",
+    "Drive roller wrong size/type (flux-core needs knurled), worn, or wire not in the groove",
+    "Roller pressure too high (flattens wire) or spool brake too tight",
+    "Torch lead kinked or bent too sharply; soft/small wire hates long leads",
+    "Wire tangled on the spool, or dirty wire",
+    "Wrong polarity, or wire speed / voltage way off"
+   ]
+  }
+ ],
+ "tig": [
+  {
+   "problem": "Tungsten burning away fast",
+   "fixes": [
+    "Torch on DC+ \u2013 must be DC\u2212 (torch negative)",
+    "No/wrong gas \u2013 pure argon, valve open",
+    "Back cap not seated (O-ring inside the body)",
+    "Wrong tungsten type",
+    "Gas off too soon \u2013 keep flowing ~1 s per 10 A after the arc stops"
+   ]
+  },
+  {
+   "problem": "Contaminated tungsten",
+   "fixes": [
+    "Dipped into the pool \u2013 hold 2\u20135 mm off the work",
+    "Filler touched the tungsten \u2013 feed into the front of the pool"
+   ]
+  },
+  {
+   "problem": "Porosity / poor colour",
+   "fixes": [
+    "Wrong gas, poor flow or leaks",
+    "Dirty base metal or filler wire",
+    "Wrong filler wire"
+   ]
+  },
+  {
+   "problem": "Arc unstable or wandering",
+   "fixes": [
+    "Torch on DC+",
+    "Arc too long \u2013 2\u20135 mm",
+    "Tungsten contaminated or ground across \u2013 snap off ~10 mm, regrind lengthways",
+    "Poor gas flow",
+    "Dirty metal or filler"
+   ]
+  },
+  {
+   "problem": "Hard to start",
+   "fixes": [
+    "Check setup, gas on and flowing",
+    "Wrong tungsten size/type",
+    "Loose connections; earth clamp straight onto the job"
+   ]
+  }
+ ],
+ "stick": [
+  {
+   "problem": "No arc",
+   "fixes": [
+    "Earth lead and cables connected?",
+    "MMA selected, machine on?"
+   ]
+  },
+  {
+   "problem": "Porosity",
+   "fixes": [
+    "Arc too long",
+    "Dirty or wet job",
+    "Damp electrodes \u2013 keep rods dry"
+   ]
+  },
+  {
+   "problem": "Lots of spatter",
+   "fixes": [
+    "Amps too high (or go up a rod size)",
+    "Arc too long"
+   ]
+  },
+  {
+   "problem": "Weld sitting on top / poor penetration",
+   "fixes": [
+    "Not enough amps (or go up a rod size)",
+    "Dirty job, technique or joint prep"
+   ]
+  },
+  {
+   "problem": "Burning through",
+   "fixes": [
+    "Too many amps or rod too big",
+    "Travel faster"
+   ]
+  },
+  {
+   "problem": "Distortion",
+   "fixes": [
+    "Too much heat \u2013 lower amps / smaller rod",
+    "Joint design and fit-up, tack and stitch"
+   ]
+  },
+  {
+   "problem": "Odd arc behaviour",
+   "fixes": [
+    "Wrong polarity for the rod \u2013 check the box"
+   ]
+  }
+ ],
+ "flags": [
+  "Manual quotes different gas flow ranges in different charts (6\u201312 and 10\u201315 L/min). Door chart says 8\u201312 L/min."
+ ]
+}
