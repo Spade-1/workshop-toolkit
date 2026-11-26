@@ -170,3 +170,35 @@ h2.group:first-child { margin-top: 2px; }
 .tbl.strength th, .tbl.strength td { padding: 6px 4px; font-size: 13.5px; text-align: right; }
 .tbl.strength th:first-child, .tbl.strength td:first-child { text-align: left; }
 .tile.soon { opacity: .4; border-left-color: var(--line); pointer-events: none; }
+
+/* calculators */
+:root { --blue: #6cb2ff; }
+.row2 > label { flex: 1; min-width: 0; }
+.row2 > label select, .row2 > label input { width: 100%; }
+.calc label select { display: block; }
+.btn { font: inherit; font-size: 14px; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 7px 14px; }
+.ok { color: var(--ok); } .bad { color: var(--bad); } .acc { color: var(--accent); }
+.virp .vf { display: flex; align-items: center; gap: 8px; }
+.virp .vf input { flex: 1; min-width: 0; margin: 4px 0; font-size: 18px; }
+.virp .vf select { width: 70px; margin: 4px 0; padding: 11px 6px; }
+.vl { width: 112px; flex: none; line-height: 1.15; }
+.vl b { color: var(--blue); font-size: 22px; font-weight: 750; margin-right: 6px; }
+.vl span { font-size: 15px; }
+.vl small { display: block; color: var(--muted); font-size: 12px; margin-left: 24px; }
+.virp .vf.solved input { border-color: var(--accent); color: var(--accent); }
+.vbar { display: flex; justify-content: space-between; align-items: center; margin: 6px 0 4px; color: var(--muted); font-size: 13px; }
+.card.solve { padding: 10px 14px 10px; }
+.solve-h { font-size: 15px; }
+.solve-h b { color: var(--accent); font-weight: 750; margin-right: 4px; }
+.solve-h strong { font-weight: 650; }
+.solve-h small { display: block; color: var(--muted); font-size: 12px; }
+.tri { display: block; width: 100%; max-width: 250px; margin: 6px auto 2px; }
+.tri-o { fill: none; stroke: var(--line); stroke-width: 2; }
+.tri-l { stroke: var(--line); stroke-width: 1.5; }
+.tri .tl { fill: var(--blue); font-size: 19px; font-weight: 750; }
+.tri .tv { fill: var(--text); font-size: 13px; }
+.tri .s { fill: var(--accent); }
+.work { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 13.5px; line-height: 1.55; margin-top: 6px; }
+.work p { margin: 0; overflow-wrap: anywhere; }
+.work p + p { padding-left: 10px; }
+.work strong { color: var(--accent); }

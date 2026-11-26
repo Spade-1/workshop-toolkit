@@ -1,0 +1,10 @@
+{"title":"230 V copper TPS (2C+E) – guidance","source":"Prysmian Cable Guide (Australia), 2-core PVC 75 °C, 40 °C ambient; Olex handbook gives the same mV/A·m","source_url":"https://media.mmem.com.au/Brochure/Prysmian/Prysmian_Cable_Guide.pdf","confidence":"medium",
+"note":"Guidance only, not a substitute for AS/NZS 3008.1.1. Ratings are for one circuit; grouping, ambient above 40 °C and insulation reduce them. AS/NZS 3000 allows 5% total drop from the point of supply (11.5 V at 230 V) – that includes mains and submains.",
+"rows":[
+{"mm2":1.0,"mv":51.6,"touching":14,"conduit":13,"insul":11},
+{"mm2":1.5,"mv":33.0,"touching":18,"conduit":16,"insul":14},
+{"mm2":2.5,"mv":18.0,"touching":26,"conduit":23,"insul":20},
+{"mm2":4,"mv":11.2,"touching":34,"conduit":30,"insul":27},
+{"mm2":6,"mv":7.49,"touching":44,"conduit":39,"insul":35},
+{"mm2":10,"mv":4.46,"touching":60,"conduit":52,"insul":48},
+{"mm2":16,"mv":2.81,"touching":80,"conduit":68,"insul":64}]}

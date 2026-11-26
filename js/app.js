@@ -4,6 +4,7 @@
   const GROUPS = [
     { name: 'Threads & fasteners', ids: ['taps', 'drillcheck', 'fasteners'] },
     { name: 'Workshop', ids: ['welding', 'convert'] },
+    { name: 'Calculators', ids: ['elec'], soon: [['Trig & angles', 'Triangles, slope, bolt circle'], ['Area & volume', 'Shapes, slabs, concrete']] },
     { name: 'Automotive', ids: ['auto', 'autoelec', 'tyres'] },
     { name: 'Residential', soon: [['Residential electrical', 'Cable ratings, voltage drop'], ['Residential construction', 'Timber, spans, fixings']] },
   ];
