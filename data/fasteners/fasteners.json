@@ -1,0 +1,1016 @@
+{
+ "source": "Compiled 2026-11-26 from ISO 898-1/-2, ISO 3506, SAE J429 values via Bossard, Optimas, Portland Bolt, AIMS, GAA, SCNZ (supplier reproductions – secondary).",
+ "steel": [
+  {
+   "class": "4.6",
+   "size": "all",
+   "tensile": 400,
+   "yield": 240,
+   "proof": 225,
+   "marking": "'4.6' + manufacturer mark (marking mandatory on hex head M5 and up)",
+   "use": "general/commercial bolts; AS 1111 commercial bolts, structural category 4.6/S"
+  },
+  {
+   "class": "5.8",
+   "size": "all",
+   "tensile": 520,
+   "yield": null,
+   "proof": 380,
+   "marking": "'5.8' + manufacturer mark",
+   "use": "light-duty machine screws/bolts"
+  },
+  {
+   "class": "8.8",
+   "size": "≤ M16",
+   "tensile": 800,
+   "yield": 640,
+   "proof": 580,
+   "marking": "'8.8' + manufacturer mark",
+   "use": "general high-tensile engineering, automotive, machinery; AS/NZS 1252 structural 8.8 (M12-M36)"
+  },
+  {
+   "class": "8.8",
+   "size": "> M16",
+   "tensile": 830,
+   "yield": 660,
+   "proof": 600,
+   "marking": "'8.8' + manufacturer mark",
+   "use": ""
+  },
+  {
+   "class": "10.9",
+   "size": "all",
+   "tensile": 1040,
+   "yield": 940,
+   "proof": 830,
+   "marking": "'10.9' + manufacturer mark",
+   "use": "high-load automotive/plant (suspension, drivetrain), AS/NZS 1252.1:2016 added 10.9 assemblies"
+  },
+  {
+   "class": "12.9",
+   "size": "all",
+   "tensile": 1220,
+   "yield": 1100,
+   "proof": 970,
+   "marking": "'12.9' + manufacturer mark (socket head cap screws commonly 12.9)",
+   "use": "socket head cap screws, tooling, dies, machine building"
+  }
+ ],
+ "nuts": [
+  {
+   "class": "8",
+   "mates": "8.8",
+   "marking": "symbol '8' (embossed/indented); clock-face code permitted for small nuts"
+  },
+  {
+   "class": "10",
+   "mates": "10.9",
+   "marking": "symbol '10'"
+  },
+  {
+   "class": "12",
+   "mates": "12.9",
+   "marking": "symbol '12'"
+  }
+ ],
+ "nut_rule": "Nut class number = highest bolt class it may be mated with (regular/high nuts). Higher-class nut is always acceptable.",
+ "class_meaning": "First number x100 = nominal Rm (MPa); second number x10 = ratio of yield to tensile (e.g. 8.8 -> 800 MPa, yield ~80% of Rm).",
+ "stainless": {
+  "classes": [
+   {
+    "class": "A2-50",
+    "tensile": 500,
+    "yield": 210
+   },
+   {
+    "class": "A2-70",
+    "tensile": 700,
+    "yield": 450
+   },
+   {
+    "class": "A2-80",
+    "tensile": 800,
+    "yield": 600
+   },
+   {
+    "class": "A4-70",
+    "tensile": 700,
+    "yield": 450
+   },
+   {
+    "class": "A4-80",
+    "tensile": 800,
+    "yield": 600
+   }
+  ],
+  "meaning": "Number after dash = 1/10 of min tensile strength in MPa (A2-70 -> 700 MPa). Steel group letter: A austenitic, C martensitic, F ferritic, D duplex. 'L' = low carbon <= 0.03% C (e.g. A4L-80).",
+  "marking": "Hex head and socket head screws from M5: steel group + property class + manufacturer mark (e.g. 'A2-70'). Nuts from M5: steel group + class + origin mark. A2/A4 nuts with groove only and no class are treated as class 50. Unmarked product often only meets A2-50-type levels. Reduced load capacity: leading 0 (e.g. 070).",
+  "materials": "A2 ≈ 304, A4 ≈ 316 (common equivalence)",
+  "corrosion": [
+   "A2: above-water use, inland climates",
+   "A4: underwater use and coastal climates (marine)",
+   "Chlorides can cause stress-corrosion cracking; A8 much better than A1-A5",
+   "Indoor swimming pools (critical fastenings): Bossard recommends 1.4529 / 1.4547 / 1.4565 (A8), i.e. not plain A4",
+   "Crevices, poor ventilation, dirt and coatings reduce corrosion resistance even of A2/A4"
+  ],
+  "galling": "Stainless fasteners tend to seize (gall) when tightened; use clean rolled threads, nickel/graphite/MoS2 anti-seize, tighten slowly without interruption; impact wrenches not recommended on 300-series stainless."
+ },
+ "sae": [
+  {
+   "grade": "2",
+   "size_in": "1/4 - 3/4",
+   "proof": 379,
+   "tensile": 510,
+   "marking": "none"
+  },
+  {
+   "grade": "2",
+   "size_in": "7/8 - 1-1/2",
+   "proof": 228,
+   "tensile": 414,
+   "marking": "none"
+  },
+  {
+   "grade": "5",
+   "size_in": "1/4 - 1",
+   "proof": 586,
+   "tensile": 827,
+   "marking": "3 radial lines, 120 deg apart"
+  },
+  {
+   "grade": "5",
+   "size_in": "1-1/8 - 1-1/2",
+   "proof": 510,
+   "tensile": 724,
+   "marking": "3 radial lines"
+  },
+  {
+   "grade": "8",
+   "size_in": "1/4 - 1-1/2",
+   "proof": 827,
+   "tensile": 1034,
+   "marking": "6 radial lines, 60 deg apart"
+  }
+ ],
+ "au": {
+  "AS_1111": "ISO metric hexagon commercial bolts and screws - product grade C; property class 4.6 commercial bolts (4.6/S category).",
+  "AS_NZS_1252": "High-strength structural bolting assemblies. AS/NZS 1252.1:2016 covers class 8.8 assemblies M12-M36 (bolt, nut, washer supplied as a matched set from one batch), added class 10.9, and recognises EN 14399 HR 8.8 as deemed-to-satisfy. Components carry special identification per Clause 1.5.",
+  "categories": {
+   "4.6/S": "Commercial 4.6 bolt, snug-tight only",
+   "8.8/S": "High-strength 8.8 bolt, snug-tight only",
+   "8.8/TB": "8.8, fully tensioned, bearing-type joint (slip allowed until shank bears on hole)",
+   "8.8/TF": "8.8, fully tensioned, friction-type joint (no slip at serviceability; faying surface condition matters)",
+   "snug_tight_definition": "Tightness from a few impacts of an impact wrench or full effort of a person on a podger spanner"
+  }
+ },
+ "coatings": {
+  "zinc_electroplated": "Light coating; not recommended for external use. Nuts must still meet 6H tolerance after coating.",
+  "hot_dip_galvanised": "AS/NZS 1214 (modified adoption of ISO 10684): min average 50 um on threads. Bolts threaded to standard size; nuts tapped OVERSIZE after galvanising - clearance >= 4x coating thickness (effective diameter grows by 4x coating). Zinc-plated or plain nuts will not fit a galvanised bolt; galvanised nuts are too loose on plain/zinc bolts.",
+  "hydrogen_embrittlement": "ISO 4042: HE investigation required where core/surface hardness > 320 HV (10.9, 12.9). Electroplated 10.9/12.9 must be baked within 4 h (typ. 200-230 C, 2-24 h); baking reduces but cannot eliminate risk. Recommendation: do not electroplate 10.9/12.9; use zinc flake or mechanical plating. GAA: electroplated bolts with Rm > 1000 MPa must be baked; mechanical plating and sherardising avoid HE."
+ },
+ "torque": {
+  "method": "Preload = 75% of proof load (steel: As × Sp; stainless: As × 0.2% proof). Torque T = K × F × d. K 0.20 = dry/plain, 0.18 = zinc plated light oil, 0.15 = lubricated/anti-seize. Same method as Fastenal tables.",
+  "classes": {
+   "8.8": [
+    {
+     "size": "M3",
+     "pitch": 0.5,
+     "preload_kN": 2.2,
+     "dry": 1.31,
+     "zinc": 1.18,
+     "lube": 0.985
+    },
+    {
+     "size": "M4",
+     "pitch": 0.7,
+     "preload_kN": 3.8,
+     "dry": 3.06,
+     "zinc": 2.75,
+     "lube": 2.29
+    },
+    {
+     "size": "M5",
+     "pitch": 0.8,
+     "preload_kN": 6.2,
+     "dry": 6.18,
+     "zinc": 5.56,
+     "lube": 4.63
+    },
+    {
+     "size": "M6",
+     "pitch": 1.0,
+     "preload_kN": 8.7,
+     "dry": 10.5,
+     "zinc": 9.44,
+     "lube": 7.87
+    },
+    {
+     "size": "M7",
+     "pitch": 1.0,
+     "preload_kN": 12.6,
+     "dry": 17.6,
+     "zinc": 15.8,
+     "lube": 13.2
+    },
+    {
+     "size": "M8",
+     "pitch": 1.25,
+     "preload_kN": 15.9,
+     "dry": 25.5,
+     "zinc": 22.9,
+     "lube": 19.1
+    },
+    {
+     "size": "M10",
+     "pitch": 1.5,
+     "preload_kN": 25.2,
+     "dry": 50.5,
+     "zinc": 45.4,
+     "lube": 37.8
+    },
+    {
+     "size": "M12",
+     "pitch": 1.75,
+     "preload_kN": 36.7,
+     "dry": 88.0,
+     "zinc": 79.2,
+     "lube": 66.0
+    },
+    {
+     "size": "M14",
+     "pitch": 2.0,
+     "preload_kN": 50.0,
+     "dry": 140.0,
+     "zinc": 126.0,
+     "lube": 105.0
+    },
+    {
+     "size": "M16",
+     "pitch": 2.0,
+     "preload_kN": 68.3,
+     "dry": 219.0,
+     "zinc": 197.0,
+     "lube": 164.0
+    },
+    {
+     "size": "M18",
+     "pitch": 2.5,
+     "preload_kN": 86.4,
+     "dry": 311.0,
+     "zinc": 280.0,
+     "lube": 233.0
+    },
+    {
+     "size": "M20",
+     "pitch": 2.5,
+     "preload_kN": 110.2,
+     "dry": 441.0,
+     "zinc": 397.0,
+     "lube": 331.0
+    },
+    {
+     "size": "M22",
+     "pitch": 2.5,
+     "preload_kN": 136.3,
+     "dry": 600.0,
+     "zinc": 540.0,
+     "lube": 450.0
+    },
+    {
+     "size": "M24",
+     "pitch": 3.0,
+     "preload_kN": 158.8,
+     "dry": 762.0,
+     "zinc": 686.0,
+     "lube": 572.0
+    },
+    {
+     "size": "M8x1",
+     "pitch": 1.0,
+     "preload_kN": 17.1,
+     "dry": 27.3,
+     "zinc": 24.6,
+     "lube": 20.5
+    },
+    {
+     "size": "M10x1.25",
+     "pitch": 1.25,
+     "preload_kN": 26.6,
+     "dry": 53.2,
+     "zinc": 47.9,
+     "lube": 39.9
+    },
+    {
+     "size": "M10x1",
+     "pitch": 1.0,
+     "preload_kN": 28.1,
+     "dry": 56.1,
+     "zinc": 50.5,
+     "lube": 42.1
+    },
+    {
+     "size": "M12x1.5",
+     "pitch": 1.5,
+     "preload_kN": 38.3,
+     "dry": 92.0,
+     "zinc": 82.8,
+     "lube": 69.0
+    },
+    {
+     "size": "M12x1.25",
+     "pitch": 1.25,
+     "preload_kN": 40.1,
+     "dry": 96.2,
+     "zinc": 86.5,
+     "lube": 72.1
+    },
+    {
+     "size": "M14x1.5",
+     "pitch": 1.5,
+     "preload_kN": 54.4,
+     "dry": 152.0,
+     "zinc": 137.0,
+     "lube": 114.0
+    },
+    {
+     "size": "M16x1.5",
+     "pitch": 1.5,
+     "preload_kN": 72.6,
+     "dry": 232.0,
+     "zinc": 209.0,
+     "lube": 174.0
+    },
+    {
+     "size": "M18x1.5",
+     "pitch": 1.5,
+     "preload_kN": 97.2,
+     "dry": 350.0,
+     "zinc": 315.0,
+     "lube": 262.0
+    },
+    {
+     "size": "M20x1.5",
+     "pitch": 1.5,
+     "preload_kN": 122.4,
+     "dry": 490.0,
+     "zinc": 441.0,
+     "lube": 367.0
+    },
+    {
+     "size": "M22x1.5",
+     "pitch": 1.5,
+     "preload_kN": 149.8,
+     "dry": 659.0,
+     "zinc": 593.0,
+     "lube": 495.0
+    },
+    {
+     "size": "M24x2",
+     "pitch": 2.0,
+     "preload_kN": 172.8,
+     "dry": 829.0,
+     "zinc": 746.0,
+     "lube": 622.0
+    }
+   ],
+   "10.9": [
+    {
+     "size": "M3",
+     "pitch": 0.5,
+     "preload_kN": 3.1,
+     "dry": 1.88,
+     "zinc": 1.69,
+     "lube": 1.41
+    },
+    {
+     "size": "M4",
+     "pitch": 0.7,
+     "preload_kN": 5.5,
+     "dry": 4.37,
+     "zinc": 3.94,
+     "lube": 3.28
+    },
+    {
+     "size": "M5",
+     "pitch": 0.8,
+     "preload_kN": 8.8,
+     "dry": 8.84,
+     "zinc": 7.96,
+     "lube": 6.63
+    },
+    {
+     "size": "M6",
+     "pitch": 1.0,
+     "preload_kN": 12.5,
+     "dry": 15.0,
+     "zinc": 13.5,
+     "lube": 11.3
+    },
+    {
+     "size": "M7",
+     "pitch": 1.0,
+     "preload_kN": 18.0,
+     "dry": 25.2,
+     "zinc": 22.7,
+     "lube": 18.9
+    },
+    {
+     "size": "M8",
+     "pitch": 1.25,
+     "preload_kN": 22.8,
+     "dry": 36.5,
+     "zinc": 32.8,
+     "lube": 27.3
+    },
+    {
+     "size": "M10",
+     "pitch": 1.5,
+     "preload_kN": 36.1,
+     "dry": 72.2,
+     "zinc": 65.0,
+     "lube": 54.2
+    },
+    {
+     "size": "M12",
+     "pitch": 1.75,
+     "preload_kN": 52.5,
+     "dry": 126.0,
+     "zinc": 113.0,
+     "lube": 94.5
+    },
+    {
+     "size": "M14",
+     "pitch": 2.0,
+     "preload_kN": 71.6,
+     "dry": 200.0,
+     "zinc": 180.0,
+     "lube": 150.0
+    },
+    {
+     "size": "M16",
+     "pitch": 2.0,
+     "preload_kN": 97.7,
+     "dry": 313.0,
+     "zinc": 281.0,
+     "lube": 235.0
+    },
+    {
+     "size": "M18",
+     "pitch": 2.5,
+     "preload_kN": 119.5,
+     "dry": 430.0,
+     "zinc": 387.0,
+     "lube": 323.0
+    },
+    {
+     "size": "M20",
+     "pitch": 2.5,
+     "preload_kN": 152.5,
+     "dry": 610.0,
+     "zinc": 549.0,
+     "lube": 458.0
+    },
+    {
+     "size": "M22",
+     "pitch": 2.5,
+     "preload_kN": 188.6,
+     "dry": 830.0,
+     "zinc": 747.0,
+     "lube": 622.0
+    },
+    {
+     "size": "M24",
+     "pitch": 3.0,
+     "preload_kN": 219.7,
+     "dry": 1050.0,
+     "zinc": 949.0,
+     "lube": 791.0
+    },
+    {
+     "size": "M8x1",
+     "pitch": 1.0,
+     "preload_kN": 24.4,
+     "dry": 39.0,
+     "zinc": 35.1,
+     "lube": 29.3
+    },
+    {
+     "size": "M10x1.25",
+     "pitch": 1.25,
+     "preload_kN": 38.1,
+     "dry": 76.2,
+     "zinc": 68.6,
+     "lube": 57.1
+    },
+    {
+     "size": "M10x1",
+     "pitch": 1.0,
+     "preload_kN": 40.2,
+     "dry": 80.3,
+     "zinc": 72.3,
+     "lube": 60.2
+    },
+    {
+     "size": "M12x1.5",
+     "pitch": 1.5,
+     "preload_kN": 54.8,
+     "dry": 132.0,
+     "zinc": 118.0,
+     "lube": 98.7
+    },
+    {
+     "size": "M12x1.25",
+     "pitch": 1.25,
+     "preload_kN": 57.3,
+     "dry": 138.0,
+     "zinc": 124.0,
+     "lube": 103.0
+    },
+    {
+     "size": "M14x1.5",
+     "pitch": 1.5,
+     "preload_kN": 77.8,
+     "dry": 218.0,
+     "zinc": 196.0,
+     "lube": 163.0
+    },
+    {
+     "size": "M16x1.5",
+     "pitch": 1.5,
+     "preload_kN": 104.0,
+     "dry": 333.0,
+     "zinc": 299.0,
+     "lube": 249.0
+    },
+    {
+     "size": "M18x1.5",
+     "pitch": 1.5,
+     "preload_kN": 134.5,
+     "dry": 484.0,
+     "zinc": 436.0,
+     "lube": 363.0
+    },
+    {
+     "size": "M20x1.5",
+     "pitch": 1.5,
+     "preload_kN": 169.3,
+     "dry": 677.0,
+     "zinc": 610.0,
+     "lube": 508.0
+    },
+    {
+     "size": "M22x1.5",
+     "pitch": 1.5,
+     "preload_kN": 207.3,
+     "dry": 912.0,
+     "zinc": 821.0,
+     "lube": 684.0
+    },
+    {
+     "size": "M24x2",
+     "pitch": 2.0,
+     "preload_kN": 239.0,
+     "dry": 1150.0,
+     "zinc": 1030.0,
+     "lube": 861.0
+    }
+   ],
+   "12.9": [
+    {
+     "size": "M3",
+     "pitch": 0.5,
+     "preload_kN": 3.7,
+     "dry": 2.2,
+     "zinc": 1.98,
+     "lube": 1.65
+    },
+    {
+     "size": "M4",
+     "pitch": 0.7,
+     "preload_kN": 6.4,
+     "dry": 5.11,
+     "zinc": 4.6,
+     "lube": 3.83
+    },
+    {
+     "size": "M5",
+     "pitch": 0.8,
+     "preload_kN": 10.3,
+     "dry": 10.3,
+     "zinc": 9.3,
+     "lube": 7.75
+    },
+    {
+     "size": "M6",
+     "pitch": 1.0,
+     "preload_kN": 14.6,
+     "dry": 17.5,
+     "zinc": 15.8,
+     "lube": 13.2
+    },
+    {
+     "size": "M7",
+     "pitch": 1.0,
+     "preload_kN": 21.0,
+     "dry": 29.4,
+     "zinc": 26.5,
+     "lube": 22.1
+    },
+    {
+     "size": "M8",
+     "pitch": 1.25,
+     "preload_kN": 26.6,
+     "dry": 42.6,
+     "zinc": 38.3,
+     "lube": 32.0
+    },
+    {
+     "size": "M10",
+     "pitch": 1.5,
+     "preload_kN": 42.2,
+     "dry": 84.4,
+     "zinc": 76.0,
+     "lube": 63.3
+    },
+    {
+     "size": "M12",
+     "pitch": 1.75,
+     "preload_kN": 61.3,
+     "dry": 147.0,
+     "zinc": 132.0,
+     "lube": 110.0
+    },
+    {
+     "size": "M14",
+     "pitch": 2.0,
+     "preload_kN": 83.7,
+     "dry": 234.0,
+     "zinc": 211.0,
+     "lube": 176.0
+    },
+    {
+     "size": "M16",
+     "pitch": 2.0,
+     "preload_kN": 114.2,
+     "dry": 365.0,
+     "zinc": 329.0,
+     "lube": 274.0
+    },
+    {
+     "size": "M18",
+     "pitch": 2.5,
+     "preload_kN": 139.7,
+     "dry": 503.0,
+     "zinc": 453.0,
+     "lube": 377.0
+    },
+    {
+     "size": "M20",
+     "pitch": 2.5,
+     "preload_kN": 178.2,
+     "dry": 713.0,
+     "zinc": 642.0,
+     "lube": 535.0
+    },
+    {
+     "size": "M22",
+     "pitch": 2.5,
+     "preload_kN": 220.4,
+     "dry": 970.0,
+     "zinc": 873.0,
+     "lube": 727.0
+    },
+    {
+     "size": "M24",
+     "pitch": 3.0,
+     "preload_kN": 256.8,
+     "dry": 1230.0,
+     "zinc": 1110.0,
+     "lube": 925.0
+    },
+    {
+     "size": "M8x1",
+     "pitch": 1.0,
+     "preload_kN": 28.5,
+     "dry": 45.6,
+     "zinc": 41.1,
+     "lube": 34.2
+    },
+    {
+     "size": "M10x1.25",
+     "pitch": 1.25,
+     "preload_kN": 44.5,
+     "dry": 89.0,
+     "zinc": 80.1,
+     "lube": 66.8
+    },
+    {
+     "size": "M10x1",
+     "pitch": 1.0,
+     "preload_kN": 46.9,
+     "dry": 93.8,
+     "zinc": 84.5,
+     "lube": 70.4
+    },
+    {
+     "size": "M12x1.5",
+     "pitch": 1.5,
+     "preload_kN": 64.1,
+     "dry": 154.0,
+     "zinc": 138.0,
+     "lube": 115.0
+    },
+    {
+     "size": "M12x1.25",
+     "pitch": 1.25,
+     "preload_kN": 67.0,
+     "dry": 161.0,
+     "zinc": 145.0,
+     "lube": 121.0
+    },
+    {
+     "size": "M14x1.5",
+     "pitch": 1.5,
+     "preload_kN": 90.9,
+     "dry": 255.0,
+     "zinc": 229.0,
+     "lube": 191.0
+    },
+    {
+     "size": "M16x1.5",
+     "pitch": 1.5,
+     "preload_kN": 121.5,
+     "dry": 389.0,
+     "zinc": 350.0,
+     "lube": 292.0
+    },
+    {
+     "size": "M18x1.5",
+     "pitch": 1.5,
+     "preload_kN": 157.1,
+     "dry": 566.0,
+     "zinc": 509.0,
+     "lube": 424.0
+    },
+    {
+     "size": "M20x1.5",
+     "pitch": 1.5,
+     "preload_kN": 197.9,
+     "dry": 792.0,
+     "zinc": 712.0,
+     "lube": 594.0
+    },
+    {
+     "size": "M22x1.5",
+     "pitch": 1.5,
+     "preload_kN": 242.3,
+     "dry": 1070.0,
+     "zinc": 959.0,
+     "lube": 799.0
+    },
+    {
+     "size": "M24x2",
+     "pitch": 2.0,
+     "preload_kN": 279.4,
+     "dry": 1340.0,
+     "zinc": 1210.0,
+     "lube": 1010.0
+    }
+   ],
+   "A2-70/A4-70": [
+    {
+     "size": "M3",
+     "pitch": 0.5,
+     "preload_kN": 1.7,
+     "dry": 1.02,
+     "zinc": 0.917,
+     "lube": 0.764
+    },
+    {
+     "size": "M4",
+     "pitch": 0.7,
+     "preload_kN": 3.0,
+     "dry": 2.37,
+     "zinc": 2.13,
+     "lube": 1.78
+    },
+    {
+     "size": "M5",
+     "pitch": 0.8,
+     "preload_kN": 4.8,
+     "dry": 4.79,
+     "zinc": 4.31,
+     "lube": 3.59
+    },
+    {
+     "size": "M6",
+     "pitch": 1.0,
+     "preload_kN": 6.8,
+     "dry": 8.14,
+     "zinc": 7.33,
+     "lube": 6.11
+    },
+    {
+     "size": "M7",
+     "pitch": 1.0,
+     "preload_kN": 9.8,
+     "dry": 13.7,
+     "zinc": 12.3,
+     "lube": 10.2
+    },
+    {
+     "size": "M8",
+     "pitch": 1.25,
+     "preload_kN": 12.4,
+     "dry": 19.8,
+     "zinc": 17.8,
+     "lube": 14.8
+    },
+    {
+     "size": "M10",
+     "pitch": 1.5,
+     "preload_kN": 19.6,
+     "dry": 39.1,
+     "zinc": 35.2,
+     "lube": 29.4
+    },
+    {
+     "size": "M12",
+     "pitch": 1.75,
+     "preload_kN": 28.5,
+     "dry": 68.3,
+     "zinc": 61.5,
+     "lube": 51.2
+    },
+    {
+     "size": "M14",
+     "pitch": 2.0,
+     "preload_kN": 38.8,
+     "dry": 109.0,
+     "zinc": 97.8,
+     "lube": 81.5
+    },
+    {
+     "size": "M16",
+     "pitch": 2.0,
+     "preload_kN": 53.0,
+     "dry": 170.0,
+     "zinc": 153.0,
+     "lube": 127.0
+    },
+    {
+     "size": "M18",
+     "pitch": 2.5,
+     "preload_kN": 64.8,
+     "dry": 233.0,
+     "zinc": 210.0,
+     "lube": 175.0
+    },
+    {
+     "size": "M20",
+     "pitch": 2.5,
+     "preload_kN": 82.7,
+     "dry": 331.0,
+     "zinc": 298.0,
+     "lube": 248.0
+    },
+    {
+     "size": "M22",
+     "pitch": 2.5,
+     "preload_kN": 102.3,
+     "dry": 450.0,
+     "zinc": 405.0,
+     "lube": 337.0
+    },
+    {
+     "size": "M24",
+     "pitch": 3.0,
+     "preload_kN": 119.1,
+     "dry": 572.0,
+     "zinc": 515.0,
+     "lube": 429.0
+    }
+   ],
+   "A2-80/A4-80": [
+    {
+     "size": "M3",
+     "pitch": 0.5,
+     "preload_kN": 2.3,
+     "dry": 1.36,
+     "zinc": 1.22,
+     "lube": 1.02
+    },
+    {
+     "size": "M4",
+     "pitch": 0.7,
+     "preload_kN": 4.0,
+     "dry": 3.16,
+     "zinc": 2.84,
+     "lube": 2.37
+    },
+    {
+     "size": "M5",
+     "pitch": 0.8,
+     "preload_kN": 6.4,
+     "dry": 6.39,
+     "zinc": 5.75,
+     "lube": 4.79
+    },
+    {
+     "size": "M6",
+     "pitch": 1.0,
+     "preload_kN": 9.0,
+     "dry": 10.9,
+     "zinc": 9.77,
+     "lube": 8.14
+    },
+    {
+     "size": "M7",
+     "pitch": 1.0,
+     "preload_kN": 13.0,
+     "dry": 18.2,
+     "zinc": 16.4,
+     "lube": 13.7
+    },
+    {
+     "size": "M8",
+     "pitch": 1.25,
+     "preload_kN": 16.5,
+     "dry": 26.4,
+     "zinc": 23.7,
+     "lube": 19.8
+    },
+    {
+     "size": "M10",
+     "pitch": 1.5,
+     "preload_kN": 26.1,
+     "dry": 52.2,
+     "zinc": 47.0,
+     "lube": 39.1
+    },
+    {
+     "size": "M12",
+     "pitch": 1.75,
+     "preload_kN": 37.9,
+     "dry": 91.0,
+     "zinc": 81.9,
+     "lube": 68.3
+    },
+    {
+     "size": "M14",
+     "pitch": 2.0,
+     "preload_kN": 51.8,
+     "dry": 145.0,
+     "zinc": 130.0,
+     "lube": 109.0
+    },
+    {
+     "size": "M16",
+     "pitch": 2.0,
+     "preload_kN": 70.7,
+     "dry": 226.0,
+     "zinc": 203.0,
+     "lube": 170.0
+    },
+    {
+     "size": "M18",
+     "pitch": 2.5,
+     "preload_kN": 86.4,
+     "dry": 311.0,
+     "zinc": 280.0,
+     "lube": 233.0
+    },
+    {
+     "size": "M20",
+     "pitch": 2.5,
+     "preload_kN": 110.2,
+     "dry": 441.0,
+     "zinc": 397.0,
+     "lube": 331.0
+    },
+    {
+     "size": "M22",
+     "pitch": 2.5,
+     "preload_kN": 136.3,
+     "dry": 600.0,
+     "zinc": 540.0,
+     "lube": 450.0
+    },
+    {
+     "size": "M24",
+     "pitch": 3.0,
+     "preload_kN": 158.8,
+     "dry": 762.0,
+     "zinc": 686.0,
+     "lube": 572.0
+    }
+   ]
+  },
+  "notes": [
+   "Never use a dry torque on a lubricated bolt – lubrication can nearly double the clamp load at the same torque.",
+   "Published VDI 2230 tables (Bossard, µ0.12) are close to the dry column and 25–45% higher than the lubricated column – the lubricated column here is conservative.",
+   "Stainless: use anti-seize, tighten slowly, no impact guns – galling risk.",
+   "Vehicle and manufacturer specs always override these general figures. Torque-to-yield bolts: replace, don't reuse."
+  ]
+ }
+}

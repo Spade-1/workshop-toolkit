@@ -133,3 +133,6 @@ label.inline select { width: auto; margin: 6px 0 8px; padding: 7px 10px; font: i
 
 .fixes { margin: 4px 0 0; padding-left: 20px; color: var(--text); font-size: 14px; }
 .fixes li { margin: 4px 0; }
+
+.tbl tr.common td { background: rgba(242,157,56,.07); }
+label.inline input[type=checkbox] { accent-color: var(--accent); width: 18px; height: 18px; }

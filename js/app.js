@@ -1,7 +1,7 @@
 // Workshop Toolkit – home screen + router. Sections register themselves in js/views/*.js.
 (function () {
   'use strict';
-  const ORDER = ['common', 'taps', 'drillcheck', 'convert', 'welding', 'auto'];
+  const ORDER = ['common', 'taps', 'drillcheck', 'fasteners', 'convert', 'welding', 'auto'];
 
   function home() {
     WT.setHeader('Workshop Toolkit', false);
