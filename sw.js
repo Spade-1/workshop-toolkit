@@ -1,5 +1,5 @@
 // Offline cache. Bump VERSION on every release so phones pick up changes.
-const VERSION = 'wt-v2';
+const VERSION = 'wt-v3';
 const ASSETS = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/core.js', 'js/calc/threads.js',
   'js/views/taps.js', 'js/views/convert.js', 'js/views/welding.js', 'js/views/auto.js',
@@ -22,7 +22,8 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   e.respondWith(
-    fetch(e.request).then((res) => {
+    // no-cache = revalidate with the server, so new releases show up straight away
+    fetch(new Request(e.request.url, { cache: 'no-cache', credentials: 'same-origin' })).then((res) => {
       const copy = res.clone();
       caches.open(VERSION).then((c) => c.put(e.request, copy));
       return res;
