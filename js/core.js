@@ -36,8 +36,9 @@
   };
 
   // Auto fuses: standard ratings and families (blade ATO/ATC/mini to 40 A, Maxi to 120 A, MIDI to 200 A, ANL / MEGA above).
-  WT.FUSES = [1, 2, 3, 4, 5, 7.5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 500];
-  WT.fuseType = (a) => (a <= 40 ? 'ATO / mini blade' : a <= 100 ? 'Maxi blade or MIDI' : a <= 200 ? 'MIDI or ANL' : 'ANL or MEGA');
+  WT.FUSES = [1, 2, 3, 4, 5, 7.5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 500, 600, 750];
+  // Littelfuse: mini 2–30, ATO 1–40, Maxi 20–80, MIDI 30–200, MEGA 40–500; Blue Sea ANL 35–750 (Narva ranges not yet checked).
+  WT.fuseType = (a) => (a <= 30 ? 'mini or ATO blade' : a <= 40 ? 'ATO blade' : a <= 80 ? 'Maxi blade or MIDI' : a <= 200 ? 'MIDI or ANL' : 'ANL or MEGA');
   WT.maxFuse = (cableA) => WT.FUSES.filter((f) => f <= cableA).pop() || null;
   /** Fuse for a load: at least 1.25 × load (continuous), never above the cable's rating. */
   WT.fuseFor = (loadA, cableA) => { const f = WT.FUSES.find((x) => x >= loadA * 1.25); return { f, ok: f != null && (cableA == null || f <= cableA) }; };

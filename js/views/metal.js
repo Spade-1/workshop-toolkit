@@ -40,7 +40,14 @@
     return `<svg class="geo" viewBox="-60 0 270 ${S}" role="img"><title>${esc(PROF[k].name)}</title>${g}</svg>`;
   }
 
-  function weight($el) {
+  let CAT = null;
+  function catFind(mat, prof, v) {
+    if (!CAT) return null;
+    return CAT.rows.find((r) => r.mat === mat && r.prof === prof && Object.entries(r.k).every(([k, x]) => v[k] != null && Math.abs(v[k] - x) < 1e-6)
+      && (prof !== 'angle' && prof !== 'rhs' ? true : true)) || (prof === 'rhs' || prof === 'angle' ? CAT.rows.find((r) => r.mat === mat && r.prof === prof && Math.abs(r.k.A - v.B) < 1e-6 && Math.abs(r.k.B - v.A) < 1e-6 && Math.abs(r.k.t - v.t) < 1e-6) : null);
+  }
+  async function weight($el) {
+    CAT = await WT.load('data/metal/catalogue.json');
     const st = WT.store.get('metal.w', { mat: 'steel', prof: 'shs', v: {}, len: '' });
     $el.innerHTML = `<form class="calc" onsubmit="return false">
       <div class="row2"><label>Material<select id="mat">${MAT.map(([k, n, d]) => `<option value="${k}">${n} (${d} kg/m³)</option>`).join('')}</select></label></div>
@@ -70,10 +77,12 @@
       }
       if (p.f.some(([k]) => v[k] == null)) { $('wo').innerHTML = ''; return; }
       if (v.t && ((v.A && 2 * v.t >= v.A) || (v.B && 2 * v.t >= v.B) || (v.D && 2 * v.t >= v.D))) { $('wo').innerHTML = `<div class="out">${row('Check', 'Wall is too thick for that size')}</div>`; return; }
-      const A = p.area(v), kgm = A * 1e-6 * rho, L = val($('len'));
-      $('wo').innerHTML = `<div class="out">${row('Per metre', `<b class="acc">${sig(kgm)} kg/m</b>`, 'hl')}${L ? row(`${sig(L)} m length`, `<b class="acc">${sig(kgm * L)} kg</b>`) : ''}${row('Cross-section', `${sig(A)} mm²`)}</div>
-        ${work([p.eq, `= ${sig(A)} mm²`, `kg/m = mm² × density ÷ 1,000,000`, `= ${sig(A)} × ${rho} ÷ 1,000,000 = <strong>${sig(kgm)} kg/m</strong>`, ...(L ? [`Total = ${sig(kgm)} × ${sig(L)} m = <strong>${sig(kgm * L)} kg</strong>`] : [])])}
-        ${p.note ? `<p class="foot">${p.note}</p>` : ''}`;
+      const A = p.area(v), kgf = A * 1e-6 * rho, L = val($('len'));
+      const cat = catFind(st.mat, st.prof, v), kgm = cat ? cat.kgm : kgf;
+      $('wo').innerHTML = `<div class="out">${row('Per metre', `<b class="acc">${sig(kgm)} kg/m</b> ${cat ? '<small>catalogue</small>' : '<small>calculated</small>'}`, 'hl')}${L ? row(`${sig(L)} m length`, `<b class="acc">${sig(kgm * L)} kg</b>`) : ''}
+        ${cat ? row('Calculated (square corners)', `${sig(kgf)} kg/m`) + row('Source', `<a href="${esc(cat.url)}" target="_blank" rel="noopener">${esc(cat.src)}</a> <small>${esc(cat.conf)}</small>`) : ''}${row('Cross-section', `${sig(A)} mm²`)}</div>
+        ${work([p.eq, `= ${sig(A)} mm²`, `kg/m = mm² × density ÷ 1,000,000`, `= ${sig(A)} × ${rho} ÷ 1,000,000 = <strong>${sig(kgf)} kg/m</strong>`, ...(L ? [`Total = ${sig(kgm)} × ${sig(L)} m = <strong>${sig(kgm * L)} kg</strong>`] : [])])}
+        ${p.note && !cat ? `<p class="foot">${p.note}</p>` : ''}${cat ? '<p class="foot">Standard size – catalogue weight used (includes corner radii). Total uses the catalogue figure.</p>' : ''}`;
     }
     $('pf').addEventListener('input', (e) => { const k = e.target.dataset.k; if (!k) return; (st.v[st.prof] ||= {})[k] = e.target.value; go(); });
     $('prof').addEventListener('change', () => { st.prof = $('prof').value; fields(); go(); });
@@ -82,23 +91,27 @@
   }
 
   // ---------- Drill speed. Typical HSS cutting speeds (m/min); cobalt similar to +20%, carbide roughly 2–3×.
-  const VC = [['al', 'Aluminium', 60, 90], ['brass', 'Brass / bronze', 45, 60], ['plas', 'Plastic (acrylic, nylon)', 30, 45], ['ms', 'Mild steel', 25, 30], ['ci', 'Cast iron', 20, 25], ['cs', 'Med. carbon / 4140 steel', 15, 20], ['ss', 'Stainless 304/316', 10, 15], ['tool', 'Tool steel (annealed)', 10, 15]];
+  const VC = [['al', 'Aluminium', 60, 120, 0], ['brass', 'Brass / bronze', 50, 80, 0], ['plas', 'Plastic (acrylic, nylon)', 30, 80, 0], ['ms', 'Mild steel', 20, 30, 1], ['ci', 'Cast iron', 20, 35, 3], ['cs', 'Med. carbon / 4140 steel', 10, 20, 2], ['ss', 'Stainless 304/316', 8, 15, 2], ['tool', 'Tool steel (annealed)', 8, 15, 2]];
+  // AIMS feed mm/rev by diameter band; columns: soft, mild steel, alloy/stainless, cast iron
+  const FEED = [[3, ['0.03–0.06', '0.03–0.05', '0.02–0.04', '0.03–0.05']], [6, ['0.06–0.12', '0.05–0.10', '0.04–0.08', '0.05–0.10']], [12, ['0.12–0.25', '0.10–0.18', '0.08–0.15', '0.10–0.18']],
+    [20, ['0.25–0.40', '0.18–0.30', '0.12–0.25', '0.18–0.30']], [32, ['0.40–0.65', '0.25–0.45', '0.18–0.35', '0.25–0.45']], [1e9, ['0.65–1.00', '0.40–0.60', '0.30–0.50', '0.40–0.60']]];
+  const AIMS = 'https://www.aimsindustrial.com.au';
   const SIZES = [3, 4, 5, 6, 6.8, 8, 8.5, 10, 10.2, 12, 13, 16, 20, 25];
   function speed($el) {
     const st = WT.store.get('metal.s', { m: 'ms', d: '8.5', tool: '1' });
     $el.innerHTML = `<p class="intro">RPM = cutting speed × 1000 ÷ (π × drill Ø). Typical HSS figures – start low and adjust by the chip and sound.</p>
       <form class="calc" onsubmit="return false">
       <label>Material<select id="m">${VC.map(([k, n, a, b]) => `<option value="${k}">${n} – ${a}–${b} m/min</option>`).join('')}</select></label>
-      <div class="row2"><label>Drill Ø (mm)<input id="d" inputmode="decimal"></label><label>Drill type<select id="tool"><option value="1">HSS</option><option value="1.2">Cobalt (HSS-Co)</option><option value="2.5">Carbide</option></select></label></div>
+      <div class="row2"><label>Drill Ø (mm)<input id="d" inputmode="decimal"></label><label>Drill type<select id="tool"><option value="1">HSS</option><option value="1.2">Cobalt (HSS-Co) – ×1.2, unverified</option><option value="2.5">Carbide – ×2.5, unverified</option></select></label></div>
       </form><div id="so"></div><h3 class="sub">Common sizes</h3><div id="st"></div>
-      <p class="foot">Use cutting fluid on steel and stainless; aluminium likes kerosene/WD-40. Stainless: keep feed steady – rubbing work-hardens it. Large drills: pilot first. Typical values from standard machining references (Machinery's Handbook-style tables); check your drill maker's chart.</p>`;
+      <p class="foot">Use cutting fluid on steel and stainless; aluminium likes kerosene/WD-40. Stainless: keep feed steady – rubbing work-hardens it. Large drills: pilot first. HSS speeds and feeds: AIMS Industrial (AU distributor) chart, medium confidence. Cobalt and carbide multipliers are not yet sourced – to check.</p>`;
     const $ = (id) => $el.querySelector('#' + id);
     $('m').value = st.m; $('d').value = st.d; $('tool').value = st.tool;
     const rpm = (vc, d) => (vc * 1000) / (PI * d);
     function go() {
       st.m = $('m').value; st.d = $('d').value; st.tool = $('tool').value; WT.store.set('metal.s', st);
-      const [, n, a0, b0] = VC.find((x) => x[0] === st.m), k = +st.tool, a = a0 * k, b = b0 * k, d = val($('d'));
-      $('so').innerHTML = d ? `<div class="out">${row('Spindle speed', `<b class="acc">${Math.round(rpm(a, d))}–${Math.round(rpm(b, d))} rpm</b>`, 'hl')}${row('Cutting speed', `${sig(a, 3)}–${sig(b, 3)} m/min`)}</div>
+      const [, n, a0, b0, fc] = VC.find((x) => x[0] === st.m), k = +st.tool, a = a0 * k, b = b0 * k, d = val($('d'));
+      $('so').innerHTML = d ? `<div class="out">${row('Spindle speed', `<b class="acc">${Math.round(rpm(a, d))}–${Math.round(rpm(b, d))} rpm</b>`, 'hl')}${row('Cutting speed', `${sig(a, 3)}–${sig(b, 3)} m/min`)}${row('Feed', `${FEED.find(([mx]) => d < mx)[1][fc]} mm/rev`)}</div>
         ${work([`RPM = Vc × 1000 ÷ (π × D)`, `= ${sig(a, 3)} × 1000 ÷ (π × ${sig(d)}) = ${Math.round(rpm(a, d))}`, `to ${sig(b, 3)} × 1000 ÷ (π × ${sig(d)}) = ${Math.round(rpm(b, d))}`])}` : '';
       $('st').innerHTML = `<table class="tbl"><thead><tr><th>Drill Ø</th><th>RPM (${esc(n)})</th></tr></thead><tbody>
         ${SIZES.map((s) => `<tr${d === s ? ' class="near"' : ''}><td>${s} mm</td><td>${Math.round(rpm(a, s))}–${Math.round(rpm(b, s))}</td></tr>`).join('')}</tbody></table>`;
@@ -112,9 +125,9 @@
     let tab = WT.store.get('metal.tab', 'weight');
     WT.$view.innerHTML = `${WT.chips(TABS, tab)}<div id="pane"></div>`;
     const $p = WT.$view.querySelector('#pane');
-    function render() {
+    async function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      ({ weight, speed })[tab]($p);
+      await ({ weight, speed })[tab]($p);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('metal.tab', tab); render(); });
     render();
