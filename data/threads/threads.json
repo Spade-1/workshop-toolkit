@@ -1,0 +1,6179 @@
+{
+ "meta": {
+  "generated_by": "tools/build_threads.py",
+  "notes": [
+   "Engagement % uses the full-form thread depth (60 deg: 1.299P, 55 deg: 1.281P).",
+   "Metric tap drill = D - P; where that lands on a 0.05 it is rounded half-to-even to a stocked 0.1 mm drill (6.75 -> 6.8, 10.25 -> 10.2).",
+   "Imperial/Whitworth: drill nearest 75% engagement, chosen within 60-85% where possible.",
+   "Forming (fluteless) drill = D - 0.476P (70% thread), rounded up to 0.05 mm (undersize holes break forming taps).",
+   "Clearance holes: ISO 273 close (H12) / normal (H13) / loose (H14).",
+   "Pipe tap drills are common-practice values; NPT figures are without taper reamer."
+  ]
+ },
+ "metric_coarse": [
+  {
+   "id": "M1x0.25",
+   "series": "Metric coarse",
+   "label": "M1 \u00d7 0.25",
+   "major_mm": 1,
+   "pitch_mm": 0.25,
+   "tpi": 101.6,
+   "pitch_dia_mm": 0.838,
+   "minor_int_mm": 0.729,
+   "minor_ext_mm": 0.693,
+   "tap_drill_mm": 0.75,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 0.9,
+   "clearance_mm": {
+    "close": 1.1,
+    "normal": 1.2,
+    "loose": 1.3
+   },
+   "nearest_imperial_drill": {
+    "name": "#69",
+    "in": 0.0292,
+    "mm": 0.742,
+    "engagement_pct": 79.4
+   }
+  },
+  {
+   "id": "M1.1x0.25",
+   "series": "Metric coarse",
+   "label": "M1.1 \u00d7 0.25",
+   "major_mm": 1.1,
+   "pitch_mm": 0.25,
+   "tpi": 101.6,
+   "pitch_dia_mm": 0.938,
+   "minor_int_mm": 0.829,
+   "minor_ext_mm": 0.793,
+   "tap_drill_mm": 0.85,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.0,
+   "clearance_mm": null,
+   "nearest_imperial_drill": {
+    "name": "#66",
+    "in": 0.033,
+    "mm": 0.838,
+    "engagement_pct": 80.7
+   }
+  },
+  {
+   "id": "M1.2x0.25",
+   "series": "Metric coarse",
+   "label": "M1.2 \u00d7 0.25",
+   "major_mm": 1.2,
+   "pitch_mm": 0.25,
+   "tpi": 101.6,
+   "pitch_dia_mm": 1.038,
+   "minor_int_mm": 0.929,
+   "minor_ext_mm": 0.893,
+   "tap_drill_mm": 0.95,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.1,
+   "clearance_mm": {
+    "close": 1.3,
+    "normal": 1.4,
+    "loose": 1.5
+   },
+   "nearest_imperial_drill": {
+    "name": "#62",
+    "in": 0.038,
+    "mm": 0.965,
+    "engagement_pct": 72.4
+   }
+  },
+  {
+   "id": "M1.4x0.3",
+   "series": "Metric coarse",
+   "label": "M1.4 \u00d7 0.3",
+   "major_mm": 1.4,
+   "pitch_mm": 0.3,
+   "tpi": 84.67,
+   "pitch_dia_mm": 1.205,
+   "minor_int_mm": 1.075,
+   "minor_ext_mm": 1.032,
+   "tap_drill_mm": 1.1,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.3,
+   "clearance_mm": {
+    "close": 1.5,
+    "normal": 1.6,
+    "loose": 1.8
+   },
+   "nearest_imperial_drill": {
+    "name": "#57",
+    "in": 0.043,
+    "mm": 1.092,
+    "engagement_pct": 79.0
+   }
+  },
+  {
+   "id": "M1.6x0.35",
+   "series": "Metric coarse",
+   "label": "M1.6 \u00d7 0.35",
+   "major_mm": 1.6,
+   "pitch_mm": 0.35,
+   "tpi": 72.57,
+   "pitch_dia_mm": 1.373,
+   "minor_int_mm": 1.221,
+   "minor_ext_mm": 1.171,
+   "tap_drill_mm": 1.25,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.45,
+   "clearance_mm": {
+    "close": 1.7,
+    "normal": 1.8,
+    "loose": 2.0
+   },
+   "nearest_imperial_drill": {
+    "name": "#55",
+    "in": 0.052,
+    "mm": 1.321,
+    "engagement_pct": 61.4
+   }
+  },
+  {
+   "id": "M1.8x0.35",
+   "series": "Metric coarse",
+   "label": "M1.8 \u00d7 0.35",
+   "major_mm": 1.8,
+   "pitch_mm": 0.35,
+   "tpi": 72.57,
+   "pitch_dia_mm": 1.573,
+   "minor_int_mm": 1.421,
+   "minor_ext_mm": 1.371,
+   "tap_drill_mm": 1.45,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.65,
+   "clearance_mm": {
+    "close": 2.0,
+    "normal": 2.1,
+    "loose": 2.2
+   },
+   "nearest_imperial_drill": {
+    "name": "#53",
+    "in": 0.0595,
+    "mm": 1.511,
+    "engagement_pct": 63.6
+   }
+  },
+  {
+   "id": "M2x0.4",
+   "series": "Metric coarse",
+   "label": "M2 \u00d7 0.4",
+   "major_mm": 2,
+   "pitch_mm": 0.4,
+   "tpi": 63.5,
+   "pitch_dia_mm": 1.74,
+   "minor_int_mm": 1.567,
+   "minor_ext_mm": 1.509,
+   "tap_drill_mm": 1.6,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.85,
+   "clearance_mm": {
+    "close": 2.2,
+    "normal": 2.4,
+    "loose": 2.6
+   },
+   "nearest_imperial_drill": {
+    "name": "#52",
+    "in": 0.0635,
+    "mm": 1.613,
+    "engagement_pct": 74.5
+   }
+  },
+  {
+   "id": "M2.2x0.45",
+   "series": "Metric coarse",
+   "label": "M2.2 \u00d7 0.45",
+   "major_mm": 2.2,
+   "pitch_mm": 0.45,
+   "tpi": 56.44,
+   "pitch_dia_mm": 1.908,
+   "minor_int_mm": 1.713,
+   "minor_ext_mm": 1.648,
+   "tap_drill_mm": 1.75,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 2.0,
+   "clearance_mm": null,
+   "nearest_imperial_drill": {
+    "name": "#50",
+    "in": 0.07,
+    "mm": 1.778,
+    "engagement_pct": 72.2
+   }
+  },
+  {
+   "id": "M2.5x0.45",
+   "series": "Metric coarse",
+   "label": "M2.5 \u00d7 0.45",
+   "major_mm": 2.5,
+   "pitch_mm": 0.45,
+   "tpi": 56.44,
+   "pitch_dia_mm": 2.208,
+   "minor_int_mm": 2.013,
+   "minor_ext_mm": 1.948,
+   "tap_drill_mm": 2.05,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 2.3,
+   "clearance_mm": {
+    "close": 2.7,
+    "normal": 2.9,
+    "loose": 3.1
+   },
+   "nearest_imperial_drill": {
+    "name": "#46",
+    "in": 0.081,
+    "mm": 2.057,
+    "engagement_pct": 75.8
+   }
+  },
+  {
+   "id": "M3x0.5",
+   "series": "Metric coarse",
+   "label": "M3 \u00d7 0.5",
+   "major_mm": 3,
+   "pitch_mm": 0.5,
+   "tpi": 50.8,
+   "pitch_dia_mm": 2.675,
+   "minor_int_mm": 2.459,
+   "minor_ext_mm": 2.387,
+   "tap_drill_mm": 2.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 2.8,
+   "clearance_mm": {
+    "close": 3.2,
+    "normal": 3.4,
+    "loose": 3.6
+   },
+   "nearest_imperial_drill": {
+    "name": "#39",
+    "in": 0.0995,
+    "mm": 2.527,
+    "engagement_pct": 72.8
+   }
+  },
+  {
+   "id": "M3.5x0.6",
+   "series": "Metric coarse",
+   "label": "M3.5 \u00d7 0.6",
+   "major_mm": 3.5,
+   "pitch_mm": 0.6,
+   "tpi": 42.33,
+   "pitch_dia_mm": 3.11,
+   "minor_int_mm": 2.85,
+   "minor_ext_mm": 2.764,
+   "tap_drill_mm": 2.9,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 3.25,
+   "clearance_mm": {
+    "close": 3.7,
+    "normal": 3.9,
+    "loose": 4.2
+   },
+   "nearest_imperial_drill": {
+    "name": "#32",
+    "in": 0.116,
+    "mm": 2.946,
+    "engagement_pct": 71.1
+   }
+  },
+  {
+   "id": "M4x0.7",
+   "series": "Metric coarse",
+   "label": "M4 \u00d7 0.7",
+   "major_mm": 4,
+   "pitch_mm": 0.7,
+   "tpi": 36.29,
+   "pitch_dia_mm": 3.545,
+   "minor_int_mm": 3.242,
+   "minor_ext_mm": 3.141,
+   "tap_drill_mm": 3.3,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 3.7,
+   "clearance_mm": {
+    "close": 4.3,
+    "normal": 4.5,
+    "loose": 4.8
+   },
+   "nearest_imperial_drill": {
+    "name": "#30",
+    "in": 0.1285,
+    "mm": 3.264,
+    "engagement_pct": 80.9
+   }
+  },
+  {
+   "id": "M4.5x0.75",
+   "series": "Metric coarse",
+   "label": "M4.5 \u00d7 0.75",
+   "major_mm": 4.5,
+   "pitch_mm": 0.75,
+   "tpi": 33.87,
+   "pitch_dia_mm": 4.013,
+   "minor_int_mm": 3.688,
+   "minor_ext_mm": 3.58,
+   "tap_drill_mm": 3.8,
+   "tap_drill_engagement_pct": 71.8,
+   "forming_drill_mm": 4.15,
+   "clearance_mm": {
+    "close": 4.8,
+    "normal": 5.0,
+    "loose": 5.3
+   },
+   "nearest_imperial_drill": {
+    "name": "#25",
+    "in": 0.1495,
+    "mm": 3.797,
+    "engagement_pct": 72.2
+   }
+  },
+  {
+   "id": "M5x0.8",
+   "series": "Metric coarse",
+   "label": "M5 \u00d7 0.8",
+   "major_mm": 5,
+   "pitch_mm": 0.8,
+   "tpi": 31.75,
+   "pitch_dia_mm": 4.48,
+   "minor_int_mm": 4.134,
+   "minor_ext_mm": 4.019,
+   "tap_drill_mm": 4.2,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 4.65,
+   "clearance_mm": {
+    "close": 5.3,
+    "normal": 5.5,
+    "loose": 5.8
+   },
+   "nearest_imperial_drill": {
+    "name": "#19",
+    "in": 0.166,
+    "mm": 4.216,
+    "engagement_pct": 75.4
+   }
+  },
+  {
+   "id": "M6x1",
+   "series": "Metric coarse",
+   "label": "M6 \u00d7 1",
+   "major_mm": 6,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 5.35,
+   "minor_int_mm": 4.917,
+   "minor_ext_mm": 4.773,
+   "tap_drill_mm": 5.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 5.55,
+   "clearance_mm": {
+    "close": 6.4,
+    "normal": 6.6,
+    "loose": 7.0
+   },
+   "nearest_imperial_drill": {
+    "name": "#8",
+    "in": 0.199,
+    "mm": 5.055,
+    "engagement_pct": 72.7
+   }
+  },
+  {
+   "id": "M7x1",
+   "series": "Metric coarse",
+   "label": "M7 \u00d7 1",
+   "major_mm": 7,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 6.35,
+   "minor_int_mm": 5.917,
+   "minor_ext_mm": 5.773,
+   "tap_drill_mm": 6.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 6.55,
+   "clearance_mm": {
+    "close": 7.4,
+    "normal": 7.6,
+    "loose": 8.0
+   },
+   "nearest_imperial_drill": {
+    "name": "B",
+    "in": 0.238,
+    "mm": 6.045,
+    "engagement_pct": 73.5
+   }
+  },
+  {
+   "id": "M8x1.25",
+   "series": "Metric coarse",
+   "label": "M8 \u00d7 1.25",
+   "major_mm": 8,
+   "pitch_mm": 1.25,
+   "tpi": 20.32,
+   "pitch_dia_mm": 7.188,
+   "minor_int_mm": 6.647,
+   "minor_ext_mm": 6.466,
+   "tap_drill_mm": 6.8,
+   "tap_drill_engagement_pct": 73.9,
+   "forming_drill_mm": 7.45,
+   "clearance_mm": {
+    "close": 8.4,
+    "normal": 9.0,
+    "loose": 10.0
+   },
+   "nearest_imperial_drill": {
+    "name": "H",
+    "in": 0.266,
+    "mm": 6.756,
+    "engagement_pct": 76.6
+   }
+  },
+  {
+   "id": "M9x1.25",
+   "series": "Metric coarse",
+   "label": "M9 \u00d7 1.25",
+   "major_mm": 9,
+   "pitch_mm": 1.25,
+   "tpi": 20.32,
+   "pitch_dia_mm": 8.188,
+   "minor_int_mm": 7.647,
+   "minor_ext_mm": 7.466,
+   "tap_drill_mm": 7.8,
+   "tap_drill_engagement_pct": 73.9,
+   "forming_drill_mm": 8.45,
+   "clearance_mm": null,
+   "nearest_imperial_drill": {
+    "name": "N",
+    "in": 0.302,
+    "mm": 7.671,
+    "engagement_pct": 81.8
+   }
+  },
+  {
+   "id": "M10x1.5",
+   "series": "Metric coarse",
+   "label": "M10 \u00d7 1.5",
+   "major_mm": 10,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 9.026,
+   "minor_int_mm": 8.376,
+   "minor_ext_mm": 8.16,
+   "tap_drill_mm": 8.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 9.3,
+   "clearance_mm": {
+    "close": 10.5,
+    "normal": 11.0,
+    "loose": 12.0
+   },
+   "nearest_imperial_drill": {
+    "name": "R",
+    "in": 0.339,
+    "mm": 8.611,
+    "engagement_pct": 71.3
+   }
+  },
+  {
+   "id": "M11x1.5",
+   "series": "Metric coarse",
+   "label": "M11 \u00d7 1.5",
+   "major_mm": 11,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 10.026,
+   "minor_int_mm": 9.376,
+   "minor_ext_mm": 9.16,
+   "tap_drill_mm": 9.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 10.3,
+   "clearance_mm": null,
+   "nearest_imperial_drill": {
+    "name": "3/8\"",
+    "in": 0.375,
+    "mm": 9.525,
+    "engagement_pct": 75.7
+   }
+  },
+  {
+   "id": "M12x1.75",
+   "series": "Metric coarse",
+   "label": "M12 \u00d7 1.75",
+   "major_mm": 12,
+   "pitch_mm": 1.75,
+   "tpi": 14.51,
+   "pitch_dia_mm": 10.863,
+   "minor_int_mm": 10.106,
+   "minor_ext_mm": 9.853,
+   "tap_drill_mm": 10.2,
+   "tap_drill_engagement_pct": 79.2,
+   "forming_drill_mm": 11.2,
+   "clearance_mm": {
+    "close": 13.0,
+    "normal": 13.5,
+    "loose": 14.5
+   },
+   "nearest_imperial_drill": {
+    "name": "13/32\"",
+    "in": 0.4062,
+    "mm": 10.319,
+    "engagement_pct": 73.9
+   }
+  },
+  {
+   "id": "M14x2",
+   "series": "Metric coarse",
+   "label": "M14 \u00d7 2",
+   "major_mm": 14,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 12.701,
+   "minor_int_mm": 11.835,
+   "minor_ext_mm": 11.546,
+   "tap_drill_mm": 12.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 13.05,
+   "clearance_mm": {
+    "close": 15.0,
+    "normal": 15.5,
+    "loose": 16.5
+   },
+   "nearest_imperial_drill": {
+    "name": "15/32\"",
+    "in": 0.4688,
+    "mm": 11.906,
+    "engagement_pct": 80.6
+   }
+  },
+  {
+   "id": "M16x2",
+   "series": "Metric coarse",
+   "label": "M16 \u00d7 2",
+   "major_mm": 16,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 14.701,
+   "minor_int_mm": 13.835,
+   "minor_ext_mm": 13.546,
+   "tap_drill_mm": 14.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 15.05,
+   "clearance_mm": {
+    "close": 17.0,
+    "normal": 17.5,
+    "loose": 18.5
+   },
+   "nearest_imperial_drill": {
+    "name": "35/64\"",
+    "in": 0.5469,
+    "mm": 13.891,
+    "engagement_pct": 81.2
+   }
+  },
+  {
+   "id": "M18x2.5",
+   "series": "Metric coarse",
+   "label": "M18 \u00d7 2.5",
+   "major_mm": 18,
+   "pitch_mm": 2.5,
+   "tpi": 10.16,
+   "pitch_dia_mm": 16.376,
+   "minor_int_mm": 15.294,
+   "minor_ext_mm": 14.933,
+   "tap_drill_mm": 15.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 16.85,
+   "clearance_mm": {
+    "close": 19.0,
+    "normal": 20.0,
+    "loose": 21.0
+   },
+   "nearest_imperial_drill": {
+    "name": "39/64\"",
+    "in": 0.6094,
+    "mm": 15.478,
+    "engagement_pct": 77.7
+   }
+  },
+  {
+   "id": "M20x2.5",
+   "series": "Metric coarse",
+   "label": "M20 \u00d7 2.5",
+   "major_mm": 20,
+   "pitch_mm": 2.5,
+   "tpi": 10.16,
+   "pitch_dia_mm": 18.376,
+   "minor_int_mm": 17.294,
+   "minor_ext_mm": 16.933,
+   "tap_drill_mm": 17.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 18.85,
+   "clearance_mm": {
+    "close": 21.0,
+    "normal": 22.0,
+    "loose": 24.0
+   },
+   "nearest_imperial_drill": {
+    "name": "11/16\"",
+    "in": 0.6875,
+    "mm": 17.462,
+    "engagement_pct": 78.2
+   }
+  },
+  {
+   "id": "M22x2.5",
+   "series": "Metric coarse",
+   "label": "M22 \u00d7 2.5",
+   "major_mm": 22,
+   "pitch_mm": 2.5,
+   "tpi": 10.16,
+   "pitch_dia_mm": 20.376,
+   "minor_int_mm": 19.294,
+   "minor_ext_mm": 18.933,
+   "tap_drill_mm": 19.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 20.85,
+   "clearance_mm": {
+    "close": 23.0,
+    "normal": 24.0,
+    "loose": 26.0
+   },
+   "nearest_imperial_drill": {
+    "name": "49/64\"",
+    "in": 0.7656,
+    "mm": 19.447,
+    "engagement_pct": 78.6
+   }
+  },
+  {
+   "id": "M24x3",
+   "series": "Metric coarse",
+   "label": "M24 \u00d7 3",
+   "major_mm": 24,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 22.051,
+   "minor_int_mm": 20.752,
+   "minor_ext_mm": 20.319,
+   "tap_drill_mm": 21.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 22.6,
+   "clearance_mm": {
+    "close": 25.0,
+    "normal": 26.0,
+    "loose": 28.0
+   },
+   "nearest_imperial_drill": {
+    "name": "53/64\"",
+    "in": 0.8281,
+    "mm": 21.034,
+    "engagement_pct": 76.1
+   }
+  },
+  {
+   "id": "M27x3",
+   "series": "Metric coarse",
+   "label": "M27 \u00d7 3",
+   "major_mm": 27,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 25.051,
+   "minor_int_mm": 23.752,
+   "minor_ext_mm": 23.319,
+   "tap_drill_mm": 24.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 25.6,
+   "clearance_mm": {
+    "close": 28.0,
+    "normal": 30.0,
+    "loose": 32.0
+   },
+   "nearest_imperial_drill": {
+    "name": "61/64\"",
+    "in": 0.9531,
+    "mm": 24.209,
+    "engagement_pct": 71.6
+   }
+  },
+  {
+   "id": "M30x3.5",
+   "series": "Metric coarse",
+   "label": "M30 \u00d7 3.5",
+   "major_mm": 30,
+   "pitch_mm": 3.5,
+   "tpi": 7.26,
+   "pitch_dia_mm": 27.727,
+   "minor_int_mm": 26.211,
+   "minor_ext_mm": 25.706,
+   "tap_drill_mm": 26.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 28.35,
+   "clearance_mm": {
+    "close": 31.0,
+    "normal": 33.0,
+    "loose": 35.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-3/64\"",
+    "in": 1.0469,
+    "mm": 26.591,
+    "engagement_pct": 75.0
+   }
+  },
+  {
+   "id": "M33x3.5",
+   "series": "Metric coarse",
+   "label": "M33 \u00d7 3.5",
+   "major_mm": 33,
+   "pitch_mm": 3.5,
+   "tpi": 7.26,
+   "pitch_dia_mm": 30.727,
+   "minor_int_mm": 29.211,
+   "minor_ext_mm": 28.706,
+   "tap_drill_mm": 29.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 31.35,
+   "clearance_mm": {
+    "close": 34.0,
+    "normal": 36.0,
+    "loose": 38.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-11/64\"",
+    "in": 1.1719,
+    "mm": 29.766,
+    "engagement_pct": 71.1
+   }
+  },
+  {
+   "id": "M36x4",
+   "series": "Metric coarse",
+   "label": "M36 \u00d7 4",
+   "major_mm": 36,
+   "pitch_mm": 4,
+   "tpi": 6.35,
+   "pitch_dia_mm": 33.402,
+   "minor_int_mm": 31.67,
+   "minor_ext_mm": 31.093,
+   "tap_drill_mm": 32.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 34.1,
+   "clearance_mm": {
+    "close": 37.0,
+    "normal": 39.0,
+    "loose": 42.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-17/64\"",
+    "in": 1.2656,
+    "mm": 32.147,
+    "engagement_pct": 74.2
+   }
+  },
+  {
+   "id": "M39x4",
+   "series": "Metric coarse",
+   "label": "M39 \u00d7 4",
+   "major_mm": 39,
+   "pitch_mm": 4,
+   "tpi": 6.35,
+   "pitch_dia_mm": 36.402,
+   "minor_int_mm": 34.67,
+   "minor_ext_mm": 34.093,
+   "tap_drill_mm": 35.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 37.1,
+   "clearance_mm": {
+    "close": 40.0,
+    "normal": 42.0,
+    "loose": 45.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-3/8\"",
+    "in": 1.375,
+    "mm": 34.925,
+    "engagement_pct": 78.4
+   }
+  },
+  {
+   "id": "M42x4.5",
+   "series": "Metric coarse",
+   "label": "M42 \u00d7 4.5",
+   "major_mm": 42,
+   "pitch_mm": 4.5,
+   "tpi": 5.64,
+   "pitch_dia_mm": 39.077,
+   "minor_int_mm": 37.129,
+   "minor_ext_mm": 36.479,
+   "tap_drill_mm": 37.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 39.9,
+   "clearance_mm": {
+    "close": 43.0,
+    "normal": 45.0,
+    "loose": 48.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-31/64\"",
+    "in": 1.4844,
+    "mm": 37.703,
+    "engagement_pct": 73.5
+   }
+  },
+  {
+   "id": "M45x4.5",
+   "series": "Metric coarse",
+   "label": "M45 \u00d7 4.5",
+   "major_mm": 45,
+   "pitch_mm": 4.5,
+   "tpi": 5.64,
+   "pitch_dia_mm": 42.077,
+   "minor_int_mm": 40.129,
+   "minor_ext_mm": 39.479,
+   "tap_drill_mm": 40.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 42.9,
+   "clearance_mm": {
+    "close": 46.0,
+    "normal": 48.0,
+    "loose": 52.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-19/32\"",
+    "in": 1.5938,
+    "mm": 40.481,
+    "engagement_pct": 77.3
+   }
+  },
+  {
+   "id": "M48x5",
+   "series": "Metric coarse",
+   "label": "M48 \u00d7 5",
+   "major_mm": 48,
+   "pitch_mm": 5,
+   "tpi": 5.08,
+   "pitch_dia_mm": 44.752,
+   "minor_int_mm": 42.587,
+   "minor_ext_mm": 41.866,
+   "tap_drill_mm": 43.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 45.65,
+   "clearance_mm": {
+    "close": 50.0,
+    "normal": 52.0,
+    "loose": 56.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-45/64\"",
+    "in": 1.7031,
+    "mm": 43.259,
+    "engagement_pct": 73.0
+   }
+  },
+  {
+   "id": "M52x5",
+   "series": "Metric coarse",
+   "label": "M52 \u00d7 5",
+   "major_mm": 52,
+   "pitch_mm": 5,
+   "tpi": 5.08,
+   "pitch_dia_mm": 48.752,
+   "minor_int_mm": 46.587,
+   "minor_ext_mm": 45.866,
+   "tap_drill_mm": 47.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 49.65,
+   "clearance_mm": {
+    "close": 54.0,
+    "normal": 56.0,
+    "loose": 62.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-55/64\"",
+    "in": 1.8594,
+    "mm": 47.228,
+    "engagement_pct": 73.5
+   }
+  },
+  {
+   "id": "M56x5.5",
+   "series": "Metric coarse",
+   "label": "M56 \u00d7 5.5",
+   "major_mm": 56,
+   "pitch_mm": 5.5,
+   "tpi": 4.62,
+   "pitch_dia_mm": 52.428,
+   "minor_int_mm": 50.046,
+   "minor_ext_mm": 49.252,
+   "tap_drill_mm": 50.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 53.4,
+   "clearance_mm": {
+    "close": 58.0,
+    "normal": 62.0,
+    "loose": 66.0
+   },
+   "nearest_imperial_drill": {
+    "name": "2\"",
+    "in": 2.0,
+    "mm": 50.8,
+    "engagement_pct": 72.8
+   }
+  }
+ ],
+ "metric_fine": [
+  {
+   "id": "M2x0.25",
+   "series": "Metric fine",
+   "label": "M2 \u00d7 0.25",
+   "major_mm": 2,
+   "pitch_mm": 0.25,
+   "tpi": 101.6,
+   "pitch_dia_mm": 1.838,
+   "minor_int_mm": 1.729,
+   "minor_ext_mm": 1.693,
+   "tap_drill_mm": 1.75,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 1.9,
+   "clearance_mm": {
+    "close": 2.2,
+    "normal": 2.4,
+    "loose": 2.6
+   },
+   "nearest_imperial_drill": {
+    "name": "#50",
+    "in": 0.07,
+    "mm": 1.778,
+    "engagement_pct": 68.4
+   }
+  },
+  {
+   "id": "M2.5x0.35",
+   "series": "Metric fine",
+   "label": "M2.5 \u00d7 0.35",
+   "major_mm": 2.5,
+   "pitch_mm": 0.35,
+   "tpi": 72.57,
+   "pitch_dia_mm": 2.273,
+   "minor_int_mm": 2.121,
+   "minor_ext_mm": 2.071,
+   "tap_drill_mm": 2.15,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 2.35,
+   "clearance_mm": {
+    "close": 2.7,
+    "normal": 2.9,
+    "loose": 3.1
+   },
+   "nearest_imperial_drill": {
+    "name": "#44",
+    "in": 0.086,
+    "mm": 2.184,
+    "engagement_pct": 69.5
+   }
+  },
+  {
+   "id": "M3x0.35",
+   "series": "Metric fine",
+   "label": "M3 \u00d7 0.35",
+   "major_mm": 3,
+   "pitch_mm": 0.35,
+   "tpi": 72.57,
+   "pitch_dia_mm": 2.773,
+   "minor_int_mm": 2.621,
+   "minor_ext_mm": 2.571,
+   "tap_drill_mm": 2.65,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 2.85,
+   "clearance_mm": {
+    "close": 3.2,
+    "normal": 3.4,
+    "loose": 3.6
+   },
+   "nearest_imperial_drill": {
+    "name": "#37",
+    "in": 0.104,
+    "mm": 2.642,
+    "engagement_pct": 78.7
+   }
+  },
+  {
+   "id": "M3.5x0.35",
+   "series": "Metric fine",
+   "label": "M3.5 \u00d7 0.35",
+   "major_mm": 3.5,
+   "pitch_mm": 0.35,
+   "tpi": 72.57,
+   "pitch_dia_mm": 3.273,
+   "minor_int_mm": 3.121,
+   "minor_ext_mm": 3.071,
+   "tap_drill_mm": 3.2,
+   "tap_drill_engagement_pct": 66.0,
+   "forming_drill_mm": 3.35,
+   "clearance_mm": {
+    "close": 3.7,
+    "normal": 3.9,
+    "loose": 4.2
+   },
+   "nearest_imperial_drill": {
+    "name": "1/8\"",
+    "in": 0.125,
+    "mm": 3.175,
+    "engagement_pct": 71.5
+   }
+  },
+  {
+   "id": "M4x0.5",
+   "series": "Metric fine",
+   "label": "M4 \u00d7 0.5",
+   "major_mm": 4,
+   "pitch_mm": 0.5,
+   "tpi": 50.8,
+   "pitch_dia_mm": 3.675,
+   "minor_int_mm": 3.459,
+   "minor_ext_mm": 3.387,
+   "tap_drill_mm": 3.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 3.8,
+   "clearance_mm": {
+    "close": 4.3,
+    "normal": 4.5,
+    "loose": 4.8
+   },
+   "nearest_imperial_drill": {
+    "name": "#28",
+    "in": 0.1405,
+    "mm": 3.569,
+    "engagement_pct": 66.4
+   }
+  },
+  {
+   "id": "M5x0.5",
+   "series": "Metric fine",
+   "label": "M5 \u00d7 0.5",
+   "major_mm": 5,
+   "pitch_mm": 0.5,
+   "tpi": 50.8,
+   "pitch_dia_mm": 4.675,
+   "minor_int_mm": 4.459,
+   "minor_ext_mm": 4.387,
+   "tap_drill_mm": 4.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 4.8,
+   "clearance_mm": {
+    "close": 5.3,
+    "normal": 5.5,
+    "loose": 5.8
+   },
+   "nearest_imperial_drill": {
+    "name": "#16",
+    "in": 0.177,
+    "mm": 4.496,
+    "engagement_pct": 77.6
+   }
+  },
+  {
+   "id": "M6x0.75",
+   "series": "Metric fine",
+   "label": "M6 \u00d7 0.75",
+   "major_mm": 6,
+   "pitch_mm": 0.75,
+   "tpi": 33.87,
+   "pitch_dia_mm": 5.513,
+   "minor_int_mm": 5.188,
+   "minor_ext_mm": 5.08,
+   "tap_drill_mm": 5.2,
+   "tap_drill_engagement_pct": 82.1,
+   "forming_drill_mm": 5.65,
+   "clearance_mm": {
+    "close": 6.4,
+    "normal": 6.6,
+    "loose": 7.0
+   },
+   "nearest_imperial_drill": {
+    "name": "#4",
+    "in": 0.209,
+    "mm": 5.309,
+    "engagement_pct": 70.9
+   }
+  },
+  {
+   "id": "M7x0.75",
+   "series": "Metric fine",
+   "label": "M7 \u00d7 0.75",
+   "major_mm": 7,
+   "pitch_mm": 0.75,
+   "tpi": 33.87,
+   "pitch_dia_mm": 6.513,
+   "minor_int_mm": 6.188,
+   "minor_ext_mm": 6.08,
+   "tap_drill_mm": 6.2,
+   "tap_drill_engagement_pct": 82.1,
+   "forming_drill_mm": 6.65,
+   "clearance_mm": {
+    "close": 7.4,
+    "normal": 7.6,
+    "loose": 8.0
+   },
+   "nearest_imperial_drill": {
+    "name": "D",
+    "in": 0.246,
+    "mm": 6.248,
+    "engagement_pct": 77.2
+   }
+  },
+  {
+   "id": "M8x0.75",
+   "series": "Metric fine",
+   "label": "M8 \u00d7 0.75",
+   "major_mm": 8,
+   "pitch_mm": 0.75,
+   "tpi": 33.87,
+   "pitch_dia_mm": 7.513,
+   "minor_int_mm": 7.188,
+   "minor_ext_mm": 7.08,
+   "tap_drill_mm": 7.2,
+   "tap_drill_engagement_pct": 82.1,
+   "forming_drill_mm": 7.65,
+   "clearance_mm": {
+    "close": 8.4,
+    "normal": 9.0,
+    "loose": 10.0
+   },
+   "nearest_imperial_drill": {
+    "name": "L",
+    "in": 0.29,
+    "mm": 7.366,
+    "engagement_pct": 65.1
+   }
+  },
+  {
+   "id": "M8x1",
+   "series": "Metric fine",
+   "label": "M8 \u00d7 1",
+   "major_mm": 8,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 7.35,
+   "minor_int_mm": 6.917,
+   "minor_ext_mm": 6.773,
+   "tap_drill_mm": 7.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 7.55,
+   "clearance_mm": {
+    "close": 8.4,
+    "normal": 9.0,
+    "loose": 10.0
+   },
+   "nearest_imperial_drill": {
+    "name": "J",
+    "in": 0.277,
+    "mm": 7.036,
+    "engagement_pct": 74.2
+   }
+  },
+  {
+   "id": "M10x0.75",
+   "series": "Metric fine",
+   "label": "M10 \u00d7 0.75",
+   "major_mm": 10,
+   "pitch_mm": 0.75,
+   "tpi": 33.87,
+   "pitch_dia_mm": 9.513,
+   "minor_int_mm": 9.188,
+   "minor_ext_mm": 9.08,
+   "tap_drill_mm": 9.2,
+   "tap_drill_engagement_pct": 82.1,
+   "forming_drill_mm": 9.65,
+   "clearance_mm": {
+    "close": 10.5,
+    "normal": 11.0,
+    "loose": 12.0
+   },
+   "nearest_imperial_drill": {
+    "name": "U",
+    "in": 0.368,
+    "mm": 9.347,
+    "engagement_pct": 67.0
+   }
+  },
+  {
+   "id": "M10x1",
+   "series": "Metric fine",
+   "label": "M10 \u00d7 1",
+   "major_mm": 10,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 9.35,
+   "minor_int_mm": 8.917,
+   "minor_ext_mm": 8.773,
+   "tap_drill_mm": 9.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 9.55,
+   "clearance_mm": {
+    "close": 10.5,
+    "normal": 11.0,
+    "loose": 12.0
+   },
+   "nearest_imperial_drill": {
+    "name": "T",
+    "in": 0.358,
+    "mm": 9.093,
+    "engagement_pct": 69.8
+   }
+  },
+  {
+   "id": "M10x1.25",
+   "series": "Metric fine",
+   "label": "M10 \u00d7 1.25",
+   "major_mm": 10,
+   "pitch_mm": 1.25,
+   "tpi": 20.32,
+   "pitch_dia_mm": 9.188,
+   "minor_int_mm": 8.647,
+   "minor_ext_mm": 8.466,
+   "tap_drill_mm": 8.8,
+   "tap_drill_engagement_pct": 73.9,
+   "forming_drill_mm": 9.45,
+   "clearance_mm": {
+    "close": 10.5,
+    "normal": 11.0,
+    "loose": 12.0
+   },
+   "nearest_imperial_drill": {
+    "name": "11/32\"",
+    "in": 0.3438,
+    "mm": 8.731,
+    "engagement_pct": 78.2
+   }
+  },
+  {
+   "id": "M12x1",
+   "series": "Metric fine",
+   "label": "M12 \u00d7 1",
+   "major_mm": 12,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 11.35,
+   "minor_int_mm": 10.917,
+   "minor_ext_mm": 10.773,
+   "tap_drill_mm": 11.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 11.55,
+   "clearance_mm": {
+    "close": 13.0,
+    "normal": 13.5,
+    "loose": 14.5
+   },
+   "nearest_imperial_drill": {
+    "name": "7/16\"",
+    "in": 0.4375,
+    "mm": 11.112,
+    "engagement_pct": 68.4
+   }
+  },
+  {
+   "id": "M12x1.25",
+   "series": "Metric fine",
+   "label": "M12 \u00d7 1.25",
+   "major_mm": 12,
+   "pitch_mm": 1.25,
+   "tpi": 20.32,
+   "pitch_dia_mm": 11.188,
+   "minor_int_mm": 10.647,
+   "minor_ext_mm": 10.466,
+   "tap_drill_mm": 10.8,
+   "tap_drill_engagement_pct": 73.9,
+   "forming_drill_mm": 11.45,
+   "clearance_mm": {
+    "close": 13.0,
+    "normal": 13.5,
+    "loose": 14.5
+   },
+   "nearest_imperial_drill": {
+    "name": "27/64\"",
+    "in": 0.4219,
+    "mm": 10.716,
+    "engagement_pct": 79.1
+   }
+  },
+  {
+   "id": "M12x1.5",
+   "series": "Metric fine",
+   "label": "M12 \u00d7 1.5",
+   "major_mm": 12,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 11.026,
+   "minor_int_mm": 10.376,
+   "minor_ext_mm": 10.16,
+   "tap_drill_mm": 10.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 11.3,
+   "clearance_mm": {
+    "close": 13.0,
+    "normal": 13.5,
+    "loose": 14.5
+   },
+   "nearest_imperial_drill": {
+    "name": "Z",
+    "in": 0.413,
+    "mm": 10.49,
+    "engagement_pct": 77.5
+   }
+  },
+  {
+   "id": "M14x1",
+   "series": "Metric fine",
+   "label": "M14 \u00d7 1",
+   "major_mm": 14,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 13.35,
+   "minor_int_mm": 12.917,
+   "minor_ext_mm": 12.773,
+   "tap_drill_mm": 13.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 13.55,
+   "clearance_mm": {
+    "close": 15.0,
+    "normal": 15.5,
+    "loose": 16.5
+   },
+   "nearest_imperial_drill": {
+    "name": "33/64\"",
+    "in": 0.5156,
+    "mm": 13.097,
+    "engagement_pct": 69.5
+   }
+  },
+  {
+   "id": "M14x1.25",
+   "series": "Metric fine",
+   "label": "M14 \u00d7 1.25",
+   "major_mm": 14,
+   "pitch_mm": 1.25,
+   "tpi": 20.32,
+   "pitch_dia_mm": 13.188,
+   "minor_int_mm": 12.647,
+   "minor_ext_mm": 12.466,
+   "tap_drill_mm": 12.8,
+   "tap_drill_engagement_pct": 73.9,
+   "forming_drill_mm": 13.45,
+   "clearance_mm": {
+    "close": 15.0,
+    "normal": 15.5,
+    "loose": 16.5
+   },
+   "nearest_imperial_drill": {
+    "name": "1/2\"",
+    "in": 0.5,
+    "mm": 12.7,
+    "engagement_pct": 80.1
+   }
+  },
+  {
+   "id": "M14x1.5",
+   "series": "Metric fine",
+   "label": "M14 \u00d7 1.5",
+   "major_mm": 14,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 13.026,
+   "minor_int_mm": 12.376,
+   "minor_ext_mm": 12.16,
+   "tap_drill_mm": 12.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 13.3,
+   "clearance_mm": {
+    "close": 15.0,
+    "normal": 15.5,
+    "loose": 16.5
+   },
+   "nearest_imperial_drill": {
+    "name": "1/2\"",
+    "in": 0.5,
+    "mm": 12.7,
+    "engagement_pct": 66.7
+   }
+  },
+  {
+   "id": "M16x1",
+   "series": "Metric fine",
+   "label": "M16 \u00d7 1",
+   "major_mm": 16,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 15.35,
+   "minor_int_mm": 14.917,
+   "minor_ext_mm": 14.773,
+   "tap_drill_mm": 15.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 15.55,
+   "clearance_mm": {
+    "close": 17.0,
+    "normal": 17.5,
+    "loose": 18.5
+   },
+   "nearest_imperial_drill": {
+    "name": "19/32\"",
+    "in": 0.5938,
+    "mm": 15.081,
+    "engagement_pct": 70.7
+   }
+  },
+  {
+   "id": "M16x1.5",
+   "series": "Metric fine",
+   "label": "M16 \u00d7 1.5",
+   "major_mm": 16,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 15.026,
+   "minor_int_mm": 14.376,
+   "minor_ext_mm": 14.16,
+   "tap_drill_mm": 14.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 15.3,
+   "clearance_mm": {
+    "close": 17.0,
+    "normal": 17.5,
+    "loose": 18.5
+   },
+   "nearest_imperial_drill": {
+    "name": "37/64\"",
+    "in": 0.5781,
+    "mm": 14.684,
+    "engagement_pct": 67.5
+   }
+  },
+  {
+   "id": "M18x1",
+   "series": "Metric fine",
+   "label": "M18 \u00d7 1",
+   "major_mm": 18,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 17.35,
+   "minor_int_mm": 16.917,
+   "minor_ext_mm": 16.773,
+   "tap_drill_mm": 17.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 17.55,
+   "clearance_mm": {
+    "close": 19.0,
+    "normal": 20.0,
+    "loose": 21.0
+   },
+   "nearest_imperial_drill": {
+    "name": "43/64\"",
+    "in": 0.6719,
+    "mm": 17.066,
+    "engagement_pct": 71.9
+   }
+  },
+  {
+   "id": "M18x1.5",
+   "series": "Metric fine",
+   "label": "M18 \u00d7 1.5",
+   "major_mm": 18,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 17.026,
+   "minor_int_mm": 16.376,
+   "minor_ext_mm": 16.16,
+   "tap_drill_mm": 16.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 17.3,
+   "clearance_mm": {
+    "close": 19.0,
+    "normal": 20.0,
+    "loose": 21.0
+   },
+   "nearest_imperial_drill": {
+    "name": "21/32\"",
+    "in": 0.6562,
+    "mm": 16.669,
+    "engagement_pct": 68.3
+   }
+  },
+  {
+   "id": "M18x2",
+   "series": "Metric fine",
+   "label": "M18 \u00d7 2",
+   "major_mm": 18,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 16.701,
+   "minor_int_mm": 15.835,
+   "minor_ext_mm": 15.546,
+   "tap_drill_mm": 16.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 17.05,
+   "clearance_mm": {
+    "close": 19.0,
+    "normal": 20.0,
+    "loose": 21.0
+   },
+   "nearest_imperial_drill": {
+    "name": "5/8\"",
+    "in": 0.625,
+    "mm": 15.875,
+    "engagement_pct": 81.8
+   }
+  },
+  {
+   "id": "M20x1",
+   "series": "Metric fine",
+   "label": "M20 \u00d7 1",
+   "major_mm": 20,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 19.35,
+   "minor_int_mm": 18.917,
+   "minor_ext_mm": 18.773,
+   "tap_drill_mm": 19.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 19.55,
+   "clearance_mm": {
+    "close": 21.0,
+    "normal": 22.0,
+    "loose": 24.0
+   },
+   "nearest_imperial_drill": {
+    "name": "3/4\"",
+    "in": 0.75,
+    "mm": 19.05,
+    "engagement_pct": 73.1
+   }
+  },
+  {
+   "id": "M20x1.5",
+   "series": "Metric fine",
+   "label": "M20 \u00d7 1.5",
+   "major_mm": 20,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 19.026,
+   "minor_int_mm": 18.376,
+   "minor_ext_mm": 18.16,
+   "tap_drill_mm": 18.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 19.3,
+   "clearance_mm": {
+    "close": 21.0,
+    "normal": 22.0,
+    "loose": 24.0
+   },
+   "nearest_imperial_drill": {
+    "name": "47/64\"",
+    "in": 0.7344,
+    "mm": 18.653,
+    "engagement_pct": 69.1
+   }
+  },
+  {
+   "id": "M20x2",
+   "series": "Metric fine",
+   "label": "M20 \u00d7 2",
+   "major_mm": 20,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 18.701,
+   "minor_int_mm": 17.835,
+   "minor_ext_mm": 17.546,
+   "tap_drill_mm": 18.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 19.05,
+   "clearance_mm": {
+    "close": 21.0,
+    "normal": 22.0,
+    "loose": 24.0
+   },
+   "nearest_imperial_drill": {
+    "name": "45/64\"",
+    "in": 0.7031,
+    "mm": 17.859,
+    "engagement_pct": 82.4
+   }
+  },
+  {
+   "id": "M22x1",
+   "series": "Metric fine",
+   "label": "M22 \u00d7 1",
+   "major_mm": 22,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 21.35,
+   "minor_int_mm": 20.917,
+   "minor_ext_mm": 20.773,
+   "tap_drill_mm": 21.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 21.55,
+   "clearance_mm": {
+    "close": 23.0,
+    "normal": 24.0,
+    "loose": 26.0
+   },
+   "nearest_imperial_drill": {
+    "name": "53/64\"",
+    "in": 0.8281,
+    "mm": 21.034,
+    "engagement_pct": 74.4
+   }
+  },
+  {
+   "id": "M22x1.5",
+   "series": "Metric fine",
+   "label": "M22 \u00d7 1.5",
+   "major_mm": 22,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 21.026,
+   "minor_int_mm": 20.376,
+   "minor_ext_mm": 20.16,
+   "tap_drill_mm": 20.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 21.3,
+   "clearance_mm": {
+    "close": 23.0,
+    "normal": 24.0,
+    "loose": 26.0
+   },
+   "nearest_imperial_drill": {
+    "name": "13/16\"",
+    "in": 0.8125,
+    "mm": 20.637,
+    "engagement_pct": 69.9
+   }
+  },
+  {
+   "id": "M22x2",
+   "series": "Metric fine",
+   "label": "M22 \u00d7 2",
+   "major_mm": 22,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 20.701,
+   "minor_int_mm": 19.835,
+   "minor_ext_mm": 19.546,
+   "tap_drill_mm": 20.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 21.05,
+   "clearance_mm": {
+    "close": 23.0,
+    "normal": 24.0,
+    "loose": 26.0
+   },
+   "nearest_imperial_drill": {
+    "name": "51/64\"",
+    "in": 0.7969,
+    "mm": 20.241,
+    "engagement_pct": 67.7
+   }
+  },
+  {
+   "id": "M24x1",
+   "series": "Metric fine",
+   "label": "M24 \u00d7 1",
+   "major_mm": 24,
+   "pitch_mm": 1,
+   "tpi": 25.4,
+   "pitch_dia_mm": 23.35,
+   "minor_int_mm": 22.917,
+   "minor_ext_mm": 22.773,
+   "tap_drill_mm": 23.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 23.55,
+   "clearance_mm": {
+    "close": 25.0,
+    "normal": 26.0,
+    "loose": 28.0
+   },
+   "nearest_imperial_drill": {
+    "name": "29/32\"",
+    "in": 0.9062,
+    "mm": 23.019,
+    "engagement_pct": 75.5
+   }
+  },
+  {
+   "id": "M24x1.5",
+   "series": "Metric fine",
+   "label": "M24 \u00d7 1.5",
+   "major_mm": 24,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 23.026,
+   "minor_int_mm": 22.376,
+   "minor_ext_mm": 22.16,
+   "tap_drill_mm": 22.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 23.3,
+   "clearance_mm": {
+    "close": 25.0,
+    "normal": 26.0,
+    "loose": 28.0
+   },
+   "nearest_imperial_drill": {
+    "name": "57/64\"",
+    "in": 0.8906,
+    "mm": 22.622,
+    "engagement_pct": 70.7
+   }
+  },
+  {
+   "id": "M24x2",
+   "series": "Metric fine",
+   "label": "M24 \u00d7 2",
+   "major_mm": 24,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 22.701,
+   "minor_int_mm": 21.835,
+   "minor_ext_mm": 21.546,
+   "tap_drill_mm": 22.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 23.05,
+   "clearance_mm": {
+    "close": 25.0,
+    "normal": 26.0,
+    "loose": 28.0
+   },
+   "nearest_imperial_drill": {
+    "name": "7/8\"",
+    "in": 0.875,
+    "mm": 22.225,
+    "engagement_pct": 68.3
+   }
+  },
+  {
+   "id": "M27x1.5",
+   "series": "Metric fine",
+   "label": "M27 \u00d7 1.5",
+   "major_mm": 27,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 26.026,
+   "minor_int_mm": 25.376,
+   "minor_ext_mm": 25.16,
+   "tap_drill_mm": 25.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 26.3,
+   "clearance_mm": {
+    "close": 28.0,
+    "normal": 30.0,
+    "loose": 32.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1\"",
+    "in": 1.0,
+    "mm": 25.4,
+    "engagement_pct": 82.1
+   }
+  },
+  {
+   "id": "M27x2",
+   "series": "Metric fine",
+   "label": "M27 \u00d7 2",
+   "major_mm": 27,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 25.701,
+   "minor_int_mm": 24.835,
+   "minor_ext_mm": 24.546,
+   "tap_drill_mm": 25.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 26.05,
+   "clearance_mm": {
+    "close": 28.0,
+    "normal": 30.0,
+    "loose": 32.0
+   },
+   "nearest_imperial_drill": {
+    "name": "63/64\"",
+    "in": 0.9844,
+    "mm": 25.003,
+    "engagement_pct": 76.9
+   }
+  },
+  {
+   "id": "M30x1.5",
+   "series": "Metric fine",
+   "label": "M30 \u00d7 1.5",
+   "major_mm": 30,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 29.026,
+   "minor_int_mm": 28.376,
+   "minor_ext_mm": 28.16,
+   "tap_drill_mm": 28.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 29.3,
+   "clearance_mm": {
+    "close": 31.0,
+    "normal": 33.0,
+    "loose": 35.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-1/8\"",
+    "in": 1.125,
+    "mm": 28.575,
+    "engagement_pct": 73.1
+   }
+  },
+  {
+   "id": "M30x2",
+   "series": "Metric fine",
+   "label": "M30 \u00d7 2",
+   "major_mm": 30,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 28.701,
+   "minor_int_mm": 27.835,
+   "minor_ext_mm": 27.546,
+   "tap_drill_mm": 28.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 29.05,
+   "clearance_mm": {
+    "close": 31.0,
+    "normal": 33.0,
+    "loose": 35.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-7/64\"",
+    "in": 1.1094,
+    "mm": 28.178,
+    "engagement_pct": 70.1
+   }
+  },
+  {
+   "id": "M33x2",
+   "series": "Metric fine",
+   "label": "M33 \u00d7 2",
+   "major_mm": 33,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 31.701,
+   "minor_int_mm": 30.835,
+   "minor_ext_mm": 30.546,
+   "tap_drill_mm": 31.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 32.05,
+   "clearance_mm": {
+    "close": 34.0,
+    "normal": 36.0,
+    "loose": 38.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-7/32\"",
+    "in": 1.2188,
+    "mm": 30.956,
+    "engagement_pct": 78.7
+   }
+  },
+  {
+   "id": "M36x1.5",
+   "series": "Metric fine",
+   "label": "M36 \u00d7 1.5",
+   "major_mm": 36,
+   "pitch_mm": 1.5,
+   "tpi": 16.93,
+   "pitch_dia_mm": 35.026,
+   "minor_int_mm": 34.376,
+   "minor_ext_mm": 34.16,
+   "tap_drill_mm": 34.5,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 35.3,
+   "clearance_mm": {
+    "close": 37.0,
+    "normal": 39.0,
+    "loose": 42.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-23/64\"",
+    "in": 1.3594,
+    "mm": 34.528,
+    "engagement_pct": 75.5
+   }
+  },
+  {
+   "id": "M36x2",
+   "series": "Metric fine",
+   "label": "M36 \u00d7 2",
+   "major_mm": 36,
+   "pitch_mm": 2,
+   "tpi": 12.7,
+   "pitch_dia_mm": 34.701,
+   "minor_int_mm": 33.835,
+   "minor_ext_mm": 33.546,
+   "tap_drill_mm": 34.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 35.05,
+   "clearance_mm": {
+    "close": 37.0,
+    "normal": 39.0,
+    "loose": 42.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-11/32\"",
+    "in": 1.3438,
+    "mm": 34.131,
+    "engagement_pct": 71.9
+   }
+  },
+  {
+   "id": "M36x3",
+   "series": "Metric fine",
+   "label": "M36 \u00d7 3",
+   "major_mm": 36,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 34.051,
+   "minor_int_mm": 32.752,
+   "minor_ext_mm": 32.319,
+   "tap_drill_mm": 33.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 34.6,
+   "clearance_mm": {
+    "close": 37.0,
+    "normal": 39.0,
+    "loose": 42.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-19/64\"",
+    "in": 1.2969,
+    "mm": 32.941,
+    "engagement_pct": 78.5
+   }
+  },
+  {
+   "id": "M39x3",
+   "series": "Metric fine",
+   "label": "M39 \u00d7 3",
+   "major_mm": 39,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 37.051,
+   "minor_int_mm": 35.752,
+   "minor_ext_mm": 35.319,
+   "tap_drill_mm": 36.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 37.6,
+   "clearance_mm": {
+    "close": 40.0,
+    "normal": 42.0,
+    "loose": 45.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-27/64\"",
+    "in": 1.4219,
+    "mm": 36.116,
+    "engagement_pct": 74.0
+   }
+  },
+  {
+   "id": "M42x3",
+   "series": "Metric fine",
+   "label": "M42 \u00d7 3",
+   "major_mm": 42,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 40.051,
+   "minor_int_mm": 38.752,
+   "minor_ext_mm": 38.319,
+   "tap_drill_mm": 39.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 40.6,
+   "clearance_mm": {
+    "close": 43.0,
+    "normal": 45.0,
+    "loose": 48.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-17/32\"",
+    "in": 1.5312,
+    "mm": 38.894,
+    "engagement_pct": 79.7
+   }
+  },
+  {
+   "id": "M45x3",
+   "series": "Metric fine",
+   "label": "M45 \u00d7 3",
+   "major_mm": 45,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 43.051,
+   "minor_int_mm": 41.752,
+   "minor_ext_mm": 41.319,
+   "tap_drill_mm": 42.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 43.6,
+   "clearance_mm": {
+    "close": 46.0,
+    "normal": 48.0,
+    "loose": 52.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-21/32\"",
+    "in": 1.6562,
+    "mm": 42.069,
+    "engagement_pct": 75.2
+   }
+  },
+  {
+   "id": "M48x3",
+   "series": "Metric fine",
+   "label": "M48 \u00d7 3",
+   "major_mm": 48,
+   "pitch_mm": 3,
+   "tpi": 8.47,
+   "pitch_dia_mm": 46.051,
+   "minor_int_mm": 44.752,
+   "minor_ext_mm": 44.319,
+   "tap_drill_mm": 45.0,
+   "tap_drill_engagement_pct": 77.0,
+   "forming_drill_mm": 46.6,
+   "clearance_mm": {
+    "close": 50.0,
+    "normal": 52.0,
+    "loose": 56.0
+   },
+   "nearest_imperial_drill": {
+    "name": "1-25/32\"",
+    "in": 1.7812,
+    "mm": 45.244,
+    "engagement_pct": 70.7
+   }
+  }
+ ],
+ "unc": [
+  {
+   "id": "#1-64UNC",
+   "series": "UNC",
+   "label": "#1-64 UNC",
+   "major_in": 0.073,
+   "major_mm": 1.854,
+   "tpi": 64,
+   "pitch_mm": 0.3969,
+   "pitch_dia_mm": 1.596,
+   "minor_int_mm": 1.425,
+   "tap_drill": {
+    "ideal_mm": 1.468,
+    "metric": {
+     "mm": 1.45,
+     "engagement_pct": 78.4
+    },
+    "metric_alts": [
+     {
+      "mm": 1.4,
+      "engagement_pct": 88.1
+     },
+     {
+      "mm": 1.5,
+      "engagement_pct": 68.7
+     }
+    ],
+    "imperial": {
+     "name": "#53",
+     "in": 0.0595,
+     "mm": 1.511,
+     "engagement_pct": 66.6
+    },
+    "imperial_alts": [
+     {
+      "name": "#54",
+      "in": 0.055,
+      "mm": 1.397,
+      "engagement_pct": 88.7
+     },
+     {
+      "name": "1/16\"",
+      "in": 0.0625,
+      "mm": 1.587,
+      "engagement_pct": 51.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "#2-56UNC",
+   "series": "UNC",
+   "label": "#2-56 UNC",
+   "major_in": 0.086,
+   "major_mm": 2.184,
+   "tpi": 56,
+   "pitch_mm": 0.4536,
+   "pitch_dia_mm": 1.89,
+   "minor_int_mm": 1.693,
+   "tap_drill": {
+    "ideal_mm": 1.742,
+    "metric": {
+     "mm": 1.75,
+     "engagement_pct": 73.7
+    },
+    "metric_alts": [
+     {
+      "mm": 1.7,
+      "engagement_pct": 82.2
+     },
+     {
+      "mm": 1.8,
+      "engagement_pct": 65.2
+     }
+    ],
+    "imperial": {
+     "name": "#50",
+     "in": 0.07,
+     "mm": 1.778,
+     "engagement_pct": 69.0
+    },
+    "imperial_alts": [
+     {
+      "name": "#51",
+      "in": 0.067,
+      "mm": 1.702,
+      "engagement_pct": 81.9
+     },
+     {
+      "name": "#49",
+      "in": 0.073,
+      "mm": 1.854,
+      "engagement_pct": 56.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "#3-48UNC",
+   "series": "UNC",
+   "label": "#3-48 UNC",
+   "major_in": 0.099,
+   "major_mm": 2.515,
+   "tpi": 48,
+   "pitch_mm": 0.5292,
+   "pitch_dia_mm": 2.171,
+   "minor_int_mm": 1.942,
+   "tap_drill": {
+    "ideal_mm": 1.999,
+    "metric": {
+     "mm": 2.0,
+     "engagement_pct": 74.9
+    },
+    "metric_alts": [
+     {
+      "mm": 1.95,
+      "engagement_pct": 82.1
+     },
+     {
+      "mm": 2.05,
+      "engagement_pct": 67.6
+     }
+    ],
+    "imperial": {
+     "name": "#47",
+     "in": 0.0785,
+     "mm": 1.994,
+     "engagement_pct": 75.7
+    },
+    "imperial_alts": [
+     {
+      "name": "5/64\"",
+      "in": 0.0781,
+      "mm": 1.984,
+      "engagement_pct": 77.2
+     },
+     {
+      "name": "#46",
+      "in": 0.081,
+      "mm": 2.057,
+      "engagement_pct": 66.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "#4-40UNC",
+   "series": "UNC",
+   "label": "#4-40 UNC",
+   "major_in": 0.112,
+   "major_mm": 2.845,
+   "tpi": 40,
+   "pitch_mm": 0.635,
+   "pitch_dia_mm": 2.432,
+   "minor_int_mm": 2.157,
+   "tap_drill": {
+    "ideal_mm": 2.226,
+    "metric": {
+     "mm": 2.25,
+     "engagement_pct": 72.1
+    },
+    "metric_alts": [
+     {
+      "mm": 2.2,
+      "engagement_pct": 78.2
+     },
+     {
+      "mm": 2.3,
+      "engagement_pct": 66.0
+     }
+    ],
+    "imperial": {
+     "name": "#43",
+     "in": 0.089,
+     "mm": 2.261,
+     "engagement_pct": 70.8
+    },
+    "imperial_alts": [
+     {
+      "name": "#44",
+      "in": 0.086,
+      "mm": 2.184,
+      "engagement_pct": 80.1
+     },
+     {
+      "name": "#42",
+      "in": 0.0935,
+      "mm": 2.375,
+      "engagement_pct": 57.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "#5-40UNC",
+   "series": "UNC",
+   "label": "#5-40 UNC",
+   "major_in": 0.125,
+   "major_mm": 3.175,
+   "tpi": 40,
+   "pitch_mm": 0.635,
+   "pitch_dia_mm": 2.763,
+   "minor_int_mm": 2.488,
+   "tap_drill": {
+    "ideal_mm": 2.556,
+    "metric": {
+     "mm": 2.55,
+     "engagement_pct": 75.8
+    },
+    "metric_alts": [
+     {
+      "mm": 2.5,
+      "engagement_pct": 81.8
+     },
+     {
+      "mm": 2.6,
+      "engagement_pct": 69.7
+     }
+    ],
+    "imperial": {
+     "name": "#38",
+     "in": 0.1015,
+     "mm": 2.578,
+     "engagement_pct": 72.4
+    },
+    "imperial_alts": [
+     {
+      "name": "#39",
+      "in": 0.0995,
+      "mm": 2.527,
+      "engagement_pct": 78.6
+     },
+     {
+      "name": "#37",
+      "in": 0.104,
+      "mm": 2.642,
+      "engagement_pct": 64.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "#6-32UNC",
+   "series": "UNC",
+   "label": "#6-32 UNC",
+   "major_in": 0.138,
+   "major_mm": 3.505,
+   "tpi": 32,
+   "pitch_mm": 0.7937,
+   "pitch_dia_mm": 2.99,
+   "minor_int_mm": 2.646,
+   "tap_drill": {
+    "ideal_mm": 2.732,
+    "metric": {
+     "mm": 2.75,
+     "engagement_pct": 73.2
+    },
+    "metric_alts": [
+     {
+      "mm": 2.7,
+      "engagement_pct": 78.1
+     },
+     {
+      "mm": 2.8,
+      "engagement_pct": 68.4
+     }
+    ],
+    "imperial": {
+     "name": "#36",
+     "in": 0.1065,
+     "mm": 2.705,
+     "engagement_pct": 77.6
+    },
+    "imperial_alts": [
+     {
+      "name": "#37",
+      "in": 0.104,
+      "mm": 2.642,
+      "engagement_pct": 83.7
+     },
+     {
+      "name": "7/64\"",
+      "in": 0.1094,
+      "mm": 2.778,
+      "engagement_pct": 70.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "#8-32UNC",
+   "series": "UNC",
+   "label": "#8-32 UNC",
+   "major_in": 0.164,
+   "major_mm": 4.166,
+   "tpi": 32,
+   "pitch_mm": 0.7937,
+   "pitch_dia_mm": 3.65,
+   "minor_int_mm": 3.306,
+   "tap_drill": {
+    "ideal_mm": 3.392,
+    "metric": {
+     "mm": 3.4,
+     "engagement_pct": 74.2
+    },
+    "metric_alts": [
+     {
+      "mm": 3.3,
+      "engagement_pct": 83.9
+     },
+     {
+      "mm": 3.5,
+      "engagement_pct": 64.6
+     }
+    ],
+    "imperial": {
+     "name": "#29",
+     "in": 0.136,
+     "mm": 3.454,
+     "engagement_pct": 69.0
+    },
+    "imperial_alts": [
+     {
+      "name": "#30",
+      "in": 0.1285,
+      "mm": 3.264,
+      "engagement_pct": 87.4
+     },
+     {
+      "name": "#28",
+      "in": 0.1405,
+      "mm": 3.569,
+      "engagement_pct": 57.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "#10-24UNC",
+   "series": "UNC",
+   "label": "#10-24 UNC",
+   "major_in": 0.19,
+   "major_mm": 4.826,
+   "tpi": 24,
+   "pitch_mm": 1.0583,
+   "pitch_dia_mm": 4.139,
+   "minor_int_mm": 3.68,
+   "tap_drill": {
+    "ideal_mm": 3.795,
+    "metric": {
+     "mm": 3.8,
+     "engagement_pct": 74.6
+    },
+    "metric_alts": [
+     {
+      "mm": 3.7,
+      "engagement_pct": 81.9
+     },
+     {
+      "mm": 3.9,
+      "engagement_pct": 67.4
+     }
+    ],
+    "imperial": {
+     "name": "#25",
+     "in": 0.1495,
+     "mm": 3.797,
+     "engagement_pct": 74.8
+    },
+    "imperial_alts": [
+     {
+      "name": "#26",
+      "in": 0.147,
+      "mm": 3.734,
+      "engagement_pct": 79.4
+     },
+     {
+      "name": "#24",
+      "in": 0.152,
+      "mm": 3.861,
+      "engagement_pct": 70.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "#12-24UNC",
+   "series": "UNC",
+   "label": "#12-24 UNC",
+   "major_in": 0.216,
+   "major_mm": 5.486,
+   "tpi": 24,
+   "pitch_mm": 1.0583,
+   "pitch_dia_mm": 4.799,
+   "minor_int_mm": 4.341,
+   "tap_drill": {
+    "ideal_mm": 4.455,
+    "metric": {
+     "mm": 4.5,
+     "engagement_pct": 71.7
+    },
+    "metric_alts": [
+     {
+      "mm": 4.4,
+      "engagement_pct": 79.0
+     },
+     {
+      "mm": 4.6,
+      "engagement_pct": 64.5
+     }
+    ],
+    "imperial": {
+     "name": "#16",
+     "in": 0.177,
+     "mm": 4.496,
+     "engagement_pct": 72.0
+    },
+    "imperial_alts": [
+     {
+      "name": "#17",
+      "in": 0.173,
+      "mm": 4.394,
+      "engagement_pct": 79.5
+     },
+     {
+      "name": "#15",
+      "in": 0.18,
+      "mm": 4.572,
+      "engagement_pct": 66.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/4-20UNC",
+   "series": "UNC",
+   "label": "1/4\"-20 UNC",
+   "major_in": 0.25,
+   "major_mm": 6.35,
+   "tpi": 20,
+   "pitch_mm": 1.27,
+   "pitch_dia_mm": 5.525,
+   "minor_int_mm": 4.975,
+   "tap_drill": {
+    "ideal_mm": 5.113,
+    "metric": {
+     "mm": 5.1,
+     "engagement_pct": 75.8
+    },
+    "metric_alts": [
+     {
+      "mm": 5.0,
+      "engagement_pct": 81.8
+     },
+     {
+      "mm": 5.2,
+      "engagement_pct": 69.7
+     }
+    ],
+    "imperial": {
+     "name": "#7",
+     "in": 0.201,
+     "mm": 5.105,
+     "engagement_pct": 75.5
+    },
+    "imperial_alts": [
+     {
+      "name": "#8",
+      "in": 0.199,
+      "mm": 5.055,
+      "engagement_pct": 78.5
+     },
+     {
+      "name": "13/64\"",
+      "in": 0.2031,
+      "mm": 5.159,
+      "engagement_pct": 72.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/16-18UNC",
+   "series": "UNC",
+   "label": "5/16\"-18 UNC",
+   "major_in": 0.3125,
+   "major_mm": 7.938,
+   "tpi": 18,
+   "pitch_mm": 1.4111,
+   "pitch_dia_mm": 7.021,
+   "minor_int_mm": 6.41,
+   "tap_drill": {
+    "ideal_mm": 6.563,
+    "metric": {
+     "mm": 6.6,
+     "engagement_pct": 73.0
+    },
+    "metric_alts": [
+     {
+      "mm": 6.5,
+      "engagement_pct": 78.4
+     },
+     {
+      "mm": 6.7,
+      "engagement_pct": 67.5
+     }
+    ],
+    "imperial": {
+     "name": "F",
+     "in": 0.257,
+     "mm": 6.528,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1/4\"",
+      "in": 0.25,
+      "mm": 6.35,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "G",
+      "in": 0.261,
+      "mm": 6.629,
+      "engagement_pct": 71.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/8-16UNC",
+   "series": "UNC",
+   "label": "3/8\"-16 UNC",
+   "major_in": 0.375,
+   "major_mm": 9.525,
+   "tpi": 16,
+   "pitch_mm": 1.5875,
+   "pitch_dia_mm": 8.494,
+   "minor_int_mm": 7.806,
+   "tap_drill": {
+    "ideal_mm": 7.978,
+    "metric": {
+     "mm": 8.0,
+     "engagement_pct": 73.9
+    },
+    "metric_alts": [
+     {
+      "mm": 7.9,
+      "engagement_pct": 78.8
+     },
+     {
+      "mm": 8.1,
+      "engagement_pct": 69.1
+     }
+    ],
+    "imperial": {
+     "name": "5/16\"",
+     "in": 0.3125,
+     "mm": 7.938,
+     "engagement_pct": 77.0
+    },
+    "imperial_alts": [
+     {
+      "name": "N",
+      "in": 0.302,
+      "mm": 7.671,
+      "engagement_pct": 89.9
+     },
+     {
+      "name": "O",
+      "in": 0.316,
+      "mm": 8.026,
+      "engagement_pct": 72.7
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/16-14UNC",
+   "series": "UNC",
+   "label": "7/16\"-14 UNC",
+   "major_in": 0.4375,
+   "major_mm": 11.112,
+   "tpi": 14,
+   "pitch_mm": 1.8143,
+   "pitch_dia_mm": 9.934,
+   "minor_int_mm": 9.148,
+   "tap_drill": {
+    "ideal_mm": 9.345,
+    "metric": {
+     "mm": 9.3,
+     "engagement_pct": 76.9
+    },
+    "metric_alts": [
+     {
+      "mm": 9.2,
+      "engagement_pct": 81.1
+     },
+     {
+      "mm": 9.4,
+      "engagement_pct": 72.7
+     }
+    ],
+    "imperial": {
+     "name": "U",
+     "in": 0.368,
+     "mm": 9.347,
+     "engagement_pct": 74.9
+    },
+    "imperial_alts": [
+     {
+      "name": "23/64\"",
+      "in": 0.3594,
+      "mm": 9.128,
+      "engagement_pct": 84.2
+     },
+     {
+      "name": "3/8\"",
+      "in": 0.375,
+      "mm": 9.525,
+      "engagement_pct": 67.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/2-13UNC",
+   "series": "UNC",
+   "label": "1/2\"-13 UNC",
+   "major_in": 0.5,
+   "major_mm": 12.7,
+   "tpi": 13,
+   "pitch_mm": 1.9538,
+   "pitch_dia_mm": 11.431,
+   "minor_int_mm": 10.585,
+   "tap_drill": {
+    "ideal_mm": 10.796,
+    "metric": {
+     "mm": 10.8,
+     "engagement_pct": 74.9
+    },
+    "metric_alts": [
+     {
+      "mm": 10.7,
+      "engagement_pct": 78.8
+     },
+     {
+      "mm": 10.9,
+      "engagement_pct": 70.9
+     }
+    ],
+    "imperial": {
+     "name": "27/64\"",
+     "in": 0.4219,
+     "mm": 10.716,
+     "engagement_pct": 78.2
+    },
+    "imperial_alts": [
+     {
+      "name": "Z",
+      "in": 0.413,
+      "mm": 10.49,
+      "engagement_pct": 87.1
+     },
+     {
+      "name": "7/16\"",
+      "in": 0.4375,
+      "mm": 11.112,
+      "engagement_pct": 62.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "9/16-12UNC",
+   "series": "UNC",
+   "label": "9/16\"-12 UNC",
+   "major_in": 0.5625,
+   "major_mm": 14.287,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 12.913,
+   "minor_int_mm": 11.996,
+   "tap_drill": {
+    "ideal_mm": 12.225,
+    "metric": {
+     "mm": 12.2,
+     "engagement_pct": 75.9
+    },
+    "metric_alts": [
+     {
+      "mm": 12.1,
+      "engagement_pct": 79.6
+     },
+     {
+      "mm": 12.3,
+      "engagement_pct": 72.3
+     }
+    ],
+    "imperial": {
+     "name": "31/64\"",
+     "in": 0.4844,
+     "mm": 12.303,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "15/32\"",
+      "in": 0.4688,
+      "mm": 11.906,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "1/2\"",
+      "in": 0.5,
+      "mm": 12.7,
+      "engagement_pct": 57.7
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/8-11UNC",
+   "series": "UNC",
+   "label": "5/8\"-11 UNC",
+   "major_in": 0.625,
+   "major_mm": 15.875,
+   "tpi": 11,
+   "pitch_mm": 2.3091,
+   "pitch_dia_mm": 14.375,
+   "minor_int_mm": 13.375,
+   "tap_drill": {
+    "ideal_mm": 13.625,
+    "metric": {
+     "mm": 13.75,
+     "engagement_pct": 70.8
+    },
+    "metric_alts": [
+     {
+      "mm": 13.5,
+      "engagement_pct": 79.2
+     },
+     {
+      "mm": 14.0,
+      "engagement_pct": 62.5
+     }
+    ],
+    "imperial": {
+     "name": "17/32\"",
+     "in": 0.5312,
+     "mm": 13.494,
+     "engagement_pct": 79.4
+    },
+    "imperial_alts": [
+     {
+      "name": "33/64\"",
+      "in": 0.5156,
+      "mm": 13.097,
+      "engagement_pct": 92.6
+     },
+     {
+      "name": "35/64\"",
+      "in": 0.5469,
+      "mm": 13.891,
+      "engagement_pct": 66.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/4-10UNC",
+   "series": "UNC",
+   "label": "3/4\"-10 UNC",
+   "major_in": 0.75,
+   "major_mm": 19.05,
+   "tpi": 10,
+   "pitch_mm": 2.54,
+   "pitch_dia_mm": 17.4,
+   "minor_int_mm": 16.3,
+   "tap_drill": {
+    "ideal_mm": 16.575,
+    "metric": {
+     "mm": 16.5,
+     "engagement_pct": 77.3
+    },
+    "metric_alts": [
+     {
+      "mm": 16.25,
+      "engagement_pct": 84.9
+     },
+     {
+      "mm": 16.75,
+      "engagement_pct": 69.7
+     }
+    ],
+    "imperial": {
+     "name": "21/32\"",
+     "in": 0.6562,
+     "mm": 16.669,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "41/64\"",
+      "in": 0.6406,
+      "mm": 16.272,
+      "engagement_pct": 84.2
+     },
+     {
+      "name": "43/64\"",
+      "in": 0.6719,
+      "mm": 17.066,
+      "engagement_pct": 60.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/8-9UNC",
+   "series": "UNC",
+   "label": "7/8\"-9 UNC",
+   "major_in": 0.875,
+   "major_mm": 22.225,
+   "tpi": 9,
+   "pitch_mm": 2.8222,
+   "pitch_dia_mm": 20.392,
+   "minor_int_mm": 19.17,
+   "tap_drill": {
+    "ideal_mm": 19.475,
+    "metric": {
+     "mm": 19.5,
+     "engagement_pct": 74.3
+    },
+    "metric_alts": [
+     {
+      "mm": 19.25,
+      "engagement_pct": 81.1
+     },
+     {
+      "mm": 19.75,
+      "engagement_pct": 67.5
+     }
+    ],
+    "imperial": {
+     "name": "49/64\"",
+     "in": 0.7656,
+     "mm": 19.447,
+     "engagement_pct": 75.8
+    },
+    "imperial_alts": [
+     {
+      "name": "3/4\"",
+      "in": 0.75,
+      "mm": 19.05,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "25/32\"",
+      "in": 0.7812,
+      "mm": 19.844,
+      "engagement_pct": 64.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-8UNC",
+   "series": "UNC",
+   "label": "1\"-8 UNC",
+   "major_in": 1.0,
+   "major_mm": 25.4,
+   "tpi": 8,
+   "pitch_mm": 3.175,
+   "pitch_dia_mm": 23.338,
+   "minor_int_mm": 21.963,
+   "tap_drill": {
+    "ideal_mm": 22.307,
+    "metric": {
+     "mm": 22.25,
+     "engagement_pct": 76.4
+    },
+    "metric_alts": [
+     {
+      "mm": 22.0,
+      "engagement_pct": 82.4
+     },
+     {
+      "mm": 22.5,
+      "engagement_pct": 70.3
+     }
+    ],
+    "imperial": {
+     "name": "7/8\"",
+     "in": 0.875,
+     "mm": 22.225,
+     "engagement_pct": 77.0
+    },
+    "imperial_alts": [
+     {
+      "name": "55/64\"",
+      "in": 0.8594,
+      "mm": 21.828,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "57/64\"",
+      "in": 0.8906,
+      "mm": 22.622,
+      "engagement_pct": 67.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/8-7UNC",
+   "series": "UNC",
+   "label": "1-1/8\"-7 UNC",
+   "major_in": 1.125,
+   "major_mm": 28.575,
+   "tpi": 7,
+   "pitch_mm": 3.6286,
+   "pitch_dia_mm": 26.218,
+   "minor_int_mm": 24.647,
+   "tap_drill": {
+    "ideal_mm": 25.04,
+    "metric": {
+     "mm": 25.0,
+     "engagement_pct": 75.8
+    },
+    "metric_alts": [
+     {
+      "mm": 24.75,
+      "engagement_pct": 81.1
+     },
+     {
+      "mm": 25.25,
+      "engagement_pct": 70.5
+     }
+    ],
+    "imperial": {
+     "name": "63/64\"",
+     "in": 0.9844,
+     "mm": 25.003,
+     "engagement_pct": 75.8
+    },
+    "imperial_alts": [
+     {
+      "name": "31/32\"",
+      "in": 0.9688,
+      "mm": 24.606,
+      "engagement_pct": 84.2
+     },
+     {
+      "name": "1\"",
+      "in": 1.0,
+      "mm": 25.4,
+      "engagement_pct": 67.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/4-7UNC",
+   "series": "UNC",
+   "label": "1-1/4\"-7 UNC",
+   "major_in": 1.25,
+   "major_mm": 31.75,
+   "tpi": 7,
+   "pitch_mm": 3.6286,
+   "pitch_dia_mm": 29.393,
+   "minor_int_mm": 27.822,
+   "tap_drill": {
+    "ideal_mm": 28.215,
+    "metric": {
+     "mm": 28.25,
+     "engagement_pct": 74.3
+    },
+    "metric_alts": [
+     {
+      "mm": 28.0,
+      "engagement_pct": 79.6
+     },
+     {
+      "mm": 28.5,
+      "engagement_pct": 68.9
+     }
+    ],
+    "imperial": {
+     "name": "1-7/64\"",
+     "in": 1.1094,
+     "mm": 28.178,
+     "engagement_pct": 75.8
+    },
+    "imperial_alts": [
+     {
+      "name": "1-3/32\"",
+      "in": 1.0938,
+      "mm": 27.781,
+      "engagement_pct": 84.2
+     },
+     {
+      "name": "1-1/8\"",
+      "in": 1.125,
+      "mm": 28.575,
+      "engagement_pct": 67.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-3/8-6UNC",
+   "series": "UNC",
+   "label": "1-3/8\"-6 UNC",
+   "major_in": 1.375,
+   "major_mm": 34.925,
+   "tpi": 6,
+   "pitch_mm": 4.2333,
+   "pitch_dia_mm": 32.175,
+   "minor_int_mm": 30.342,
+   "tap_drill": {
+    "ideal_mm": 30.801,
+    "metric": {
+     "mm": 30.75,
+     "engagement_pct": 75.9
+    },
+    "metric_alts": [
+     {
+      "mm": 30.5,
+      "engagement_pct": 80.5
+     },
+     {
+      "mm": 31.0,
+      "engagement_pct": 71.4
+     }
+    ],
+    "imperial": {
+     "name": "1-7/32\"",
+     "in": 1.2188,
+     "mm": 30.956,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-13/64\"",
+      "in": 1.2031,
+      "mm": 30.559,
+      "engagement_pct": 79.4
+     },
+     {
+      "name": "1-15/64\"",
+      "in": 1.2344,
+      "mm": 31.353,
+      "engagement_pct": 65.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/2-6UNC",
+   "series": "UNC",
+   "label": "1-1/2\"-6 UNC",
+   "major_in": 1.5,
+   "major_mm": 38.1,
+   "tpi": 6,
+   "pitch_mm": 4.2333,
+   "pitch_dia_mm": 35.35,
+   "minor_int_mm": 33.517,
+   "tap_drill": {
+    "ideal_mm": 33.976,
+    "metric": {
+     "mm": 34.0,
+     "engagement_pct": 74.6
+    },
+    "metric_alts": [
+     {
+      "mm": 33.75,
+      "engagement_pct": 79.1
+     },
+     {
+      "mm": 34.25,
+      "engagement_pct": 70.0
+     }
+    ],
+    "imperial": {
+     "name": "1-11/32\"",
+     "in": 1.3438,
+     "mm": 34.131,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-21/64\"",
+      "in": 1.3281,
+      "mm": 33.734,
+      "engagement_pct": 79.4
+     },
+     {
+      "name": "1-23/64\"",
+      "in": 1.3594,
+      "mm": 34.528,
+      "engagement_pct": 65.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-3/4-5UNC",
+   "series": "UNC",
+   "label": "1-3/4\"-5 UNC",
+   "major_in": 1.75,
+   "major_mm": 44.45,
+   "tpi": 5,
+   "pitch_mm": 5.08,
+   "pitch_dia_mm": 41.15,
+   "minor_int_mm": 38.951,
+   "tap_drill": {
+    "ideal_mm": 39.501,
+    "metric": {
+     "mm": 39.5,
+     "engagement_pct": 75.0
+    },
+    "metric_alts": [
+     {
+      "mm": 39.25,
+      "engagement_pct": 78.8
+     },
+     {
+      "mm": 39.75,
+      "engagement_pct": 71.2
+     }
+    ],
+    "imperial": {
+     "name": "1-9/16\"",
+     "in": 1.5625,
+     "mm": 39.688,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-35/64\"",
+      "in": 1.5469,
+      "mm": 39.291,
+      "engagement_pct": 78.2
+     },
+     {
+      "name": "1-37/64\"",
+      "in": 1.5781,
+      "mm": 40.084,
+      "engagement_pct": 66.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-4.5UNC",
+   "series": "UNC",
+   "label": "2\"-4.5 UNC",
+   "major_in": 2.0,
+   "major_mm": 50.8,
+   "tpi": 4.5,
+   "pitch_mm": 5.6444,
+   "pitch_dia_mm": 47.134,
+   "minor_int_mm": 44.69,
+   "tap_drill": {
+    "ideal_mm": 45.301,
+    "metric": {
+     "mm": 45.5,
+     "engagement_pct": 72.3
+    },
+    "metric_alts": [
+     {
+      "mm": 45.0,
+      "engagement_pct": 79.1
+     },
+     {
+      "mm": 46.0,
+      "engagement_pct": 65.5
+     }
+    ],
+    "imperial": {
+     "name": "1-25/32\"",
+     "in": 1.7812,
+     "mm": 45.244,
+     "engagement_pct": 75.8
+    },
+    "imperial_alts": [
+     {
+      "name": "1-49/64\"",
+      "in": 1.7656,
+      "mm": 44.847,
+      "engagement_pct": 81.2
+     },
+     {
+      "name": "1-51/64\"",
+      "in": 1.7969,
+      "mm": 45.641,
+      "engagement_pct": 70.4
+     }
+    ]
+   }
+  }
+ ],
+ "unf": [
+  {
+   "id": "#0-80UNF",
+   "series": "UNF",
+   "label": "#0-80 UNF",
+   "major_in": 0.06,
+   "major_mm": 1.524,
+   "tpi": 80,
+   "pitch_mm": 0.3175,
+   "pitch_dia_mm": 1.318,
+   "minor_int_mm": 1.18,
+   "tap_drill": {
+    "ideal_mm": 1.215,
+    "metric": {
+     "mm": 1.2,
+     "engagement_pct": 78.6
+    },
+    "metric_alts": [
+     {
+      "mm": 1.15,
+      "engagement_pct": 90.7
+     },
+     {
+      "mm": 1.25,
+      "engagement_pct": 66.4
+     }
+    ],
+    "imperial": {
+     "name": "3/64\"",
+     "in": 0.0469,
+     "mm": 1.191,
+     "engagement_pct": 80.7
+    },
+    "imperial_alts": [
+     {
+      "name": "#56",
+      "in": 0.0465,
+      "mm": 1.181,
+      "engagement_pct": 83.2
+     },
+     {
+      "name": "#55",
+      "in": 0.052,
+      "mm": 1.321,
+      "engagement_pct": 49.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "#1-72UNF",
+   "series": "UNF",
+   "label": "#1-72 UNF",
+   "major_in": 0.073,
+   "major_mm": 1.854,
+   "tpi": 72,
+   "pitch_mm": 0.3528,
+   "pitch_dia_mm": 1.625,
+   "minor_int_mm": 1.472,
+   "tap_drill": {
+    "ideal_mm": 1.51,
+    "metric": {
+     "mm": 1.5,
+     "engagement_pct": 77.3
+    },
+    "metric_alts": [
+     {
+      "mm": 1.45,
+      "engagement_pct": 88.2
+     },
+     {
+      "mm": 1.55,
+      "engagement_pct": 66.4
+     }
+    ],
+    "imperial": {
+     "name": "#53",
+     "in": 0.0595,
+     "mm": 1.511,
+     "engagement_pct": 74.9
+    },
+    "imperial_alts": [
+     {
+      "name": "#54",
+      "in": 0.055,
+      "mm": 1.397,
+      "engagement_pct": 99.8
+     },
+     {
+      "name": "1/16\"",
+      "in": 0.0625,
+      "mm": 1.587,
+      "engagement_pct": 58.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "#2-64UNF",
+   "series": "UNF",
+   "label": "#2-64 UNF",
+   "major_in": 0.086,
+   "major_mm": 2.184,
+   "tpi": 64,
+   "pitch_mm": 0.3969,
+   "pitch_dia_mm": 1.927,
+   "minor_int_mm": 1.755,
+   "tap_drill": {
+    "ideal_mm": 1.798,
+    "metric": {
+     "mm": 1.8,
+     "engagement_pct": 74.6
+    },
+    "metric_alts": [
+     {
+      "mm": 1.75,
+      "engagement_pct": 84.3
+     },
+     {
+      "mm": 1.85,
+      "engagement_pct": 64.9
+     }
+    ],
+    "imperial": {
+     "name": "#50",
+     "in": 0.07,
+     "mm": 1.778,
+     "engagement_pct": 78.8
+    },
+    "imperial_alts": [
+     {
+      "name": "#51",
+      "in": 0.067,
+      "mm": 1.702,
+      "engagement_pct": 93.6
+     },
+     {
+      "name": "#49",
+      "in": 0.073,
+      "mm": 1.854,
+      "engagement_pct": 64.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "#3-56UNF",
+   "series": "UNF",
+   "label": "#3-56 UNF",
+   "major_in": 0.099,
+   "major_mm": 2.515,
+   "tpi": 56,
+   "pitch_mm": 0.4536,
+   "pitch_dia_mm": 2.22,
+   "minor_int_mm": 2.024,
+   "tap_drill": {
+    "ideal_mm": 2.073,
+    "metric": {
+     "mm": 2.05,
+     "engagement_pct": 78.9
+    },
+    "metric_alts": [
+     {
+      "mm": 2.0,
+      "engagement_pct": 87.3
+     },
+     {
+      "mm": 2.1,
+      "engagement_pct": 70.4
+     }
+    ],
+    "imperial": {
+     "name": "#45",
+     "in": 0.082,
+     "mm": 2.083,
+     "engagement_pct": 73.3
+    },
+    "imperial_alts": [
+     {
+      "name": "#46",
+      "in": 0.081,
+      "mm": 2.057,
+      "engagement_pct": 77.7
+     },
+     {
+      "name": "#44",
+      "in": 0.086,
+      "mm": 2.184,
+      "engagement_pct": 56.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "#4-48UNF",
+   "series": "UNF",
+   "label": "#4-48 UNF",
+   "major_in": 0.112,
+   "major_mm": 2.845,
+   "tpi": 48,
+   "pitch_mm": 0.5292,
+   "pitch_dia_mm": 2.501,
+   "minor_int_mm": 2.272,
+   "tap_drill": {
+    "ideal_mm": 2.329,
+    "metric": {
+     "mm": 2.35,
+     "engagement_pct": 72.0
+    },
+    "metric_alts": [
+     {
+      "mm": 2.3,
+      "engagement_pct": 79.3
+     },
+     {
+      "mm": 2.4,
+      "engagement_pct": 64.7
+     }
+    ],
+    "imperial": {
+     "name": "#42",
+     "in": 0.0935,
+     "mm": 2.375,
+     "engagement_pct": 68.3
+    },
+    "imperial_alts": [
+     {
+      "name": "#43",
+      "in": 0.089,
+      "mm": 2.261,
+      "engagement_pct": 84.9
+     },
+     {
+      "name": "3/32\"",
+      "in": 0.0938,
+      "mm": 2.381,
+      "engagement_pct": 67.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "#5-44UNF",
+   "series": "UNF",
+   "label": "#5-44 UNF",
+   "major_in": 0.125,
+   "major_mm": 3.175,
+   "tpi": 44,
+   "pitch_mm": 0.5773,
+   "pitch_dia_mm": 2.8,
+   "minor_int_mm": 2.55,
+   "tap_drill": {
+    "ideal_mm": 2.613,
+    "metric": {
+     "mm": 2.6,
+     "engagement_pct": 76.7
+    },
+    "metric_alts": [
+     {
+      "mm": 2.55,
+      "engagement_pct": 83.3
+     },
+     {
+      "mm": 2.65,
+      "engagement_pct": 70.0
+     }
+    ],
+    "imperial": {
+     "name": "#37",
+     "in": 0.104,
+     "mm": 2.642,
+     "engagement_pct": 71.1
+    },
+    "imperial_alts": [
+     {
+      "name": "#38",
+      "in": 0.1015,
+      "mm": 2.578,
+      "engagement_pct": 79.6
+     },
+     {
+      "name": "#36",
+      "in": 0.1065,
+      "mm": 2.705,
+      "engagement_pct": 62.7
+     }
+    ]
+   }
+  },
+  {
+   "id": "#6-40UNF",
+   "series": "UNF",
+   "label": "#6-40 UNF",
+   "major_in": 0.138,
+   "major_mm": 3.505,
+   "tpi": 40,
+   "pitch_mm": 0.635,
+   "pitch_dia_mm": 3.093,
+   "minor_int_mm": 2.818,
+   "tap_drill": {
+    "ideal_mm": 2.887,
+    "metric": {
+     "mm": 2.9,
+     "engagement_pct": 73.4
+    },
+    "metric_alts": [
+     {
+      "mm": 2.85,
+      "engagement_pct": 79.4
+     },
+     {
+      "mm": 2.95,
+      "engagement_pct": 67.3
+     }
+    ],
+    "imperial": {
+     "name": "#33",
+     "in": 0.113,
+     "mm": 2.87,
+     "engagement_pct": 77.0
+    },
+    "imperial_alts": [
+     {
+      "name": "#34",
+      "in": 0.111,
+      "mm": 2.819,
+      "engagement_pct": 83.2
+     },
+     {
+      "name": "#32",
+      "in": 0.116,
+      "mm": 2.946,
+      "engagement_pct": 67.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "#8-36UNF",
+   "series": "UNF",
+   "label": "#8-36 UNF",
+   "major_in": 0.164,
+   "major_mm": 4.166,
+   "tpi": 36,
+   "pitch_mm": 0.7056,
+   "pitch_dia_mm": 3.707,
+   "minor_int_mm": 3.402,
+   "tap_drill": {
+    "ideal_mm": 3.478,
+    "metric": {
+     "mm": 3.5,
+     "engagement_pct": 72.6
+    },
+    "metric_alts": [
+     {
+      "mm": 3.4,
+      "engagement_pct": 83.5
+     },
+     {
+      "mm": 3.6,
+      "engagement_pct": 61.7
+     }
+    ],
+    "imperial": {
+     "name": "#29",
+     "in": 0.136,
+     "mm": 3.454,
+     "engagement_pct": 77.6
+    },
+    "imperial_alts": [
+     {
+      "name": "#30",
+      "in": 0.1285,
+      "mm": 3.264,
+      "engagement_pct": 98.4
+     },
+     {
+      "name": "#28",
+      "in": 0.1405,
+      "mm": 3.569,
+      "engagement_pct": 65.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "#10-32UNF",
+   "series": "UNF",
+   "label": "#10-32 UNF",
+   "major_in": 0.19,
+   "major_mm": 4.826,
+   "tpi": 32,
+   "pitch_mm": 0.7937,
+   "pitch_dia_mm": 4.31,
+   "minor_int_mm": 3.967,
+   "tap_drill": {
+    "ideal_mm": 4.053,
+    "metric": {
+     "mm": 4.1,
+     "engagement_pct": 70.4
+    },
+    "metric_alts": [
+     {
+      "mm": 4.0,
+      "engagement_pct": 80.1
+     },
+     {
+      "mm": 4.2,
+      "engagement_pct": 60.7
+     }
+    ],
+    "imperial": {
+     "name": "#21",
+     "in": 0.159,
+     "mm": 4.039,
+     "engagement_pct": 76.3
+    },
+    "imperial_alts": [
+     {
+      "name": "#22",
+      "in": 0.157,
+      "mm": 3.988,
+      "engagement_pct": 81.3
+     },
+     {
+      "name": "#20",
+      "in": 0.161,
+      "mm": 4.089,
+      "engagement_pct": 71.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "#12-28UNF",
+   "series": "UNF",
+   "label": "#12-28 UNF",
+   "major_in": 0.216,
+   "major_mm": 5.486,
+   "tpi": 28,
+   "pitch_mm": 0.9071,
+   "pitch_dia_mm": 4.897,
+   "minor_int_mm": 4.504,
+   "tap_drill": {
+    "ideal_mm": 4.603,
+    "metric": {
+     "mm": 4.6,
+     "engagement_pct": 75.2
+    },
+    "metric_alts": [
+     {
+      "mm": 4.5,
+      "engagement_pct": 83.7
+     },
+     {
+      "mm": 4.7,
+      "engagement_pct": 66.7
+     }
+    ],
+    "imperial": {
+     "name": "#14",
+     "in": 0.182,
+     "mm": 4.623,
+     "engagement_pct": 73.3
+    },
+    "imperial_alts": [
+     {
+      "name": "#15",
+      "in": 0.18,
+      "mm": 4.572,
+      "engagement_pct": 77.6
+     },
+     {
+      "name": "#13",
+      "in": 0.185,
+      "mm": 4.699,
+      "engagement_pct": 66.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/4-28UNF",
+   "series": "UNF",
+   "label": "1/4\"-28 UNF",
+   "major_in": 0.25,
+   "major_mm": 6.35,
+   "tpi": 28,
+   "pitch_mm": 0.9071,
+   "pitch_dia_mm": 5.761,
+   "minor_int_mm": 5.368,
+   "tap_drill": {
+    "ideal_mm": 5.466,
+    "metric": {
+     "mm": 5.5,
+     "engagement_pct": 72.1
+    },
+    "metric_alts": [
+     {
+      "mm": 5.4,
+      "engagement_pct": 80.6
+     },
+     {
+      "mm": 5.6,
+      "engagement_pct": 63.6
+     }
+    ],
+    "imperial": {
+     "name": "#3",
+     "in": 0.213,
+     "mm": 5.41,
+     "engagement_pct": 79.8
+    },
+    "imperial_alts": [
+     {
+      "name": "#4",
+      "in": 0.209,
+      "mm": 5.309,
+      "engagement_pct": 88.3
+     },
+     {
+      "name": "7/32\"",
+      "in": 0.2188,
+      "mm": 5.556,
+      "engagement_pct": 67.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/16-24UNF",
+   "series": "UNF",
+   "label": "5/16\"-24 UNF",
+   "major_in": 0.3125,
+   "major_mm": 7.938,
+   "tpi": 24,
+   "pitch_mm": 1.0583,
+   "pitch_dia_mm": 7.25,
+   "minor_int_mm": 6.792,
+   "tap_drill": {
+    "ideal_mm": 6.906,
+    "metric": {
+     "mm": 6.9,
+     "engagement_pct": 75.5
+    },
+    "metric_alts": [
+     {
+      "mm": 6.8,
+      "engagement_pct": 82.7
+     },
+     {
+      "mm": 7.0,
+      "engagement_pct": 68.2
+     }
+    ],
+    "imperial": {
+     "name": "I",
+     "in": 0.272,
+     "mm": 6.909,
+     "engagement_pct": 74.8
+    },
+    "imperial_alts": [
+     {
+      "name": "H",
+      "in": 0.266,
+      "mm": 6.756,
+      "engagement_pct": 85.9
+     },
+     {
+      "name": "J",
+      "in": 0.277,
+      "mm": 7.036,
+      "engagement_pct": 65.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/8-24UNF",
+   "series": "UNF",
+   "label": "3/8\"-24 UNF",
+   "major_in": 0.375,
+   "major_mm": 9.525,
+   "tpi": 24,
+   "pitch_mm": 1.0583,
+   "pitch_dia_mm": 8.838,
+   "minor_int_mm": 8.379,
+   "tap_drill": {
+    "ideal_mm": 8.494,
+    "metric": {
+     "mm": 8.5,
+     "engagement_pct": 74.6
+    },
+    "metric_alts": [
+     {
+      "mm": 8.4,
+      "engagement_pct": 81.8
+     },
+     {
+      "mm": 8.6,
+      "engagement_pct": 67.3
+     }
+    ],
+    "imperial": {
+     "name": "Q",
+     "in": 0.332,
+     "mm": 8.433,
+     "engagement_pct": 79.4
+    },
+    "imperial_alts": [
+     {
+      "name": "21/64\"",
+      "in": 0.3281,
+      "mm": 8.334,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "R",
+      "in": 0.339,
+      "mm": 8.611,
+      "engagement_pct": 66.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/16-20UNF",
+   "series": "UNF",
+   "label": "7/16\"-20 UNF",
+   "major_in": 0.4375,
+   "major_mm": 11.112,
+   "tpi": 20,
+   "pitch_mm": 1.27,
+   "pitch_dia_mm": 10.288,
+   "minor_int_mm": 9.738,
+   "tap_drill": {
+    "ideal_mm": 9.875,
+    "metric": {
+     "mm": 9.9,
+     "engagement_pct": 73.5
+    },
+    "metric_alts": [
+     {
+      "mm": 9.8,
+      "engagement_pct": 79.6
+     },
+     {
+      "mm": 10.0,
+      "engagement_pct": 67.4
+     }
+    ],
+    "imperial": {
+     "name": "25/64\"",
+     "in": 0.3906,
+     "mm": 9.922,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "W",
+      "in": 0.386,
+      "mm": 9.804,
+      "engagement_pct": 79.3
+     },
+     {
+      "name": "X",
+      "in": 0.397,
+      "mm": 10.084,
+      "engagement_pct": 62.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/2-20UNF",
+   "series": "UNF",
+   "label": "1/2\"-20 UNF",
+   "major_in": 0.5,
+   "major_mm": 12.7,
+   "tpi": 20,
+   "pitch_mm": 1.27,
+   "pitch_dia_mm": 11.875,
+   "minor_int_mm": 11.325,
+   "tap_drill": {
+    "ideal_mm": 11.463,
+    "metric": {
+     "mm": 11.5,
+     "engagement_pct": 72.7
+    },
+    "metric_alts": [
+     {
+      "mm": 11.4,
+      "engagement_pct": 78.8
+     },
+     {
+      "mm": 11.6,
+      "engagement_pct": 66.7
+     }
+    ],
+    "imperial": {
+     "name": "29/64\"",
+     "in": 0.4531,
+     "mm": 11.509,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "7/16\"",
+      "in": 0.4375,
+      "mm": 11.112,
+      "engagement_pct": 96.3
+     },
+     {
+      "name": "15/32\"",
+      "in": 0.4688,
+      "mm": 11.906,
+      "engagement_pct": 48.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "9/16-18UNF",
+   "series": "UNF",
+   "label": "9/16\"-18 UNF",
+   "major_in": 0.5625,
+   "major_mm": 14.287,
+   "tpi": 18,
+   "pitch_mm": 1.4111,
+   "pitch_dia_mm": 13.371,
+   "minor_int_mm": 12.76,
+   "tap_drill": {
+    "ideal_mm": 12.913,
+    "metric": {
+     "mm": 12.9,
+     "engagement_pct": 75.7
+    },
+    "metric_alts": [
+     {
+      "mm": 12.8,
+      "engagement_pct": 81.1
+     },
+     {
+      "mm": 13.0,
+      "engagement_pct": 70.2
+     }
+    ],
+    "imperial": {
+     "name": "33/64\"",
+     "in": 0.5156,
+     "mm": 13.097,
+     "engagement_pct": 64.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1/2\"",
+      "in": 0.5,
+      "mm": 12.7,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "17/32\"",
+      "in": 0.5312,
+      "mm": 13.494,
+      "engagement_pct": 43.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/8-18UNF",
+   "series": "UNF",
+   "label": "5/8\"-18 UNF",
+   "major_in": 0.625,
+   "major_mm": 15.875,
+   "tpi": 18,
+   "pitch_mm": 1.4111,
+   "pitch_dia_mm": 14.958,
+   "minor_int_mm": 14.347,
+   "tap_drill": {
+    "ideal_mm": 14.5,
+    "metric": {
+     "mm": 14.5,
+     "engagement_pct": 75.0
+    },
+    "metric_alts": [
+     {
+      "mm": 14.25,
+      "engagement_pct": 88.6
+     },
+     {
+      "mm": 14.75,
+      "engagement_pct": 61.4
+     }
+    ],
+    "imperial": {
+     "name": "37/64\"",
+     "in": 0.5781,
+     "mm": 14.684,
+     "engagement_pct": 65.0
+    },
+    "imperial_alts": [
+     {
+      "name": "9/16\"",
+      "in": 0.5625,
+      "mm": 14.287,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "19/32\"",
+      "in": 0.5938,
+      "mm": 15.081,
+      "engagement_pct": 43.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/4-16UNF",
+   "series": "UNF",
+   "label": "3/4\"-16 UNF",
+   "major_in": 0.75,
+   "major_mm": 19.05,
+   "tpi": 16,
+   "pitch_mm": 1.5875,
+   "pitch_dia_mm": 18.019,
+   "minor_int_mm": 17.331,
+   "tap_drill": {
+    "ideal_mm": 17.503,
+    "metric": {
+     "mm": 17.5,
+     "engagement_pct": 75.2
+    },
+    "metric_alts": [
+     {
+      "mm": 17.25,
+      "engagement_pct": 87.3
+     },
+     {
+      "mm": 17.75,
+      "engagement_pct": 63.0
+     }
+    ],
+    "imperial": {
+     "name": "11/16\"",
+     "in": 0.6875,
+     "mm": 17.462,
+     "engagement_pct": 77.0
+    },
+    "imperial_alts": [
+     {
+      "name": "43/64\"",
+      "in": 0.6719,
+      "mm": 17.066,
+      "engagement_pct": 96.2
+     },
+     {
+      "name": "45/64\"",
+      "in": 0.7031,
+      "mm": 17.859,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/8-14UNF",
+   "series": "UNF",
+   "label": "7/8\"-14 UNF",
+   "major_in": 0.875,
+   "major_mm": 22.225,
+   "tpi": 14,
+   "pitch_mm": 1.8143,
+   "pitch_dia_mm": 21.047,
+   "minor_int_mm": 20.261,
+   "tap_drill": {
+    "ideal_mm": 20.457,
+    "metric": {
+     "mm": 20.5,
+     "engagement_pct": 73.2
+    },
+    "metric_alts": [
+     {
+      "mm": 20.25,
+      "engagement_pct": 83.8
+     },
+     {
+      "mm": 20.75,
+      "engagement_pct": 62.6
+     }
+    ],
+    "imperial": {
+     "name": "13/16\"",
+     "in": 0.8125,
+     "mm": 20.637,
+     "engagement_pct": 67.4
+    },
+    "imperial_alts": [
+     {
+      "name": "51/64\"",
+      "in": 0.7969,
+      "mm": 20.241,
+      "engagement_pct": 84.2
+     },
+     {
+      "name": "53/64\"",
+      "in": 0.8281,
+      "mm": 21.034,
+      "engagement_pct": 50.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-12UNF",
+   "series": "UNF",
+   "label": "1\"-12 UNF",
+   "major_in": 1.0,
+   "major_mm": 25.4,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 24.025,
+   "minor_int_mm": 23.109,
+   "tap_drill": {
+    "ideal_mm": 23.338,
+    "metric": {
+     "mm": 23.25,
+     "engagement_pct": 78.2
+    },
+    "metric_alts": [
+     {
+      "mm": 23.0,
+      "engagement_pct": 87.3
+     },
+     {
+      "mm": 23.5,
+      "engagement_pct": 69.1
+     }
+    ],
+    "imperial": {
+     "name": "59/64\"",
+     "in": 0.9219,
+     "mm": 23.416,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "29/32\"",
+      "in": 0.9062,
+      "mm": 23.019,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "15/16\"",
+      "in": 0.9375,
+      "mm": 23.812,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/8-12UNF",
+   "series": "UNF",
+   "label": "1-1/8\"-12 UNF",
+   "major_in": 1.125,
+   "major_mm": 28.575,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 27.2,
+   "minor_int_mm": 26.284,
+   "tap_drill": {
+    "ideal_mm": 26.513,
+    "metric": {
+     "mm": 26.5,
+     "engagement_pct": 75.5
+    },
+    "metric_alts": [
+     {
+      "mm": 26.25,
+      "engagement_pct": 84.6
+     },
+     {
+      "mm": 26.75,
+      "engagement_pct": 66.4
+     }
+    ],
+    "imperial": {
+     "name": "1-3/64\"",
+     "in": 1.0469,
+     "mm": 26.591,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-1/32\"",
+      "in": 1.0312,
+      "mm": 26.194,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "1-1/16\"",
+      "in": 1.0625,
+      "mm": 26.987,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/4-12UNF",
+   "series": "UNF",
+   "label": "1-1/4\"-12 UNF",
+   "major_in": 1.25,
+   "major_mm": 31.75,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 30.375,
+   "minor_int_mm": 29.459,
+   "tap_drill": {
+    "ideal_mm": 29.688,
+    "metric": {
+     "mm": 29.75,
+     "engagement_pct": 72.7
+    },
+    "metric_alts": [
+     {
+      "mm": 29.5,
+      "engagement_pct": 81.8
+     },
+     {
+      "mm": 30.0,
+      "engagement_pct": 63.6
+     }
+    ],
+    "imperial": {
+     "name": "1-11/64\"",
+     "in": 1.1719,
+     "mm": 29.766,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-5/32\"",
+      "in": 1.1562,
+      "mm": 29.369,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "1-3/16\"",
+      "in": 1.1875,
+      "mm": 30.162,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-3/8-12UNF",
+   "series": "UNF",
+   "label": "1-3/8\"-12 UNF",
+   "major_in": 1.375,
+   "major_mm": 34.925,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 33.55,
+   "minor_int_mm": 32.634,
+   "tap_drill": {
+    "ideal_mm": 32.863,
+    "metric": {
+     "mm": 32.75,
+     "engagement_pct": 79.1
+    },
+    "metric_alts": [
+     {
+      "mm": 32.5,
+      "engagement_pct": 88.2
+     },
+     {
+      "mm": 33.0,
+      "engagement_pct": 70.0
+     }
+    ],
+    "imperial": {
+     "name": "1-19/64\"",
+     "in": 1.2969,
+     "mm": 32.941,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-9/32\"",
+      "in": 1.2812,
+      "mm": 32.544,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "1-5/16\"",
+      "in": 1.3125,
+      "mm": 33.337,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/2-12UNF",
+   "series": "UNF",
+   "label": "1-1/2\"-12 UNF",
+   "major_in": 1.5,
+   "major_mm": 38.1,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "pitch_dia_mm": 36.725,
+   "minor_int_mm": 35.809,
+   "tap_drill": {
+    "ideal_mm": 36.038,
+    "metric": {
+     "mm": 36.0,
+     "engagement_pct": 76.4
+    },
+    "metric_alts": [
+     {
+      "mm": 35.75,
+      "engagement_pct": 85.5
+     },
+     {
+      "mm": 36.25,
+      "engagement_pct": 67.3
+     }
+    ],
+    "imperial": {
+     "name": "1-27/64\"",
+     "in": 1.4219,
+     "mm": 36.116,
+     "engagement_pct": 72.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-13/32\"",
+      "in": 1.4062,
+      "mm": 35.719,
+      "engagement_pct": 86.6
+     },
+     {
+      "name": "1-7/16\"",
+      "in": 1.4375,
+      "mm": 36.512,
+      "engagement_pct": 57.8
+     }
+    ]
+   }
+  }
+ ],
+ "bsw": [
+  {
+   "id": "1/8-40BSW",
+   "series": "BSW",
+   "label": "1/8\" BSW (40 TPI)",
+   "major_in": 0.125,
+   "major_mm": 3.175,
+   "tpi": 40,
+   "pitch_mm": 0.635,
+   "minor_mm": 2.362,
+   "tap_drill": {
+    "ideal_mm": 2.565,
+    "metric": {
+     "mm": 2.55,
+     "engagement_pct": 76.9
+    },
+    "metric_alts": [
+     {
+      "mm": 2.5,
+      "engagement_pct": 83.0
+     },
+     {
+      "mm": 2.6,
+      "engagement_pct": 70.7
+     }
+    ],
+    "imperial": {
+     "name": "#38",
+     "in": 0.1015,
+     "mm": 2.578,
+     "engagement_pct": 73.4
+    },
+    "imperial_alts": [
+     {
+      "name": "#39",
+      "in": 0.0995,
+      "mm": 2.527,
+      "engagement_pct": 79.7
+     },
+     {
+      "name": "#37",
+      "in": 0.104,
+      "mm": 2.642,
+      "engagement_pct": 65.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/16-24BSW",
+   "series": "BSW",
+   "label": "3/16\" BSW (24 TPI)",
+   "major_in": 0.1875,
+   "major_mm": 4.762,
+   "tpi": 24,
+   "pitch_mm": 1.0583,
+   "minor_mm": 3.407,
+   "tap_drill": {
+    "ideal_mm": 3.746,
+    "metric": {
+     "mm": 3.7,
+     "engagement_pct": 78.4
+    },
+    "metric_alts": [
+     {
+      "mm": 3.6,
+      "engagement_pct": 85.8
+     },
+     {
+      "mm": 3.8,
+      "engagement_pct": 71.0
+     }
+    ],
+    "imperial": {
+     "name": "#26",
+     "in": 0.147,
+     "mm": 3.734,
+     "engagement_pct": 75.9
+    },
+    "imperial_alts": [
+     {
+      "name": "#27",
+      "in": 0.144,
+      "mm": 3.658,
+      "engagement_pct": 81.5
+     },
+     {
+      "name": "#25",
+      "in": 0.1495,
+      "mm": 3.797,
+      "engagement_pct": 71.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/4-20BSW",
+   "series": "BSW",
+   "label": "1/4\" BSW (20 TPI)",
+   "major_in": 0.25,
+   "major_mm": 6.35,
+   "tpi": 20,
+   "pitch_mm": 1.27,
+   "minor_mm": 4.724,
+   "tap_drill": {
+    "ideal_mm": 5.13,
+    "metric": {
+     "mm": 5.1,
+     "engagement_pct": 76.9
+    },
+    "metric_alts": [
+     {
+      "mm": 5.0,
+      "engagement_pct": 83.0
+     },
+     {
+      "mm": 5.2,
+      "engagement_pct": 70.7
+     }
+    ],
+    "imperial": {
+     "name": "#7",
+     "in": 0.201,
+     "mm": 5.105,
+     "engagement_pct": 76.5
+    },
+    "imperial_alts": [
+     {
+      "name": "#8",
+      "in": 0.199,
+      "mm": 5.055,
+      "engagement_pct": 79.6
+     },
+     {
+      "name": "13/64\"",
+      "in": 0.2031,
+      "mm": 5.159,
+      "engagement_pct": 73.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/16-18BSW",
+   "series": "BSW",
+   "label": "5/16\" BSW (18 TPI)",
+   "major_in": 0.3125,
+   "major_mm": 7.938,
+   "tpi": 18,
+   "pitch_mm": 1.4111,
+   "minor_mm": 6.13,
+   "tap_drill": {
+    "ideal_mm": 6.582,
+    "metric": {
+     "mm": 6.6,
+     "engagement_pct": 74.0
+    },
+    "metric_alts": [
+     {
+      "mm": 6.5,
+      "engagement_pct": 79.5
+     },
+     {
+      "mm": 6.7,
+      "engagement_pct": 68.5
+     }
+    ],
+    "imperial": {
+     "name": "G",
+     "in": 0.261,
+     "mm": 6.629,
+     "engagement_pct": 72.4
+    },
+    "imperial_alts": [
+     {
+      "name": "F",
+      "in": 0.257,
+      "mm": 6.528,
+      "engagement_pct": 78.0
+     },
+     {
+      "name": "17/64\"",
+      "in": 0.2656,
+      "mm": 6.747,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/8-16BSW",
+   "series": "BSW",
+   "label": "3/8\" BSW (16 TPI)",
+   "major_in": 0.375,
+   "major_mm": 9.525,
+   "tpi": 16,
+   "pitch_mm": 1.5875,
+   "minor_mm": 7.492,
+   "tap_drill": {
+    "ideal_mm": 8.0,
+    "metric": {
+     "mm": 8.0,
+     "engagement_pct": 75.0
+    },
+    "metric_alts": [
+     {
+      "mm": 7.9,
+      "engagement_pct": 79.9
+     },
+     {
+      "mm": 8.1,
+      "engagement_pct": 70.1
+     }
+    ],
+    "imperial": {
+     "name": "O",
+     "in": 0.316,
+     "mm": 8.026,
+     "engagement_pct": 73.7
+    },
+    "imperial_alts": [
+     {
+      "name": "5/16\"",
+      "in": 0.3125,
+      "mm": 7.938,
+      "engagement_pct": 78.1
+     },
+     {
+      "name": "P",
+      "in": 0.323,
+      "mm": 8.204,
+      "engagement_pct": 65.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/16-14BSW",
+   "series": "BSW",
+   "label": "7/16\" BSW (14 TPI)",
+   "major_in": 0.4375,
+   "major_mm": 11.112,
+   "tpi": 14,
+   "pitch_mm": 1.8143,
+   "minor_mm": 8.789,
+   "tap_drill": {
+    "ideal_mm": 9.37,
+    "metric": {
+     "mm": 9.4,
+     "engagement_pct": 73.7
+    },
+    "metric_alts": [
+     {
+      "mm": 9.3,
+      "engagement_pct": 78.0
+     },
+     {
+      "mm": 9.5,
+      "engagement_pct": 69.4
+     }
+    ],
+    "imperial": {
+     "name": "U",
+     "in": 0.368,
+     "mm": 9.347,
+     "engagement_pct": 76.0
+    },
+    "imperial_alts": [
+     {
+      "name": "23/64\"",
+      "in": 0.3594,
+      "mm": 9.128,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "3/8\"",
+      "in": 0.375,
+      "mm": 9.525,
+      "engagement_pct": 68.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/2-12BSW",
+   "series": "BSW",
+   "label": "1/2\" BSW (12 TPI)",
+   "major_in": 0.5,
+   "major_mm": 12.7,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "minor_mm": 9.989,
+   "tap_drill": {
+    "ideal_mm": 10.667,
+    "metric": {
+     "mm": 10.7,
+     "engagement_pct": 73.8
+    },
+    "metric_alts": [
+     {
+      "mm": 10.6,
+      "engagement_pct": 77.5
+     },
+     {
+      "mm": 10.8,
+      "engagement_pct": 70.1
+     }
+    ],
+    "imperial": {
+     "name": "27/64\"",
+     "in": 0.4219,
+     "mm": 10.716,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "Z",
+      "in": 0.413,
+      "mm": 10.49,
+      "engagement_pct": 81.5
+     },
+     {
+      "name": "7/16\"",
+      "in": 0.4375,
+      "mm": 11.112,
+      "engagement_pct": 58.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "9/16-12BSW",
+   "series": "BSW",
+   "label": "9/16\" BSW (12 TPI)",
+   "major_in": 0.5625,
+   "major_mm": 14.287,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "minor_mm": 11.577,
+   "tap_drill": {
+    "ideal_mm": 12.254,
+    "metric": {
+     "mm": 12.3,
+     "engagement_pct": 73.3
+    },
+    "metric_alts": [
+     {
+      "mm": 12.2,
+      "engagement_pct": 77.0
+     },
+     {
+      "mm": 12.4,
+      "engagement_pct": 69.6
+     }
+    ],
+    "imperial": {
+     "name": "31/64\"",
+     "in": 0.4844,
+     "mm": 12.303,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "15/32\"",
+      "in": 0.4688,
+      "mm": 11.906,
+      "engagement_pct": 87.9
+     },
+     {
+      "name": "1/2\"",
+      "in": 0.5,
+      "mm": 12.7,
+      "engagement_pct": 58.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/8-11BSW",
+   "series": "BSW",
+   "label": "5/8\" BSW (11 TPI)",
+   "major_in": 0.625,
+   "major_mm": 15.875,
+   "tpi": 11,
+   "pitch_mm": 2.3091,
+   "minor_mm": 12.918,
+   "tap_drill": {
+    "ideal_mm": 13.657,
+    "metric": {
+     "mm": 13.75,
+     "engagement_pct": 71.9
+    },
+    "metric_alts": [
+     {
+      "mm": 13.5,
+      "engagement_pct": 80.3
+     },
+     {
+      "mm": 14.0,
+      "engagement_pct": 63.4
+     }
+    ],
+    "imperial": {
+     "name": "17/32\"",
+     "in": 0.5312,
+     "mm": 13.494,
+     "engagement_pct": 80.5
+    },
+    "imperial_alts": [
+     {
+      "name": "33/64\"",
+      "in": 0.5156,
+      "mm": 13.097,
+      "engagement_pct": 93.9
+     },
+     {
+      "name": "35/64\"",
+      "in": 0.5469,
+      "mm": 13.891,
+      "engagement_pct": 67.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/4-10BSW",
+   "series": "BSW",
+   "label": "3/4\" BSW (10 TPI)",
+   "major_in": 0.75,
+   "major_mm": 19.05,
+   "tpi": 10,
+   "pitch_mm": 2.54,
+   "minor_mm": 15.797,
+   "tap_drill": {
+    "ideal_mm": 16.61,
+    "metric": {
+     "mm": 16.5,
+     "engagement_pct": 78.4
+    },
+    "metric_alts": [
+     {
+      "mm": 16.25,
+      "engagement_pct": 86.1
+     },
+     {
+      "mm": 16.75,
+      "engagement_pct": 70.7
+     }
+    ],
+    "imperial": {
+     "name": "21/32\"",
+     "in": 0.6562,
+     "mm": 16.669,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "41/64\"",
+      "in": 0.6406,
+      "mm": 16.272,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "43/64\"",
+      "in": 0.6719,
+      "mm": 17.066,
+      "engagement_pct": 61.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/8-9BSW",
+   "series": "BSW",
+   "label": "7/8\" BSW (9 TPI)",
+   "major_in": 0.875,
+   "major_mm": 22.225,
+   "tpi": 9,
+   "pitch_mm": 2.8222,
+   "minor_mm": 18.611,
+   "tap_drill": {
+    "ideal_mm": 19.514,
+    "metric": {
+     "mm": 19.5,
+     "engagement_pct": 75.4
+    },
+    "metric_alts": [
+     {
+      "mm": 19.25,
+      "engagement_pct": 82.3
+     },
+     {
+      "mm": 19.75,
+      "engagement_pct": 68.5
+     }
+    ],
+    "imperial": {
+     "name": "49/64\"",
+     "in": 0.7656,
+     "mm": 19.447,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "3/4\"",
+      "in": 0.75,
+      "mm": 19.05,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "25/32\"",
+      "in": 0.7812,
+      "mm": 19.844,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-8BSW",
+   "series": "BSW",
+   "label": "1\" BSW (8 TPI)",
+   "major_in": 1.0,
+   "major_mm": 25.4,
+   "tpi": 8,
+   "pitch_mm": 3.175,
+   "minor_mm": 21.334,
+   "tap_drill": {
+    "ideal_mm": 22.35,
+    "metric": {
+     "mm": 22.25,
+     "engagement_pct": 77.5
+    },
+    "metric_alts": [
+     {
+      "mm": 22.0,
+      "engagement_pct": 83.6
+     },
+     {
+      "mm": 22.5,
+      "engagement_pct": 71.3
+     }
+    ],
+    "imperial": {
+     "name": "7/8\"",
+     "in": 0.875,
+     "mm": 22.225,
+     "engagement_pct": 78.1
+    },
+    "imperial_alts": [
+     {
+      "name": "55/64\"",
+      "in": 0.8594,
+      "mm": 21.828,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "57/64\"",
+      "in": 0.8906,
+      "mm": 22.622,
+      "engagement_pct": 68.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/8-7BSW",
+   "series": "BSW",
+   "label": "1-1/8\" BSW (7 TPI)",
+   "major_in": 1.125,
+   "major_mm": 28.575,
+   "tpi": 7,
+   "pitch_mm": 3.6286,
+   "minor_mm": 23.928,
+   "tap_drill": {
+    "ideal_mm": 25.09,
+    "metric": {
+     "mm": 25.0,
+     "engagement_pct": 76.9
+    },
+    "metric_alts": [
+     {
+      "mm": 24.75,
+      "engagement_pct": 82.3
+     },
+     {
+      "mm": 25.25,
+      "engagement_pct": 71.6
+     }
+    ],
+    "imperial": {
+     "name": "63/64\"",
+     "in": 0.9844,
+     "mm": 25.003,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "31/32\"",
+      "in": 0.9688,
+      "mm": 24.606,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "1\"",
+      "in": 1.0,
+      "mm": 25.4,
+      "engagement_pct": 68.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/4-7BSW",
+   "series": "BSW",
+   "label": "1-1/4\" BSW (7 TPI)",
+   "major_in": 1.25,
+   "major_mm": 31.75,
+   "tpi": 7,
+   "pitch_mm": 3.6286,
+   "minor_mm": 27.103,
+   "tap_drill": {
+    "ideal_mm": 28.265,
+    "metric": {
+     "mm": 28.25,
+     "engagement_pct": 75.3
+    },
+    "metric_alts": [
+     {
+      "mm": 28.0,
+      "engagement_pct": 80.7
+     },
+     {
+      "mm": 28.5,
+      "engagement_pct": 69.9
+     }
+    ],
+    "imperial": {
+     "name": "1-7/64\"",
+     "in": 1.1094,
+     "mm": 28.178,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1-3/32\"",
+      "in": 1.0938,
+      "mm": 27.781,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "1-1/8\"",
+      "in": 1.125,
+      "mm": 28.575,
+      "engagement_pct": 68.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/2-6BSW",
+   "series": "BSW",
+   "label": "1-1/2\" BSW (6 TPI)",
+   "major_in": 1.5,
+   "major_mm": 38.1,
+   "tpi": 6,
+   "pitch_mm": 4.2333,
+   "minor_mm": 32.679,
+   "tap_drill": {
+    "ideal_mm": 34.034,
+    "metric": {
+     "mm": 34.0,
+     "engagement_pct": 75.6
+    },
+    "metric_alts": [
+     {
+      "mm": 33.75,
+      "engagement_pct": 80.2
+     },
+     {
+      "mm": 34.25,
+      "engagement_pct": 71.0
+     }
+    ],
+    "imperial": {
+     "name": "1-11/32\"",
+     "in": 1.3438,
+     "mm": 34.131,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-21/64\"",
+      "in": 1.3281,
+      "mm": 33.734,
+      "engagement_pct": 80.5
+     },
+     {
+      "name": "1-23/64\"",
+      "in": 1.3594,
+      "mm": 34.528,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-3/4-5BSW",
+   "series": "BSW",
+   "label": "1-3/4\" BSW (5 TPI)",
+   "major_in": 1.75,
+   "major_mm": 44.45,
+   "tpi": 5,
+   "pitch_mm": 5.08,
+   "minor_mm": 37.944,
+   "tap_drill": {
+    "ideal_mm": 39.571,
+    "metric": {
+     "mm": 39.5,
+     "engagement_pct": 76.1
+    },
+    "metric_alts": [
+     {
+      "mm": 39.25,
+      "engagement_pct": 79.9
+     },
+     {
+      "mm": 39.75,
+      "engagement_pct": 72.2
+     }
+    ],
+    "imperial": {
+     "name": "1-9/16\"",
+     "in": 1.5625,
+     "mm": 39.688,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "1-35/64\"",
+      "in": 1.5469,
+      "mm": 39.291,
+      "engagement_pct": 79.3
+     },
+     {
+      "name": "1-37/64\"",
+      "in": 1.5781,
+      "mm": 40.084,
+      "engagement_pct": 67.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-4.5BSW",
+   "series": "BSW",
+   "label": "2\" BSW (4.5 TPI)",
+   "major_in": 2.0,
+   "major_mm": 50.8,
+   "tpi": 4.5,
+   "pitch_mm": 5.6444,
+   "minor_mm": 43.571,
+   "tap_drill": {
+    "ideal_mm": 45.379,
+    "metric": {
+     "mm": 45.5,
+     "engagement_pct": 73.3
+    },
+    "metric_alts": [
+     {
+      "mm": 45.0,
+      "engagement_pct": 80.2
+     },
+     {
+      "mm": 46.0,
+      "engagement_pct": 66.4
+     }
+    ],
+    "imperial": {
+     "name": "1-25/32\"",
+     "in": 1.7812,
+     "mm": 45.244,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1-49/64\"",
+      "in": 1.7656,
+      "mm": 44.847,
+      "engagement_pct": 82.4
+     },
+     {
+      "name": "1-51/64\"",
+      "in": 1.7969,
+      "mm": 45.641,
+      "engagement_pct": 71.4
+     }
+    ]
+   }
+  }
+ ],
+ "bsf": [
+  {
+   "id": "3/16-32BSF",
+   "series": "BSF",
+   "label": "3/16\" BSF (32 TPI)",
+   "major_in": 0.1875,
+   "major_mm": 4.762,
+   "tpi": 32,
+   "pitch_mm": 0.7937,
+   "minor_mm": 3.746,
+   "tap_drill": {
+    "ideal_mm": 4.0,
+    "metric": {
+     "mm": 4.0,
+     "engagement_pct": 75.0
+    },
+    "metric_alts": [
+     {
+      "mm": 3.9,
+      "engagement_pct": 84.8
+     },
+     {
+      "mm": 4.1,
+      "engagement_pct": 65.2
+     }
+    ],
+    "imperial": {
+     "name": "#22",
+     "in": 0.157,
+     "mm": 3.988,
+     "engagement_pct": 76.2
+    },
+    "imperial_alts": [
+     {
+      "name": "5/32\"",
+      "in": 0.1562,
+      "mm": 3.969,
+      "engagement_pct": 78.1
+     },
+     {
+      "name": "#21",
+      "in": 0.159,
+      "mm": 4.039,
+      "engagement_pct": 71.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/32-28BSF",
+   "series": "BSF",
+   "label": "7/32\" BSF (28 TPI)",
+   "major_in": 0.2188,
+   "major_mm": 5.556,
+   "tpi": 28,
+   "pitch_mm": 0.9071,
+   "minor_mm": 4.395,
+   "tap_drill": {
+    "ideal_mm": 4.685,
+    "metric": {
+     "mm": 4.7,
+     "engagement_pct": 73.7
+    },
+    "metric_alts": [
+     {
+      "mm": 4.6,
+      "engagement_pct": 82.3
+     },
+     {
+      "mm": 4.8,
+      "engagement_pct": 65.1
+     }
+    ],
+    "imperial": {
+     "name": "#13",
+     "in": 0.185,
+     "mm": 4.699,
+     "engagement_pct": 73.8
+    },
+    "imperial_alts": [
+     {
+      "name": "#14",
+      "in": 0.182,
+      "mm": 4.623,
+      "engagement_pct": 80.3
+     },
+     {
+      "name": "3/16\"",
+      "in": 0.1875,
+      "mm": 4.762,
+      "engagement_pct": 68.4
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/4-26BSF",
+   "series": "BSF",
+   "label": "1/4\" BSF (26 TPI)",
+   "major_in": 0.25,
+   "major_mm": 6.35,
+   "tpi": 26,
+   "pitch_mm": 0.9769,
+   "minor_mm": 5.099,
+   "tap_drill": {
+    "ideal_mm": 5.412,
+    "metric": {
+     "mm": 5.4,
+     "engagement_pct": 75.9
+    },
+    "metric_alts": [
+     {
+      "mm": 5.3,
+      "engagement_pct": 83.9
+     },
+     {
+      "mm": 5.5,
+      "engagement_pct": 67.9
+     }
+    ],
+    "imperial": {
+     "name": "#3",
+     "in": 0.213,
+     "mm": 5.41,
+     "engagement_pct": 75.1
+    },
+    "imperial_alts": [
+     {
+      "name": "#4",
+      "in": 0.209,
+      "mm": 5.309,
+      "engagement_pct": 83.2
+     },
+     {
+      "name": "7/32\"",
+      "in": 0.2188,
+      "mm": 5.556,
+      "engagement_pct": 63.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/16-22BSF",
+   "series": "BSF",
+   "label": "5/16\" BSF (22 TPI)",
+   "major_in": 0.3125,
+   "major_mm": 7.938,
+   "tpi": 22,
+   "pitch_mm": 1.1545,
+   "minor_mm": 6.459,
+   "tap_drill": {
+    "ideal_mm": 6.829,
+    "metric": {
+     "mm": 6.8,
+     "engagement_pct": 76.9
+    },
+    "metric_alts": [
+     {
+      "mm": 6.7,
+      "engagement_pct": 83.7
+     },
+     {
+      "mm": 6.9,
+      "engagement_pct": 70.2
+     }
+    ],
+    "imperial": {
+     "name": "H",
+     "in": 0.266,
+     "mm": 6.756,
+     "engagement_pct": 79.9
+    },
+    "imperial_alts": [
+     {
+      "name": "17/64\"",
+      "in": 0.2656,
+      "mm": 6.747,
+      "engagement_pct": 80.5
+     },
+     {
+      "name": "I",
+      "in": 0.272,
+      "mm": 6.909,
+      "engagement_pct": 69.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/8-20BSF",
+   "series": "BSF",
+   "label": "3/8\" BSF (20 TPI)",
+   "major_in": 0.375,
+   "major_mm": 9.525,
+   "tpi": 20,
+   "pitch_mm": 1.27,
+   "minor_mm": 7.899,
+   "tap_drill": {
+    "ideal_mm": 8.305,
+    "metric": {
+     "mm": 8.3,
+     "engagement_pct": 75.3
+    },
+    "metric_alts": [
+     {
+      "mm": 8.2,
+      "engagement_pct": 81.5
+     },
+     {
+      "mm": 8.4,
+      "engagement_pct": 69.2
+     }
+    ],
+    "imperial": {
+     "name": "21/64\"",
+     "in": 0.3281,
+     "mm": 8.334,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "P",
+      "in": 0.323,
+      "mm": 8.204,
+      "engagement_pct": 81.2
+     },
+     {
+      "name": "Q",
+      "in": 0.332,
+      "mm": 8.433,
+      "engagement_pct": 67.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/16-18BSF",
+   "series": "BSF",
+   "label": "7/16\" BSF (18 TPI)",
+   "major_in": 0.4375,
+   "major_mm": 11.112,
+   "tpi": 18,
+   "pitch_mm": 1.4111,
+   "minor_mm": 9.305,
+   "tap_drill": {
+    "ideal_mm": 9.757,
+    "metric": {
+     "mm": 9.8,
+     "engagement_pct": 72.6
+    },
+    "metric_alts": [
+     {
+      "mm": 9.7,
+      "engagement_pct": 78.2
+     },
+     {
+      "mm": 9.9,
+      "engagement_pct": 67.1
+     }
+    ],
+    "imperial": {
+     "name": "W",
+     "in": 0.386,
+     "mm": 9.804,
+     "engagement_pct": 72.4
+    },
+    "imperial_alts": [
+     {
+      "name": "V",
+      "in": 0.377,
+      "mm": 9.576,
+      "engagement_pct": 85.0
+     },
+     {
+      "name": "25/64\"",
+      "in": 0.3906,
+      "mm": 9.922,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1/2-16BSF",
+   "series": "BSF",
+   "label": "1/2\" BSF (16 TPI)",
+   "major_in": 0.5,
+   "major_mm": 12.7,
+   "tpi": 16,
+   "pitch_mm": 1.5875,
+   "minor_mm": 10.667,
+   "tap_drill": {
+    "ideal_mm": 11.175,
+    "metric": {
+     "mm": 11.2,
+     "engagement_pct": 73.8
+    },
+    "metric_alts": [
+     {
+      "mm": 11.1,
+      "engagement_pct": 78.7
+     },
+     {
+      "mm": 11.3,
+      "engagement_pct": 68.9
+     }
+    ],
+    "imperial": {
+     "name": "7/16\"",
+     "in": 0.4375,
+     "mm": 11.112,
+     "engagement_pct": 78.1
+    },
+    "imperial_alts": [
+     {
+      "name": "27/64\"",
+      "in": 0.4219,
+      "mm": 10.716,
+      "engagement_pct": 97.6
+     },
+     {
+      "name": "29/64\"",
+      "in": 0.4531,
+      "mm": 11.509,
+      "engagement_pct": 58.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "9/16-16BSF",
+   "series": "BSF",
+   "label": "9/16\" BSF (16 TPI)",
+   "major_in": 0.5625,
+   "major_mm": 14.287,
+   "tpi": 16,
+   "pitch_mm": 1.5875,
+   "minor_mm": 12.254,
+   "tap_drill": {
+    "ideal_mm": 12.763,
+    "metric": {
+     "mm": 12.8,
+     "engagement_pct": 73.2
+    },
+    "metric_alts": [
+     {
+      "mm": 12.7,
+      "engagement_pct": 78.1
+     },
+     {
+      "mm": 12.9,
+      "engagement_pct": 68.2
+     }
+    ],
+    "imperial": {
+     "name": "1/2\"",
+     "in": 0.5,
+     "mm": 12.7,
+     "engagement_pct": 78.1
+    },
+    "imperial_alts": [
+     {
+      "name": "31/64\"",
+      "in": 0.4844,
+      "mm": 12.303,
+      "engagement_pct": 97.6
+     },
+     {
+      "name": "33/64\"",
+      "in": 0.5156,
+      "mm": 13.097,
+      "engagement_pct": 58.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "5/8-14BSF",
+   "series": "BSF",
+   "label": "5/8\" BSF (14 TPI)",
+   "major_in": 0.625,
+   "major_mm": 15.875,
+   "tpi": 14,
+   "pitch_mm": 1.8143,
+   "minor_mm": 13.552,
+   "tap_drill": {
+    "ideal_mm": 14.132,
+    "metric": {
+     "mm": 14.25,
+     "engagement_pct": 69.9
+    },
+    "metric_alts": [
+     {
+      "mm": 14.0,
+      "engagement_pct": 80.7
+     },
+     {
+      "mm": 14.5,
+      "engagement_pct": 59.2
+     }
+    ],
+    "imperial": {
+     "name": "9/16\"",
+     "in": 0.5625,
+     "mm": 14.287,
+     "engagement_pct": 68.3
+    },
+    "imperial_alts": [
+     {
+      "name": "35/64\"",
+      "in": 0.5469,
+      "mm": 13.891,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "37/64\"",
+      "in": 0.5781,
+      "mm": 14.684,
+      "engagement_pct": 51.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "3/4-12BSF",
+   "series": "BSF",
+   "label": "3/4\" BSF (12 TPI)",
+   "major_in": 0.75,
+   "major_mm": 19.05,
+   "tpi": 12,
+   "pitch_mm": 2.1167,
+   "minor_mm": 16.339,
+   "tap_drill": {
+    "ideal_mm": 17.017,
+    "metric": {
+     "mm": 17.0,
+     "engagement_pct": 75.6
+    },
+    "metric_alts": [
+     {
+      "mm": 16.75,
+      "engagement_pct": 84.8
+     },
+     {
+      "mm": 17.25,
+      "engagement_pct": 66.4
+     }
+    ],
+    "imperial": {
+     "name": "43/64\"",
+     "in": 0.6719,
+     "mm": 17.066,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "21/32\"",
+      "in": 0.6562,
+      "mm": 16.669,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "11/16\"",
+      "in": 0.6875,
+      "mm": 17.462,
+      "engagement_pct": 58.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "7/8-11BSF",
+   "series": "BSF",
+   "label": "7/8\" BSF (11 TPI)",
+   "major_in": 0.875,
+   "major_mm": 22.225,
+   "tpi": 11,
+   "pitch_mm": 2.3091,
+   "minor_mm": 19.268,
+   "tap_drill": {
+    "ideal_mm": 20.007,
+    "metric": {
+     "mm": 20.0,
+     "engagement_pct": 75.2
+    },
+    "metric_alts": [
+     {
+      "mm": 19.75,
+      "engagement_pct": 83.7
+     },
+     {
+      "mm": 20.25,
+      "engagement_pct": 66.8
+     }
+    ],
+    "imperial": {
+     "name": "25/32\"",
+     "in": 0.7812,
+     "mm": 19.844,
+     "engagement_pct": 80.5
+    },
+    "imperial_alts": [
+     {
+      "name": "49/64\"",
+      "in": 0.7656,
+      "mm": 19.447,
+      "engagement_pct": 93.9
+     },
+     {
+      "name": "51/64\"",
+      "in": 0.7969,
+      "mm": 20.241,
+      "engagement_pct": 67.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-10BSF",
+   "series": "BSF",
+   "label": "1\" BSF (10 TPI)",
+   "major_in": 1.0,
+   "major_mm": 25.4,
+   "tpi": 10,
+   "pitch_mm": 2.54,
+   "minor_mm": 22.147,
+   "tap_drill": {
+    "ideal_mm": 22.96,
+    "metric": {
+     "mm": 23.0,
+     "engagement_pct": 73.8
+    },
+    "metric_alts": [
+     {
+      "mm": 22.75,
+      "engagement_pct": 81.5
+     },
+     {
+      "mm": 23.25,
+      "engagement_pct": 66.1
+     }
+    ],
+    "imperial": {
+     "name": "29/32\"",
+     "in": 0.9062,
+     "mm": 23.019,
+     "engagement_pct": 73.2
+    },
+    "imperial_alts": [
+     {
+      "name": "57/64\"",
+      "in": 0.8906,
+      "mm": 22.622,
+      "engagement_pct": 85.4
+     },
+     {
+      "name": "59/64\"",
+      "in": 0.9219,
+      "mm": 23.416,
+      "engagement_pct": 61.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/8-9BSF",
+   "series": "BSF",
+   "label": "1-1/8\" BSF (9 TPI)",
+   "major_in": 1.125,
+   "major_mm": 28.575,
+   "tpi": 9,
+   "pitch_mm": 2.8222,
+   "minor_mm": 24.961,
+   "tap_drill": {
+    "ideal_mm": 25.864,
+    "metric": {
+     "mm": 25.75,
+     "engagement_pct": 78.2
+    },
+    "metric_alts": [
+     {
+      "mm": 25.5,
+      "engagement_pct": 85.1
+     },
+     {
+      "mm": 26.0,
+      "engagement_pct": 71.2
+     }
+    ],
+    "imperial": {
+     "name": "1-1/64\"",
+     "in": 1.0156,
+     "mm": 25.797,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1\"",
+      "in": 1.0,
+      "mm": 25.4,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "1-1/32\"",
+      "in": 1.0312,
+      "mm": 26.194,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/4-9BSF",
+   "series": "BSF",
+   "label": "1-1/4\" BSF (9 TPI)",
+   "major_in": 1.25,
+   "major_mm": 31.75,
+   "tpi": 9,
+   "pitch_mm": 2.8222,
+   "minor_mm": 28.136,
+   "tap_drill": {
+    "ideal_mm": 29.039,
+    "metric": {
+     "mm": 29.0,
+     "engagement_pct": 76.1
+    },
+    "metric_alts": [
+     {
+      "mm": 28.75,
+      "engagement_pct": 83.0
+     },
+     {
+      "mm": 29.25,
+      "engagement_pct": 69.2
+     }
+    ],
+    "imperial": {
+     "name": "1-9/64\"",
+     "in": 1.1406,
+     "mm": 28.972,
+     "engagement_pct": 76.9
+    },
+    "imperial_alts": [
+     {
+      "name": "1-1/8\"",
+      "in": 1.125,
+      "mm": 28.575,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "1-5/32\"",
+      "in": 1.1562,
+      "mm": 29.369,
+      "engagement_pct": 65.9
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-1/2-8BSF",
+   "series": "BSF",
+   "label": "1-1/2\" BSF (8 TPI)",
+   "major_in": 1.5,
+   "major_mm": 38.1,
+   "tpi": 8,
+   "pitch_mm": 3.175,
+   "minor_mm": 34.034,
+   "tap_drill": {
+    "ideal_mm": 35.05,
+    "metric": {
+     "mm": 35.0,
+     "engagement_pct": 76.2
+    },
+    "metric_alts": [
+     {
+      "mm": 34.75,
+      "engagement_pct": 82.4
+     },
+     {
+      "mm": 35.25,
+      "engagement_pct": 70.1
+     }
+    ],
+    "imperial": {
+     "name": "1-3/8\"",
+     "in": 1.375,
+     "mm": 34.925,
+     "engagement_pct": 78.1
+    },
+    "imperial_alts": [
+     {
+      "name": "1-23/64\"",
+      "in": 1.3594,
+      "mm": 34.528,
+      "engagement_pct": 87.8
+     },
+     {
+      "name": "1-25/64\"",
+      "in": 1.3906,
+      "mm": 35.322,
+      "engagement_pct": 68.3
+     }
+    ]
+   }
+  }
+ ],
+ "pipe": [
+  {
+   "id": "BSP1/16",
+   "series": "BSP",
+   "label": "1/16\" BSP (28 TPI)",
+   "tpi": 28,
+   "major_mm": 7.723,
+   "minor_mm": 6.561,
+   "drill_G_mm": 6.8,
+   "drill_Rp_mm": 6.6,
+   "drill_Rc_mm": 6.4
+  },
+  {
+   "id": "BSP1/8",
+   "series": "BSP",
+   "label": "1/8\" BSP (28 TPI)",
+   "tpi": 28,
+   "major_mm": 9.728,
+   "minor_mm": 8.566,
+   "drill_G_mm": 8.8,
+   "drill_Rp_mm": 8.6,
+   "drill_Rc_mm": 8.4
+  },
+  {
+   "id": "BSP1/4",
+   "series": "BSP",
+   "label": "1/4\" BSP (19 TPI)",
+   "tpi": 19,
+   "major_mm": 13.157,
+   "minor_mm": 11.445,
+   "drill_G_mm": 11.8,
+   "drill_Rp_mm": 11.5,
+   "drill_Rc_mm": 11.2
+  },
+  {
+   "id": "BSP3/8",
+   "series": "BSP",
+   "label": "3/8\" BSP (19 TPI)",
+   "tpi": 19,
+   "major_mm": 16.662,
+   "minor_mm": 14.95,
+   "drill_G_mm": 15.25,
+   "drill_Rp_mm": 15.0,
+   "drill_Rc_mm": 14.75
+  },
+  {
+   "id": "BSP1/2",
+   "series": "BSP",
+   "label": "1/2\" BSP (14 TPI)",
+   "tpi": 14,
+   "major_mm": 20.955,
+   "minor_mm": 18.632,
+   "drill_G_mm": 19.0,
+   "drill_Rp_mm": 18.5,
+   "drill_Rc_mm": 18.25
+  },
+  {
+   "id": "BSP5/8",
+   "series": "BSP",
+   "label": "5/8\" BSP (14 TPI)",
+   "tpi": 14,
+   "major_mm": 22.911,
+   "minor_mm": 20.588,
+   "drill_G_mm": 21.0,
+   "drill_Rp_mm": 20.5,
+   "drill_Rc_mm": null
+  },
+  {
+   "id": "BSP3/4",
+   "series": "BSP",
+   "label": "3/4\" BSP (14 TPI)",
+   "tpi": 14,
+   "major_mm": 26.441,
+   "minor_mm": 24.118,
+   "drill_G_mm": 24.5,
+   "drill_Rp_mm": 24.0,
+   "drill_Rc_mm": 23.75
+  },
+  {
+   "id": "BSP7/8",
+   "series": "BSP",
+   "label": "7/8\" BSP (14 TPI)",
+   "tpi": 14,
+   "major_mm": 30.201,
+   "minor_mm": 27.878,
+   "drill_G_mm": 28.25,
+   "drill_Rp_mm": 27.75,
+   "drill_Rc_mm": null
+  },
+  {
+   "id": "BSP1",
+   "series": "BSP",
+   "label": "1\" BSP (11 TPI)",
+   "tpi": 11,
+   "major_mm": 33.249,
+   "minor_mm": 30.292,
+   "drill_G_mm": 30.75,
+   "drill_Rp_mm": 30.25,
+   "drill_Rc_mm": 30.0
+  },
+  {
+   "id": "BSP1-1/4",
+   "series": "BSP",
+   "label": "1-1/4\" BSP (11 TPI)",
+   "tpi": 11,
+   "major_mm": 41.91,
+   "minor_mm": 38.953,
+   "drill_G_mm": 39.5,
+   "drill_Rp_mm": 39.0,
+   "drill_Rc_mm": 38.5
+  },
+  {
+   "id": "BSP1-1/2",
+   "series": "BSP",
+   "label": "1-1/2\" BSP (11 TPI)",
+   "tpi": 11,
+   "major_mm": 47.803,
+   "minor_mm": 44.846,
+   "drill_G_mm": 45.5,
+   "drill_Rp_mm": 45.0,
+   "drill_Rc_mm": 44.5
+  },
+  {
+   "id": "BSP2",
+   "series": "BSP",
+   "label": "2\" BSP (11 TPI)",
+   "tpi": 11,
+   "major_mm": 59.614,
+   "minor_mm": 56.657,
+   "drill_G_mm": 57.0,
+   "drill_Rp_mm": 56.5,
+   "drill_Rc_mm": 56.0
+  },
+  {
+   "id": "NPT1/16",
+   "series": "NPT",
+   "label": "1/16\" NPT (27 TPI)",
+   "tpi": 27,
+   "pipe_od_in": 0.3125,
+   "pipe_od_mm": 7.94,
+   "drill": {
+    "name": "C",
+    "in": 0.242,
+    "mm": 6.15
+   }
+  },
+  {
+   "id": "NPT1/8",
+   "series": "NPT",
+   "label": "1/8\" NPT (27 TPI)",
+   "tpi": 27,
+   "pipe_od_in": 0.405,
+   "pipe_od_mm": 10.29,
+   "drill": {
+    "name": "R",
+    "in": 0.339,
+    "mm": 8.61
+   }
+  },
+  {
+   "id": "NPT1/4",
+   "series": "NPT",
+   "label": "1/4\" NPT (18 TPI)",
+   "tpi": 18,
+   "pipe_od_in": 0.54,
+   "pipe_od_mm": 13.72,
+   "drill": {
+    "name": "7/16\"",
+    "in": 0.4375,
+    "mm": 11.11
+   }
+  },
+  {
+   "id": "NPT3/8",
+   "series": "NPT",
+   "label": "3/8\" NPT (18 TPI)",
+   "tpi": 18,
+   "pipe_od_in": 0.675,
+   "pipe_od_mm": 17.14,
+   "drill": {
+    "name": "37/64\"",
+    "in": 0.5781,
+    "mm": 14.68
+   }
+  },
+  {
+   "id": "NPT1/2",
+   "series": "NPT",
+   "label": "1/2\" NPT (14 TPI)",
+   "tpi": 14,
+   "pipe_od_in": 0.84,
+   "pipe_od_mm": 21.34,
+   "drill": {
+    "name": "23/32\"",
+    "in": 0.7188,
+    "mm": 18.26
+   }
+  },
+  {
+   "id": "NPT3/4",
+   "series": "NPT",
+   "label": "3/4\" NPT (14 TPI)",
+   "tpi": 14,
+   "pipe_od_in": 1.05,
+   "pipe_od_mm": 26.67,
+   "drill": {
+    "name": "59/64\"",
+    "in": 0.9219,
+    "mm": 23.42
+   }
+  },
+  {
+   "id": "NPT1",
+   "series": "NPT",
+   "label": "1\" NPT (11.5 TPI)",
+   "tpi": 11.5,
+   "pipe_od_in": 1.315,
+   "pipe_od_mm": 33.4,
+   "drill": {
+    "name": "1-5/32\"",
+    "in": 1.1563,
+    "mm": 29.37
+   }
+  },
+  {
+   "id": "NPT1-1/4",
+   "series": "NPT",
+   "label": "1-1/4\" NPT (11.5 TPI)",
+   "tpi": 11.5,
+   "pipe_od_in": 1.66,
+   "pipe_od_mm": 42.16,
+   "drill": {
+    "name": "1-1/2\"",
+    "in": 1.5,
+    "mm": 38.1
+   }
+  },
+  {
+   "id": "NPT1-1/2",
+   "series": "NPT",
+   "label": "1-1/2\" NPT (11.5 TPI)",
+   "tpi": 11.5,
+   "pipe_od_in": 1.9,
+   "pipe_od_mm": 48.26,
+   "drill": {
+    "name": "1-47/64\"",
+    "in": 1.7344,
+    "mm": 44.05
+   }
+  },
+  {
+   "id": "NPT2",
+   "series": "NPT",
+   "label": "2\" NPT (11.5 TPI)",
+   "tpi": 11.5,
+   "pipe_od_in": 2.375,
+   "pipe_od_mm": 60.32,
+   "drill": {
+    "name": "2-7/32\"",
+    "in": 2.2188,
+    "mm": 56.36
+   }
+  }
+ ]
+}
