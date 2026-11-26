@@ -250,6 +250,32 @@
    "name": "Toyota HiLux",
    "rows": [
     {
+     "model_code": "GUN1x2/GUN1x5/GUN1x6/TGN1x6 4x4 (AN120/130)",
+     "years": "2015/04–",
+     "engine": "all",
+     "component": "Wheel nuts – 4x4",
+     "fastener_detail": "Steel and alloy, all wheel sizes incl. spare",
+     "torque_nm": "105",
+     "torque_original": "105 N·m (10.7 kgf·m, 77 ft·lbf)",
+     "confidence": "high",
+     "source_name": "Toyota HiLux owner's manual (Europe, 2023) + Toyota Motor Europe bulletin AIM 005 469-5, via whatsizebolt.com",
+     "source_url": "https://www.whatsizebolt.com/knowledge-hub/toyota-hilux-wheel-nut-torque-specs/",
+     "notes": "Two Toyota documents agree for 4x4. Corroborated by 4x4community.co.za owner posts. AU owner's manual not checked (login required)."
+    },
+    {
+     "model_code": "AN120/130 4x2 (Workmate/SR 2WD)",
+     "years": "2015/04–",
+     "engine": "all",
+     "component": "Wheel nuts – 4x2",
+     "fastener_detail": "Alloy 121 N·m / steel 152 N·m",
+     "torque_nm": "121 / 152",
+     "torque_original": "121 alloy / 152 steel (N·m)",
+     "confidence": "medium",
+     "source_name": "Toyota Motor Europe bulletin AIM 005 469-5 rev 5 (2025), via whatsizebolt.com",
+     "source_url": "https://www.whatsizebolt.com/knowledge-hub/toyota-hilux-wheel-nut-torque-specs/",
+     "notes": "Conflicts with the EU owner's manual, which gives 105 for Pre Runner 2WD. Model code digit: 2 = 4WD, 3 = Pre Runner 2WD (door-pillar label). Check your own manual for 2WD."
+    },
+    {
      "model_code": "AN120/AN130 (listed 'Hilux 2016 Underbumper', DC/CC/SC)",
      "years": "2015-",
      "engine": "all",
@@ -1472,7 +1498,7 @@
   }
  ],
  "gaps": [
-  "HiLux AN120/130: no factory figures found yet (wheel nuts only from retailers/earlier gen).",
+  "HiLux AN120/130: wheel nuts now sourced (4x4 105; 4x2 121 alloy / 152 steel). Brakes, diffs, drain plugs, U-bolts still missing.",
   "LC200: AU steel vs alloy wheel nut figure, stud thread, 1VD diesel drain/filter, suspension not found.",
   "RAV4 / Celica / MR2: brakes, suspension and transmission plugs not found.",
   "Wheel nuts still missing: Prado AU, Camry, Corolla AU, D-Max RG, Triton, Navara D23, Patrol Y62, Subaru, Amarok, Atto 3, MG3.",
