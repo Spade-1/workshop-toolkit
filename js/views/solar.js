@@ -10,21 +10,31 @@
   async function solar() {
     WT.setHeader('Solar (12 V)', true);
     const C = await WT.load('data/auto/cable.json');
+    const S = await WT.load('data/auto/solar_psh.json');
     const cab = C.rows.filter((r) => r.au_mm2 && r.au_mm2 <= 21).map((r) => ({ id: r.bs, a: r.au_mm2, name: /auto/.test(r.au_sold_as) ? `${r.au_sold_as.replace(' auto', '').replace('mm', ' mm')} auto (${r.bs} B&S)` : `${r.bs} B&S` })).sort((x, y) => x.a - y.a);
-    const st = WT.store.get('solar', { w: '80', vmp: '18', psh: '4.65', amb: '30', rise: '25', coef: '-0.35', mppt: '95', len: '2.5', cab: '12', bv: '12', use: '' });
+    const st = WT.store.get('solar', { loc: 'Sydney', mon: 'y', w: '80', vmp: '18', psh: '4.65', amb: '30', rise: '25', coef: '-0.35', mppt: '95', len: '2.5', cab: '12', bv: '12', use: '' });
     WT.$view.innerHTML = `<p class="intro">Daily energy from a panel through an MPPT controller. Clean panel assumed. Change any default.</p>
       <form class="calc" onsubmit="return false">
       <div class="row2"><label>Panel rating (W)<input id="w" inputmode="decimal"></label><label>Panel Vmp (V)<input id="vmp" inputmode="decimal"></label></div>
+      <div class="row2"><label>Location<select id="loc">${S.locations.map((l) => `<option>${esc(l.name)}</option>`).join('')}<option value="">Custom</option></select></label>
+        <label>Month<select id="mon"><option value="y">Year average</option>${S.months.map((m, i) => `<option value="${i}">${m}</option>`).join('')}</select></label></div>
       <label>Peak sun hours per day (flat panel)<input id="psh" inputmode="decimal"></label>
-      <p class="foot" style="margin:-6px 0 8px">Default 4.65 h = Sydney, flat, yearly average (NASA POWER via solarposition.org, medium confidence). Winter is lower, summer higher – monthly figures coming.</p>
+      <p class="foot" id="pshn" style="margin:-6px 0 8px"></p>
       <div class="row2"><label>Air temp (°C)<input id="amb" inputmode="decimal"></label><label>Panel runs hotter by (°C)<input id="rise" inputmode="decimal"></label></div>
       <div class="row2"><label>Temp coefficient (%/°C)<input id="coef" inputmode="decimal"></label><label>MPPT efficiency (%)<input id="mppt" inputmode="decimal"></label></div>
       <div class="row2"><label>Panel cable, one way (m)<input id="len" inputmode="decimal"></label><label>Cable<select id="cab">${cab.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select></label></div>
       <div class="row2"><label>Battery voltage<select id="bv"><option>12</option><option>24</option></select></label><label>Your daily use (Wh, optional)<input id="use" inputmode="decimal"></label></div>
       </form><div id="so"></div>
-      <p class="foot">Panel heat: output falls by the temp coefficient for every °C the cells sit above 25 °C. A flat panel on a roof runs roughly 20–30 °C above air (rule of thumb, low confidence). Modern panels are about −0.30 to −0.36 %/°C. MPPT controllers are 92–96% in real use (Victron quotes >98% peak). Shade on even part of a panel cuts output sharply.</p>`;
+      <p class="foot">Panel heat: output falls by the temp coefficient for every °C the cells sit above 25 °C. A flat panel on a roof runs roughly 20–30 °C above air (rule of thumb, low confidence). Modern panels are about −0.30 to −0.36 %/°C. Flat roof panels lose about 10% more in winter versus tilted (ExplorOz) – many fitters add ~20% panel instead of tilting. MPPT controllers are 92–96% in real use (Victron quotes >98% peak). Shade on even part of a panel cuts output sharply.</p>`;
     const $ = (id) => WT.$view.querySelector('#' + id);
     Object.entries(st).forEach(([k, v]) => { if ($(k)) $(k).value = v; });
+    function setPsh() {
+      const l = S.locations.find((x) => x.name === $('loc').value);
+      if (!l) { $('pshn').textContent = 'Custom value – type your own peak sun hours.'; return; }
+      const mi = $('mon').value, v = mi === 'y' ? l.year : l.m[+mi];
+      $('psh').value = v;
+      $('pshn').innerHTML = `${esc(l.name)}, ${mi === 'y' ? 'year average' : S.months[+mi]}, flat panel. BOM ${esc(l.station)} (<a href="${esc(l.url)}" target="_blank" rel="noopener">source</a>, high confidence). Lowest month ${Math.min(...l.m)} h, highest ${Math.max(...l.m)} h.`;
+    }
     function go() {
       Object.keys(st).forEach((k) => (st[k] = $(k).value)); WT.store.set('solar', st);
       const W = val($('w')), vmp = val($('vmp')), psh = val($('psh')), amb = val($('amb')) ?? 30, rise = val($('rise')) ?? 25, coef = val($('coef')) ?? -0.35, mppt = (val($('mppt')) || 95) / 100, L = val($('len')) || 0, bv = +st.bv, use = val($('use'));
@@ -43,6 +53,9 @@
         <div class="card solve"><div class="solve-h"><b>Working</b></div>${work(lines)}</div>`;
     }
     WT.$view.querySelectorAll('input,select').forEach((x) => x.addEventListener(x.tagName === 'SELECT' ? 'change' : 'input', go));
+    ['loc', 'mon'].forEach((k) => $(k).addEventListener('change', () => { setPsh(); go(); }));
+    $('psh').addEventListener('input', () => { if ($('loc').value) { $('loc').value = ''; setPsh(); go(); } });
+    if (st.loc) setPsh(); else $('pshn').textContent = 'Custom value – type your own peak sun hours.';
     go();
   }
   WT.section('solar', { name: 'Solar (12 V)', desc: 'Panel yield per day, heat and cable loss' }, solar);
