@@ -1,8 +1,8 @@
 // Offline cache. Bump VERSION on every release so phones pick up changes.
-const VERSION = 'wt-v19';
+const VERSION = 'wt-v20';
 const ASSETS = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/core.js', 'js/calc/threads.js',
-  'js/views/taps.js', 'js/views/convert.js', 'js/views/welding.js', 'js/views/auto.js', 'js/views/fasteners.js', 'js/views/tyres.js', 'js/views/elec.js', 'js/views/geom.js', 'js/views/area.js', 'js/views/metal.js', 'data/elec/mains_cable.json', 'data/auto/tyres.json', 'data/auto/fitment.json', 'data/fasteners/fasteners.json',
+  'js/views/taps.js', 'js/views/convert.js', 'js/views/welding.js', 'js/views/auto.js', 'js/views/fasteners.js', 'js/views/tyres.js', 'js/views/elec.js', 'js/views/geom.js', 'js/views/area.js', 'js/views/metal.js', 'js/views/solar.js', 'data/elec/mains_cable.json', 'data/auto/tyres.json', 'data/auto/fitment.json', 'data/fasteners/fasteners.json',
   'data/threads/threads.json', 'data/threads/drills.json', 'data/threads/common.json',
   'data/welding/razor205.json', 'data/welding/tig_unimig.json', 'data/welding/troubleshooting.json', 'data/auto/cable.json', 'data/auto/torque.json', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png',
