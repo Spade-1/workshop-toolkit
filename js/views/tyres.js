@@ -81,7 +81,39 @@
       <p class="foot">${D.sources.map(esc).join(' ')}</p>`;
   }
 
-  const TABS = [{ key: 'calc', label: 'Size calculator' }, { key: 'decode', label: 'Explained' }, { key: 'tables', label: 'Load & speed' }];
+  const conf = (c) => `<span class="conf conf-${esc(c || 'low')}">${c === 'low' || !c ? 'unverified' : esc(c)}</span>`;
+  async function fitment($el) {
+    const F = await WT.load('data/auto/fitment.json');
+    $el.innerHTML = `<p class="warn">${esc(F.note)}</p>
+      <input id="fq" class="search" type="search" placeholder="Search vehicle (e.g. hilux, ranger, rav4)" autocomplete="off">
+      <ul id="fl" class="list"></ul>`;
+    const $l = $el.querySelector('#fl');
+    const link = (u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">src ${i + 1}</a>`;
+    function render() {
+      const q = $el.querySelector('#fq').value.trim().toLowerCase();
+      const rs = F.rows.filter((r) => !q || (r.vehicle + ' ' + r.code + ' ' + r.years).toLowerCase().includes(q));
+      $l.innerHTML = rs.map((r) => `<li class="item"><button class="item-head" aria-expanded="false">
+          <span class="item-label">${esc(r.vehicle)} <small>${esc(r.years)}</small></span>
+          <span class="item-sum">${esc(r.pcd)} ${conf(r.conf)}</span></button>
+        <div class="item-body" hidden>
+          ${row('Stud pattern', esc(r.pcd), 'hl')}
+          ${row('Centre bore', r.cb ? esc(r.cb) + ' mm' : '?')}
+          ${row('Stud thread', esc(r.thread || '?'))}
+          ${row('Factory tyres', esc(r.tyres || '?'))}
+          ${row('Factory wheels', esc(r.wheels || '?'))}
+          ${row('Nut torque', r.torque ? esc(r.torque) + ' N·m' : 'not found')}
+          ${r.seat ? row('Nut seat', esc(r.seat)) : ''}${r.hex ? row('Nut hex', esc(r.hex) + ' mm') : ''}
+          ${row('Model', esc(r.code))}
+          ${row('Sources', r.src.map(link).join(' · '))}
+          ${r.notes ? row('Notes', esc(r.notes)) : ''}
+        </div></li>`).join('') || '<li class="item"><p class="intro">No match.</p></li>';
+    }
+    $l.addEventListener('click', (e) => { const b = e.target.closest('.item-head'); if (!b) return; const o = b.getAttribute('aria-expanded') === 'true'; b.setAttribute('aria-expanded', !o); b.nextElementSibling.hidden = o; });
+    $el.querySelector('#fq').addEventListener('input', render);
+    render();
+  }
+
+  const TABS = [{ key: 'calc', label: 'Size calculator' }, { key: 'decode', label: 'Explained' }, { key: 'tables', label: 'Load & speed' }, { key: 'fit', label: 'Fitment' }];
   async function tyres() {
     WT.setHeader('Tyres & wheels', true);
     const D = await WT.load('data/auto/tyres.json');
@@ -90,7 +122,7 @@
     const $p = WT.$view.querySelector('#pane');
     function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      ({ calc, decode, tables })[tab]($p, D);
+      ({ calc, decode, tables, fit: fitment })[tab]($p, D);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('tyre.tab', tab); render(); });
     render();
