@@ -33,7 +33,16 @@
       if (!l) { $('pshn').textContent = 'Custom value – type your own peak sun hours.'; return; }
       const mi = $('mon').value, v = mi === 'y' ? l.year : l.m[+mi];
       $('psh').value = v;
-      $('pshn').innerHTML = `${esc(l.name)}, ${mi === 'y' ? 'year average' : S.months[+mi]}, flat panel. BOM ${esc(l.station)} (<a href="${esc(l.url)}" target="_blank" rel="noopener">source</a>, high confidence). Lowest month ${Math.min(...l.m)} h, highest ${Math.max(...l.m)} h.`;
+      $('amb').value = mi === 'y' ? sig(l.t.reduce((a, b) => a + b, 0) / 12) : l.t[+mi];
+      $('pshn').innerHTML = `${esc(l.name)}, ${mi === 'y' ? 'year average' : S.months[+mi]}, flat panel. BOM ${esc(l.station)} (<a href="${esc(l.url)}" target="_blank" rel="noopener">source</a>, high confidence). Lowest month ${Math.min(...l.m)} h, highest ${Math.max(...l.m)} h. Air temp = BOM mean daily max for that month (medium confidence).`;
+    }
+    function monthly(kRest, W, bv, use, coef, rise) {
+      const l = S.locations.find((x) => x.name === $('loc').value);
+      if (!l) return '';
+      const mi = $('mon').value;
+      return `<h3 class="sub">${esc(l.name)} by month <small>(each month at its own sun hours and air temp)</small></h3>
+        <table class="tbl"><thead><tr><th>Month</th><th>Sun h</th><th>Air °C</th><th>Wh/day</th><th>Ah/day</th>${use ? '<th>vs use</th>' : ''}</tr></thead><tbody>
+        ${l.m.map((h, i) => { const kTm = Math.max(0, 1 + (coef / 100) * (l.t[i] + rise - 25)), wh = W * h * kTm * kRest; return `<tr${String(i) === mi ? ' class="near"' : ''}><td>${S.months[i]}</td><td>${h}</td><td>${l.t[i]}</td><td>${Math.round(wh)}</td><td>${sig(wh / bv)}</td>${use ? `<td class="${wh >= use ? 'ok' : 'bad'}">${wh >= use ? '+' : ''}${Math.round(wh - use)}</td>` : ''}</tr>`; }).join('')}</tbody></table>`;
     }
     function go() {
       Object.keys(st).forEach((k) => (st[k] = $(k).value)); WT.store.set('solar', st);
@@ -50,7 +59,8 @@
       if (use) { const net = Wh - use; bal = row('Against your use', `<span class="${net >= 0 ? 'ok' : 'bad'}">${net >= 0 ? '+' : ''}${sig(net)} Wh/day</span> <small>${net >= 0 ? 'covered' : `need about ${sig((use / (Wh / W)), 3)} W of panel`}</small>`); }
       $('so').innerHTML = `<div class="out">${row('Per day', `<b class="acc">${sig(Wh)} Wh · ${sig(Ah)} Ah</b>`, 'hl')}${row('Average over 24 h', `${sig(avg)} W`)}
         ${row('Midday peak (approx)', `${sig(Pt * kC * mppt)} W · ${sig((Pt * kC * mppt) / bv)} A into battery`)}${row('Heat loss', `${sig((1 - kT) * 100, 3)}%`)}${row('Cable loss', `${sig((1 - kC) * 100, 2)}%`)}${bal}</div>
-        <div class="card solve"><div class="solve-h"><b>Working</b></div>${work(lines)}</div>`;
+        <div class="card solve"><div class="solve-h"><b>Working</b></div>${work(lines)}</div>${monthly(kC * mppt, W, bv, use, coef, rise)}`;
+      WT.store.set('solar.last', { wh: Math.round(Wh), label: `${sig(W)} W, ${$('loc').value || 'custom'} ${$('mon').value === 'y' ? 'year avg' : S.months[+$('mon').value]}` });
     }
     WT.$view.querySelectorAll('input,select').forEach((x) => x.addEventListener(x.tagName === 'SELECT' ? 'change' : 'input', go));
     ['loc', 'mon'].forEach((k) => $(k).addEventListener('change', () => { setPsh(); go(); }));

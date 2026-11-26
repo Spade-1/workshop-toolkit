@@ -294,7 +294,8 @@
   const DUTY = [['on', 'On all the time'], ['mph', 'Minutes on per hour'], ['hpd', 'Hours on per day'], ['pct', '% of the time']];
   const newLoad = () => ({ name: '', val: '', u: 'w', sup: 'dc', duty: 'on', dv: '' });
   function battery($el) {
-    const st = WT.store.get('elec.bat3', { cap: '100', cu: 'ah', v: '12', dod: '0.5', eff: '85', hrs: '', loads: [newLoad()] });
+    const st = WT.store.get('elec.bat3', { cap: '100', cu: 'ah', v: '12', dod: '0.5', eff: '85', hrs: '', sol: '', loads: [newLoad()] });
+    if (st.sol == null) st.sol = '';
     $el.innerHTML = `<form class="calc" onsubmit="return false">
       <div class="row2"><label>Battery capacity<input id="cap" inputmode="decimal"></label><label>Unit<select id="cu">${CAPU.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label></div>
       <div class="row2"><label>Battery voltage (V)<select id="v">${['3.7', '7.4', '12', '24', '48'].map((x) => `<option>${x}</option>`).join('')}</select></label><label>Inverter efficiency (%)<input id="eff" inputmode="decimal"></label></div>
@@ -302,11 +303,16 @@
       <h3 class="sub">Loads – what's drawing power</h3><div id="loads"></div>
       <button type="button" class="btn" id="addl">+ Add load</button>
       </form><div id="bo"></div>
+      <h3 class="sub">Solar coming in</h3>
+      <form class="calc" onsubmit="return false"><label>Solar per day (Wh, optional)<input id="sol" inputmode="decimal"></label>
+      <button type="button" class="btn" id="solb" hidden></button></form><div id="bs"></div>
       <h3 class="sub">Battery needed</h3>
       <form class="calc" onsubmit="return false"><label>Run time wanted (hours)<input id="hrs" inputmode="decimal"></label></form><div id="bn"></div>
       <p class="foot">Each load's average = its draw × the share of time it's on. A fridge cycling 20 min every hour is on 33% of the time. Lead-acid gives less than rated Ah at high draw (Peukert) and in the cold. AC loads run through the inverter; AC amps are converted at 230 V.</p>`;
     const $ = (id) => $el.querySelector('#' + id);
-    ['cap', 'cu', 'v', 'dod', 'eff', 'hrs'].forEach((k) => ($(k).value = st[k]));
+    ['cap', 'cu', 'v', 'dod', 'eff', 'hrs', 'sol'].forEach((k) => ($(k).value = st[k]));
+    const last = WT.store.get('solar.last', null);
+    if (last) { $('solb').hidden = false; $('solb').textContent = `Use Solar tab: ${last.wh} Wh/day (${last.label})`; $('solb').addEventListener('click', () => { $('sol').value = last.wh; go(); }); }
     const $L = $('loads');
     function drawLoads() {
       $L.innerHTML = st.loads.map((l, i) => `<div class="load" data-i="${i}">
@@ -317,7 +323,7 @@
           <label${l.duty === 'on' ? ' hidden' : ''}>${{ mph: 'Min / hour', hpd: 'Hours / day', pct: '%' }[l.duty] || '&nbsp;'}<input data-f="dv" inputmode="decimal" value="${esc(l.dv)}"></label></div></div>`).join('');
     }
     function go() {
-      ['cap', 'cu', 'v', 'dod', 'eff', 'hrs'].forEach((k) => (st[k] = $(k).value));
+      ['cap', 'cu', 'v', 'dod', 'eff', 'hrs', 'sol'].forEach((k) => (st[k] = $(k).value));
       WT.store.set('elec.bat3', st);
       const V = +st.v, dod = +st.dod, cap = num($('cap')), eff = (num($('eff')) || 85) / 100, H = num($('hrs'));
       const rows = [], lw = [];
@@ -334,7 +340,16 @@
         rows.push([nm, `${sig(Wdc, 3)} W × ${sig(frac * 100, 3)}% = <b>${sig(avg, 3)} W</b>`]);
         lw.push(`${esc(nm)}: ${l.u === 'a' || l.u === 'ma' ? `${sig(l.u === 'ma' ? val / 1000 : val)} A × ${lv} V = ` : ''}${sig(Wdev, 4)} W${l.sup === 'ac' ? ` ÷ ${sig(eff)} = ${sig(Wdc, 4)} W` : ''} × ${sig(frac * 100, 3)}% on = ${sig(avg, 4)} W avg`);
       });
-      if (!tot) { $('bo').innerHTML = ''; $('bn').innerHTML = ''; return; }
+      if (!tot) { $('bo').innerHTML = ''; $('bn').innerHTML = ''; $('bs').innerHTML = ''; return; }
+      const sol = num($('sol')), day = tot * 24;
+      if (sol) {
+        const net = sol - day;
+        let txt;
+        if (net >= 0) txt = `<span class="ok">Solar covers it: +${sig(net, 4)} Wh/day spare</span>`;
+        else if (cap) { const Wh0 = { ah: cap * V, mah: (cap / 1000) * V, wh: cap, kwh: cap * 1000 }[st.cu] * dod; txt = `<span class="bad">Short ${sig(-net, 4)} Wh/day</span> → about <b class="acc">${sig(Wh0 / -net, 3)} days</b> from full to flat`; }
+        else txt = `<span class="bad">Short ${sig(-net, 4)} Wh/day</span>`;
+        $('bs').innerHTML = `<div class="out">${row('Use per day', `${sig(day, 4)} Wh`)}${row('Solar per day', `${sig(sol, 4)} Wh`)}${row('Balance', txt, 'hl')}</div>`;
+      } else $('bs').innerHTML = '';
       const sum = `<div class="out">${rows.map(([a, b]) => row(esc(a), b)).join('')}${row('Average total', `<b class="acc">${sig(tot, 4)} W</b> · ${sig(tot / V, 3)} A`, 'hl')}
         ${row('Per day', `${sig(tot * 24, 4)} Wh · ${sig((tot * 24) / V, 4)} Ah`)}${row('Peak (all on at once)', `${sig(peak, 4)} W · ${sig(peak / V, 3)} A`)}</div>`;
       if (cap) {
@@ -354,7 +369,7 @@
     $L.addEventListener('change', (e) => { const f = e.target.dataset.f; if (!f || e.target.tagName !== 'SELECT') return; const i = +e.target.closest('.load').dataset.i; st.loads[i][f] = e.target.value; if (f === 'duty') drawLoads(); go(); });
     $L.addEventListener('click', (e) => { const d = e.target.closest('[data-del]'); if (!d) return; st.loads.splice(+d.dataset.del, 1); if (!st.loads.length) st.loads.push(newLoad()); drawLoads(); go(); });
     $('addl').addEventListener('click', () => { st.loads.push(newLoad()); drawLoads(); go(); });
-    ['cap', 'eff', 'hrs'].forEach((k) => $(k).addEventListener('input', go));
+    ['cap', 'eff', 'hrs', 'sol'].forEach((k) => $(k).addEventListener('input', go));
     ['cu', 'v', 'dod'].forEach((k) => $(k).addEventListener('change', go));
     drawLoads(); go();
   }
