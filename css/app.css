@@ -232,3 +232,4 @@ h2.group:first-child { margin-top: 2px; }
 .load .row2 { align-items: flex-end; }
 .btn.x { padding: 9px 12px; margin-bottom: 6px; }
 #addl { margin: 2px 0 10px; }
+.clab { margin: 6px 0 2px; font-size: 13px; color: var(--text); font-weight: 600; } .clab small { color: var(--muted); font-weight: 400; }

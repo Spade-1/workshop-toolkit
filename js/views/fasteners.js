@@ -12,7 +12,9 @@
     let cls = WT.store.get('fast.class', '8.8'); if (!F.torque.classes[cls]) cls = '8.8';
     let cond = WT.store.get('fast.cond', 'dry');
     let fine = WT.store.get('fast.fine', false);
-    $el.innerHTML = `<div id="cc">${WT.chips(classes, cls).replace('class="chips"', 'class="chips small"')}</div>
+    $el.innerHTML = `<p class="clab">Bolt grade <small>– the number stamped on the bolt head (8.8, 10.9…) or A2/A4 for stainless</small></p>
+      <div id="cc">${WT.chips(classes, cls).replace('class="chips"', 'class="chips small"')}</div>
+      <p class="clab">Thread condition <small>– dry, plated or lubricated changes the torque</small></p>
       <div id="cd">${WT.chips(COND, cond).replace('class="chips"', 'class="chips small"')}</div>
       <label class="inline"><input id="fine" type="checkbox"> Show fine pitches</label>
       <table class="tbl"><thead><tr><th>Size</th><th>N·m</th><th>ft·lb</th><th>Clamp kN</th></tr></thead><tbody id="tb"></tbody></table>
@@ -46,6 +48,7 @@
     const classes = Object.keys(S.classes).map((k) => ({ key: k, label: k.replace(' / ', '/') }));
     let cls = WT.store.get('fast.sclass', '8.8'); if (!S.classes[cls]) cls = '8.8';
     $el.innerHTML = `<p class="warn">${esc(S.warning)}</p>
+      <p class="clab">Bolt grade <small>– the number stamped on the bolt head, or A2/A4 for stainless</small></p>
       <div id="sc">${WT.chips(classes, cls).replace('class="chips"', 'class="chips small"')}</div>
       <div class="key"><p><b>All figures are kilograms for ONE bolt.</b></p>
         <p><b>Pull</b> – load along the bolt (hanging, clamping). <i>Stretches</i> = bolt yields and is ruined. <i>Breaks</i> = snaps.</p>

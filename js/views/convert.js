@@ -7,6 +7,10 @@
   const TABS = [
     { key: 'drills', label: 'Drill chart' },
     { key: 'length', label: 'mm ↔ inch' },
+    { key: 'dist', label: 'Distance' },
+    { key: 'area', label: 'Area' },
+    { key: 'mass', label: 'Weight' },
+    { key: 'cook', label: 'Cooking' },
     { key: 'torque', label: 'Torque' },
     { key: 'pressure', label: 'Pressure' },
     { key: 'temp', label: 'Temp' },
@@ -62,6 +66,32 @@
     { id: 'psi', label: 'psi', ...lin(6.894757, 1) },
     { id: 'kgfcm', label: 'kgf/cm²', ...lin(98.0665, 3) },
   ];
+  const DIST = [
+    { id: 'mm', label: 'Millimetres (mm)', ...lin(0.001, 4) }, { id: 'cm', label: 'Centimetres (cm)', ...lin(0.01, 4) },
+    { id: 'm', label: 'Metres (m)', ...lin(1, 4) }, { id: 'km', label: 'Kilometres (km)', ...lin(1000, 5) },
+    { id: 'in', label: 'Inches (in)', ...lin(0.0254, 4) }, { id: 'ft', label: 'Feet (ft)', ...lin(0.3048, 4) },
+    { id: 'yd', label: 'Yards (yd)', ...lin(0.9144, 4) }, { id: 'mi', label: 'Miles (statute, road)', ...lin(1609.344, 5) },
+    { id: 'nm', label: 'Nautical / aviation miles (NM)', ...lin(1852, 5) },
+  ];
+  const AREA = [
+    { id: 'mm2', label: 'Square mm (mm²)', ...lin(1e-6, 4) }, { id: 'cm2', label: 'Square cm (cm²)', ...lin(1e-4, 4) },
+    { id: 'm2', label: 'Square metres (m²)', ...lin(1, 4) }, { id: 'ha', label: 'Hectares (ha)', ...lin(10000, 5) },
+    { id: 'km2', label: 'Square km (km²)', ...lin(1e6, 6) }, { id: 'in2', label: 'Square inches (in²)', ...lin(6.4516e-4, 4) },
+    { id: 'ft2', label: 'Square feet (ft²)', ...lin(0.09290304, 4) }, { id: 'sq', label: 'Squares (100 ft², AU housing)', ...lin(9.290304, 4) },
+    { id: 'ac', label: 'Acres', ...lin(4046.8564, 5) },
+  ];
+  const MASS = [
+    { id: 'g', label: 'Grams (g)', ...lin(0.001, 4) }, { id: 'kg', label: 'Kilograms (kg)', ...lin(1, 4) },
+    { id: 't', label: 'Tonnes (t)', ...lin(1000, 5) }, { id: 'oz', label: 'Ounces (oz)', ...lin(0.028349523, 4) },
+    { id: 'lb', label: 'Pounds (lb)', ...lin(0.45359237, 4) }, { id: 'st', label: 'Stone (st)', ...lin(6.35029318, 4) },
+  ];
+  const COOK = [
+    { id: 'ml', label: 'Millilitres (mL)', ...lin(1, 4) }, { id: 'l', label: 'Litres (L)', ...lin(1000, 4) },
+    { id: 'tsp', label: 'Teaspoons (5 mL)', ...lin(5, 3) }, { id: 'tbsp', label: 'Tablespoons – Australian (20 mL)', ...lin(20, 3) },
+    { id: 'tbspus', label: 'Tablespoons – US / UK (15 mL)', ...lin(14.787, 3) }, { id: 'cup', label: 'Cups – Australian metric (250 mL)', ...lin(250, 3) },
+    { id: 'cupus', label: 'Cups – US (237 mL)', ...lin(236.588, 3) }, { id: 'flozus', label: 'Fluid ounces – US', ...lin(29.5735, 3) },
+    { id: 'flozuk', label: 'Fluid ounces – UK', ...lin(28.4131, 3) }, { id: 'pt', label: 'Pints – UK / AU (568 mL)', ...lin(568.261, 3) },
+  ];
   const TEMP = [
     { id: 'c', label: '°C', toBase: (v) => v, fromBase: (b) => b, d: 1 },
     { id: 'f', label: '°F', toBase: (v) => (v - 32) / 1.8, fromBase: (b) => b * 1.8 + 32, d: 1 },
@@ -74,8 +104,8 @@
     const F = [{ key: 'all', label: 'All' }, { key: 'number', label: 'Number' }, { key: 'letter', label: 'Letter' }, { key: 'fraction', label: 'Fraction' }];
     let f = WT.store.get('conv.drillfilter', 'all');
     $el.innerHTML = `${WT.chips(F, f).replace('class="chips"', 'class="chips small"')}
-      <input id="dq" class="search" type="search" inputmode="decimal" placeholder="Find nearest to… e.g. 6.5 (mm) or 0.257 / 17/64 (in)">
-      <table class="tbl"><thead><tr><th>Drill</th><th>inch</th><th>mm</th><th>Near metric</th></tr></thead><tbody id="db"></tbody></table>`;
+      <input id="dq" class="search" type="search" inputmode="decimal" placeholder="Find nearest to… 6.5 (mm), or 17/64 / 0.257 (inch)">
+      <table class="tbl"><thead><tr><th>mm</th><th>Nearest metric drill</th><th>Imperial drill</th><th>inch</th></tr></thead><tbody id="db"></tbody></table>`;
     const $b = $el.querySelector('#db'), $q = $el.querySelector('#dq');
     function render() {
       $el.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === f));
@@ -90,7 +120,7 @@
       let near = null;
       if (target != null) near = list.reduce((a, b) => (Math.abs(b.mm - target) < Math.abs(a.mm - target) ? b : a));
       $b.innerHTML = list.map((x) => `<tr${near === x ? ' class="near" id="nearrow"' : ''}>
-        <td>${esc(x.name)}</td><td>${x.in.toFixed(4)}</td><td>${x.mm.toFixed(2)}</td><td>${nearestMetric(x.mm).toFixed(nearestMetric(x.mm) < 3 ? 2 : 1)}</td></tr>`).join('');
+        <td><b>${x.mm.toFixed(2)}</b></td><td>${nearestMetric(x.mm).toFixed(nearestMetric(x.mm) < 3 ? 2 : 1)}</td><td>${esc(x.name)}</td><td>${x.in.toFixed(4)}</td></tr>`).join('');
       if (near) { const n = $el.querySelector('#nearrow'); if (n) n.scrollIntoView({ block: 'center' }); }
     }
     $el.querySelector('.chips').addEventListener('click', (e) => {
@@ -136,6 +166,10 @@
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
       if (tab === 'drills') await drillChart($p);
       else if (tab === 'length') await length($p);
+      else if (tab === 'dist') unitConverter($p, DIST, 'dist');
+      else if (tab === 'area') unitConverter($p, AREA, 'area');
+      else if (tab === 'mass') unitConverter($p, MASS, 'mass');
+      else if (tab === 'cook') { unitConverter($p, COOK, 'cook'); $p.insertAdjacentHTML('beforeend', '<p class="foot">Australian recipes use a 20 mL tablespoon and 250 mL cup; US and UK recipes use 15 mL and about 237 mL. Teaspoon is 5 mL everywhere. Grams ↔ cups depends on the ingredient (1 cup flour ≈ 150 g, sugar ≈ 220 g, water = 250 g).</p>'); }
       else if (tab === 'torque') unitConverter($p, TORQUE, 'torque');
       else if (tab === 'pressure') unitConverter($p, PRESSURE, 'pressure');
       else unitConverter($p, TEMP, 'temp');
