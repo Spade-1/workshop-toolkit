@@ -143,3 +143,23 @@ label.inline input[type=checkbox] { accent-color: var(--accent); width: 18px; he
 .warn { background: rgba(231,193,74,.1); border: 1px solid rgba(231,193,74,.35); color: var(--text); border-radius: 10px; padding: 8px 10px; font-size: 13px; margin: 0 0 10px; }
 .kv a, .tbl a { color: var(--accent); }
 .tbl td:first-child, .tbl td:last-child { white-space: nowrap; }
+
+/* v9: grouped home, list column headings, compact phone grid */
+h2.group { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 16px 2px 8px; font-weight: 700; }
+h2.group:first-child { margin-top: 2px; }
+.tiles { gap: 8px; }
+.tile { min-height: 84px; padding: 11px 12px; }
+.lhead { display: grid; gap: 6px; padding: 6px 4px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; position: sticky; top: 61px; background: var(--bg); z-index: 2; }
+.g4 { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,.9fr); }
+.g3 { grid-template-columns: minmax(0,1.6fr) minmax(0,1.2fr) minmax(0,1fr); }
+.lhead span:not(:first-child), .item-head.grid > span:not(:first-child) { text-align: right; }
+.item-head.grid { display: grid; gap: 6px; align-items: center; padding: 11px 4px; font-variant-numeric: tabular-nums; }
+.item-head.grid > span:nth-child(2) { color: var(--accent); font-weight: 650; }
+.item-head.grid .item-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tbl.cheat td, .tbl.cheat th { padding: 7px 5px; }
+.tbl.cheat th:not(:first-child), .tbl.cheat td:not(:first-child) { text-align: right; }
+.tbl.cheat tr.cs-main td { border-bottom: 0; font-size: 15px; }
+.tbl.cheat tr.cs-main td small { color: var(--muted); margin-left: 2px; font-size: 12px; }
+.tbl.cheat tr.cs-fine td { color: var(--muted); font-size: 12.5px; padding-top: 0; text-align: left !important; }
+.tbl.cheat .acc { color: var(--accent); font-size: 16px; }
+.tbl th small { font-weight: 500; text-transform: none; }

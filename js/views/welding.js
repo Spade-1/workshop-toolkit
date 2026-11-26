@@ -181,5 +181,5 @@
     render();
   }
 
-  WT.section('welding', { name: 'Welding', desc: 'Razor 205 MIG · stick · TIG' }, welding);
+  WT.section('welding', { name: 'Welding', desc: 'Razor 205 MIG · stick · TIG · faults', group: 'Welding' }, welding);
 })();

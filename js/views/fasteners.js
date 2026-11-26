@@ -2,9 +2,9 @@
 (function () {
   'use strict';
   const { fmt, esc, row } = WT;
-  const TABS = [{ key: 'torque', label: 'Torque' }, { key: 'grades', label: 'Grades' }, { key: 'stainless', label: 'Stainless' }, { key: 'imperial', label: 'Imperial' }];
+  const TABS = [{ key: 'torque', label: 'Torque' }, { key: 'strength', label: 'Strength (kg)' }, { key: 'grades', label: 'Grades' }, { key: 'stainless', label: 'Stainless' }, { key: 'imperial', label: 'Imperial' }];
   const COND = [{ key: 'dry', label: 'Dry / plain' }, { key: 'zinc', label: 'Zinc plated' }, { key: 'lube', label: 'Oiled / anti-seize' }];
-  const COMMON = ['M4', 'M5', 'M6', 'M8', 'M10', 'M12'];
+  const COMMON = ['M3', 'M4', 'M5', 'M6', 'M8', 'M10', 'M12'];
   const NM_FTLB = 0.737562;
 
   function torque($el, F) {
@@ -38,6 +38,26 @@
     $('#cc').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; cls = b.dataset.k; WT.store.set('fast.class', cls); render(); });
     $('#cd').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; cond = b.dataset.k; WT.store.set('fast.cond', cond); render(); });
     $('#fine').addEventListener('change', () => { fine = $('#fine').checked; WT.store.set('fast.fine', fine); render(); });
+    render();
+  }
+
+  function strength($el, F) {
+    const S = F.strength;
+    const classes = Object.keys(S.classes).map((k) => ({ key: k, label: k.replace(' / ', '/') }));
+    let cls = WT.store.get('fast.sclass', '8.8'); if (!S.classes[cls]) cls = '8.8';
+    $el.innerHTML = `<p class="warn">${esc(S.warning)}</p>
+      <div id="sc">${WT.chips(classes, cls).replace('class="chips"', 'class="chips small"')}</div>
+      <table class="tbl"><thead><tr><th>Size</th><th>Pull</th><th>Shear<br><small>thread</small></th><th>Shear<br><small>shank</small></th></tr></thead><tbody id="sb"></tbody></table>
+      <p class="foot">kg to break one bolt (1 kg ≈ 9.8 N). Shear "thread" = threads in the joint line; "shank" = plain shank in the joint line (stronger).
+      Two shear planes (e.g. clevis) roughly doubles shear.</p>
+      <div class="notes"><p>${esc(S.method)}</p><p>Sources: ${S.sources.map(esc).join(' · ')}</p></div>`;
+    const k = (v) => (v >= 10000 ? `${fmt(v / 1000, 1)} t` : `${Math.round(v).toLocaleString('en-AU')}`);
+    function render() {
+      $el.querySelectorAll('#sc .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === cls));
+      $el.querySelector('#sb').innerHTML = S.classes[cls].map((r) => `<tr class="${COMMON.includes(r.size) ? 'common' : ''}">
+        <td>${r.size}</td><td><b>${k(r.tension_kg)}</b></td><td>${k(r.shear_thread_kg)}</td><td>${k(r.shear_shank_kg)}</td></tr>`).join('');
+    }
+    $el.querySelector('#sc').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; cls = b.dataset.k; WT.store.set('fast.sclass', cls); render(); });
     render();
   }
 
@@ -84,11 +104,11 @@
     const $p = WT.$view.querySelector('#pane');
     function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      ({ torque, grades, stainless, imperial })[tab]($p, F);
+      ({ torque, strength, grades, stainless, imperial })[tab]($p, F);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('fast.tab', tab); render(); });
     render();
   }
 
-  WT.section('fasteners', { name: 'Fasteners', desc: 'Bolt torque, 8.8 / 10.9 / A2 / A4 grades' }, fasteners);
+  WT.section('fasteners', { name: 'Fasteners', desc: 'Torque, strength in kg, grades', group: 'Threads & fasteners' }, fasteners);
 })();

@@ -4,7 +4,7 @@
   const { fmt, esc, row } = WT;
 
   const TERM = { Yellow: 'term-y', Blue: 'term-b', Red: 'term-r' };
-  const TABS = [{ key: 'cables', label: 'Cables' }, { key: 'torque', label: 'Torque specs' }, { key: 'wheels', label: 'Wheel nuts' }, { key: 'plugs', label: 'Spark plugs' }];
+  const TABS = [{ key: 'torque', label: 'Torque specs' }, { key: 'wheels', label: 'Wheel nuts' }, { key: 'plugs', label: 'Spark plugs' }];
   const conf = (c) => `<span class="conf conf-${esc(c || 'low')}">${c === 'low' || !c ? 'unverified' : esc(c)}</span>`;
   const src = (r) => r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_name || 'source')}</a>` : esc(r.source_name || '');
   const toggle = ($l) => $l.addEventListener('click', (e) => {
@@ -98,17 +98,25 @@
 
   async function auto() {
     WT.setHeader('Automotive', true);
-    const [C, T] = await Promise.all([WT.load('data/auto/cable.json'), WT.load('data/auto/torque.json')]);
-    let tab = WT.store.get('auto.tab', 'cables');
+    const T = await WT.load('data/auto/torque.json');
+    let tab = WT.store.get('auto.tab', 'torque'); if (!TABS.some((t) => t.key === tab)) tab = 'torque';
     WT.$view.innerHTML = `${WT.chips(TABS, tab)}<div id="pane"></div>`;
     const $p = WT.$view.querySelector('#pane');
     function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      if (tab === 'cables') cables($p, C); else ({ torque, wheels, plugs })[tab]($p, T);
+      ({ torque, wheels, plugs })[tab]($p, T);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('auto.tab', tab); render(); });
     render();
   }
 
-  WT.section('auto', { name: 'Automotive', desc: 'Cables, torque specs, wheel nuts, plugs' }, auto);
+  async function autoelec() {
+    WT.setHeader('Auto electrical', true);
+    const C = await WT.load('data/auto/cable.json');
+    WT.$view.innerHTML = '<div id="pane"></div>';
+    cables(WT.$view.querySelector('#pane'), C);
+  }
+
+  WT.section('auto', { name: 'Automotive', desc: 'Torque specs, wheel nuts, plugs', group: 'Automotive' }, auto);
+  WT.section('autoelec', { name: 'Auto electrical', desc: 'Cable size, amps, lugs', group: 'Electrical' }, autoelec);
 })();

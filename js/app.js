@@ -1,13 +1,20 @@
 // Workshop Toolkit – home screen + router. Sections register themselves in js/views/*.js.
 (function () {
   'use strict';
-  const ORDER = ['common', 'taps', 'drillcheck', 'fasteners', 'convert', 'welding', 'auto'];
+  const GROUPS = [
+    { name: 'Threads & fasteners', ids: ['taps', 'drillcheck', 'fasteners'] },
+    { name: 'Workshop', ids: ['welding', 'convert'] },
+    { name: 'Automotive', ids: ['auto'] },
+    { name: 'Electrical', ids: ['autoelec'] },
+  ];
 
   function home() {
     WT.setHeader('Workshop Toolkit', false);
-    const tiles = ORDER.map((id) => WT.tiles.find((t) => t.id === id)).filter(Boolean);
-    WT.$view.innerHTML = `<div class="tiles">${tiles.map((t) => `
-      <a class="tile" href="#${t.id}"><span class="tile-name">${t.name}</span><span class="tile-desc">${t.desc}</span></a>`).join('')}</div>
+    const tile = (t) => `<a class="tile" href="#${t.id}"><span class="tile-name">${t.name}</span><span class="tile-desc">${t.desc}</span></a>`;
+    WT.$view.innerHTML = GROUPS.map((g) => {
+      const tiles = g.ids.map((id) => WT.tiles.find((t) => t.id === id)).filter(Boolean);
+      return `<h2 class="group">${g.name}</h2><div class="tiles">${tiles.map(tile).join('')}</div>`;
+    }).join('') + `
       <p class="foot">Offline reference. Thread data computed from ISO / ASME / BS standards; welding from Unimig data and your machine; cable chart from your Narva / Tycab compilation. Verify critical work.</p>`;
   }
 

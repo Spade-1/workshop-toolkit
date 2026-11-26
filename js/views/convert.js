@@ -146,6 +146,6 @@
     await render();
   }
 
-  WT.section('convert', { name: 'Conversions', desc: 'Drill chart, mm ↔ inch, torque, pressure' }, convert);
+  WT.section('convert', { name: 'Conversions', desc: 'Drill chart, mm ↔ inch, torque, pressure', group: 'Conversions' }, convert);
   WT.toFraction = toFraction; WT.parseInches = parseInches;
 })();

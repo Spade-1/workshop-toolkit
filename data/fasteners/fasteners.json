@@ -1012,5 +1012,645 @@
    "Stainless: use anti-seize, tighten slowly, no impact guns – galling risk.",
    "Vehicle and manufacturer specs always override these general figures. Torque-to-yield bolts: replace, don't reuse."
   ]
+ },
+ "strength": {
+  "method": "Minimum breaking loads. Pull (tension) = As × Rm (AS 4100 Ntf). Shear = 0.62 × Rm × area (AS 4100 Cl. 9.3.2.1): through the thread uses the minor-diameter area Ac, through the plain shank uses the full shank area Ao. Single shear plane, 1 kgf = 9.80665 N.",
+  "warning": "These are ultimate BREAKING loads of a new bolt – not safe working loads. Structural design under AS 4100 uses φ = 0.8 on top; lifting needs rated hardware and much larger safety factors. Shock, bending, fatigue, corrosion and poor thread engagement all reduce real capacity.",
+  "sources": [
+   "AS 4100 bolt capacity: GAA Design Manual (designmanual.gaa.com.au/?p=577); calcs.com AS 4100:2020 bolt calculator",
+   "Rm values: ISO 898-1 / ISO 3506 (see Grades)"
+  ],
+  "classes": {
+   "4.6": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 400,
+     "tension_kg": 205,
+     "shear_thread_kg": 113,
+     "shear_shank_kg": 179
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 400,
+     "tension_kg": 358,
+     "shear_thread_kg": 196,
+     "shear_shank_kg": 318
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 400,
+     "tension_kg": 578,
+     "shear_thread_kg": 321,
+     "shear_shank_kg": 497
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 400,
+     "tension_kg": 821,
+     "shear_thread_kg": 453,
+     "shear_shank_kg": 715
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 400,
+     "tension_kg": 1493,
+     "shear_thread_kg": 831,
+     "shear_shank_kg": 1271
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 400,
+     "tension_kg": 2365,
+     "shear_thread_kg": 1322,
+     "shear_shank_kg": 1986
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 400,
+     "tension_kg": 3437,
+     "shear_thread_kg": 1928,
+     "shear_shank_kg": 2860
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 400,
+     "tension_kg": 4709,
+     "shear_thread_kg": 2648,
+     "shear_shank_kg": 3893
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 400,
+     "tension_kg": 6390,
+     "shear_thread_kg": 3645,
+     "shear_shank_kg": 5085
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 400,
+     "tension_kg": 9985,
+     "shear_thread_kg": 5695,
+     "shear_shank_kg": 7945
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 400,
+     "tension_kg": 14378,
+     "shear_thread_kg": 8201,
+     "shear_shank_kg": 11440
+    }
+   ],
+   "5.8": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 520,
+     "tension_kg": 267,
+     "shear_thread_kg": 147,
+     "shear_shank_kg": 232
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 520,
+     "tension_kg": 465,
+     "shear_thread_kg": 255,
+     "shear_shank_kg": 413
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 520,
+     "tension_kg": 752,
+     "shear_thread_kg": 417,
+     "shear_shank_kg": 646
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 520,
+     "tension_kg": 1067,
+     "shear_thread_kg": 588,
+     "shear_shank_kg": 930
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 520,
+     "tension_kg": 1941,
+     "shear_thread_kg": 1080,
+     "shear_shank_kg": 1653
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 520,
+     "tension_kg": 3075,
+     "shear_thread_kg": 1719,
+     "shear_shank_kg": 2582
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 520,
+     "tension_kg": 4468,
+     "shear_thread_kg": 2507,
+     "shear_shank_kg": 3718
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 520,
+     "tension_kg": 6121,
+     "shear_thread_kg": 3442,
+     "shear_shank_kg": 5061
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 520,
+     "tension_kg": 8307,
+     "shear_thread_kg": 4738,
+     "shear_shank_kg": 6610
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 520,
+     "tension_kg": 12980,
+     "shear_thread_kg": 7403,
+     "shear_shank_kg": 10328
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 520,
+     "tension_kg": 18692,
+     "shear_thread_kg": 10661,
+     "shear_shank_kg": 14873
+    }
+   ],
+   "8.8": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 800,
+     "tension_kg": 410,
+     "shear_thread_kg": 226,
+     "shear_shank_kg": 358
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 800,
+     "tension_kg": 716,
+     "shear_thread_kg": 392,
+     "shear_shank_kg": 636
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 800,
+     "tension_kg": 1157,
+     "shear_thread_kg": 641,
+     "shear_shank_kg": 993
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 800,
+     "tension_kg": 1642,
+     "shear_thread_kg": 905,
+     "shear_shank_kg": 1430
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 800,
+     "tension_kg": 2986,
+     "shear_thread_kg": 1661,
+     "shear_shank_kg": 2542
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 800,
+     "tension_kg": 4731,
+     "shear_thread_kg": 2645,
+     "shear_shank_kg": 3972
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 800,
+     "tension_kg": 6874,
+     "shear_thread_kg": 3856,
+     "shear_shank_kg": 5720
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 800,
+     "tension_kg": 9417,
+     "shear_thread_kg": 5296,
+     "shear_shank_kg": 7786
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 800,
+     "tension_kg": 12781,
+     "shear_thread_kg": 7289,
+     "shear_shank_kg": 10169
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 830,
+     "tension_kg": 20718,
+     "shear_thread_kg": 11817,
+     "shear_shank_kg": 16485
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 830,
+     "tension_kg": 29835,
+     "shear_thread_kg": 17016,
+     "shear_shank_kg": 23739
+    }
+   ],
+   "10.9": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 1040,
+     "tension_kg": 534,
+     "shear_thread_kg": 294,
+     "shear_shank_kg": 465
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 1040,
+     "tension_kg": 931,
+     "shear_thread_kg": 510,
+     "shear_shank_kg": 826
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 1040,
+     "tension_kg": 1504,
+     "shear_thread_kg": 834,
+     "shear_shank_kg": 1291
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 1040,
+     "tension_kg": 2134,
+     "shear_thread_kg": 1177,
+     "shear_shank_kg": 1859
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 1040,
+     "tension_kg": 3882,
+     "shear_thread_kg": 2159,
+     "shear_shank_kg": 3305
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 1040,
+     "tension_kg": 6150,
+     "shear_thread_kg": 3438,
+     "shear_shank_kg": 5164
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 1040,
+     "tension_kg": 8936,
+     "shear_thread_kg": 5013,
+     "shear_shank_kg": 7436
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 1040,
+     "tension_kg": 12242,
+     "shear_thread_kg": 6885,
+     "shear_shank_kg": 10122
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 1040,
+     "tension_kg": 16615,
+     "shear_thread_kg": 9476,
+     "shear_shank_kg": 13220
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 1040,
+     "tension_kg": 25961,
+     "shear_thread_kg": 14807,
+     "shear_shank_kg": 20656
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 1040,
+     "tension_kg": 37383,
+     "shear_thread_kg": 21321,
+     "shear_shank_kg": 29745
+    }
+   ],
+   "12.9": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 1220,
+     "tension_kg": 626,
+     "shear_thread_kg": 345,
+     "shear_shank_kg": 545
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 1220,
+     "tension_kg": 1092,
+     "shear_thread_kg": 598,
+     "shear_shank_kg": 969
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 1220,
+     "tension_kg": 1764,
+     "shear_thread_kg": 978,
+     "shear_shank_kg": 1514
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 1220,
+     "tension_kg": 2503,
+     "shear_thread_kg": 1380,
+     "shear_shank_kg": 2181
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 1220,
+     "tension_kg": 4554,
+     "shear_thread_kg": 2533,
+     "shear_shank_kg": 3877
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 1220,
+     "tension_kg": 7214,
+     "shear_thread_kg": 4033,
+     "shear_shank_kg": 6058
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 1220,
+     "tension_kg": 10483,
+     "shear_thread_kg": 5881,
+     "shear_shank_kg": 8723
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 1220,
+     "tension_kg": 14361,
+     "shear_thread_kg": 8076,
+     "shear_shank_kg": 11873
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 1220,
+     "tension_kg": 19490,
+     "shear_thread_kg": 11116,
+     "shear_shank_kg": 15508
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 1220,
+     "tension_kg": 30454,
+     "shear_thread_kg": 17369,
+     "shear_shank_kg": 24232
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 1220,
+     "tension_kg": 43853,
+     "shear_thread_kg": 25012,
+     "shear_shank_kg": 34893
+    }
+   ],
+   "A2-70 / A4-70": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 700,
+     "tension_kg": 359,
+     "shear_thread_kg": 198,
+     "shear_shank_kg": 313
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 700,
+     "tension_kg": 627,
+     "shear_thread_kg": 343,
+     "shear_shank_kg": 556
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 700,
+     "tension_kg": 1012,
+     "shear_thread_kg": 561,
+     "shear_shank_kg": 869
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 700,
+     "tension_kg": 1436,
+     "shear_thread_kg": 792,
+     "shear_shank_kg": 1251
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 700,
+     "tension_kg": 2613,
+     "shear_thread_kg": 1453,
+     "shear_shank_kg": 2225
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 700,
+     "tension_kg": 4139,
+     "shear_thread_kg": 2314,
+     "shear_shank_kg": 3476
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 700,
+     "tension_kg": 6015,
+     "shear_thread_kg": 3374,
+     "shear_shank_kg": 5005
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 700,
+     "tension_kg": 8240,
+     "shear_thread_kg": 4634,
+     "shear_shank_kg": 6813
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 700,
+     "tension_kg": 11183,
+     "shear_thread_kg": 6378,
+     "shear_shank_kg": 8898
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 700,
+     "tension_kg": 17473,
+     "shear_thread_kg": 9966,
+     "shear_shank_kg": 13903
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 700,
+     "tension_kg": 25162,
+     "shear_thread_kg": 14351,
+     "shear_shank_kg": 20021
+    }
+   ],
+   "A2-80 / A4-80": [
+    {
+     "size": "M3",
+     "As": 5.0,
+     "Rm": 800,
+     "tension_kg": 410,
+     "shear_thread_kg": 226,
+     "shear_shank_kg": 358
+    },
+    {
+     "size": "M4",
+     "As": 8.8,
+     "Rm": 800,
+     "tension_kg": 716,
+     "shear_thread_kg": 392,
+     "shear_shank_kg": 636
+    },
+    {
+     "size": "M5",
+     "As": 14.2,
+     "Rm": 800,
+     "tension_kg": 1157,
+     "shear_thread_kg": 641,
+     "shear_shank_kg": 993
+    },
+    {
+     "size": "M6",
+     "As": 20.1,
+     "Rm": 800,
+     "tension_kg": 1642,
+     "shear_thread_kg": 905,
+     "shear_shank_kg": 1430
+    },
+    {
+     "size": "M8",
+     "As": 36.6,
+     "Rm": 800,
+     "tension_kg": 2986,
+     "shear_thread_kg": 1661,
+     "shear_shank_kg": 2542
+    },
+    {
+     "size": "M10",
+     "As": 58.0,
+     "Rm": 800,
+     "tension_kg": 4731,
+     "shear_thread_kg": 2645,
+     "shear_shank_kg": 3972
+    },
+    {
+     "size": "M12",
+     "As": 84.3,
+     "Rm": 800,
+     "tension_kg": 6874,
+     "shear_thread_kg": 3856,
+     "shear_shank_kg": 5720
+    },
+    {
+     "size": "M14",
+     "As": 115.4,
+     "Rm": 800,
+     "tension_kg": 9417,
+     "shear_thread_kg": 5296,
+     "shear_shank_kg": 7786
+    },
+    {
+     "size": "M16",
+     "As": 156.7,
+     "Rm": 800,
+     "tension_kg": 12781,
+     "shear_thread_kg": 7289,
+     "shear_shank_kg": 10169
+    },
+    {
+     "size": "M20",
+     "As": 244.8,
+     "Rm": 800,
+     "tension_kg": 19970,
+     "shear_thread_kg": 11390,
+     "shear_shank_kg": 15890
+    },
+    {
+     "size": "M24",
+     "As": 352.5,
+     "Rm": 800,
+     "tension_kg": 28756,
+     "shear_thread_kg": 16401,
+     "shear_shank_kg": 22881
+    }
+   ]
+  }
  }
 }
