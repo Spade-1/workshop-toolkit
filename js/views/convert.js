@@ -32,6 +32,38 @@
     const v = parseFloat(s); return isNaN(v) ? null : v;
   }
 
+  // ---- kitchen reference
+  // grams per 1 / ½ / ⅓ / ¼ Australian metric cup (250 mL). Source: kitchentotable.com.au chart (AU cookery, rounded).
+  const ING = [['Water / milk', 250, 125, 85, 60], ['Flour, plain / self-raising', 150, 75, 50, 40], ['Sugar, white', 225, 110, 80, 60], ['Sugar, caster', 220, 115, 80, 60],
+    ['Sugar, brown (firmly packed)', 200, 100, 70, 55], ['Sugar, icing', 150, 80, 60, 45], ['Butter', 250, 125, 80, 60], ['Rice, uncooked', 200, 100, 70, 50],
+    ['Cheese, grated', 80, 40, 35, 25], ['Coconut, desiccated', 85, 45, 35, 20], ['Breadcrumbs, dry', 90, 45, 30, 25], ['Choc bits', 190, 95, 70, 55],
+    ['Sour cream', 235, 125, 85, 65], ['Yoghurt', 260, 130, 90, 70], ['Sultanas', 170, 90, 65, 45]];
+  // conventional °C, fan-forced °C (−20), °F (usual recipe rounding), gas mark (standard UK scale)
+  const OVEN = [[120, 100, 250, '½', 'Very slow'], [140, 120, 275, '1', 'Very slow'], [150, 130, 300, '2', 'Slow'], [170, 150, 325, '3', 'Moderately slow'], [180, 160, 350, '4', 'Moderate'],
+    [190, 170, 375, '5', 'Moderately hot'], [200, 180, 400, '6', 'Hot'], [220, 200, 425, '7', 'Hot'], [230, 210, 450, '8', 'Very hot'], [240, 220, 475, '9', 'Very hot']];
+  function kitchen($el) {
+    const st = WT.store.get('conv.kit', { ing: 1, cups: '1', g: '' });
+    $el.insertAdjacentHTML('beforeend', `
+      <h3 class="sub">Cups ↔ grams</h3>
+      <form class="calc" onsubmit="return false"><label>Ingredient<select id="king">${ING.map((r, i) => `<option value="${i}">${esc(r[0])}</option>`).join('')}</select></label>
+      <div class="row2"><label>Grams<input id="kg" inputmode="decimal"></label><label>Cups (AU 250 mL)<input id="kc" inputmode="decimal"></label></div></form>
+      <h3 class="sub">Oven temperatures</h3>
+      <table class="tbl"><thead><tr><th>°C</th><th>Fan °C</th><th>°F</th><th>Gas</th><th></th></tr></thead><tbody>
+      ${OVEN.map((o) => `<tr><td><b>${o[0]}</b></td><td>${o[1]}</td><td>${o[2]}</td><td>${o[3]}</td><td><small>${o[4]}</small></td></tr>`).join('')}</tbody></table>
+      <h3 class="sub">Grams per cup <small>(Australian 250 mL cup)</small></h3>
+      <table class="tbl"><thead><tr><th>Ingredient</th><th>1</th><th>½</th><th>⅓</th><th>¼</th></tr></thead><tbody>
+      ${ING.map((r) => `<tr><td>${esc(r[0])}</td><td><b>${r[1]}</b></td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join('')}</tbody></table>
+      <p class="foot">Australian recipes use a 20 mL tablespoon (4 tsp) and 250 mL cup; US and UK use 15 mL and about 237 mL. Teaspoon is 5 mL everywhere. Fan-forced ovens run about 20 °C lower. °F and gas marks are the usual recipe roundings (180 °C ≈ 350 °F, gas 4). Grams per cup: kitchentotable.com.au chart (rounded cookery figures; packing changes the weight).</p>`);
+    const $i = $el.querySelector('#king'), $g = $el.querySelector('#kg'), $c = $el.querySelector('#kc');
+    $i.value = st.ing;
+    const per = () => ING[+$i.value][1];
+    const save = () => WT.store.set('conv.kit', { ing: +$i.value, cups: $c.value, g: $g.value });
+    $c.addEventListener('input', () => { const v = parseFloat($c.value); $g.value = isNaN(v) ? '' : fmt(v * per(), 0); save(); });
+    $g.addEventListener('input', () => { const v = parseFloat($g.value); $c.value = isNaN(v) ? '' : fmt(v / per(), 2); save(); });
+    $i.addEventListener('change', () => { const v = parseFloat($c.value); if (!isNaN(v)) $g.value = fmt(v * per(), 0); save(); });
+    $c.value = st.cups; $c.dispatchEvent(new Event('input'));
+  }
+
   // ---- generic linked-unit converter
   function unitConverter($el, units, key) {
     // units: [{id,label,toBase(v),fromBase(b),d}]
@@ -169,7 +201,7 @@
       else if (tab === 'dist') unitConverter($p, DIST, 'dist');
       else if (tab === 'area') unitConverter($p, AREA, 'area');
       else if (tab === 'mass') unitConverter($p, MASS, 'mass');
-      else if (tab === 'cook') { unitConverter($p, COOK, 'cook'); $p.insertAdjacentHTML('beforeend', '<p class="foot">Australian recipes use a 20 mL tablespoon and 250 mL cup; US and UK recipes use 15 mL and about 237 mL. Teaspoon is 5 mL everywhere. Grams ↔ cups depends on the ingredient (1 cup flour ≈ 150 g, sugar ≈ 220 g, water = 250 g).</p>'); }
+      else if (tab === 'cook') { unitConverter($p, COOK, 'cook'); kitchen($p); }
       else if (tab === 'torque') unitConverter($p, TORQUE, 'torque');
       else if (tab === 'pressure') unitConverter($p, PRESSURE, 'pressure');
       else unitConverter($p, TEMP, 'temp');
