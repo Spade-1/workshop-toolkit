@@ -1,5 +1,5 @@
 // Offline cache. Bump VERSION on every release so phones pick up changes.
-const VERSION = 'wt-v26';
+const VERSION = 'wt-v27';
 const ASSETS = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/core.js', 'js/calc/threads.js',
   'js/views/taps.js', 'js/views/convert.js', 'js/views/welding.js', 'js/views/auto.js', 'js/views/fasteners.js', 'js/views/tyres.js', 'js/views/elec.js', 'js/views/geom.js', 'js/views/area.js', 'js/views/metal.js', 'js/views/solar.js', 'data/metal/catalogue.json', 'data/elec/mains_cable.json', 'data/auto/tyres.json', 'data/auto/solar_psh.json', 'data/auto/fitment.json', 'data/fasteners/fasteners.json',
