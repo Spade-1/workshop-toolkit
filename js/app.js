@@ -4,16 +4,17 @@
   const GROUPS = [
     { name: 'Threads & fasteners', ids: ['taps', 'drillcheck', 'fasteners'] },
     { name: 'Workshop', ids: ['welding', 'convert'] },
-    { name: 'Automotive', ids: ['auto'] },
-    { name: 'Electrical', ids: ['autoelec'] },
+    { name: 'Automotive', ids: ['auto', 'autoelec', 'tyres'] },
+    { name: 'Residential', soon: [['Residential electrical', 'Cable ratings, voltage drop'], ['Residential construction', 'Timber, spans, fixings']] },
   ];
 
   function home() {
     WT.setHeader('Workshop Toolkit', false);
     const tile = (t) => `<a class="tile" href="#${t.id}"><span class="tile-name">${t.name}</span><span class="tile-desc">${t.desc}</span></a>`;
     WT.$view.innerHTML = GROUPS.map((g) => {
-      const tiles = g.ids.map((id) => WT.tiles.find((t) => t.id === id)).filter(Boolean);
-      return `<h2 class="group">${g.name}</h2><div class="tiles">${tiles.map(tile).join('')}</div>`;
+      const tiles = (g.ids || []).map((id) => WT.tiles.find((t) => t.id === id)).filter(Boolean);
+      const soon = (g.soon || []).map(([n, d]) => `<div class="tile soon" aria-disabled="true"><span class="tile-name">${n}</span><span class="tile-desc">${d} · coming</span></div>`);
+      return `<h2 class="group">${g.name}</h2><div class="tiles">${tiles.map(tile).join('')}${soon.join('')}</div>`;
     }).join('') + `
       <p class="foot">Offline reference. Thread data computed from ISO / ASME / BS standards; welding from Unimig data and your machine; cable chart from your Narva / Tycab compilation. Verify critical work.</p>`;
   }

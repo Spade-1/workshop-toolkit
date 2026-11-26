@@ -1,0 +1,192 @@
+{
+ "load_index": {
+  "62": 265,
+  "63": 272,
+  "64": 280,
+  "65": 290,
+  "66": 300,
+  "67": 307,
+  "68": 315,
+  "69": 325,
+  "70": 335,
+  "71": 345,
+  "72": 355,
+  "73": 365,
+  "74": 375,
+  "75": 387,
+  "76": 400,
+  "77": 412,
+  "78": 425,
+  "79": 437,
+  "80": 450,
+  "81": 462,
+  "82": 475,
+  "83": 487,
+  "84": 500,
+  "85": 515,
+  "86": 530,
+  "87": 545,
+  "88": 560,
+  "89": 580,
+  "90": 600,
+  "91": 615,
+  "92": 630,
+  "93": 650,
+  "94": 670,
+  "95": 690,
+  "96": 710,
+  "97": 730,
+  "98": 750,
+  "99": 775,
+  "100": 800,
+  "101": 825,
+  "102": 850,
+  "103": 875,
+  "104": 900,
+  "105": 925,
+  "106": 950,
+  "107": 975,
+  "108": 1000,
+  "109": 1030,
+  "110": 1060,
+  "111": 1090,
+  "112": 1120,
+  "113": 1150,
+  "114": 1180,
+  "115": 1215,
+  "116": 1250,
+  "117": 1285,
+  "118": 1320,
+  "119": 1360,
+  "120": 1400,
+  "121": 1450,
+  "122": 1500,
+  "123": 1550,
+  "124": 1600,
+  "125": 1650,
+  "126": 1700,
+  "127": 1750,
+  "128": 1800,
+  "129": 1850,
+  "130": 1900
+ },
+ "speed_rating": [
+  [
+   "L",
+   120
+  ],
+  [
+   "M",
+   130
+  ],
+  [
+   "N",
+   140
+  ],
+  [
+   "P",
+   150
+  ],
+  [
+   "Q",
+   160
+  ],
+  [
+   "R",
+   170
+  ],
+  [
+   "S",
+   180
+  ],
+  [
+   "T",
+   190
+  ],
+  [
+   "U",
+   200
+  ],
+  [
+   "H",
+   210
+  ],
+  [
+   "V",
+   240
+  ],
+  [
+   "W",
+   270
+  ],
+  [
+   "Y",
+   300
+  ]
+ ],
+ "sources": [
+  "Load index: tyreleader.co.uk / oponeo / Uniroyal / Pirelli load index tables (ETRTO). Max load per tyre at max rated pressure.",
+  "Speed symbols: ETRTO / ISO 4000 speed categories."
+ ],
+ "markings": [
+  [
+   "265/65R17",
+   "Width 265 mm \u00b7 sidewall 65% of width \u00b7 R = radial \u00b7 fits a 17\" rim"
+  ],
+  [
+   "112H",
+   "Load index 112 (1120 kg per tyre) \u00b7 speed rating H (210 km/h)"
+  ],
+  [
+   "LT",
+   "Light truck construction \u2013 stronger carcass, usually higher pressure. Common on 4WDs."
+  ],
+  [
+   "XL / Reinforced",
+   "Extra load \u2013 higher load at a higher pressure than standard."
+  ],
+  [
+   "C (e.g. 195R14C)",
+   "Commercial / van tyre, higher load index (often shown as two numbers, single/dual)."
+  ],
+  [
+   "M+S",
+   "Mud and snow tread pattern (not a winter rating)."
+  ],
+  [
+   "3PMSF (mountain/snowflake)",
+   "Tested severe-snow rated."
+  ],
+  [
+   "DOT \u20262324",
+   "Last 4 digits = week and year made (week 23 of 2024)."
+  ],
+  [
+   "33x12.50R15",
+   "Flotation (inch) size: 33\" tall \u00b7 12.5\" wide \u00b7 15\" rim."
+  ]
+ ],
+ "wheel_terms": [
+  [
+   "PCD / stud pattern",
+   "Number of studs \u00d7 pitch circle diameter, e.g. 6\u00d7139.7 (LC200 is 5\u00d7150)."
+  ],
+  [
+   "Offset (ET)",
+   "Mounting face distance from the wheel centreline, mm. Lower / negative pushes the wheel out."
+  ],
+  [
+   "Centre bore",
+   "Hole in the middle of the wheel. Hub-centric wheels must match the hub (or use spigot rings)."
+  ],
+  [
+   "Rim width (J)",
+   "e.g. 17\u00d78J = 17\" diameter, 8\" wide between the bead seats."
+  ],
+  [
+   "Nut seat",
+   "Conical (60\u00b0), ball/radius or flat with washer \u2013 must match the wheel. Toyota alloys use flat-seat nuts."
+  ]
+ ],
+ "fitment_note": "In Australia, changing tyre/wheel size beyond the vehicle placard limits may need engineering approval \u2013 check your state's rules (e.g. NSW VSI 08 / NCOP)."
+}

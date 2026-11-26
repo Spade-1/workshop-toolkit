@@ -118,5 +118,5 @@
   }
 
   WT.section('auto', { name: 'Automotive', desc: 'Torque specs, wheel nuts, plugs', group: 'Automotive' }, auto);
-  WT.section('autoelec', { name: 'Auto electrical', desc: 'Cable size, amps, lugs', group: 'Electrical' }, autoelec);
+  WT.section('autoelec', { name: 'Auto electrical', desc: 'Cable size, amps, lugs', group: 'Automotive' }, autoelec);
 })();

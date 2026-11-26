@@ -163,3 +163,9 @@ h2.group:first-child { margin-top: 2px; }
 .tbl.cheat tr.cs-fine td { color: var(--muted); font-size: 12.5px; padding-top: 0; text-align: left !important; }
 .tbl.cheat .acc { color: var(--accent); font-size: 16px; }
 .tbl th small { font-weight: 500; text-transform: none; }
+
+.key { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 13px; margin: 6px 0 10px; }
+.key p { margin: 0 0 5px; } .key p:last-child { margin: 0; } .key i { color: var(--accent); font-style: normal; font-weight: 600; }
+.tbl.strength th, .tbl.strength td { padding: 6px 4px; font-size: 13.5px; text-align: right; }
+.tbl.strength th:first-child, .tbl.strength td:first-child { text-align: left; }
+.tile.soon { opacity: .4; border-left-color: var(--line); pointer-events: none; }

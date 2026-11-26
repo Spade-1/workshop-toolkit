@@ -47,15 +47,18 @@
     let cls = WT.store.get('fast.sclass', '8.8'); if (!S.classes[cls]) cls = '8.8';
     $el.innerHTML = `<p class="warn">${esc(S.warning)}</p>
       <div id="sc">${WT.chips(classes, cls).replace('class="chips"', 'class="chips small"')}</div>
-      <table class="tbl"><thead><tr><th>Size</th><th>Pull</th><th>Shear<br><small>thread</small></th><th>Shear<br><small>shank</small></th></tr></thead><tbody id="sb"></tbody></table>
-      <p class="foot">kg to break one bolt (1 kg ≈ 9.8 N). Shear "thread" = threads in the joint line; "shank" = plain shank in the joint line (stronger).
-      Two shear planes (e.g. clevis) roughly doubles shear.</p>
+      <div class="key"><p><b>All figures are kilograms for ONE bolt.</b></p>
+        <p><b>Pull</b> – load along the bolt (hanging, clamping). <i>Stretches</i> = bolt yields and is ruined. <i>Breaks</i> = snaps.</p>
+        <p><b>Shear</b> – load across the bolt (two plates sliding, like scissors). <i>Thread</i> = the threaded part sits where the plates meet (weaker).
+        <i>Shank</i> = the plain, unthreaded part sits there (stronger). A clevis/double-sided joint has two shear planes ≈ double.</p></div>
+      <table class="tbl strength"><thead><tr><th>Size</th><th>Pull<br><small>stretches</small></th><th>Pull<br><small>breaks</small></th><th>Shear<br><small>thread</small></th><th>Shear<br><small>shank</small></th></tr></thead><tbody id="sb"></tbody></table>
+      <p class="foot">kg. 1 t = 1000 kg.</p>
       <div class="notes"><p>${esc(S.method)}</p><p>Sources: ${S.sources.map(esc).join(' · ')}</p></div>`;
     const k = (v) => (v >= 10000 ? `${fmt(v / 1000, 1)} t` : `${Math.round(v).toLocaleString('en-AU')}`);
     function render() {
       $el.querySelectorAll('#sc .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === cls));
       $el.querySelector('#sb').innerHTML = S.classes[cls].map((r) => `<tr class="${COMMON.includes(r.size) ? 'common' : ''}">
-        <td>${r.size}</td><td><b>${k(r.tension_kg)}</b></td><td>${k(r.shear_thread_kg)}</td><td>${k(r.shear_shank_kg)}</td></tr>`).join('');
+        <td>${r.size}</td><td>${r.yield_kg ? k(r.yield_kg) : '–'}</td><td><b>${k(r.tension_kg)}</b></td><td>${k(r.shear_thread_kg)}</td><td>${k(r.shear_shank_kg)}</td></tr>`).join('');
     }
     $el.querySelector('#sc').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; cls = b.dataset.k; WT.store.set('fast.sclass', cls); render(); });
     render();
