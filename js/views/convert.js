@@ -212,6 +212,6 @@
     await render();
   }
 
-  WT.section('convert', { name: 'Conversions', desc: 'Drill chart, mm ↔ inch, torque, pressure', group: 'Conversions' }, convert);
+  WT.section('convert', { name: 'Conversions', desc: 'Drill chart, length, area, weight, cooking', group: 'Conversions' }, convert);
   WT.toFraction = toFraction; WT.parseInches = parseInches;
 })();

@@ -374,7 +374,64 @@
     drawLoads(); go();
   }
 
-  const TABS = [{ key: 'virp', label: 'V I R P' }, { key: 'vdrop', label: 'Voltage drop' }, { key: 'combo', label: 'Series / parallel' }, { key: 'led', label: 'LED resistor' }, { key: 'bat', label: 'Battery' }];
+  // ---------- Resistor colour code
+  const RC = [['black', '#111', 0], ['brown', '#7a4a1e', 1], ['red', '#d22', 2], ['orange', '#f08a12', 3], ['yellow', '#f2d30c', 4], ['green', '#1f9e3a', 5], ['blue', '#1f5fd1', 6], ['violet', '#8a3fc7', 7], ['grey', '#8b8b8b', 8], ['white', '#f4f4f4', 9]];
+  const MULT = [...RC.map(([n, c, d]) => [n, c, 10 ** d]), ['gold', '#c9a227', 0.1], ['silver', '#c0c0c0', 0.01]];
+  const TOL = [['brown', '#7a4a1e', '±1%'], ['red', '#d22', '±2%'], ['green', '#1f9e3a', '±0.5%'], ['blue', '#1f5fd1', '±0.25%'], ['violet', '#8a3fc7', '±0.1%'], ['grey', '#8b8b8b', '±0.05%'], ['gold', '#c9a227', '±5%'], ['silver', '#c0c0c0', '±10%']];
+  function rcc($el) {
+    const st = WT.store.get('elec.rcc', { n: 4, b: ['yellow', 'violet', 'red', 'gold', 'gold'], val: '' });
+    $el.innerHTML = `<p class="intro">Tap a band colour, or type a value to get the bands. Read with the tolerance band (gold/silver, often spaced apart) on the right.</p>
+      <div id="rs"></div>${WT.chips([{ key: '4', label: '4 band' }, { key: '5', label: '5 band (precision)' }], String(st.n)).replace('class="chips"', 'class="chips small"')}
+      <form class="calc" onsubmit="return false"><div id="bands"></div>
+      <label>Or type a value (e.g. 4k7, 220, 1M)<input id="rv" autocomplete="off"></label></form><div id="ro"></div>`;
+    const $ = (id) => $el.querySelector('#' + id);
+    const opts = (L, sel) => L.map(([n]) => `<option value="${n}"${n === sel ? ' selected' : ''}>${n}</option>`).join('');
+    function bandLists() { const d = st.n === 4 ? 2 : 3; return [...Array(d).fill(RC), MULT, TOL]; }
+    function bandNames() { return st.n === 4 ? ['1st digit', '2nd digit', 'Multiplier', 'Tolerance'] : ['1st digit', '2nd digit', '3rd digit', 'Multiplier', 'Tolerance']; }
+    function draw() {
+      const L = bandLists(), sel = st.b.slice(0, L.length - 1).concat([st.b[4] || 'gold']);
+      const cols = sel.map((n, i) => (L[i].find((x) => x[0] === n) || L[i][0])[1]);
+      const xs = st.n === 4 ? [95, 125, 155, 205] : [90, 115, 140, 165, 210];
+      $('rs').innerHTML = `<svg class="geo" viewBox="0 0 300 80" role="img"><title>Resistor</title><line x1="10" y1="40" x2="290" y2="40" stroke="var(--muted)" stroke-width="3"/>
+        <rect x="70" y="18" width="160" height="44" rx="18" fill="#d9c49a"/>${cols.map((c, i) => `<rect x="${xs[i]}" y="18" width="12" height="44" fill="${c}" stroke="#0004"/>`).join('')}</svg>`;
+      return sel;
+    }
+    function bandsUI() {
+      const L = bandLists(), N = bandNames(), sel = draw();
+      $('bands').innerHTML = `<div class="gform">${L.map((list, i) => `<div class="gf"><label>${N[i]}</label><select data-i="${i}">${opts(list, sel[i])}</select></div>`).join('')}</div>`;
+    }
+    function read() {
+      const L = bandLists(), sel = draw(), d = st.n === 4 ? 2 : 3;
+      const digits = sel.slice(0, d).map((n) => RC.find((x) => x[0] === n)[2]).join('');
+      const mult = MULT.find((x) => x[0] === sel[d])[2], tol = TOL.find((x) => x[0] === sel[d + 1]);
+      const R = +digits * mult;
+      $('ro').innerHTML = `<div class="out">${row('Value', `<b class="acc">${si(R, 'Ω', 4)}</b> ${tol ? tol[2] : ''}`, 'hl')}</div>${work([`${sel.slice(0, d).join(' – ')} = ${digits}`, `× ${sel[d]} (${mult}) = ${si(R, 'Ω', 4)}`])}`;
+      void L;
+    }
+    function fromValue() {
+      const v = parseSI($('rv').value); if (!v) return;
+      const d = st.n === 4 ? 2 : 3;
+      let e = Math.floor(Math.log10(v)) - (d - 1); let m = Math.round(v / 10 ** e);
+      if (m >= 10 ** d) { m /= 10; e += 1; }
+      if (e < -2 || e > 9) { $('ro').innerHTML = `<div class="out">${row('Out of range', 'use 0.1 Ω to 999 MΩ')}</div>`; return; }
+      const ds = String(m).padStart(d, '0').split('').map((c) => RC[+c][0]);
+      const mn = e >= 0 ? RC[e][0] : e === -1 ? 'gold' : 'silver';
+      st.b = st.n === 4 ? [ds[0], ds[1], mn, 'gold', 'gold'] : [ds[0], ds[1], ds[2], mn, 'brown'];
+      bandsUI(); read();
+      if (Math.abs(m * 10 ** e - v) / v > 1e-6) $('ro').insertAdjacentHTML('beforeend', `<p class="foot">Rounded to ${d} significant figures – nearest E-series part may differ.</p>`);
+    }
+    const save = () => WT.store.set('elec.rcc', st);
+    $('bands').addEventListener('change', (e) => { const i = +e.target.dataset.i; const d = st.n === 4 ? 2 : 3; if (i === d + 1) st.b[4] = e.target.value; else st.b[i] = e.target.value; save(); read(); });
+    $el.querySelector('.chips').addEventListener('click', (e) => {
+      const b = e.target.closest('.chip'); if (!b) return; st.n = +b.dataset.k;
+      $el.querySelectorAll('.chips .chip').forEach((c) => c.setAttribute('aria-selected', c.dataset.k === b.dataset.k));
+      st.b = st.n === 4 ? ['yellow', 'violet', 'red', 'gold', 'gold'] : ['yellow', 'violet', 'black', 'brown', 'brown']; save(); bandsUI(); read();
+    });
+    $('rv').addEventListener('input', () => { fromValue(); save(); });
+    bandsUI(); read();
+  }
+
+  const TABS = [{ key: 'virp', label: 'V I R P' }, { key: 'vdrop', label: 'Voltage drop' }, { key: 'combo', label: 'Series / parallel' }, { key: 'led', label: 'LED resistor' }, { key: 'bat', label: 'Battery' }, { key: 'rcc', label: 'Resistor colours' }];
   async function elec() {
     WT.setHeader('Electrical calculators', true);
     let tab = WT.store.get('elec.tab', 'virp');
@@ -382,11 +439,11 @@
     const $p = WT.$view.querySelector('#pane');
     async function render() {
       WT.$view.querySelectorAll(':scope > .chips .chip').forEach((b) => b.setAttribute('aria-selected', b.dataset.k === tab));
-      await ({ virp, vdrop, combo, led, bat: battery })[tab]($p);
+      await ({ virp, vdrop, combo, led, bat: battery, rcc })[tab]($p);
     }
     WT.$view.querySelector('.chips').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; tab = b.dataset.k; WT.store.set('elec.tab', tab); render(); });
     await render();
   }
-  WT.section('elec', { name: 'Electrical', desc: 'V I R P, voltage drop, LED, battery' }, elec);
+  WT.section('elec', { name: 'Electrical', desc: 'V I R P, voltage drop, battery, resistors' }, elec);
   WT.parseSI = parseSI; WT.si = si;
 })();
